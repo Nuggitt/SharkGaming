@@ -9,5 +9,10 @@
         public string LatencyTimings { get; set; }
         public double Voltage { get; set; }
         public string ColourCategory { get; set; }
+
+        public RAM()
+        {
+
+        }
     }
 }
