@@ -2,5 +2,7 @@
 {
     public class MotherboardRepository
     {
+        private static List<Motherboard> _motherboards;
+
     }
 }

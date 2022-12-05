@@ -2,5 +2,7 @@
 {
     public class CpuRepository
     {
+
+        public static List<CPU> CPUs;
     }
 }
