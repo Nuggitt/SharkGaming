@@ -3,9 +3,9 @@
     public class ProductsClass
     {
         protected static int nextId = 0;
-        protected string Name { get; set; }
-        protected double Price { get; set; }
-        protected int Id { get; set; }
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public int Id { get; set; }
 
         public ProductsClass(string name, double price)
         {
