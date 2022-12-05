@@ -2,5 +2,6 @@
 {
     public class CaseRepository
     {
+        public static List<Case> CaseList;
     }
 }
