@@ -1,6 +1,6 @@
 ﻿namespace SharkGaming.Products.Components.ComponentTypes.RAM
 {
-    public class RAM
+    public class RAM : ComponentsClass
     {
         public int Capacity { get; set; }
         public string Technology { get; set; }

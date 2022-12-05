@@ -1,6 +1,6 @@
 ﻿namespace SharkGaming.Products.Components.ComponentTypes.PowerSupply
 {
-    public class PowerSupply
+    public class PowerSupply : ComponentsClass
     {
         public string PSUFormFactor { get; set; }
         public string ColourCategory { get; set; }

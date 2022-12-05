@@ -1,6 +1,6 @@
 ﻿namespace SharkGaming.Products.Components.ComponentTypes.CPU
 {
-    public class CPU
+    public class CPU : ComponentsClass
     {
         public double clockSpeed { get; set; }
         public double boostClock { get; set; }

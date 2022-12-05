@@ -1,6 +1,6 @@
 ﻿namespace SharkGaming.Products.Components.ComponentTypes.Motherboard
 {
-    public class Motherboard
+    public class Motherboard : ComponentsClass
     {
         public bool SupportedRamIntergrityCheck { get; set; }
         public int MaxRamSize { get; set; }

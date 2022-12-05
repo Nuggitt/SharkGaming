@@ -1,6 +1,6 @@
 ﻿namespace SharkGaming.Products.Components.ComponentTypes.GPU
 {
-    public class GPU
+    public class GPU : ComponentsClass
     {
         public double busType { get; set; }
         public string graphicsEngine { get; set; }
