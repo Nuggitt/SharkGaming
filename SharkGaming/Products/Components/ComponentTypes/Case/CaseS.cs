@@ -29,15 +29,6 @@
         }
         public Cases()
         {
-            SizeType = sizeType;
-            Colour = colour;
-            AmountOfFans = amountOfFans;
-            RGB = rGB;
-            Width = width;
-            Depth = depth;
-            Height = height;
-            SupportMotherboard = supportMotherboard;
-            BuildInInterface = buildInInterface;
         }
     }
 }
