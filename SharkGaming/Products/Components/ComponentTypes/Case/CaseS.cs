@@ -12,9 +12,18 @@
         public string SupportMotherboard { get; set; }
         public string  BuildInInterface { get; set; }
 
-        public Cases()
+        public Cases(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, string sizeType, string colour, int amountOfFans, bool rGB, double width, double depth, double height, string supportMotherboard, string buildInInterface)
+            : base(name, price, amdCompatible, intelCompatible, specInfo)
         {
-
+            SizeType = sizeType;
+            Colour = colour;
+            AmountOfFans = amountOfFans;
+            RGB = rGB;
+            Width = width;
+            Depth = depth;
+            Height = height;
+            SupportMotherboard = supportMotherboard;
+            BuildInInterface = buildInInterface;
         }
     }
 }
