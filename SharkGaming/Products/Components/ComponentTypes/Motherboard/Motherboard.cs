@@ -28,6 +28,11 @@
             BIOSType = bIOSType;
         }
 
+        public Motherboard()
+        {
+
+        }
+
 
       
 
