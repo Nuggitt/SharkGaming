@@ -1,6 +1,10 @@
 ﻿namespace SharkGaming.Users.Admin
 {
-    public class Admin
+    public class AdminClass
     {
+        public AdminClass()
+        {
+
+        }
     }
 }
