@@ -1,6 +1,6 @@
 ﻿using SharkGaming.Order;
 
-namespace SharkGaming.OrderFlie
+namespace SharkGaming.OrderFile
 {
     public class OrderRepositoryClass
     {
