@@ -15,8 +15,8 @@ html {
 
 body {
     margin-bottom: 60px;
-    background: rgb(46,127,139);
-    background: linear-gradient(90deg, rgba(46,127,139,1) 0%, rgba(39,39,194,1) 47%, rgba(136,27,173,1) 100%);
+    background: rgb(111,142,255);
+    background: radial-gradient(circle, rgba(111,142,255,0.861782212885154) 9%, rgba(13,41,185,1) 49%, rgba(0,2,18,1) 97%);
 }
 footer{
     background-color: white;
