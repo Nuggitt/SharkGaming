@@ -2,5 +2,6 @@
 {
     public class RAMRepository
     {
+        public static List<RAM> RamList;
     }
 }
