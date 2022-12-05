@@ -1,6 +1,6 @@
 ﻿namespace SharkGaming.Products.Components.ComponentTypes.Storage.Case
 {
-    public class Case : ComponentsClass
+    public class Cases : ComponentsClass
     {
         public string SizeType { get; set; }
         public string Colour { get; set; }
@@ -12,7 +12,7 @@
         public string SupportMotherboard { get; set; }
         public string  BuildInInterface { get; set; }
 
-        public Case()
+        public Cases()
         {
 
         }
