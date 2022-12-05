@@ -2,5 +2,6 @@
 {
     public class CPUAirCoolingRepository
     {
+        public static List<CPUAirCooling> _cPUAirCooling;
     }
 }
