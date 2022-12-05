@@ -13,5 +13,10 @@
             Name = name;
             Id = nextId++;
         }
+
+        public ProductsClass()
+        {
+
+        }
     }
 }
