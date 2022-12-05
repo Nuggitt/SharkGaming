@@ -1,6 +1,10 @@
 ﻿namespace SharkGaming.Users.Worker
 {
-    public class Worker
+    public class WorkerClass
     {
+        public WorkerClass()
+        {
+
+        }
     }
 }
