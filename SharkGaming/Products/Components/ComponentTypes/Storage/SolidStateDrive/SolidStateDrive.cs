@@ -11,5 +11,14 @@
         {
 
         }
+
+        public SolidStateDrive(double driveTransferRate, double fourKBRandomRead, double fourKBRandomWrite, double nandFlashMemoryType)
+            : base()
+        {
+            DriveTransferRate = driveTransferRate;
+            FourKBRandomRead = fourKBRandomRead;
+            FourKBRandomWrite = fourKBRandomWrite;
+            NANDFlashMemoryType = nandFlashMemoryType;
+        }
     }
 }

@@ -5,8 +5,11 @@
         public string Specs { get; set; }
         public bool Discount { get; set; }
 
-        public PreBuildsClass()
+        public PreBuildsClass(string name, double price, string specs, bool discount)
+            : base(name, price)
         {
+            Specs = specs;
+            Discount = discount;
 
         }
 

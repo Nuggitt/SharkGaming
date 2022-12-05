@@ -10,5 +10,13 @@
         {
 
         }
+
+        public StorageClass(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, int capacity, string compatibleBay, double internalDateRate)
+            : base(name, price, amdCompatible, intelCompatible, specInfo)
+        {
+            Capacity = capacity;
+            CompatibleBay = compatibleBay;
+            InternalDateRate = internalDateRate;
+        }
     }
 }
