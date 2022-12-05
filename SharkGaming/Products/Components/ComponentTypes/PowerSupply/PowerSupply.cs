@@ -11,8 +11,8 @@
         public string CoolingSystem { get; set; }
 
 
-        public PowerSupply(string pSUFormFactor, string colourCategory, string classType, double powerCapacity, bool molex, string coolingSystem)
-            : base()
+        public PowerSupply(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, string pSUFormFactor, string colourCategory, string classType, double powerCapacity, bool molex, string coolingSystem)
+            : base(name, price, amdCompatible, intelCompatible, specInfo)
         {
             PSUFormFactor = pSUFormFactor;
             ColourCategory = colourCategory;
@@ -20,6 +20,11 @@
             PowerCapacity = powerCapacity;
             Molex = molex;
             CoolingSystem = coolingSystem;
+        }
+
+        public PowerSupply()
+        {
+
         }
 
         

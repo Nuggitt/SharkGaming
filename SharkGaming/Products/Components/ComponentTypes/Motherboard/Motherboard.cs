@@ -14,8 +14,8 @@
         public string BIOSType { get; set; }
         
         
-        public Motherboard(bool supportedRamIntergrityCheck, int maxRamSize, string technology, double buSClock, string productType, string chipsetType, string processorSocket, string powerConnectors, string bIOSType)
-            : base()
+        public Motherboard(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, bool supportedRamIntergrityCheck, int maxRamSize, string technology, double buSClock, string productType, string chipsetType, string processorSocket, string powerConnectors, string bIOSType)
+            : base(name, price, amdCompatible, intelCompatible, specInfo)
         {
             SupportedRamIntergrityCheck = supportedRamIntergrityCheck;
             MaxRamSize = maxRamSize;
@@ -26,6 +26,11 @@
             ProcessorSocket = processorSocket;
             PowerConnectors = powerConnectors;
             BIOSType = bIOSType;
+        }
+
+        public Motherboard()
+        {
+
         }
 
 

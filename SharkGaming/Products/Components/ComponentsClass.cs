@@ -14,5 +14,10 @@
             SpecInfo = specInfo;
 
         }
+
+        public ComponentsClass()
+        {
+
+        }
     }
 }
