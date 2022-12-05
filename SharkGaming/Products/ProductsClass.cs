@@ -3,12 +3,15 @@
     public class ProductsClass
     {
         protected static int nextId = 0;
-        protected string name { get; set; }
-        protected double price { get; set; }
+        protected string Name { get; set; }
+        protected double Price { get; set; }
+        protected int Id { get; set; }
 
-        public ProductsClass()
+        public ProductsClass(string name, double price)
         {
-
+            Price = price;
+            Name = name;
+            Id = nextId++;
         }
     }
 }

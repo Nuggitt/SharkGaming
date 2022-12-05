@@ -12,6 +12,7 @@
 
 
         public PowerSupply(string pSUFormFactor, string colourCategory, string classType, double powerCapacity, bool molex, string coolingSystem)
+            : base()
         {
             PSUFormFactor = pSUFormFactor;
             ColourCategory = colourCategory;
