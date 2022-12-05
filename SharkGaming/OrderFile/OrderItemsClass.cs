@@ -1,4 +1,4 @@
-﻿namespace SharkGaming.OrderFlie
+﻿namespace SharkGaming.OrderFile
 {
     public class OrderItemsClass
     {
