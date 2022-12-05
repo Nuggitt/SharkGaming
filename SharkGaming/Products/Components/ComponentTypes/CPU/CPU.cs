@@ -12,7 +12,20 @@
         public int ThermalDesignPower { get; set; }
         public int PowerDraw { get; set; }
 
-
+        public CPU(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, double clockSpeed, double boostClock, int gen, int threads, string socket, bool unlockForOC, double pCIExpress, int thermalDesignPower, int powerDraw)
+            : base(name, price, amdCompatible, intelCompatible, specInfo)
+        {
+            ClockSpeed = clockSpeed;
+            BoostClock = boostClock;
+            Gen = gen;
+            Threads = threads;
+            Socket = socket;
+            UnlockForOC = unlockForOC;
+            PCIExpress = pCIExpress;
+            ThermalDesignPower = thermalDesignPower;
+            PowerDraw = powerDraw;
+        }
+        
         public CPU()
         {
 

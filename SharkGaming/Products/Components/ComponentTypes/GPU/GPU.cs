@@ -13,6 +13,19 @@
         public int RequriedPowerSupply { get; set; }
         public double Width { get; set; }
 
+        public GPU(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, double busType, string graphicsEngine, int cUDACore, bool vRReady, string maxResolution, int memorySize, string memoryTechnology, int memoryBusWidth, int requriedPowerSupply, double width)
+            : base(name, price, amdCompatible, intelCompatible, specInfo)
+        {
+            BusType = busType;
+            GraphicsEngine = graphicsEngine;
+            CUDACore = cUDACore;
+            VRReady = vRReady;
+            MaxResolution = maxResolution;
+            MemorySize = memorySize;
+            MemoryTechnology = memoryTechnology;
+            Width = width;
+
+        }
 
         public GPU()
         {
