@@ -2,6 +2,7 @@
 {
     public class PowerSupply : ComponentsClass
     {
+
         public string PSUFormFactor { get; set; }
         public string ColourCategory { get; set; }
         public string ClassType { get; set; }
@@ -9,9 +10,19 @@
         public bool Molex { get; set; }
         public string CoolingSystem { get; set; }
 
-        public PowerSupply()
-        {
 
+        public PowerSupply(string pSUFormFactor, string colourCategory, string classType, double powerCapacity, bool molex, string coolingSystem)
+        {
+            PSUFormFactor = pSUFormFactor;
+            ColourCategory = colourCategory;
+            ClassType = classType;
+            PowerCapacity = powerCapacity;
+            Molex = molex;
+            CoolingSystem = coolingSystem;
         }
+
+        
+
+        
     }
 }
