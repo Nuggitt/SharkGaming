@@ -2,5 +2,6 @@
 {
     public class CaseFanRepository
     {
+        public static List<CaseFan> _caseFans; 
     }
 }

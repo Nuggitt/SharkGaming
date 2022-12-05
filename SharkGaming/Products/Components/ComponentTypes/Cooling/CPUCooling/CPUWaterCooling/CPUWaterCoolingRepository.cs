@@ -2,5 +2,6 @@
 {
     public class CPUWaterCoolingRepository
     {
+        public static List<CPUWaterCooling> cPUWaterCooling;
     }
 }
