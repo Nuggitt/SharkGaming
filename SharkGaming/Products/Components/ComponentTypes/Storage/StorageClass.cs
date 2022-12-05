@@ -1,6 +1,6 @@
 ﻿namespace SharkGaming.Products.Components.ComponentTypes.Storage
 {
-    public class StorageClass
+    public class StorageClass : ComponentsClass
     {
         public int Capacity { get; set; }
         public string CompatibleBay { get; set; }

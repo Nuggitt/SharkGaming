@@ -2,5 +2,6 @@
 {
     public class PreBuildRepository
     {
+        private static List<PreBuildsClass> _preBuilds;
     }
 }

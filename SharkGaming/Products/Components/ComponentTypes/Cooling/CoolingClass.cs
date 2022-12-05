@@ -1,6 +1,6 @@
 ﻿namespace SharkGaming.Products.Components.ComponentTypes.Cooling
 {
-    public class CoolingClass 
+    public class CoolingClass : ComponentsClass
     {
         public double ThermalDesignPower { get; set; }
         public double Size { get; set; }

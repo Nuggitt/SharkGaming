@@ -2,7 +2,7 @@
 {
     public class ProductsClass
     {
-        protected int id { get; set; }
+        protected static int nextId = 0;
         protected string name { get; set; }
         protected double price { get; set; }
 

@@ -2,5 +2,6 @@
 {
     public class ComponentsRepository
     {
+        public static List<ComponentsClass> _components;
     }
 }
