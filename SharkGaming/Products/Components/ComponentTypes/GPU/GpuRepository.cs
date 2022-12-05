@@ -2,5 +2,8 @@
 {
     public class GpuRepository
     {
+
+        public static List<GPU> GPUs;
+
     }
 }
