@@ -52,23 +52,23 @@ namespace SharkGaming.Services.ProductServiceFile
         #region initialise Lists
         public ProductService()
         {
-            _products = MockProducts.GetMockProducts();
-            _components = MockComponents.GetMockComponentsClass();
-            _preBuilds = MockPreBuilds.GetMockPreBuilds();
-            _customPcs = MockCustomPC.GetMockCustomPcs();
-            _cases = MockCaseS.GetMockCases();
-            _cooling = MockCooling.GetMockCooling();
-            _caseFans = MockCaseFan.GetMockCaseFans();
-            _cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCooling();
-            _cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling();
-            _cPUs = MockCPU.GetMockCPUs();
-            _gPUs = MockGPU.GetMockGPUs();
-            _motherboards = MockMotherboard.GetMockMotherboards();
-            _powerSupplies = MockPowerSupply.GetMockPowerSupplies();
-            _storage = MockStorage.GetMockStorage();
-            _rAMs = MockRam.GetMockRam();
-            _mdot2s = MockMdot.GetMockMdot2s();
-            _solidStateDrives = MockSoildStateDrive.GetSoildSateDrives();
+            //_products = MockProducts.GetMockProducts();
+            //_components = MockComponents.GetMockComponentsClass();
+            //_preBuilds = MockPreBuilds.GetMockPreBuilds();
+            //_customPcs = MockCustomPC.GetMockCustomPcs();
+            //_cases = MockCaseS.GetMockCases();
+            //_cooling = MockCooling.GetMockCooling();
+            //_caseFans = MockCaseFan.GetMockCaseFans();
+            //_cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCooling();
+            //_cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling();
+            //_cPUs = MockCPU.GetMockCPUs();
+            //_gPUs = MockGPU.GetMockGPUs();
+            //_motherboards = MockMotherboard.GetMockMotherboards();
+            //_powerSupplies = MockPowerSupply.GetMockPowerSupplies();
+            //_storage = MockStorage.GetMockStorage();
+            //_rAMs = MockRam.GetMockRam();
+            //_mdot2s = MockMdot.GetMockMdot2s();
+            //_solidStateDrives = MockSoildStateDrive.GetSoildSateDrives();
         }
         #endregion
         #region Get methods
