@@ -61,5 +61,10 @@ namespace SharkGaming.Services.ProductServiceFile
         //    _mdot2s = MockItems.GetMockMdot2s();
         //    _solidStateDrives = MockItems.GetMockSolidStateDrives();
         //}
+
+        public void AddItem(ProductsClass product)
+        {
+            _products.Add(product);
+        }
     }
 }
