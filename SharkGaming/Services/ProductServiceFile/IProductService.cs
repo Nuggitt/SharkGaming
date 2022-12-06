@@ -42,6 +42,7 @@ namespace SharkGaming.Services.ProductServiceFile
         List<SolidStateDrive> GetSolidStateDrives();
         #endregion
 
+        #region Add
         void AddProduct();
         void AddComponent();
         void AddPreBuild();
@@ -60,5 +61,6 @@ namespace SharkGaming.Services.ProductServiceFile
         void AddStorage();
         void AddMdot2();
         void AddSolidStateDrive();
+        #endregion
     }
 }
