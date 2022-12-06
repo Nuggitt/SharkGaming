@@ -11,6 +11,7 @@ namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MStorage
             new Mdot2("Crucial P2 500GB 3D NAND", 319.03, true, true, "Low-end", 500, "M.2", 2300, 3.0)
         };
 
+        public static List<Mdot2> GetMockMdot2s() { return _Mdot2; }
 
 
     }
