@@ -62,9 +62,77 @@ namespace SharkGaming.Services.ProductServiceFile
         //    _solidStateDrives = MockItems.GetMockSolidStateDrives();
         //}
 
-        public void AddItem(ProductsClass product)
+        public void AddProduct(ProductsClass product)
         {
             _products.Add(product);
+        }
+        public void AddComponent(ComponentsClass comp)
+        {
+            _components.Add(comp);
+        }
+        public void AddPreBuild(PreBuildsClass preBuild)
+        {
+            _preBuilds.Add(preBuild);
+        }
+        public void AddCustomPc(CustomPcClass cPc)
+        {
+            _customPcs.Add(cPc);
+        }
+        public void AddCase(Cases ca)
+        {
+            _cases.Add(ca);
+        }
+        public void AddCooling(CoolingClass cooling)
+        {
+            _cooling.Add(cooling);
+        }
+        public void AddCaseFan(CaseFan cf)
+        {
+            _caseFans.Add(cf);
+        }
+        public void AddCPUCooling(CPUCooling cpuCooling)
+        {
+            _cPUCooling.Add(cpuCooling);
+        }
+        public void AddCPUAirCooling(CPUAirCooling airCooling)
+        {
+            _cPUAirCooling.Add(airCooling);
+        }
+        public void AddCPUWaterCooling(CPUWaterCooling waterCooling)
+        {
+            _cPUWaterCooling.Add(waterCooling);
+        }
+        public void AddCPU(CPU cpu)
+        {
+            _cPUs.Add(cpu);
+        }
+        public void AddGPU(GPU gpu)
+        {
+            _gPUs.Add(gpu);
+        }
+        public void AddMotherboard(Motherboard motherboard)
+        {
+            _motherboards.Add(motherboard);
+        }
+        public void AddPowerSupply(PowerSupply pcu)
+        {
+            _powerSupplies.Add(pcu);
+        }
+        public void AddRAM(RAM ram)
+        {
+            _rAMs.Add(ram);
+        }
+        public void AddStorage(StorageClass storage)
+        {
+            _storage.Add(storage);
+        }
+        public void AddMdot2(Mdot2 m2)
+        {
+            _mdot2s.Add(m2);
+        }
+        public void AddSolidStateDrive(SolidStateDrive ssd)
+        {
+            _solidStateDrives.Add(ssd);
         }
     }
 }
