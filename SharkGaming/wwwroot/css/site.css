@@ -41,7 +41,11 @@ footer{
 }
 
 .navbar a:hover {
-    background-color: #Ccd5ff;
+    background-color: #829dff;
+}
+
+.hoverTable tr:hover {
+    background-color: #829dff;
 }
 
 .active {
