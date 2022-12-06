@@ -1,4 +1,7 @@
-﻿namespace SharkGaming.Products.Components.ComponentTypes.Cooling.CPUCooling
+﻿using System.Drawing;
+using System.Xml.Linq;
+
+namespace SharkGaming.Products.Components.ComponentTypes.Cooling.CPUCooling
 {
     public class CPUCooling : CoolingClass
     {
@@ -10,6 +13,13 @@
         {
 
         }
-        
+
+        public CPUCooling(bool type, string socket, int fanAmount, double thermalDesignPower, double size, string powerConnector, string airFlow, double rpm, string squareMetersPerHour, string mmH20, string colourCatagory, string name, double price, bool amdCompatible, bool intelCompatible, string specInfo)
+        : base(thermalDesignPower, size,  powerConnector,  airFlow,  rpm,  squareMetersPerHour, mmH20,  colourCatagory, name, price, amdCompatible, intelCompatible, specInfo)
+        {
+            Type = type;
+            Socket = socket;
+            FanAmount = fanAmount;
+        }
     }
 }

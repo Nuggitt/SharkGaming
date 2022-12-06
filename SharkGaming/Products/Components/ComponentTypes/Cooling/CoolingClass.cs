@@ -15,6 +15,18 @@
         {
 
         }
-        
+
+        public CoolingClass(double thermalDesignPower, double size, string powerConnector, string airFlow, double rpm, string squareMetersPerHour, string mmH20, string colourCatagory, string name, double price, bool amdCompatible, bool intelCompatible, string specInfo)
+        : base( name, price, amdCompatible, intelCompatible, specInfo)
+        {
+            ThermalDesignPower = thermalDesignPower;
+            Size = size;
+            PowerConnector = powerConnector;
+            AirFlow = airFlow;
+            Rpm = rpm;
+            SquareMetersPerHour = squareMetersPerHour;
+            MmH20 = mmH20;
+            ColourCatagory = colourCatagory;
+        }
     }
 }
