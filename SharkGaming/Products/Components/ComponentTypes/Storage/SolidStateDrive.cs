@@ -1,4 +1,4 @@
-﻿namespace SharkGaming.Products.Components.ComponentTypes.Storage.SolidStateDrive
+﻿namespace SharkGaming.Products.Components.ComponentTypes.Storage
 {
     public class SolidStateDrive : StorageClass
     {

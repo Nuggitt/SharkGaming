@@ -1,11 +1,11 @@
-﻿namespace SharkGaming.Products.Components.ComponentTypes.Storage.Mdot2
+﻿namespace SharkGaming.Products.Components.ComponentTypes.Storage
 {
     public class Mdot2 : StorageClass
     {
         public double PCIExpress { get; set; }
 
         public Mdot2()
-        { 
+        {
 
         }
 

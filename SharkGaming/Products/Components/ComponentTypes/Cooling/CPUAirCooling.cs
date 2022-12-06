@@ -1,4 +1,4 @@
-﻿namespace SharkGaming.Products.Components.ComponentTypes.Cooling.CPUCooling.CPUAirCooling
+﻿namespace SharkGaming.Products.Components.ComponentTypes.Cooling
 {
     public class CPUAirCooling : CPUCooling
     {
