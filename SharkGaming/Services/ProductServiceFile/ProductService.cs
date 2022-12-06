@@ -17,6 +17,20 @@ using SharkGaming.Products.CustomPc;
 using SharkGaming.Products.PreBuilds;
 using SharkGaming.Products;
 using SharkGaming.MockData;
+using SharkGaming.MockData.Products.Components.ComponentTypes.Storage.SoildSateDrive;
+using SharkGaming.MockData.Products.Components.ComponentTypes.Storage.Mdot2;
+using SharkGaming.MockData.Products.Components.ComponentTypes.PowerSupply;
+using SharkGaming.MockData.Products.Components.ComponentTypes.Motherboard;
+using SharkGaming.MockData.Products.Components.ComponentTypes.GPU;
+using SharkGaming.MockData.Products.Components.ComponentTypes.CPU;
+using SharkGaming.MockData.Products.Components.ComponentTypes.Cooling.CPUCooling.CPUWaterCooling;
+using SharkGaming.MockData.Products.Components.ComponentTypes.Cooling.CPUCooling.CPUAirCooling;
+using SharkGaming.MockData.Products.Components.ComponentTypes.Cooling.CaseFan;
+using SharkGaming.MockData.Products.Components.ComponentTypes.Case;
+using SharkGaming.MockData.Products.CustomPC;
+using SharkGaming.MockData.Products.PreBuilds;
+using SharkGaming.MockData.Products;
+using SharkGaming.MockData.Products.Components.ComponentTypes.Ram;
 
 namespace SharkGaming.Services.ProductServiceFile
 {
@@ -36,30 +50,30 @@ namespace SharkGaming.Services.ProductServiceFile
         private List<GPU> _gPUs;
         private List<Motherboard> _motherboards;
         private List<PowerSupply> _powerSupplies;
+        private List<StorageClass> _storages;
         private List<RAM> _rAMs;
-        private List<StorageClass> _storage;
         private List<Mdot2> _mdot2s;
         private List<SolidStateDrive> _solidStateDrives;
 
-        //public ProductService() 
+        //public ProductService()
         //{
-        //    _products = MockItems.GetMockProducts();
-        //    _components = MockItems.GetMockComponents();
-        //    _preBuilds = MockItems.GetMockPreBuilds();
-        //    _customPcs = MockItems.GetMockCustomPcs();
-        //    _cases = MockItems.GetMockCases();
-        //    _cooling = MockItems.GetMockCooling();
-        //    _caseFans = MockItems.GetMockCaseFans();
-        //    _cPUCooling = MockItems.GetMockCPUCooling();
-        //    _cPUAirCooling = MockItems.GetMockCPUAirCooling();
-        //    _cPUWaterCooling = MockItems.GetMockCPUWaterCooling();
-        //    _cPUs = MockItems.GetMockCPUs();
-        //    _gPUs = MockItems.GetMockGPUs();
-        //    _motherboards = MockItems.GetMockMotherboards();
-        //    _powerSupplies = MockItems.GetMockPowerSupplies();
-        //    _storage = MockItems.GetMockStorage();
-        //    _mdot2s = MockItems.GetMockMdot2s();
-        //    _solidStateDrives = MockItems.GetMockSolidStateDrives();
+        //    _products = MockProducts.GetMockProducts();
+        //    _components = MockComponents.GetMockComponents();
+        //    _preBuilds = MockPreBuilds.GetMockPreBuilds();
+        //    _customPcs = MockCustomPC.GetMockCustomPcs();
+        //    _cases = MockCaseS.GetMockCases();
+        //    _cooling = MockCooling.GetMockCooling();
+        //    _caseFans = MockCaseFan.GetMockCaseFans();
+        //    _cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCooling();
+        //    _cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling();
+        //    _cPUs = MockCPU.GetMockCPUs();
+        //    _gPUs = MockGPU.GetMockGPUs();
+        //    _motherboards = MockMotherboard.GetMockMotherboards();
+        //    _powerSupplies = MockPowerSupply.GetMockPowerSupplies();
+        //    _storage = MockStorage.GetMockStorage();
+        //    _rAMs = MockRam.GetMockRam();
+        //    _mdot2s = MockMdot2.GetMockMdot2s();
+        //    _solidStateDrives = MockSoildStateDrive.GetSoildSateDrives();
         //}
 
         public void AddProduct(ProductsClass product)
@@ -82,17 +96,9 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             _cases.Add(ca);
         }
-        public void AddCooling(CoolingClass cooling)
-        {
-            _cooling.Add(cooling);
-        }
         public void AddCaseFan(CaseFan cf)
         {
             _caseFans.Add(cf);
-        }
-        public void AddCPUCooling(CPUCooling cpuCooling)
-        {
-            _cPUCooling.Add(cpuCooling);
         }
         public void AddCPUAirCooling(CPUAirCooling airCooling)
         {
@@ -121,10 +127,6 @@ namespace SharkGaming.Services.ProductServiceFile
         public void AddRAM(RAM ram)
         {
             _rAMs.Add(ram);
-        }
-        public void AddStorage(StorageClass storage)
-        {
-            _storage.Add(storage);
         }
         public void AddMdot2(Mdot2 m2)
         {
