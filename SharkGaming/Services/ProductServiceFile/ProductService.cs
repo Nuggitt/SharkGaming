@@ -31,11 +31,13 @@ using SharkGaming.MockData.Products.CustomPC;
 using SharkGaming.MockData.Products.PreBuilds;
 using SharkGaming.MockData.Products;
 using SharkGaming.MockData.Products.Components.ComponentTypes.Ram;
+using SharkGaming.MockData.Products.Components;
 
 namespace SharkGaming.Services.ProductServiceFile
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
+        #region Lists
         private List<ProductsClass> _products;
         private List<ComponentsClass> _components;
         private List<PreBuildsClass> _preBuilds;
@@ -50,32 +52,110 @@ namespace SharkGaming.Services.ProductServiceFile
         private List<GPU> _gPUs;
         private List<Motherboard> _motherboards;
         private List<PowerSupply> _powerSupplies;
-        private List<StorageClass> _storages;
+        private List<StorageClass> _storage;
         private List<RAM> _rAMs;
         private List<Mdot2> _mdot2s;
         private List<SolidStateDrive> _solidStateDrives;
+        #endregion
 
-        //public ProductService()
-        //{
-        //    _products = MockProducts.GetMockProducts();
-        //    _components = MockComponents.GetMockComponents();
-        //    _preBuilds = MockPreBuilds.GetMockPreBuilds();
-        //    _customPcs = MockCustomPC.GetMockCustomPcs();
-        //    _cases = MockCaseS.GetMockCases();
-        //    _cooling = MockCooling.GetMockCooling();
-        //    _caseFans = MockCaseFan.GetMockCaseFans();
-        //    _cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCooling();
-        //    _cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling();
-        //    _cPUs = MockCPU.GetMockCPUs();
-        //    _gPUs = MockGPU.GetMockGPUs();
-        //    _motherboards = MockMotherboard.GetMockMotherboards();
-        //    _powerSupplies = MockPowerSupply.GetMockPowerSupplies();
-        //    _storage = MockStorage.GetMockStorage();
-        //    _rAMs = MockRam.GetMockRam();
-        //    _mdot2s = MockMdot2.GetMockMdot2s();
-        //    _solidStateDrives = MockSoildStateDrive.GetSoildSateDrives();
-        //}
+        #region initialise Lists
+        public ProductService()
+        {
+            //_products = MockProducts.GetMockProducts();
+            //_components = MockComponents.GetMockComponentsClass();
+            //_preBuilds = MockPreBuilds.GetMockPreBuilds();
+            //_customPcs = MockCustomPC.GetMockCustomPcs();
+            //_cases = MockCaseS.GetMockCases();
+            //_cooling = MockCooling.GetMockCooling();
+            //_caseFans = MockCaseFan.GetMockCaseFans();
+            //_cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCooling();
+            //_cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling();
+            //_cPUs = MockCPU.GetMockCPUs();
+            //_gPUs = MockGPU.GetMockGPUs();
+            //_motherboards = MockMotherboard.GetMockMotherboards();
+            //_powerSupplies = MockPowerSupply.GetMockPowerSupplies();
+            //_storage = MockStorage.GetMockStorage();
+            //_rAMs = MockRam.GetMockRam();
+            //_mdot2s = MockMdot2.GetMockMdot2s();
+            //_solidStateDrives = MockSoildStateDrive.GetSoildSateDrives();
+        }
+        #endregion
+        #region Get methods
+        public List<ProductsClass> GetAllProducts()
+        {
+            return _products;
+        }
+        public List<ComponentsClass> GetAllComponents()
+        {
+            return _components;
+        }
+        public List<PreBuildsClass> GetPreBuilds()
+        {
+            return _preBuilds;
+        }
+        public List<CustomPcClass> GetCustomPc()
+        {
+            return _customPcs;
+        }
+        public List<Cases> GetCases()
+        {
+            return _cases;
+        }
+        public List<CoolingClass> GetAllCooling()
+        {
+            return _cooling;
+        }
+        public List<CaseFan> GetCaseFans()
+        {
+            return _caseFans;
+        }
+        public List<CPUCooling> GetCPUCooling()
+        {
+            return _cPUCooling;
+        }
+        public List<CPUAirCooling> GetCPUAirCooling()
+        {
+            return _cPUAirCooling;
+        }
+        public List<CPUWaterCooling> GetCPUWaterCooling()
+        {
+            return _cPUWaterCooling;
+        }
+        public List<CPU> GetCPUs()
+        {
+            return _cPUs;
+        }
+        public List<GPU> GetGPUs()
+        {
+            return _gPUs;
+        }
+        public List<Motherboard> GetMotherboards()
+        {
+            return _motherboards;
+        }
+        public List<PowerSupply> GetPowerSupply()
+        {
+            return _powerSupplies;
+        }
+        public List<RAM> GetRAM()
+        {
+            return _rAMs;
+        }
+        public List<StorageClass> GetStorage()
+        {
+            return _storage;
+        }
+        public List<Mdot2> GetMdot2()
+        {
+            return _mdot2s;
+        }
+        public List<SolidStateDrive> GetSolidStateDrives()
+        {
+            return _solidStateDrives;
+        }
+        #endregion
 
+        #region Add to list methods
         public void AddProduct(ProductsClass product)
         {
             _products.Add(product);
@@ -84,29 +164,37 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             _components.Add(comp);
         }
-        public void AddPreBuild(PreBuildsClass preBuild)
+        public void AddPreBuild(PreBuildsClass preBuilds)
         {
-            _preBuilds.Add(preBuild);
+            _preBuilds.Add(preBuilds);
         }
-        public void AddCustomPc(CustomPcClass cPc)
+        public void AddCustomPc(CustomPcClass customPc)
         {
-            _customPcs.Add(cPc);
+            _customPcs.Add(customPc);
         }
-        public void AddCase(Cases ca)
+        public void AddCase(Cases cas)
         {
-            _cases.Add(ca);
+            _cases.Add(cas);
         }
-        public void AddCaseFan(CaseFan cf)
+        public void AddCooling(CoolingClass cooling)
         {
-            _caseFans.Add(cf);
+            _cooling.Add(cooling);
         }
-        public void AddCPUAirCooling(CPUAirCooling airCooling)
+        public void AddCaseFan(CaseFan caseFan)
         {
-            _cPUAirCooling.Add(airCooling);
+            _caseFans.Add(caseFan);
         }
-        public void AddCPUWaterCooling(CPUWaterCooling waterCooling)
+        public void AddCPUCooling(CPUCooling cpuCooling)
         {
-            _cPUWaterCooling.Add(waterCooling);
+            _cPUCooling.Add(cpuCooling);
+        }
+        public void AddCPUAirCooling(CPUAirCooling air)
+        {
+            _cPUAirCooling.Add(air);
+        }
+        public void AddCPUWaterCooling(CPUWaterCooling water)
+        {
+            _cPUWaterCooling.Add(water);
         }
         public void AddCPU(CPU cpu)
         {
@@ -120,21 +208,80 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             _motherboards.Add(motherboard);
         }
-        public void AddPowerSupply(PowerSupply pcu)
+        public void AddPowerSupply(PowerSupply psu)
         {
-            _powerSupplies.Add(pcu);
+            _powerSupplies.Add(psu);
         }
         public void AddRAM(RAM ram)
         {
             _rAMs.Add(ram);
         }
-        public void AddMdot2(Mdot2 m2)
+        public void AddStorage(StorageClass storage)
         {
-            _mdot2s.Add(m2);
+            _storage.Add(storage);
+        }
+        public void AddMdot2(Mdot2 mdot2)
+        {
+            _mdot2s.Add(mdot2);
         }
         public void AddSolidStateDrive(SolidStateDrive ssd)
         {
             _solidStateDrives.Add(ssd);
         }
+
+        #endregion
+
+        #region Name Search
+        public IEnumerable<ProductsClass> NameSearch(string str)
+        {
+            List<ProductsClass> nameSearch = new List<ProductsClass>();
+            {
+                if (!string.IsNullOrWhiteSpace(str))
+                {
+                    foreach (ProductsClass item in _products)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                }
+                return nameSearch;
+            }
+        }
+        #endregion
+
+        #region update item
+        public void UpdateItem(ProductsClass item)
+        {
+            if (item != null)
+            {
+                foreach (ProductsClass i in _products)
+                {
+                    if (i.Id == item.Id)
+                    {
+                        i.Price = item.Price;
+                        i.Name = item.Name;
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region price filter
+        public IEnumerable<ProductsClass> PriceFilter(double maxPrice, double minPrice = 0)
+        {
+            List<ProductsClass> filterList = new List<ProductsClass>();
+            foreach (ProductsClass item in _products)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            return filterList;
+        }
+        #endregion
     }
 }

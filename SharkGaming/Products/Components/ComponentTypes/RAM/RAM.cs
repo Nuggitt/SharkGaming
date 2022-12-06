@@ -21,5 +21,10 @@
             Voltage = voltage;
             ColourCategory = colourCategory;
         }
+
+        public RAM()
+        {
+
+        }
     }
 }
