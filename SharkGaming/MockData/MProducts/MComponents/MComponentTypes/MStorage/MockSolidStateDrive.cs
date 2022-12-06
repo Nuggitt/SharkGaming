@@ -1,10 +1,9 @@
 ﻿using SharkGaming.Products.Components.ComponentTypes.Storage.SolidStateDrive;
 
-namespace SharkGaming.MockData.Products.Components.ComponentTypes.Storage.SoildSateDrive
+namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MStorage
 {
-    public class MockSoildStateDrive
+    public class MockSolidStateDrive
     {
-
         public static List<SolidStateDrive> _SoildSateDrives = new List<SolidStateDrive>()
         {
             new SolidStateDrive("Samsung 870 QVO 2.5¨ SSD - 1TB", 618, true, true, "Low power DDR4 SDRAM", 1000, "2.5¨", 560, 530, 11000, 35000, "Quad-niveau celle"),
@@ -13,5 +12,6 @@ namespace SharkGaming.MockData.Products.Components.ComponentTypes.Storage.SoildS
         };
 
         public static List<SolidStateDrive> GetMockSoildSateDrives() { return _SoildSateDrives; }
+
     }
 }
