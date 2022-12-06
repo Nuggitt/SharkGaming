@@ -1,6 +1,7 @@
 ﻿namespace SharkGaming.Services.AdminServiceFile
 {
-    public class AdminService
+    public class AdminService : IAdminService
     {
+
     }
 }
