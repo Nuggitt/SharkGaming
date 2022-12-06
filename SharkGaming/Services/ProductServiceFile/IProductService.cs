@@ -1,10 +1,6 @@
 ﻿using SharkGaming.Products;
 using SharkGaming.Products.Components;
 using SharkGaming.Products.Components.ComponentTypes.Cooling;
-using SharkGaming.Products.Components.ComponentTypes.Cooling.CaseFan;
-using SharkGaming.Products.Components.ComponentTypes.Cooling.CPUCooling;
-using SharkGaming.Products.Components.ComponentTypes.Cooling.CPUCooling.CPUAirCooling;
-using SharkGaming.Products.Components.ComponentTypes.Cooling.CPUCooling.CPUWaterCooling;
 using SharkGaming.Products.Components.ComponentTypes.CPU;
 using SharkGaming.Products.Components.ComponentTypes.GPU;
 using SharkGaming.Products.Components.ComponentTypes.Motherboard;
@@ -12,8 +8,6 @@ using SharkGaming.Products.Components.ComponentTypes.PowerSupply;
 using SharkGaming.Products.Components.ComponentTypes.RAM;
 using SharkGaming.Products.Components.ComponentTypes.Storage;
 using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
-using SharkGaming.Products.Components.ComponentTypes.Storage.Mdot2;
-using SharkGaming.Products.Components.ComponentTypes.Storage.SolidStateDrive;
 using SharkGaming.Products.CustomPc;
 using SharkGaming.Products.PreBuilds;
 

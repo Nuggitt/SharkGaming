@@ -1,7 +1,4 @@
-﻿using SharkGaming.Products.Components.ComponentTypes.Cooling.CaseFan;
-using SharkGaming.Products.Components.ComponentTypes.Cooling.CPUCooling.CPUAirCooling;
-using SharkGaming.Products.Components.ComponentTypes.Cooling.CPUCooling.CPUWaterCooling;
-using SharkGaming.Products.Components.ComponentTypes.Cooling.CPUCooling;
+﻿
 using SharkGaming.Products.Components.ComponentTypes.Cooling;
 using SharkGaming.Products.Components.ComponentTypes.CPU;
 using SharkGaming.Products.Components.ComponentTypes.GPU;
@@ -9,29 +6,23 @@ using SharkGaming.Products.Components.ComponentTypes.Motherboard;
 using SharkGaming.Products.Components.ComponentTypes.PowerSupply;
 using SharkGaming.Products.Components.ComponentTypes.RAM;
 using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
-using SharkGaming.Products.Components.ComponentTypes.Storage.Mdot2;
-using SharkGaming.Products.Components.ComponentTypes.Storage.SolidStateDrive;
 using SharkGaming.Products.Components.ComponentTypes.Storage;
 using SharkGaming.Products.Components;
 using SharkGaming.Products.CustomPc;
 using SharkGaming.Products.PreBuilds;
 using SharkGaming.Products;
-using SharkGaming.MockData;
-using SharkGaming.MockData.Products.Components.ComponentTypes.Storage.SoildSateDrive;
-using SharkGaming.MockData.Products.Components.ComponentTypes.Storage.Mdot2;
 using SharkGaming.MockData.Products.Components.ComponentTypes.PowerSupply;
 using SharkGaming.MockData.Products.Components.ComponentTypes.Motherboard;
 using SharkGaming.MockData.Products.Components.ComponentTypes.GPU;
 using SharkGaming.MockData.Products.Components.ComponentTypes.CPU;
-using SharkGaming.MockData.Products.Components.ComponentTypes.Cooling.CPUCooling.CPUWaterCooling;
-using SharkGaming.MockData.Products.Components.ComponentTypes.Cooling.CPUCooling.CPUAirCooling;
-using SharkGaming.MockData.Products.Components.ComponentTypes.Cooling.CaseFan;
 using SharkGaming.MockData.Products.Components.ComponentTypes.Case;
 using SharkGaming.MockData.Products.CustomPC;
 using SharkGaming.MockData.Products.PreBuilds;
 using SharkGaming.MockData.Products;
 using SharkGaming.MockData.Products.Components.ComponentTypes.Ram;
 using SharkGaming.MockData.Products.Components;
+using SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MStorage;
+using SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MCooling;
 
 namespace SharkGaming.Services.ProductServiceFile
 {
@@ -59,26 +50,26 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region initialise Lists
-        public ProductService()
-        {
-            //_products = MockProducts.GetMockProducts();
-            //_components = MockComponents.GetMockComponentsClass();
-            //_preBuilds = MockPreBuilds.GetMockPreBuilds();
-            //_customPcs = MockCustomPC.GetMockCustomPcs();
-            //_cases = MockCaseS.GetMockCases();
-            //_cooling = MockCooling.GetMockCooling();
-            //_caseFans = MockCaseFan.GetMockCaseFans();
-            //_cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCooling();
-            //_cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling();
-            //_cPUs = MockCPU.GetMockCPUs();
-            //_gPUs = MockGPU.GetMockGPUs();
-            //_motherboards = MockMotherboard.GetMockMotherboards();
-            //_powerSupplies = MockPowerSupply.GetMockPowerSupplies();
-            //_storage = MockStorage.GetMockStorage();
-            //_rAMs = MockRam.GetMockRam();
-            //_mdot2s = MockMdot2.GetMockMdot2s();
-            //_solidStateDrives = MockSoildStateDrive.GetSoildSateDrives();
-        }
+        //public ProductService()
+        //{
+        //    _products = MockProducts.GetMockProducts();
+        //    _components = MockComponents.GetMockComponentsClass();
+        //    _preBuilds = MockPreBuilds.GetMockPreBuilds();
+        //    _customPcs = MockCustomPC.GetMockCustomPcs();
+        //    _cases = MockCaseS.GetMockCases();
+        //    _cooling = MockCooling.GetMockCooling();
+        //    _caseFans = MockCaseFan.GetMockCaseFans();
+        //    _cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCooling();
+        //    _cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling();
+        //    _cPUs = MockCPU.GetMockCPUs();
+        //    _gPUs = MockGPU.GetMockGPUs();
+        //    _motherboards = MockMotherboard.GetMockMotherboards();
+        //    _powerSupplies = MockPowerSupply.GetMockPowerSupplies();
+        //    _storage = MockStorage.GetMockStorage();
+        //    _rAMs = MockRam.GetMockRam();
+        //    _mdot2s = MockMdot.GetMockMdot2s();
+        //    _solidStateDrives = MockSoildStateDrive.GetSoildSateDrives();
+        //}
         #endregion
         #region Get methods
         public List<ProductsClass> GetAllProducts()
