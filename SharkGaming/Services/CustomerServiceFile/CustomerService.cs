@@ -1,6 +1,8 @@
 ﻿namespace SharkGaming.Services.CustomerServiceFile
 {
-    public class CustomerService
+    public class CustomerService : ICustomerService
     {
+
+
     }
 }

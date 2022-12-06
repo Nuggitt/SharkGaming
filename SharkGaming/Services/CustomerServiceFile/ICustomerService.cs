@@ -2,5 +2,15 @@
 {
     public interface ICustomerService
     {
+        protected static void UpdateCustomer()
+        {
+
+        }
+
+        protected static void DeleteCustomer()
+        {
+
+        }
+
     }
 }
