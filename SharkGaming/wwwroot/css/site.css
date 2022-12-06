@@ -40,9 +40,9 @@ footer{
     font-size: 17px;
 }
 
-    .navbar a:hover {
-        background-color: #000;
-    }
+.navbar a:hover {
+    background-color: #000;
+}
 
 .active {
     background-color: #04AA6D;
@@ -53,3 +53,16 @@ footer{
         float: none;
         display: block;
     }
+}
+
+@media screen and (max-width: 900px) {
+    .column {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .column {
+        width: 100%;
+    }
+}
