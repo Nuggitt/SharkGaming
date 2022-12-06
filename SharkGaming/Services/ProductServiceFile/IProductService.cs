@@ -21,6 +21,7 @@ namespace SharkGaming.Services.ProductServiceFile
 {
     public interface IProductService
     {
+        #region Get
         List<ProductsClass> GetAllProducts();
         List<ComponentsClass> GetAllComponents();
         List<PreBuildsClass> GetPreBuilds();
@@ -39,10 +40,25 @@ namespace SharkGaming.Services.ProductServiceFile
         List<StorageClass> GetStorage();
         List<Mdot2> GetMdot2();
         List<SolidStateDrive> GetSolidStateDrives();
+        #endregion
 
-
-
-
-
+        void AddProduct();
+        void AddComponent();
+        void AddPreBuild();
+        void AddCustomPc();
+        void AddCase();
+        void AddCooling();
+        void AddCaseFan();
+        void AddCPUCooling();
+        void AddCPUAirCooling();
+        void AddCPUWaterCooling();
+        void AddCPU();
+        void AddGPU();
+        void AddMotherboard();
+        void AddPowerSupply();
+        void AddRAM();
+        void AddStorage();
+        void AddMdot2();
+        void AddSolidStateDrive();
     }
 }
