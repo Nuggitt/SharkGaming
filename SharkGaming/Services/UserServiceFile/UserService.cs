@@ -1,6 +1,6 @@
 ﻿namespace SharkGaming.Services.UserServiceFile
 {
-    public class UserService
+    public class UserService : IUserService
     {
     }
 }
