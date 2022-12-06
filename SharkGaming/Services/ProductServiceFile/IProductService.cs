@@ -62,5 +62,8 @@ namespace SharkGaming.Services.ProductServiceFile
         void AddMdot2();
         void AddSolidStateDrive();
         #endregion
+
+        IEnumerable<ProductsClass> NameSearch(string str);
+        IEnumerable<ProductsClass> PriceFilter(double maxPrice, double minPrice = 0);
     }
 }
