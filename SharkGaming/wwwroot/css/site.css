@@ -19,7 +19,7 @@ body {
     background: radial-gradient(circle, rgba(111,142,255,0.861782212885154) 9%, rgba(13,41,185,1) 49%, rgba(0,2,18,1) 97%);
 }
 footer{
-    background-color: white;
+    background-color: transparent;
 }
 
 .center{
@@ -41,7 +41,7 @@ footer{
 }
 
 .navbar a:hover {
-    background-color: #000;
+    background-color: lightblue;
 }
 
 .active {
