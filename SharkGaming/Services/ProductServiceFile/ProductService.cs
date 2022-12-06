@@ -61,25 +61,26 @@ namespace SharkGaming.Services.ProductServiceFile
         #region initialise Lists
         public ProductService()
         {
-            _products = MockProducts.GetMockProducts();
-            _components = MockComponents.GetMockComponentsClass();
-            _preBuilds = MockPreBuilds.GetMockPreBuilds();
-            _customPcs = MockCustomPC.GetMockCustomPcs();
-            _cases = MockCaseS.GetMockCases();
-            _cooling = MockCooling.GetMockCooling();
-            _caseFans = MockCaseFan.GetMockCaseFans();
-            _cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCooling();
-            _cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling();
-            _cPUs = MockCPU.GetMockCPUs();
-            _gPUs = MockGPU.GetMockGPUs();
-            _motherboards = MockMotherboard.GetMockMotherboards();
-            _powerSupplies = MockPowerSupply.GetMockPowerSupplies();
-            _storage = MockStorage.GetMockStorage();
-            _rAMs = MockRam.GetMockRam();
-            _mdot2s = MockMdot2.GetMockMdot2s();
-            _solidStateDrives = MockSoildStateDrive.GetSoildSateDrives();
+            //_products = MockProducts.GetMockProducts();
+            //_components = MockComponents.GetMockComponentsClass();
+            //_preBuilds = MockPreBuilds.GetMockPreBuilds();
+            //_customPcs = MockCustomPC.GetMockCustomPcs();
+            //_cases = MockCaseS.GetMockCases();
+            //_cooling = MockCooling.GetMockCooling();
+            //_caseFans = MockCaseFan.GetMockCaseFans();
+            //_cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCooling();
+            //_cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling();
+            //_cPUs = MockCPU.GetMockCPUs();
+            //_gPUs = MockGPU.GetMockGPUs();
+            //_motherboards = MockMotherboard.GetMockMotherboards();
+            //_powerSupplies = MockPowerSupply.GetMockPowerSupplies();
+            //_storage = MockStorage.GetMockStorage();
+            //_rAMs = MockRam.GetMockRam();
+            //_mdot2s = MockMdot2.GetMockMdot2s();
+            //_solidStateDrives = MockSoildStateDrive.GetSoildSateDrives();
         }
         #endregion
+        #region Get methods
         public List<ProductsClass> GetAllProducts()
         {
             return _products;
@@ -152,6 +153,7 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             return _solidStateDrives;
         }
+        #endregion
 
         #region Add to list methods
         public void AddProduct(ProductsClass product)
@@ -162,29 +164,37 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             _components.Add(comp);
         }
-        public void AddPreBuild(PreBuildsClass preBuild)
+        public void AddPreBuild(PreBuildsClass preBuilds)
         {
-            _preBuilds.Add(preBuild);
+            _preBuilds.Add(preBuilds);
         }
-        public void AddCustomPc(CustomPcClass cPc)
+        public void AddCustomPc(CustomPcClass customPc)
         {
-            _customPcs.Add(cPc);
+            _customPcs.Add(customPc);
         }
-        public void AddCase(Cases ca)
+        public void AddCase(Cases cas)
         {
-            _cases.Add(ca);
+            _cases.Add(cas);
         }
-        public void AddCaseFan(CaseFan cf)
+        public void AddCooling(CoolingClass cooling)
         {
-            _caseFans.Add(cf);
+            _cooling.Add(cooling);
         }
-        public void AddCPUAirCooling(CPUAirCooling airCooling)
+        public void AddCaseFan(CaseFan caseFan)
         {
-            _cPUAirCooling.Add(airCooling);
+            _caseFans.Add(caseFan);
         }
-        public void AddCPUWaterCooling(CPUWaterCooling waterCooling)
+        public void AddCPUCooling(CPUCooling cpuCooling)
         {
-            _cPUWaterCooling.Add(waterCooling);
+            _cPUCooling.Add(cpuCooling);
+        }
+        public void AddCPUAirCooling(CPUAirCooling air)
+        {
+            _cPUAirCooling.Add(air);
+        }
+        public void AddCPUWaterCooling(CPUWaterCooling water)
+        {
+            _cPUWaterCooling.Add(water);
         }
         public void AddCPU(CPU cpu)
         {
@@ -198,26 +208,27 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             _motherboards.Add(motherboard);
         }
-        public void AddPowerSupply(PowerSupply pcu)
+        public void AddPowerSupply(PowerSupply psu)
         {
-            _powerSupplies.Add(pcu);
+            _powerSupplies.Add(psu);
         }
         public void AddRAM(RAM ram)
         {
             _rAMs.Add(ram);
         }
-        public void AddMdot2(Mdot2 m2)
+        public void AddStorage(StorageClass storage)
         {
-            _mdot2s.Add(m2);
+            _storage.Add(storage);
+        }
+        public void AddMdot2(Mdot2 mdot2)
+        {
+            _mdot2s.Add(mdot2);
         }
         public void AddSolidStateDrive(SolidStateDrive ssd)
         {
             _solidStateDrives.Add(ssd);
         }
-        public void AddStorage(StorageClass storage)
-        {
-            _storage.Add(storage);
-        }
+
         #endregion
 
         #region Name Search
@@ -239,6 +250,8 @@ namespace SharkGaming.Services.ProductServiceFile
             }
         }
         #endregion
+
+        #region update item
         public void UpdateItem(ProductsClass item)
         {
             if (item != null)
@@ -253,5 +266,22 @@ namespace SharkGaming.Services.ProductServiceFile
                 }
             }
         }
+        #endregion
+
+        #region price filter
+        public IEnumerable<ProductsClass> PriceFilter(double maxPrice, double minPrice = 0)
+        {
+            List<ProductsClass> filterList = new List<ProductsClass>();
+            foreach (ProductsClass item in _products)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            return filterList;
+        }
+        #endregion
     }
 }

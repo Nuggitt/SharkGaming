@@ -43,27 +43,28 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Add
-        void AddProduct();
-        void AddComponent();
-        void AddPreBuild();
-        void AddCustomPc();
-        void AddCase();
-        void AddCooling();
-        void AddCaseFan();
-        void AddCPUCooling();
-        void AddCPUAirCooling();
-        void AddCPUWaterCooling();
-        void AddCPU();
-        void AddGPU();
-        void AddMotherboard();
-        void AddPowerSupply();
-        void AddRAM();
-        void AddStorage();
-        void AddMdot2();
-        void AddSolidStateDrive();
+        void AddProduct(ProductsClass product);
+        void AddComponent(ComponentsClass comp);
+        void AddPreBuild(PreBuildsClass preBuilds);
+        void AddCustomPc(CustomPcClass customPc);
+        void AddCase(Cases cas);
+        void AddCooling(CoolingClass cooling);
+        void AddCaseFan(CaseFan caseFan);
+        void AddCPUCooling(CPUCooling cpuCooling);
+        void AddCPUAirCooling(CPUAirCooling air);
+        void AddCPUWaterCooling(CPUWaterCooling water);
+        void AddCPU(CPU cpu);
+        void AddGPU(GPU gpu);
+        void AddMotherboard(Motherboard motherboard);
+        void AddPowerSupply(PowerSupply psu);
+        void AddRAM(RAM ram);
+        void AddStorage(StorageClass storage);
+        void AddMdot2(Mdot2 mdot2);
+        void AddSolidStateDrive(SolidStateDrive ssd);
         #endregion
 
         IEnumerable<ProductsClass> NameSearch(string str);
         IEnumerable<ProductsClass> PriceFilter(double maxPrice, double minPrice = 0);
+        void UpdateItem(ProductsClass item);
     }
 }
