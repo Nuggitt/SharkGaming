@@ -12,9 +12,6 @@ namespace SharkGaming.MockData.Products.Components.ComponentTypes.Storage.SoildS
             new SolidStateDrive("Crucial BX500 1TB 3D NAND 2.5¨", 576, true, true, "Multistep data integrity algorithm", 500, "2.5¨", 540, 500, 8000, 24000, "Sata")
         };
 
-        public static List<SolidStateDrive> GetMockSoildSateDrives()
-        {
-            return _SoildSateDrives;
-        }
+        public static List<SolidStateDrive> GetMockSoildSateDrives() { return _SoildSateDrives; }
     }
 }
