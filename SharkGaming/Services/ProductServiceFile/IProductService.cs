@@ -62,7 +62,20 @@ namespace SharkGaming.Services.ProductServiceFile
         IEnumerable<ComponentsClass> ComponentNameSearch(string str);
         #endregion
 
+        #region Price Filter 
         IEnumerable<ProductsClass> PriceFilter(double maxPrice, double minPrice = 0);
+        #endregion
+
+        #region Update Product
         void UpdateItem(ProductsClass item);
+        #endregion
+
+        #region Get Product via ID
+        ProductsClass GetProduct(int id);
+        #endregion
+
+        #region Delete Product
+        ProductsClass DeleteProduct(int? productId);
+        #endregion
     }
 }
