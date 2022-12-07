@@ -11,18 +11,11 @@ using SharkGaming.Products.Components;
 using SharkGaming.Products.CustomPc;
 using SharkGaming.Products.PreBuilds;
 using SharkGaming.Products;
-using SharkGaming.MockData.Products.Components.ComponentTypes.PowerSupply;
-using SharkGaming.MockData.Products.Components.ComponentTypes.Motherboard;
-using SharkGaming.MockData.Products.Components.ComponentTypes.GPU;
-using SharkGaming.MockData.Products.Components.ComponentTypes.CPU;
-using SharkGaming.MockData.Products.Components.ComponentTypes.Case;
-using SharkGaming.MockData.Products.CustomPC;
-using SharkGaming.MockData.Products.PreBuilds;
-using SharkGaming.MockData.Products;
-using SharkGaming.MockData.Products.Components.ComponentTypes.Ram;
+using SharkGaming.MockData.MProducts.MComponents.MComponentTypes;
+
+
 using SharkGaming.MockData.Products.Components;
-using SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MStorage;
-using SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MCooling;
+
 using SharkGaming.Services.JsonServiceFile;
 
 namespace SharkGaming.Services.ProductServiceFile
@@ -57,7 +50,7 @@ namespace SharkGaming.Services.ProductServiceFile
             _components = MockComponents.GetMockComponentsClass();
             //_preBuilds = MockPreBuilds.GetMockPreBuilds();
             //_customPcs = MockCustomPC.GetMockCustomPcs();
-            _cases = MCompententTypes.MockCaseS.GetMockCases();
+            _cases = MockCaseS.GetMockCases();
             _cooling = MockCooling.GetMockCooling();
             _caseFans = MockCaseFan.GetMockCaseFans();
             _cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCoolings();
