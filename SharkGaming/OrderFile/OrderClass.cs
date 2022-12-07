@@ -12,15 +12,17 @@ namespace SharkGaming.Order
         public DateTime Time { get; set; }
         public CustomerClass Customer { get; set; }
 
-        private List<OrderItemsClass> orderItems = new List<OrderItemsClass>();
+        private List<OrderItemsClass> OrderItems = new List<OrderItemsClass>();
 
-        public OrderClass(string deliveryAdress, DateOnly date, DateTime time, CustomerClass customer)
+        public OrderClass(CustomerClass customer, string deliveryAdress, DateOnly date, DateTime time, List<OrderItemsClass> orderitems)
         {
             Id = nextId++;
+            Customer = customer;
             DeliveryAddress = deliveryAdress;
             Date = date;
             Time = time;
-            Customer = customer;
+            OrderItems = orderitems;
+
         }
 
         public OrderClass()
