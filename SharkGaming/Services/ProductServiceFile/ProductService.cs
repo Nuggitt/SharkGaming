@@ -71,6 +71,7 @@ namespace SharkGaming.Services.ProductServiceFile
             _solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives();
         }
         #endregion
+
         #region Get methods
         public List<ProductsClass> GetAllProducts()
         {
@@ -223,13 +224,30 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Name Search
-        public IEnumerable<ProductsClass> NameSearch(string str)
+        public IEnumerable<ProductsClass> ProductNameSearch(string str)
         {
             List<ProductsClass> nameSearch = new List<ProductsClass>();
             {
                 if (!string.IsNullOrWhiteSpace(str))
                 {
                     foreach (ProductsClass item in _products)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                }
+                return nameSearch;
+            }
+        }
+        public IEnumerable<ComponentsClass> ComponentNameSearch(string str)
+        {
+            List<ComponentsClass> nameSearch = new List<ComponentsClass>();
+            {
+                if (!string.IsNullOrWhiteSpace(str))
+                {
+                    foreach (ComponentsClass item in _components)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {

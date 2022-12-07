@@ -15,7 +15,7 @@ namespace SharkGaming.Services.ProductServiceFile
 {
     public interface IProductService
     {
-        #region Get
+        #region Get list methods
         List<ProductsClass> GetAllProducts();
         List<ComponentsClass> GetAllComponents();
         List<PreBuildsClass> GetPreBuilds();
@@ -36,7 +36,7 @@ namespace SharkGaming.Services.ProductServiceFile
         List<SolidStateDrive> GetSolidStateDrives();
         #endregion
 
-        #region Add
+        #region Add Item methods
         void AddProduct(ProductsClass product);
         void AddComponent(ComponentsClass comp);
         void AddPreBuild(PreBuildsClass preBuilds);
@@ -57,7 +57,11 @@ namespace SharkGaming.Services.ProductServiceFile
         void AddSolidStateDrive(SolidStateDrive ssd);
         #endregion
 
-        IEnumerable<ProductsClass> NameSearch(string str);
+        #region Name Search Methods
+        IEnumerable<ProductsClass> ProductNameSearch(string str);
+        IEnumerable<ComponentsClass> ComponentNameSearch(string str);
+        #endregion
+
         IEnumerable<ProductsClass> PriceFilter(double maxPrice, double minPrice = 0);
         void UpdateItem(ProductsClass item);
     }
