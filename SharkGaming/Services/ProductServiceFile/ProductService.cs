@@ -12,10 +12,7 @@ using SharkGaming.Products.CustomPc;
 using SharkGaming.Products.PreBuilds;
 using SharkGaming.Products;
 using SharkGaming.MockData.MProducts.MComponents.MComponentTypes;
-
-
 using SharkGaming.MockData.Products.Components;
-
 using SharkGaming.Services.JsonServiceFile;
 using SharkGaming.MockData.Products.PreBuilds;
 using System.Text.Json.Nodes;
@@ -50,7 +47,7 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             //_products = MockProducts.GetMockProducts();
             _components = MockComponents.GetMockComponentsClass();
-            _preBuilds = MockPreBuilds.GetMockPreBuilds();
+            //_preBuilds = MockPreBuilds.GetMockPreBuilds();
             //_customPcs = MockCustomPC.GetMockCustomPcs();
             _cases = MockCaseS.GetMockCases();
             _cooling = MockCooling.GetMockCooling();
@@ -284,7 +281,7 @@ namespace SharkGaming.Services.ProductServiceFile
         }
         #endregion
 
-        #region update product
+        #region update methods
         public void UpdateProduct(ProductsClass item)
         {
             if (item != null)
