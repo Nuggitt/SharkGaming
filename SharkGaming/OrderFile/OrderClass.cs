@@ -12,6 +12,5 @@ namespace SharkGaming.Order
         public DateTime Time { get; set; }
         public CustomerClass Customer { get; set; }
 
-
     }
 }
