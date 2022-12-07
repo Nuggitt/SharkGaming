@@ -220,6 +220,34 @@ namespace SharkGaming.Services.JsonServiceFile
         }
         #endregion
 
+        #region CPU Cooling Json
+        private string JsonFileNameCPUCooling
+        {
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "CPUCooling.json"); }
+        }
+
+        public void SaveJsonCPUCooling(List<CPUCooling> cpuCooling)
+        {
+            using (FileStream jsonFileWriter = File.Create(JsonFileNameCPUCooling))
+            {
+                Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
+                {
+                    SkipValidation = false,
+                    Indented = true
+                });
+                JsonSerializer.Serialize<CPUCooling[]>(jsonWriter, cpuCooling.ToArray());
+            }
+        }
+
+        public IEnumerable<CPUCooling> GetJsonCPUCooling()
+        {
+            using (StreamReader jsonFileReader = File.OpenText(JsonFileNameCPUCooling))
+            {
+                return JsonSerializer.Deserialize<CPUCooling[]>(jsonFileReader.ReadToEnd());
+            }
+        }
+        #endregion
+
         #region CPU Air Cooling Json
         private string JsonFileNameCPUAirCooling
         {

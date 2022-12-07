@@ -18,6 +18,7 @@ using SharkGaming.MockData.Products.Components;
 
 using SharkGaming.Services.JsonServiceFile;
 using SharkGaming.MockData.Products.PreBuilds;
+using System.Text.Json.Nodes;
 
 namespace SharkGaming.Services.ProductServiceFile
 {
@@ -66,8 +67,6 @@ namespace SharkGaming.Services.ProductServiceFile
             _solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives();
         }
         #endregion
-
-        
 
         #region Get methods
         public List<ProductsClass> GetAllProducts()
@@ -144,8 +143,6 @@ namespace SharkGaming.Services.ProductServiceFile
         }
         #endregion
 
-
-
         #region Add to list methods
         public void AddProduct(ProductsClass product)
         {
@@ -155,92 +152,92 @@ namespace SharkGaming.Services.ProductServiceFile
         public void AddComponent(ComponentsClass comp)
         {
             _components.Add(comp);
-            //JsonServiceFile.JsonService.SaveJsonItems(_components);
+            JsonService.SaveJsonComponents(_components);
         }
         public void AddPreBuild(PreBuildsClass preBuilds)
         {
             _preBuilds.Add(preBuilds);
-            //JsonServiceFile.JsonService.SaveJsonItems(_preBuilds);
+            JsonService.SaveJsonPreBuilds(_preBuilds);  
         }
         public void AddCustomPc(CustomPcClass customPc)
         {
             _customPcs.Add(customPc);
-            //JsonServiceFile.JsonService.SaveJsonItems(_customPcs);
+            JsonService.SaveJsonCustomPcs(_customPcs);   
         }
         public void AddCase(Cases cas)
         {
             _cases.Add(cas);
-            //JsonServiceFile.JsonService.SaveJsonItems(_cases);
+            JsonService.SaveJsonCases(_cases);
         }
         public void AddCooling(CoolingClass cooling)
         {
             _cooling.Add(cooling);
-            //JsonServiceFile.JsonService.SaveJsonItems(_cooling);
+            JsonService.SaveJsonCooling(_cooling);
         }
         public void AddCaseFan(CaseFan caseFan)
         {
             _caseFans.Add(caseFan);
-            //JsonServiceFile.JsonService.SaveJsonItems(_caseFans);
+            JsonService.SaveJsonCaseFans(_caseFans);
         }
         public void AddCPUCooling(CPUCooling cpuCooling)
         {
             _cPUCooling.Add(cpuCooling);
-            //JsonServiceFile.JsonService.SaveJsonItems(_cPUCooling);
+            JsonService.SaveJsonCPUCooling(_cPUCooling);
         }
         public void AddCPUAirCooling(CPUAirCooling air)
         {
             _cPUAirCooling.Add(air);
-            //JsonServiceFile.JsonService.SaveJsonItems(_cPUAirCooling);
+            JsonService.SaveJsonCPUAirCooling(_cPUAirCooling);
         }
         public void AddCPUWaterCooling(CPUWaterCooling water)
         {
             _cPUWaterCooling.Add(water);
-            //JsonServiceFile.JsonService.SaveJsonItems(_cPUWaterCooling);
+            JsonService.SaveJsonCPUWaterCooling(_cPUWaterCooling);
         }
         public void AddCPU(CPU cpu)
         {
             _cPUs.Add(cpu);
-            //JsonServiceFile.JsonService.SaveJsonItems(_cPUs);
+            JsonService.SaveJsonCPU(_cPUs);
         }
         public void AddGPU(GPU gpu)
         {
             _gPUs.Add(gpu);
-            //JsonServiceFile.JsonService.SaveJsonItems(_gPUs);
+            JsonService.SaveJsonGPU(_gPUs);
         }
         public void AddMotherboard(Motherboard motherboard)
         {
             _motherboards.Add(motherboard);
-            //JsonServiceFile.JsonService.SaveJsonItems(_motherboards);
+            JsonService.SaveJsonMotherboards(_motherboards);
         }
         public void AddPowerSupply(PowerSupply psu)
         {
             _powerSupplies.Add(psu);
-            //JsonServiceFile.JsonService.SaveJsonItems(_powerSupplies);
+            JsonService.SaveJsonPowerSupply(_powerSupplies);
         }
         public void AddRAM(RAM ram)
         {
-            _rAMs.Add(ram);
-            //JsonServiceFile.JsonService.SaveJsonItems(_rAMs);
+            _rAMs.Add(ram);           
             JsonService.SaveJsonRAM(_rAMs);
         }
         public void AddStorage(StorageClass storage)
         {
             _storage.Add(storage);
-            //JsonServiceFile.JsonService.SaveJsonItems(_storage);
+            JsonService.SaveJsonStorage(_storage);
         }
         public void AddMdot2(Mdot2 mdot2)
         {
             _mdot2s.Add(mdot2);
-            //JsonServiceFile.JsonService.SaveJsonItems(_mdot2s);
+            JsonService.SaveJsonMdot2(_mdot2s);
         }
         public void AddSolidStateDrive(SolidStateDrive ssd)
         {
             _solidStateDrives.Add(ssd);
-            //JsonServiceFile.JsonService.SaveJsonItems(_solidStateDrives);
+            JsonService.SaveJsonSSD(_solidStateDrives);
         }
 
         #endregion
 
+        #region json
         private JsonService JsonService { get; set; }
 
         public ProductService(JsonService jsonService)
@@ -248,6 +245,7 @@ namespace SharkGaming.Services.ProductServiceFile
             JsonService = jsonService;
             _rAMs = MockRam.GetMockRam().ToList();
         }
+        #endregion
 
         #region Name Search
         public IEnumerable<ProductsClass> ProductNameSearch(string str)
@@ -351,7 +349,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (productToBeDeleted != null)
             {
                 _products.Remove(productToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+                JsonService.SaveJsonProducts(_products);
             }
             #endregion
 
@@ -368,7 +366,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (componentToBeDeleted != null)
             {
                 _components.Remove(componentToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_components);
+                JsonService.SaveJsonComponents(_components);
             }
             #endregion
 
@@ -385,7 +383,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (preBuildToBeDeleted != null)
             {
                 _preBuilds.Remove(preBuildToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_preBuilds);
+                JsonService.SaveJsonPreBuilds(_preBuilds);
             }
             #endregion
 
@@ -402,7 +400,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (caseToBeDeleted != null)
             {
                 _cases.Remove(caseToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_cases);
+                JsonService.SaveJsonCases(_cases);
             }
             #endregion
 
@@ -419,7 +417,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (coolingToBeDeleted != null)
             {
                 _cooling.Remove(coolingToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_cooling);
+                JsonService.SaveJsonCooling(_cooling);
             }
             #endregion
 
@@ -436,7 +434,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (caseFanToBeDeleted != null)
             {
                 _caseFans.Remove(caseFanToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_caseFans);
+                JsonService.SaveJsonCaseFans(_caseFans);
             }
             #endregion
 
@@ -453,7 +451,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (cPUAirToBeDeleted != null)
             {
                 _cPUAirCooling.Remove(cPUAirToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_cPUAirCooling);
+                JsonService.SaveJsonCPUAirCooling(_cPUAirCooling);
             }
             #endregion
 
@@ -470,7 +468,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (cPUWaterToBeDeleted != null)
             {
                 _cPUWaterCooling.Remove(cPUWaterToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_cPUWaterCooling);
+                JsonService.SaveJsonCPUWaterCooling(_cPUWaterCooling);
             }
             #endregion
 
@@ -487,7 +485,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (cPUToBeDeleted != null)
             {
                 _cPUs.Remove(cPUToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_cPUs);
+                JsonService.SaveJsonCPU(_cPUs);
             }
             #endregion
 
@@ -504,7 +502,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (gPUToBeDeleted != null)
             {
                 _gPUs.Remove(gPUToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_gPUs);
+                JsonService.SaveJsonGPU(_gPUs);
             }
             #endregion
 
@@ -521,7 +519,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (motherboardToBeDeleted != null)
             {
                 _motherboards.Remove(motherboardToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_motherboards);
+                JsonService.SaveJsonMotherboards(_motherboards);
             }
             #endregion
 
@@ -538,7 +536,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (powerSuppliesToBeDeleted != null)
             {
                 _powerSupplies.Remove(powerSuppliesToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_powerSupplies);
+                JsonService.SaveJsonPowerSupply(_powerSupplies);
             }
             #endregion
 
@@ -555,7 +553,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (storageToBeDeleted != null)
             {
                 _storage.Remove(storageToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_storage);
+                JsonService.SaveJsonStorage(_storage);
             }
             #endregion
 
@@ -589,7 +587,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (ramToBeDeleted != null)
             {
                 _mdot2s.Remove(mdot2ToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_mdot2s);
+                JsonService.SaveJsonMdot2(_mdot2s);
             }
             #endregion
 
@@ -606,7 +604,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (SSDToBeDeleted != null)
             {
                 _solidStateDrives.Remove(SSDToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_solidStateDrives);
+                JsonService.SaveJsonSSD(_solidStateDrives);
             }
             #endregion
 
