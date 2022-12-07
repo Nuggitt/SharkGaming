@@ -151,74 +151,92 @@ namespace SharkGaming.Services.ProductServiceFile
         public void AddProduct(ProductsClass product)
         {
             _products.Add(product);
+            //JsonServiceFile.JsonService.SaveJsonItems(_products);
         }
         public void AddComponent(ComponentsClass comp)
         {
             _components.Add(comp);
+            //JsonServiceFile.JsonService.SaveJsonItems(_components);
         }
         public void AddPreBuild(PreBuildsClass preBuilds)
         {
             _preBuilds.Add(preBuilds);
+            //JsonServiceFile.JsonService.SaveJsonItems(_preBuilds);
         }
         public void AddCustomPc(CustomPcClass customPc)
         {
             _customPcs.Add(customPc);
+            //JsonServiceFile.JsonService.SaveJsonItems(_customPcs);
         }
         public void AddCase(Cases cas)
         {
             _cases.Add(cas);
+            //JsonServiceFile.JsonService.SaveJsonItems(_cases);
         }
         public void AddCooling(CoolingClass cooling)
         {
             _cooling.Add(cooling);
+            //JsonServiceFile.JsonService.SaveJsonItems(_cooling);
         }
         public void AddCaseFan(CaseFan caseFan)
         {
             _caseFans.Add(caseFan);
+            //JsonServiceFile.JsonService.SaveJsonItems(_caseFans);
         }
         public void AddCPUCooling(CPUCooling cpuCooling)
         {
             _cPUCooling.Add(cpuCooling);
+            //JsonServiceFile.JsonService.SaveJsonItems(_cPUCooling);
         }
         public void AddCPUAirCooling(CPUAirCooling air)
         {
             _cPUAirCooling.Add(air);
+            //JsonServiceFile.JsonService.SaveJsonItems(_cPUAirCooling);
         }
         public void AddCPUWaterCooling(CPUWaterCooling water)
         {
             _cPUWaterCooling.Add(water);
+            //JsonServiceFile.JsonService.SaveJsonItems(_cPUWaterCooling);
         }
         public void AddCPU(CPU cpu)
         {
             _cPUs.Add(cpu);
+            //JsonServiceFile.JsonService.SaveJsonItems(_cPUs);
         }
         public void AddGPU(GPU gpu)
         {
             _gPUs.Add(gpu);
+            //JsonServiceFile.JsonService.SaveJsonItems(_gPUs);
         }
         public void AddMotherboard(Motherboard motherboard)
         {
             _motherboards.Add(motherboard);
+            //JsonServiceFile.JsonService.SaveJsonItems(_motherboards);
         }
         public void AddPowerSupply(PowerSupply psu)
         {
             _powerSupplies.Add(psu);
+            //JsonServiceFile.JsonService.SaveJsonItems(_powerSupplies);
         }
         public void AddRAM(RAM ram)
         {
             _rAMs.Add(ram);
+            //JsonServiceFile.JsonService.SaveJsonItems(_rAMs);
         }
         public void AddStorage(StorageClass storage)
         {
             _storage.Add(storage);
+            //JsonServiceFile.JsonService.SaveJsonItems(_storage);
         }
         public void AddMdot2(Mdot2 mdot2)
         {
             _mdot2s.Add(mdot2);
+            //JsonServiceFile.JsonService.SaveJsonItems(_mdot2s);
         }
         public void AddSolidStateDrive(SolidStateDrive ssd)
         {
             _solidStateDrives.Add(ssd);
+            //JsonServiceFile.JsonService.SaveJsonItems(_solidStateDrives);
         }
 
         #endregion
@@ -307,6 +325,26 @@ namespace SharkGaming.Services.ProductServiceFile
             return null;
         }
         #endregion
-
+       
+        #region Delete Product
+        public ProductsClass DeleteProduct(int? itemId)
+        {
+            ProductsClass itemToBeDeleted = null;
+            foreach (ProductsClass item in _products)
+            {
+                if (item.Id == itemId)
+                {
+                    itemToBeDeleted = item;
+                    break;
+                }
+            }
+            if (itemToBeDeleted != null)
+            {
+                _products.Remove(itemToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+            }
+            return itemToBeDeleted;
+        }
+        #endregion
     }
 }
