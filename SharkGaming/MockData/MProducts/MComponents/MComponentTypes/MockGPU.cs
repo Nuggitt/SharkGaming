@@ -1,6 +1,4 @@
-﻿using SharkGaming.Products.Components.ComponentTypes.GPU;
-
-namespace SharkGaming.MockData.Products.Components.ComponentTypes.GPU
+﻿namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes
 {
     public class MockGPU
     {

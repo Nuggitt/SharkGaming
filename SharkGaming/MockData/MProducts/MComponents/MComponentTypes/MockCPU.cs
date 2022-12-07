@@ -1,6 +1,4 @@
-﻿using SharkGaming.Products.Components.ComponentTypes.CPU;
-
-namespace SharkGaming.MockData.Products.Components.ComponentTypes.CPU
+﻿namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes
 {
     public class MockCPU
     {

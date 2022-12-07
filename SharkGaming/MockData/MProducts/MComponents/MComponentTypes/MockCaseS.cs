@@ -1,6 +1,6 @@
 ﻿using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
 
-namespace SharkGaming.MockData.Products.Components.ComponentTypes.Case
+namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes
 {
     public class MockCaseS
     {
