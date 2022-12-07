@@ -54,6 +54,23 @@
                 </tr>
             }
         }
+        @if (TestSite.TestRoomModel.componen != null)
+        {
+            foreach (var item in TestSite.TestRoomModel.componen)
+            {
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                </tr>
+            }
+        }
     </tbody>
 </table>
 

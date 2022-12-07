@@ -13,6 +13,7 @@
             : base(name, price, amdCompatible, intelCompatible, specInfo, capacity, compatibleBay, internalDateRate)
         {
             PCIExpress = pciExpress;
+            Id = nextId++;
         }
     }
 }

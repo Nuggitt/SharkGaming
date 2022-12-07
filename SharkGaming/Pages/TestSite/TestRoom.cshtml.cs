@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SharkGaming.MockData.Products.Components.ComponentTypes.CPU;
 using SharkGaming.MockData.Products.Components.ComponentTypes.Ram;
 using SharkGaming.Products.Components;
 using SharkGaming.Products.Components.ComponentTypes.Cooling;
+using SharkGaming.Products.Components.ComponentTypes.CPU;
 using SharkGaming.Products.Components.ComponentTypes.Motherboard;
 using SharkGaming.Products.Components.ComponentTypes.RAM;
 using SharkGaming.Services.ProductServiceFile;
@@ -23,12 +25,17 @@ namespace SharkGaming.Pages.TestSite
         {
         };
 
+        public static List<CPU> componen = new List<CPU>()
+        {
+        };
+
         //TESTING NEXT ID NEVER TOUCH IT AGAIN
 
         public void OnGet()
         {
             component = MockData.MProducts.MComponents.MComponentTypes.MCooling.MockCaseFan.GetMockCaseFans();
             components = MockRam.GetMockRam();
+            componen = MockCPU.GetMockCPUs();
 
         }
 

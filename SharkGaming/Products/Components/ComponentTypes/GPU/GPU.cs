@@ -24,6 +24,7 @@
             MemoryTechnology = memoryTechnology;
             Width = width;
             PCIExpress = pCIExpress;
+            Id = nextId++;
         }
 
         public GPU()

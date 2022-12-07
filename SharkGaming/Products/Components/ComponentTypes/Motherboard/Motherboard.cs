@@ -28,6 +28,7 @@
             PowerConnectors = powerConnectors;
             BIOSType = bIOSType;
             PCIExpress = pciExpress;
+            Id = nextId++;
         }
 
         public Motherboard()

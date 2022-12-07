@@ -26,6 +26,7 @@
             Height = height;
             SupportMotherboard = supportMotherboard;
             BuildInInterface = buildInInterface;
+            Id = nextId++;
         }
         public Cases()
         {
