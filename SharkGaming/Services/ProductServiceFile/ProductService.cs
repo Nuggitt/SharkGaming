@@ -57,7 +57,7 @@ namespace SharkGaming.Services.ProductServiceFile
             _components = MockComponents.GetMockComponentsClass();
             //_preBuilds = MockPreBuilds.GetMockPreBuilds();
             //_customPcs = MockCustomPC.GetMockCustomPcs();
-            _cases = MockCaseS.GetMockCases();
+            _cases = MCompententTypes.MockCaseS.GetMockCases();
             _cooling = MockCooling.GetMockCooling();
             _caseFans = MockCaseFan.GetMockCaseFans();
             _cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCoolings();
