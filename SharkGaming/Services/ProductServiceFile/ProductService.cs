@@ -260,8 +260,8 @@ namespace SharkGaming.Services.ProductServiceFile
         }
         #endregion
 
-        #region update item
-        public void UpdateItem(ProductsClass item)
+        #region update product
+        public void UpdateProduct(ProductsClass item)
         {
             if (item != null)
             {
@@ -292,5 +292,21 @@ namespace SharkGaming.Services.ProductServiceFile
             return filterList;
         }
         #endregion
+
+        #region Get Product via ID
+        public ProductsClass GetProduct(int id)
+        {
+            if (id != null)
+            {
+                foreach (ProductsClass i in _products)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+            }
+            return null;
+        }
+        #endregion
+
     }
 }
