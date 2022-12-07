@@ -17,6 +17,7 @@ using SharkGaming.MockData.MProducts.MComponents.MComponentTypes;
 using SharkGaming.MockData.Products.Components;
 
 using SharkGaming.Services.JsonServiceFile;
+using SharkGaming.MockData.Products.PreBuilds;
 
 namespace SharkGaming.Services.ProductServiceFile
 {
@@ -48,7 +49,7 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             //_products = MockProducts.GetMockProducts();
             _components = MockComponents.GetMockComponentsClass();
-            //_preBuilds = MockPreBuilds.GetMockPreBuilds();
+            _preBuilds = MockPreBuilds.GetMockPreBuilds();
             //_customPcs = MockCustomPC.GetMockCustomPcs();
             _cases = MockCaseS.GetMockCases();
             _cooling = MockCooling.GetMockCooling();
@@ -614,6 +615,22 @@ namespace SharkGaming.Services.ProductServiceFile
         }
         #endregion
 
-        
+        #region Calculation methods
+
+        public double preBuildsCalculation(PreBuildsClass preBuildsClass)
+        {
+            double price = 0;
+            //foreach (PreBuildsClass item in preBuildsClass)
+            //{
+            //    price += item.Price;
+            //}
+            //if (preBuildsClass.Discount == true)
+            //{
+            //    price += -1000;
+            //}
+            return price;
+        }
+
+        #endregion
     }
 }
