@@ -23,6 +23,7 @@ using SharkGaming.MockData.Products.Components.ComponentTypes.Ram;
 using SharkGaming.MockData.Products.Components;
 using SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MStorage;
 using SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MCooling;
+using SharkGaming.Services.JsonServiceFile;
 
 namespace SharkGaming.Services.ProductServiceFile
 {
@@ -606,5 +607,12 @@ namespace SharkGaming.Services.ProductServiceFile
             return productToBeDeleted;
         }
         #endregion
+
+        private JsonService JsonService { get; set; }
+
+        public ProductService(JsonService jsonService)
+        {
+            JsonService = jsonService;
+        }
     }
 }
