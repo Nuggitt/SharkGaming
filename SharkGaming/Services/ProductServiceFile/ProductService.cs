@@ -359,7 +359,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (componentToBeDeleted != null)
             {
                 _components.Remove(componentToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+                //JsonServiceFile.JsonService.SaveJsonItems(_components);
             }
             #endregion
 
@@ -376,7 +376,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (preBuildToBeDeleted != null)
             {
                 _preBuilds.Remove(preBuildToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+                //JsonServiceFile.JsonService.SaveJsonItems(_preBuilds);
             }
             #endregion
 
@@ -393,7 +393,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (caseToBeDeleted != null)
             {
                 _cases.Remove(caseToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+                //JsonServiceFile.JsonService.SaveJsonItems(_cases);
             }
             #endregion
 
@@ -410,10 +410,10 @@ namespace SharkGaming.Services.ProductServiceFile
             if (coolingToBeDeleted != null)
             {
                 _cooling.Remove(coolingToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+                //JsonServiceFile.JsonService.SaveJsonItems(_cooling);
             }
             #endregion
-            
+
             #region Delete CaseFan
             CaseFan caseFanToBeDeleted = null;
             foreach (CaseFan item in _caseFans)
@@ -427,7 +427,177 @@ namespace SharkGaming.Services.ProductServiceFile
             if (caseFanToBeDeleted != null)
             {
                 _caseFans.Remove(caseFanToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+                //JsonServiceFile.JsonService.SaveJsonItems(_caseFans);
+            }
+            #endregion
+
+            #region Delete CPU Air Cooling
+            CPUAirCooling cPUAirToBeDeleted = null;
+            foreach (CPUAirCooling item in _cPUAirCooling)
+            {
+                if (item.Id == itemId)
+                {
+                    cPUAirToBeDeleted = item;
+                    break;
+                }
+            }
+            if (cPUAirToBeDeleted != null)
+            {
+                _cPUAirCooling.Remove(cPUAirToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_cPUAirCooling);
+            }
+            #endregion
+
+            #region Delete CPU Water Cooling
+            CPUWaterCooling cPUWaterToBeDeleted = null;
+            foreach (CPUWaterCooling item in _cPUWaterCooling)
+            {
+                if (item.Id == itemId)
+                {
+                    cPUWaterToBeDeleted = item;
+                    break;
+                }
+            }
+            if (cPUWaterToBeDeleted != null)
+            {
+                _cPUWaterCooling.Remove(cPUWaterToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_cPUWaterCooling);
+            }
+            #endregion
+
+            #region Delete CPU 
+            CPU cPUToBeDeleted = null;
+            foreach (CPU item in _cPUs)
+            {
+                if (item.Id == itemId)
+                {
+                    cPUToBeDeleted = item;
+                    break;
+                }
+            }
+            if (cPUToBeDeleted != null)
+            {
+                _cPUs.Remove(cPUToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_cPUs);
+            }
+            #endregion
+
+            #region Delete GPU 
+            GPU gPUToBeDeleted = null;
+            foreach (GPU item in _gPUs)
+            {
+                if (item.Id == itemId)
+                {
+                    gPUToBeDeleted = item;
+                    break;
+                }
+            }
+            if (gPUToBeDeleted != null)
+            {
+                _gPUs.Remove(gPUToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_gPUs);
+            }
+            #endregion
+
+            #region Delete Motherboard 
+            Motherboard motherboardToBeDeleted = null;
+            foreach (Motherboard item in _motherboards)
+            {
+                if (item.Id == itemId)
+                {
+                    motherboardToBeDeleted = item;
+                    break;
+                }
+            }
+            if (motherboardToBeDeleted != null)
+            {
+                _motherboards.Remove(motherboardToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_motherboards);
+            }
+            #endregion
+
+            #region Delete PSU 
+            PowerSupply powerSuppliesToBeDeleted = null;
+            foreach (PowerSupply item in _powerSupplies)
+            {
+                if (item.Id == itemId)
+                {
+                    powerSuppliesToBeDeleted = item;
+                    break;
+                }
+            }
+            if (powerSuppliesToBeDeleted != null)
+            {
+                _powerSupplies.Remove(powerSuppliesToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_powerSupplies);
+            }
+            #endregion
+
+            #region Delete storage 
+            StorageClass storageToBeDeleted = null;
+            foreach (StorageClass item in _storage)
+            {
+                if (item.Id == itemId)
+                {
+                    storageToBeDeleted = item;
+                    break;
+                }
+            }
+            if (storageToBeDeleted != null)
+            {
+                _storage.Remove(storageToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_storage);
+            }
+            #endregion
+
+            #region Delete RAM
+            RAM ramToBeDeleted = null;
+            foreach (RAM item in _rAMs)
+            {
+                if (item.Id == itemId)
+                {
+                    ramToBeDeleted = item;
+                    break;
+                }
+            }
+            if (ramToBeDeleted != null)
+            {
+                _rAMs.Remove(ramToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_rAMs);
+            }
+            #endregion
+
+            #region Delete M.2
+            Mdot2 mdot2ToBeDeleted = null;
+            foreach (Mdot2 item in _mdot2s)
+            {
+                if (item.Id == itemId)
+                {
+                    mdot2ToBeDeleted = item;
+                    break;
+                }
+            }
+            if (ramToBeDeleted != null)
+            {
+                _mdot2s.Remove(mdot2ToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_mdot2s);
+            }
+            #endregion
+
+            #region Delete SSD
+            SolidStateDrive SSDToBeDeleted = null;
+            foreach (SolidStateDrive item in _solidStateDrives)
+            {
+                if (item.Id == itemId)
+                {
+                    SSDToBeDeleted = item;
+                    break;
+                }
+            }
+            if (SSDToBeDeleted != null)
+            {
+                _solidStateDrives.Remove(SSDToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_solidStateDrives);
             }
             #endregion
 
