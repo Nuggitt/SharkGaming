@@ -66,6 +66,8 @@ namespace SharkGaming.Services.ProductServiceFile
         }
         #endregion
 
+        
+
         #region Get methods
         public List<ProductsClass> GetAllProducts()
         {
@@ -141,11 +143,13 @@ namespace SharkGaming.Services.ProductServiceFile
         }
         #endregion
 
+
+
         #region Add to list methods
         public void AddProduct(ProductsClass product)
         {
             _products.Add(product);
-            //JsonServiceFile.JsonService.SaveJsonItems(_products);
+            JsonService.SaveJsonProducts(_products);
         }
         public void AddComponent(ComponentsClass comp)
         {
@@ -216,6 +220,7 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             _rAMs.Add(ram);
             //JsonServiceFile.JsonService.SaveJsonItems(_rAMs);
+            JsonService.SaveJsonRAM(_rAMs);
         }
         public void AddStorage(StorageClass storage)
         {
@@ -234,6 +239,14 @@ namespace SharkGaming.Services.ProductServiceFile
         }
 
         #endregion
+
+        private JsonService JsonService { get; set; }
+
+        public ProductService(JsonService jsonService)
+        {
+            JsonService = jsonService;
+            _rAMs = MockRam.GetMockRam().ToList();
+        }
 
         #region Name Search
         public IEnumerable<ProductsClass> ProductNameSearch(string str)
@@ -285,7 +298,7 @@ namespace SharkGaming.Services.ProductServiceFile
                         i.Name = item.Name;
                     }
                 }
-                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+                JsonService.SaveJsonProducts(_products);
             }
         }
         #endregion
@@ -558,7 +571,7 @@ namespace SharkGaming.Services.ProductServiceFile
             if (ramToBeDeleted != null)
             {
                 _rAMs.Remove(ramToBeDeleted);
-                //JsonServiceFile.JsonService.SaveJsonItems(_rAMs);
+                JsonService.SaveJsonRAM(_rAMs);
             }
             #endregion
 
@@ -601,11 +614,6 @@ namespace SharkGaming.Services.ProductServiceFile
         }
         #endregion
 
-        private JsonService JsonService { get; set; }
-
-        public ProductService(JsonService jsonService)
-        {
-            JsonService = jsonService;
-        }
+        
     }
 }
