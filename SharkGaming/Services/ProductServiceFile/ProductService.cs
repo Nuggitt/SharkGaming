@@ -329,21 +329,110 @@ namespace SharkGaming.Services.ProductServiceFile
         #region Delete Product
         public ProductsClass DeleteProduct(int? itemId)
         {
-            ProductsClass itemToBeDeleted = null;
+            #region Delete Product
+            ProductsClass productToBeDeleted = null;
             foreach (ProductsClass item in _products)
             {
                 if (item.Id == itemId)
                 {
-                    itemToBeDeleted = item;
+                    productToBeDeleted = item;
                     break;
                 }
             }
-            if (itemToBeDeleted != null)
+            if (productToBeDeleted != null)
             {
-                _products.Remove(itemToBeDeleted);
+                _products.Remove(productToBeDeleted);
                 //JsonServiceFile.JsonService.SaveJsonItems(_products);
             }
-            return itemToBeDeleted;
+            #endregion
+
+            #region Delete Component
+            ComponentsClass componentToBeDeleted = null;
+            foreach (ComponentsClass item in _components)
+            {
+                if (item.Id == itemId)
+                {
+                    componentToBeDeleted = item;
+                    break;
+                }
+            }
+            if (componentToBeDeleted != null)
+            {
+                _components.Remove(componentToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+            }
+            #endregion
+
+            #region Delete Pre Build
+            PreBuildsClass preBuildToBeDeleted = null;
+            foreach (PreBuildsClass item in _preBuilds)
+            {
+                if (item.Id == itemId)
+                {
+                    preBuildToBeDeleted = item;
+                    break;
+                }
+            }
+            if (preBuildToBeDeleted != null)
+            {
+                _preBuilds.Remove(preBuildToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+            }
+            #endregion
+
+            #region Delete Case
+            Cases caseToBeDeleted = null;
+            foreach (Cases item in _cases)
+            {
+                if (item.Id == itemId)
+                {
+                    caseToBeDeleted = item;
+                    break;
+                }
+            }
+            if (caseToBeDeleted != null)
+            {
+                _cases.Remove(caseToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+            }
+            #endregion
+
+            #region Delete Cooling
+            CoolingClass coolingToBeDeleted = null;
+            foreach (CoolingClass item in _cooling)
+            {
+                if (item.Id == itemId)
+                {
+                    coolingToBeDeleted = item;
+                    break;
+                }
+            }
+            if (coolingToBeDeleted != null)
+            {
+                _cooling.Remove(coolingToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+            }
+            #endregion
+            
+            #region Delete CaseFan
+            CaseFan caseFanToBeDeleted = null;
+            foreach (CaseFan item in _caseFans)
+            {
+                if (item.Id == itemId)
+                {
+                    caseFanToBeDeleted = item;
+                    break;
+                }
+            }
+            if (caseFanToBeDeleted != null)
+            {
+                _caseFans.Remove(caseFanToBeDeleted);
+                //JsonServiceFile.JsonService.SaveJsonItems(_products);
+            }
+            #endregion
+
+
+            return productToBeDeleted;
         }
         #endregion
     }
