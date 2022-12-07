@@ -14,7 +14,7 @@
 
         
 
-        public Cases(string sizeType, string colour, int amountOfFans, bool rGB, double width, double depth, double height, string supportMotherboard, string buildInInterface, string name, double price, bool amdCompatible, bool intelCompatible, string specInfo)
+        public Cases(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, string sizeType, string colour, int amountOfFans, bool rGB, double width, double depth, double height, string supportMotherboard, string buildInInterface)
             : base(name, price, amdCompatible, intelCompatible, specInfo)
         {
             SizeType = sizeType;

@@ -15,9 +15,64 @@ html {
 
 body {
     margin-bottom: 60px;
-    background: rgb(46,127,139);
-    background: linear-gradient(90deg, rgba(46,127,139,1) 0%, rgba(39,39,194,1) 47%, rgba(136,27,173,1) 100%);
+    background: rgb(111,142,255);
+    background: radial-gradient(circle, rgba(111,142,255,0.861782212885154) 9%, rgba(13,41,185,1) 49%, rgba(0,2,18,1) 97%);
 }
 footer{
-    background-color: white;
+    background-color: transparent;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar{
+    width: 100%;
+    overflow: auto
+}
+
+.navbar a{
+    float: right;
+    padding: 12px;
+    color: red;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: #829dff;
+}
+
+.hoverTable tr:hover {
+    background-color: #829dff;
+}
+
+.active {
+    background-color: #04AA6D;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar a {
+        float: none;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .column {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.logo-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }

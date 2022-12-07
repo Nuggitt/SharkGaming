@@ -3,9 +3,9 @@
 @model SharkGaming.Pages.TestSite.TestRoomModel
 @{
 }
-<h1>Components</h1>
+<h1 class="text-white">Components</h1>
 @*Table List for testing. For at komme ind til listen components har vi prikket os igennem TestSite/TestRoomModel for at komme ind til listen som hedder "components." *@
-<table class="table table-bordered table-hover table-striped">
+<table class="table table-bordered table-hover bg-black text-white">
     <thead>
         <tr>
             <th>
@@ -19,7 +19,7 @@
             </th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="hoverTable">
         @if (TestSite.TestRoomModel.components != null)
         {
             foreach (var item in TestSite.TestRoomModel.components)
