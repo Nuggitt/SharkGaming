@@ -291,6 +291,7 @@ namespace SharkGaming.Services.ProductServiceFile
                         i.Name = item.Name;
                     }
                 }
+                //JsonServiceFile.JsonService.SaveJsonItems(_products);
             }
         }
         #endregion
