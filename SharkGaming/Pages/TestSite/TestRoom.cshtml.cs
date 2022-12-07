@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SharkGaming.MockData.Products.Components.ComponentTypes.CPU;
-using SharkGaming.MockData.Products.Components.ComponentTypes.Ram;
 using SharkGaming.Products;
 using SharkGaming.Products.Components;
 using SharkGaming.Products.Components.ComponentTypes.Cooling;
