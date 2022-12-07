@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SharkGaming.MockData.Products.Components.ComponentTypes.CPU;
 using SharkGaming.MockData.Products.Components.ComponentTypes.Ram;
+using SharkGaming.Products;
 using SharkGaming.Products.Components;
 using SharkGaming.Products.Components.ComponentTypes.Cooling;
 using SharkGaming.Products.Components.ComponentTypes.CPU;
@@ -15,31 +16,39 @@ namespace SharkGaming.Pages.TestSite
 {
     public class TestRoomModel : PageModel
     {
+        private IProductService _productService;
 
-
-        public static List<CaseFan> component = new List<CaseFan>()
+        public TestRoomModel(IProductService iproductervice)
         {
-        };
+            _productService = iproductervice;
+        }
 
-        public static List<RAM> components = new List<RAM>()
-        {
-        };
+        public List<RAM>? components { get; set; }
 
-        public static List<CPU> componen = new List<CPU>()
-        {
-        };
-
-        //TESTING NEXT ID NEVER TOUCH IT AGAIN
 
         public void OnGet()
         {
-            component = MockData.MProducts.MComponents.MComponentTypes.MCooling.MockCaseFan.GetMockCaseFans();
-            components = MockRam.GetMockRam();
-            componen = MockCPU.GetMockCPUs();
-
+            components = _productService.GetRAM();
         }
 
 
+        //public List<CaseFan> component { get; private set; }
+
+        //public List<ProductsClass> ? products { get; private set; }
+
+        //public List<CPU> componen { get; private set; }
+
+        ////TESTING NEXT ID NEVER TOUCH IT AGAIN
+
+        //public void OnGet()
+        //{
+        //    component = MockData.MProducts.MComponents.MComponentTypes.MCooling.MockCaseFan.GetMockCaseFans();
+        //    components = MockRam.GetMockRam();
+        //    componen = MockCPU.GetMockCPUs();
+
+        //}
+
+
     }
-        
+
 }
