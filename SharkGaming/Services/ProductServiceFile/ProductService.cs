@@ -216,6 +216,7 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             _rAMs.Add(ram);
             //JsonServiceFile.JsonService.SaveJsonItems(_rAMs);
+            JsonService.SaveJsonItems(_rAMs);
         }
         public void AddStorage(StorageClass storage)
         {
@@ -606,6 +607,7 @@ namespace SharkGaming.Services.ProductServiceFile
         public ProductService(JsonService jsonService)
         {
             JsonService = jsonService;
+            _rAMs = MockData.MProducts.MComponents.MComponentTypes.MockRam.GetMockRam();
         }
     }
 }
