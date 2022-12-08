@@ -14,7 +14,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         {
             _productService = iproductervice;
         }
-        public List<RAM>? components { get; set; }
+        public List<RAM>? components { get; private set; }
 
         public void OnGet()
         {
