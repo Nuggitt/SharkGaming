@@ -99,7 +99,7 @@
                 {
                     foreach (var item in Model.components)
                     {
-                        @if (item.Id == 24)
+                        if (item.Id == 24)
                         {
                                 @item.FormFactor;
                         }
@@ -157,7 +157,7 @@
             <td>Colour category</td>
             <td> 
                 @if (Model.components != null)
-                {
+                    {
                     foreach (var item in Model.components)
                     {
                         @if (item.Id == 24)
