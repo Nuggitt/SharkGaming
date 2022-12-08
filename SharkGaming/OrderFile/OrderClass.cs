@@ -11,7 +11,6 @@ namespace SharkGaming.Order
         public DateOnly Date { get; set; }
         public DateTime Time { get; set; }
         public CustomerClass Customer { get; set; }
-
         public double TotalPrice { get; set; }
 
         private static List<OrderItemsClass> _orderItems = new List<OrderItemsClass>();
