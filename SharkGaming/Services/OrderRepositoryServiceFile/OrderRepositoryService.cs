@@ -91,13 +91,26 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
         public OrderClass DeleteOrder(int? orderId)
         {
-            return null;
+
+            OrderClass orderToBeDeleted = null;
+            foreach (OrderClass item in _orders)
+            {
+                if (item.Id == orderId)
+                {
+                    orderToBeDeleted = item;
+                    break;
+                }
+            }
+            if (orderToBeDeleted != null)
+            {
+                _orders.Remove(orderToBeDeleted);
+                JsonService.SaveJsonOrder(_orders);
+
+            }
+            return orderToBeDeleted;
         }
 
-        public double CalculateTotalPrice()
-        {
-            return 0;
-        }
+        
     }
 }
 

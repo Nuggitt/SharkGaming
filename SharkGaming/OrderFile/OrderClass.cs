@@ -24,7 +24,7 @@ namespace SharkGaming.Order
             Date = date;
             Time = time;
             _orderItems = orderitems;
-
+            TotalPrice = CalculateTotalPrice();
         }
 
         public OrderClass()
@@ -37,6 +37,20 @@ namespace SharkGaming.Order
             return _orderItems;
         }
 
+        public double CalculateTotalPrice()
+        {
+            double totalPrice = 0;
+
+            if (_orderItems != null)
+            {
+                foreach (OrderItemsClass item in _orderItems)
+                {
+                    totalPrice = totalPrice + item.Price;
+                }
+                return totalPrice;
+            }
+            return 0;
+        }
 
     }
 }
