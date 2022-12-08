@@ -95,6 +95,13 @@ footer{
     }
 }
 
-.bgColour{
+.bgGrey {
     background-color: #151515;
+}
+
+.btnGreen {
+    background-color: #4B9A10;
+    border: none;
+    color: white;
+    text-align: center;
 }
