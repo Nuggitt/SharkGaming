@@ -11,7 +11,7 @@ namespace SharkGaming.Products
         {
             Price = price;
             Name = name;
-            Id = nextId++;
+            
         }
 
         public ProductsClass()
