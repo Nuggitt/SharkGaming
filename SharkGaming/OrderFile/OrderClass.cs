@@ -45,7 +45,7 @@ namespace SharkGaming.Order
             {
                 foreach (OrderItemsClass item in _orderItems)
                 {
-                    totalPrice = totalPrice + item.Price;
+                    totalPrice = totalPrice + item.Price + 1000;
                 }
                 return totalPrice;
             }
