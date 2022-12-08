@@ -109,3 +109,7 @@ footer{
 .columnCustom {
     column-count: 2;
 }
+
+table.border-black {
+    border-color: black;
+}
