@@ -21,14 +21,14 @@ namespace SharkGaming.Pages.TestSite
             _productService = iproductervice;
         }
 
-        //public List<RAM>? components { get; set; }
+        public List<RAM>? components { get; set; }
 
         public List<ProductsClass> Products { get; set; }
 
 
         public void OnGet()
         {
-            //components = _productService.GetRAM();
+            components = _productService.GetRAM();
             //Products = _productService.GetPreBuilds();
         }
 

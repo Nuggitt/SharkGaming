@@ -90,6 +90,8 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             return _gPUs;
         }
+
+
         public List<Motherboard> GetMotherboards()
         {
             return _motherboards;
@@ -516,7 +518,62 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             if (id != null)
             {
-                foreach (ProductsClass i in _products)
+                foreach (ProductsClass i in _preBuilds)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                foreach (ProductsClass i in _cases)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                foreach (ProductsClass i in _caseFans)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                foreach (ProductsClass i in _cPUAirCooling)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                foreach (ProductsClass i in _cPUWaterCooling)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                foreach (ProductsClass i in _cPUs)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                foreach (ProductsClass i in _gPUs)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                foreach (ProductsClass i in _motherboards)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                foreach (ProductsClass i in _powerSupplies)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                foreach (ProductsClass i in _rAMs)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                foreach (ProductsClass i in _mdot2s)
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                foreach (ProductsClass i in _solidStateDrives)
                     if (i.Id == id)
                     {
                         return i;
@@ -525,7 +582,7 @@ namespace SharkGaming.Services.ProductServiceFile
             return null;
         }
         #endregion
-       
+
         #region Delete Product
         public ProductsClass DeleteProduct(int? itemId)
         {
