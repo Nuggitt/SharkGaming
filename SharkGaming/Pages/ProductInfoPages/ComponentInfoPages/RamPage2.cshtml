@@ -1,5 +1,5 @@
 ﻿@page
-@model SharkGaming.Pages.ProductInfoPages.ComponentInfoPages.RamPage1Model
+@model SharkGaming.Pages.ProductInfoPages.ComponentInfoPages.RamPage2Model
 @{
 }
 
@@ -9,7 +9,7 @@
         {
             foreach (var item in Model.components)
             {
-                @if (item.Id == 55)
+                @if (item.Id == 57)
                 {
                     <td>
                         @item.Name;
@@ -30,12 +30,12 @@
         <h3 style="color:white">Description</h3>
         <p style="color:white">SharkGaming aquarium is a case that allows you to connect to the motherboard and control RGB through the software</p>
         <h1 style="color:white">
-            Price: 
+            Price:
             @if (Model.components != null)
             {
-                foreach(var item in Model.components)
+                foreach (var item in Model.components)
                 {
-                    @if (item.Id == 55)
+                    @if (item.Id == 57)
                     {
                         <td>
                             @item.Price;
