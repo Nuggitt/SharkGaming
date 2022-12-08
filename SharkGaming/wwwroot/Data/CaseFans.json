@@ -1,0 +1,41 @@
+[
+  {
+    "ThermalDesignPower": 1.44,
+    "Size": 120,
+    "PowerConnector": "120",
+    "AirFlow": "3-pin",
+    "Rpm": 56.3,
+    "SquareMetersPerHour": "200-1800",
+    "MmH20": "1.79 m2/h",
+    "ColourCatagory": "NO RGB",
+    "Id": 3,
+    "Name": "Arctic P12 PWM PST BLACK 120mm Fan",
+    "Price": 59
+  },
+  {
+    "ThermalDesignPower": 1.79,
+    "Size": 120,
+    "PowerConnector": "120",
+    "AirFlow": "3-pin",
+    "Rpm": 48.7,
+    "SquareMetersPerHour": "1600",
+    "MmH20": "1.79 m2/h",
+    "ColourCatagory": "NO RGB",
+    "Id": 4,
+    "Name": "be quiet! 120mm Silent Wings 4 Quiet Fan",
+    "Price": 158
+  },
+  {
+    "ThermalDesignPower": 2.01,
+    "Size": 120,
+    "PowerConnector": "120",
+    "AirFlow": "3-pin",
+    "Rpm": 56.3,
+    "SquareMetersPerHour": "1800",
+    "MmH20": "1.79 m2/h",
+    "ColourCatagory": "RGB",
+    "Id": 5,
+    "Name": "ThermalTake Riing Plus 12 RGB SYNC Edition 3 Pack",
+    "Price": 59
+  }
+]

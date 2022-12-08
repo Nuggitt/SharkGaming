@@ -1,0 +1,44 @@
+[
+  {
+    "SizeType": "MidTower (ATX)",
+    "Colour": "Black",
+    "AmountOfFans": 10,
+    "RGB": true,
+    "Width": 280,
+    "Depth": 415,
+    "Height": 427,
+    "SupportMotherboard": "ATX",
+    "BuildInInterface": "2xUSB 3.0 \u0026 1x USB 2.0 \u0026 HD Audio",
+    "Id": 0,
+    "Name": "Shark Gaming Aquarium",
+    "Price": 999
+  },
+  {
+    "SizeType": "MiniTower (m-ATX)",
+    "Colour": "Black",
+    "AmountOfFans": 4,
+    "RGB": true,
+    "Width": 210,
+    "Depth": 405,
+    "Height": 425,
+    "SupportMotherboard": "ATX",
+    "BuildInInterface": "2xUSB 3.0 \u0026 1x USB 2.0 \u0026 HD Audio",
+    "Id": 1,
+    "Name": "Shark Gaming MaelStrom",
+    "Price": 599
+  },
+  {
+    "SizeType": "MidTower (ATX)",
+    "Colour": "White",
+    "AmountOfFans": 7,
+    "RGB": true,
+    "Width": 240,
+    "Depth": 520,
+    "Height": 520,
+    "SupportMotherboard": "ATX",
+    "BuildInInterface": "1 x USB 3.1 gen 2 Type-C (Needs Front USB-C Supported Motherboard), 2xUSB 3.0, Power button, Microphone, Headphone, D-RGB Mode button, D-RGB Color button",
+    "Id": 2,
+    "Name": "Phanteks Enthoo Evolv X Satin Black Kabinet",
+    "Price": 1748
+  }
+]

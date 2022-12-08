@@ -19,7 +19,7 @@ namespace SharkGaming.Services.ProductServiceFile
         List<ProductsClass> GetPreBuilds();
         List<CustomPcClass> GetCustomPc();
         List<Cases> GetCases();
-        List<CaseFan> GetCaseFans();
+        List<CaseFan> GetCaseFan();
         List<CPUAirCooling> GetCPUAirCooling();
         List<CPUWaterCooling> GetCPUWaterCooling();
         List<CPU> GetCPUs();
@@ -79,6 +79,18 @@ namespace SharkGaming.Services.ProductServiceFile
         ProductsClass DeleteProduct(int? productId);
         #endregion
 
+
+        Cases GetCases(int id);
+        CaseFan GetCaseFans(int id);
+        CPUAirCooling GetCPUAirCoolings(int id);
+        CPUWaterCooling GetCPUWaterCoolings(int id);
+        CPU GetCPUs(int id);
+        GPU GetGPUs(int id);
+        Motherboard GetMotherboards(int id);
+        PowerSupply GetPowerSupplys(int id);
+        Mdot2 GetMdot2s(int id);
+        SolidStateDrive GetSolidStateDrives(int id);
         RAM GetRAMs(int id);
+
     }
 }

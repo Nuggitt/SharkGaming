@@ -47,7 +47,7 @@ namespace SharkGaming.Pages.TestSite
         {
             //Products = MockPreBuilds.GetMockPreBuilds();
             cases = _productService.GetCases();
-            caseFan = _productService.GetCaseFans();
+            caseFan = _productService.GetCaseFan();
             cPUAirCoolings = _productService.GetCPUAirCooling();
             cPUWaterCoolings = _productService.GetCPUWaterCooling();
             cPU = _productService.GetCPUs();

@@ -69,7 +69,7 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             return _cases;
         }      
-        public List<CaseFan> GetCaseFans()
+        public List<CaseFan> GetCaseFan()
         {
             return _caseFans;
         }       
@@ -198,7 +198,7 @@ namespace SharkGaming.Services.ProductServiceFile
             _gPUs = MockGPU.GetMockGPUs().ToList();
             _motherboards = MockMotherboard.GetMockMotherboards().ToList();
             _powerSupplies = MockPowerSupply.GetMockPowerSupplies().ToList();
-            //_rAMs = MockRam.GetMockRam().ToList();
+            _rAMs = MockRam.GetMockRam().ToList();
             _mdot2s = MockMdot.GetMockMdot2s().ToList();
             _solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives().ToList();
 
@@ -211,7 +211,7 @@ namespace SharkGaming.Services.ProductServiceFile
             //_gPUs = JsonService.GetJsonGPU().ToList();
             //_motherboards = JsonService.GetJsonMotherboards().ToList();
             //_powerSupplies = JsonService.GetJsonPowerSupply().ToList();
-            _rAMs = JsonService.GetJsonRAM().ToList();
+            //_rAMs = JsonService.GetJsonRAM().ToList();
             //_mdot2s = JsonService.GetJsonMdot2().ToList();
             //_solidStateDrives = JsonService.GetJsonSSD().ToList();
         }
@@ -622,65 +622,159 @@ namespace SharkGaming.Services.ProductServiceFile
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _cases)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
-                foreach (ProductsClass i in _caseFans)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
-                foreach (ProductsClass i in _cPUAirCooling)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
-                foreach (ProductsClass i in _cPUWaterCooling)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
-                foreach (ProductsClass i in _cPUs)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
-                foreach (ProductsClass i in _gPUs)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
-                foreach (ProductsClass i in _motherboards)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
-                foreach (ProductsClass i in _powerSupplies)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
-                foreach (ProductsClass i in _rAMs)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
-                foreach (ProductsClass i in _mdot2s)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
-                foreach (ProductsClass i in _solidStateDrives)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
             }
             return null;
         }
-        #endregion
+
+        public Cases GetCases(int id)
+        {
+            if (id != null)
+            {
+                foreach (Cases i in _cases)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public CaseFan GetCaseFans(int id)
+        {
+            if (id != null)
+            {
+                foreach (CaseFan i in _caseFans)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public CPUAirCooling GetCPUAirCoolings(int id)
+        {
+            if (id != null)
+            {
+                foreach (CPUAirCooling i in _cPUAirCooling)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public CPUWaterCooling GetCPUWaterCoolings(int id)
+        {
+            if (id != null)
+            {
+                foreach (CPUWaterCooling i in _cPUWaterCooling)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public CPU GetCPUs(int id)
+        {
+            if (id != null)
+            {
+                foreach (CPU i in _cPUs)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public GPU GetGPUs(int id)
+        {
+            if (id != null)
+            {
+                foreach (GPU i in _gPUs)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public Motherboard GetMotherboards(int id)
+        {
+            if (id != null)
+            {
+                foreach (Motherboard i in _motherboards)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public PowerSupply GetPowerSupplys(int id)
+        {
+            if (id != null)
+            {
+                foreach (PowerSupply i in _powerSupplies)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public Mdot2 GetMdot2s(int id)
+        {
+            if (id != null)
+            {
+                foreach (Mdot2 i in _mdot2s)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public SolidStateDrive GetSolidStateDrives(int id)
+        {
+            if (id != null)
+            {
+                foreach (SolidStateDrive i in _solidStateDrives)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
 
         public RAM GetRAMs(int id)
         {
@@ -696,6 +790,8 @@ namespace SharkGaming.Services.ProductServiceFile
             }
             return null;
         }
+        #endregion
+
 
         #region Delete Product
         public ProductsClass DeleteProduct(int? itemId)

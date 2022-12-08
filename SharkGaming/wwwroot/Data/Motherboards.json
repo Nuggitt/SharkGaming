@@ -1,0 +1,47 @@
+[
+  {
+    "SupportedRamIntergrityCheck": true,
+    "MaxRamSize": 128,
+    "Technology": "DDR4",
+    "BuSClock": 5400,
+    "ProductType": "Motherboard - ATX",
+    "ChipsetType": "AMD X570",
+    "ProcessorSocket": "AM4",
+    "PowerConnectors": "24-pin main power, 2 x 8 pin ATX12v",
+    "BIOSType": "AMI",
+    "PCIExpress": 4,
+    "Id": 18,
+    "Name": "Gigabyte X570S AORUS Master",
+    "Price": 2932.32
+  },
+  {
+    "SupportedRamIntergrityCheck": true,
+    "MaxRamSize": 128,
+    "Technology": "DDR4",
+    "BuSClock": 4400,
+    "ProductType": "Motherboard - ATX",
+    "ChipsetType": "AMD X570",
+    "ProcessorSocket": "AM4",
+    "PowerConnectors": "24-pin main power, 2 x 8 pin ATX12v",
+    "BIOSType": "AMI",
+    "PCIExpress": 4,
+    "Id": 19,
+    "Name": "EXDISPLAY MSI X570",
+    "Price": 1200.21
+  },
+  {
+    "SupportedRamIntergrityCheck": true,
+    "MaxRamSize": 128,
+    "Technology": "DDR4",
+    "BuSClock": 4800,
+    "ProductType": "Motherboard - ATX",
+    "ChipsetType": "Z590",
+    "ProcessorSocket": "LGA 1200",
+    "PowerConnectors": "24-pin main power, 2 x 8 pin ATX12v",
+    "BIOSType": "AMI",
+    "PCIExpress": 4,
+    "Id": 20,
+    "Name": "ASRock Z590 Extreme",
+    "Price": 1681.73
+  }
+]

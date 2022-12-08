@@ -1,0 +1,29 @@
+[
+  {
+    "PCIExpress": 4,
+    "Capacity": 2000,
+    "CompatibleBay": "M.2",
+    "InternalDateRate": 7000,
+    "Id": 27,
+    "Name": "Samsung 980 PRO 2TB M.2-2280",
+    "Price": 2276.92
+  },
+  {
+    "PCIExpress": 4,
+    "Capacity": 1000,
+    "CompatibleBay": "M.2",
+    "InternalDateRate": 7000,
+    "Id": 28,
+    "Name": "Samsung 980 PRO 2TB M.2-2280",
+    "Price": 1346.4
+  },
+  {
+    "PCIExpress": 3,
+    "Capacity": 500,
+    "CompatibleBay": "M.2",
+    "InternalDateRate": 2300,
+    "Id": 29,
+    "Name": "Crucial P2 500GB 3D NAND",
+    "Price": 319.03
+  }
+]

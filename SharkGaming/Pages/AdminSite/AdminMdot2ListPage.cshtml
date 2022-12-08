@@ -1,0 +1,49 @@
+﻿@page
+@model SharkGaming.Pages.AdminSite.AdminMdot2ListPageModel
+@{
+}
+
+<table class="table table-bordered border-black bg-dark text-white">
+	<thead>
+		<tr>
+			<th>
+				Id
+			</th>
+			<th>
+				Name
+			</th>
+			<th>
+				Price
+			</th>
+			<th>
+				Actions
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model.mdot2s != null)
+		{
+			foreach (var item in Model.mdot2s)
+			{
+				<tr class="btn-secondary">
+					<td>
+						@item.Id
+					</td>
+					<td>
+						@item.Name
+					</td>
+					<td>
+						@item.Price
+					</td>
+					<td>
+						<a class="btn btn-primary btn-sm" type="button" title="Update" asp-page="AdminMdot2Edit" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+					</td>
+				</tr>
+			}
+		}
+	</tbody>
+</table>
+
+<div>
+    <a asp-page="/AdminSite/AdminMainPage">Back to List</a>
+</div>

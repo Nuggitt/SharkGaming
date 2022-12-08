@@ -1,0 +1,47 @@
+[
+  {
+    "GraphicsEngine": "NVIDIA GeForce RTX 3090 TI",
+    "CUDACore": 10752,
+    "VRReady": true,
+    "MaxResolution": "7680 x 4320",
+    "MemorySize": 24000,
+    "MemoryTechnology": "GDDR6X SDRAM",
+    "MemoryBusWidth": 0,
+    "RequriedPowerSupply": 0,
+    "Width": 32.59,
+    "PCIExpress": 4,
+    "Id": 15,
+    "Name": "ASUS GeForce RTX 3090 TI",
+    "Price": 13799.45
+  },
+  {
+    "GraphicsEngine": "NVIDIA GeForce RTX 3070 TI",
+    "CUDACore": 6144,
+    "VRReady": true,
+    "MaxResolution": "7680 x 4320",
+    "MemorySize": 8000,
+    "MemoryTechnology": "GDDR6X SDRAM",
+    "MemoryBusWidth": 0,
+    "RequriedPowerSupply": 0,
+    "Width": 29.49,
+    "PCIExpress": 4,
+    "Id": 16,
+    "Name": "Gigabyte GeForce RTX 3070 TI",
+    "Price": 5605.89
+  },
+  {
+    "GraphicsEngine": "NVIDIA GeForce RTX 3060 TI",
+    "CUDACore": 4864,
+    "VRReady": true,
+    "MaxResolution": "7680 x 4320",
+    "MemorySize": 8000,
+    "MemoryTechnology": "GDDR6X SDRAM",
+    "MemoryBusWidth": 0,
+    "RequriedPowerSupply": 0,
+    "Width": 21.31,
+    "PCIExpress": 4,
+    "Id": 17,
+    "Name": "MSI GeForce RTX 3060 TI Ventus",
+    "Price": 3881.03
+  }
+]
