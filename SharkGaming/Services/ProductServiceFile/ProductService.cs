@@ -90,6 +90,22 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             return _gPUs;
         }
+
+        public GPU GetGPUs(int id)
+        {
+            if (id != null)
+            {
+                foreach (GPU i in _gPUs)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
+
         public List<Motherboard> GetMotherboards()
         {
             return _motherboards;
