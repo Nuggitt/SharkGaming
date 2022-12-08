@@ -1,5 +1,5 @@
 ﻿@page
-@model SharkGaming.Pages.ProductInfoPages.ComponentInfoPages.RamPage1Model
+@model SharkGaming.Pages.ProductInfoPages.ComponentInfoPages.RamPage3Model
 @{
 }
 
@@ -9,7 +9,7 @@
         {
             foreach (var item in Model.components)
             {
-                @if (item.Id == 55)
+                @if (item.Id == 59)
                 {
                     <td>
                         @item.Name;
@@ -30,12 +30,12 @@
         <h3 style="color:white">Description</h3>
         <p style="color:white">SharkGaming aquarium is a case that allows you to connect to the motherboard and control RGB through the software</p>
         <h1 style="color:white">
-            Price: 
+            Price:
             @if (Model.components != null)
             {
-                foreach(var item in Model.components)
+                foreach (var item in Model.components)
                 {
-                    @if (item.Id == 55)
+                    @if (item.Id == 59)
                     {
                         <td>
                             @item.Price;
@@ -50,45 +50,17 @@
 
 <br />
 
-<table class="table table-bordered border-black center bg-dark text-white" style="width:85%">
+<table class="table table-bordered center bg-dark text-white" style="width:85%">
     <thead>
         <tr>
             <th style="width:50%">Specification</th>
-            <th style="widht: 50%">Info</th>
+            <th style="width:50%">Info</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>Compatibility</td>
-            <td>AMD and Intel</td>
-        </tr>
-        <tr>
-            <td>Capacity</td>
-            <td> 16 gb</td>
-        </tr>
-        <tr>
-            <td>Technology</td>
-            <td>DDR4</td>
-        </tr>
-        <tr>
-            <td>Form factor</td>
-            <td>DIMM 288-pin</td>
-        </tr>
-        <tr>
-            <td>Speed</td>
-            <td>3200 MHz</td>
-        </tr>
-        <tr>
-            <td>Latency timings</td>
-            <td>CL 16</td>
-        </tr>
-        <tr>
-            <td>Voltage</td>
-            <td>1.35</td>
-        </tr>
-        <tr>
-            <td>Colour category</td>
-            <td>RGB</td>
+            <td>navn</td>
+            <td>info</td>
         </tr>
     </tbody>
 </table>

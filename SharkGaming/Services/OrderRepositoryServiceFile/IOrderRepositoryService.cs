@@ -18,11 +18,5 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         IEnumerable<OrderClass> CustomerEmailSearch(OrderClass order);
 
         OrderClass DeleteOrder(int? orderId);
-
-        double CalculateTotalPrice();
-
-
-
-
     }
 }
