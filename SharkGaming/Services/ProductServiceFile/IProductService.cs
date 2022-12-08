@@ -56,7 +56,8 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Update Product
-        void UpdateProduct(ProductsClass item);
+        //void UpdateProduct(ProductsClass item);
+        void UpdateRAM(RAM ram);
         #endregion
 
         #region Get Product via ID

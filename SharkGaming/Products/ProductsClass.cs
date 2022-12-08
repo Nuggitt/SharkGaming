@@ -24,7 +24,7 @@ namespace SharkGaming.Products
         public int Id { get; set; }
 
         [Display(Name = "Item Navn")]
-        [Required(ErrorMessage = "Item skal have et navn"), MaxLength(20)]
+        [Required(ErrorMessage = "Item skal have et navn"), MaxLength(500)]
         public string Name { get; set; }
 
         [Display(Name = "Pris")]

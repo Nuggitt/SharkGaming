@@ -432,6 +432,22 @@ namespace SharkGaming.Services.ProductServiceFile
 
             }
         }
+        public void UpdateRAM(RAM ram)
+        {
+            if (ram != null)
+            {
+                foreach (RAM i in _rAMs)
+                {
+                    if (i.Id == ram.Id)
+                    {
+                        i.Name = ram.Name;
+                        i.Price = ram.Price;
+                    }
+                }
+                JsonService.SaveJsonRAM(_rAMs);
+            }
+        }
+
         #endregion
 
         #region price filter 

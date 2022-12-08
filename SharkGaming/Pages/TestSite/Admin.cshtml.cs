@@ -23,7 +23,7 @@ namespace SharkGaming.Pages.TestSite
             ram = _productService.GetRAMs(id);
             if (ram == null)
             {
-                /*return RedirectToPage("TestRoom")*/; //Not found ikke defineret endnu
+                return RedirectToPage("TestRoom"); //Not found ikke defineret endnu
 
             }
             return Page();
@@ -31,12 +31,12 @@ namespace SharkGaming.Pages.TestSite
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-            _productService.UpdateProduct(ram);
-            return RedirectToPage("Index");
+            //if (!ModelState.IsValid)
+            //{
+            //    return Page();
+            //}
+            _productService.UpdateRAM(ram);
+            return RedirectToPage("AdminRAMPage");
         }
 
 

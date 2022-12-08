@@ -1,0 +1,38 @@
+[
+  {
+    "Capacity": 16,
+    "Technology": "DDR4",
+    "FormFactor": "DIMM 288-pin",
+    "Speed": 3200,
+    "LatencyTimings": "CL 16",
+    "Voltage": 1.35,
+    "ColourCategory": "RGB",
+    "Id": 24,
+    "Name": "Corsair Vengeance RGB Black Pro 16GB",
+    "Price": 543
+  },
+  {
+    "Capacity": 32,
+    "Technology": "DDR4",
+    "FormFactor": "DIMM 288-pin",
+    "Speed": 3200,
+    "LatencyTimings": "CL 16",
+    "Voltage": 1.35,
+    "ColourCategory": "RGB",
+    "Id": 25,
+    "Name": "G.SKILL TridentZ RGB Series 32GB",
+    "Price": 1177
+  },
+  {
+    "Capacity": 16,
+    "Technology": "DDR4",
+    "FormFactor": "DIMM 288-pin",
+    "Speed": 3200,
+    "LatencyTimings": "CL 18",
+    "Voltage": 1.35,
+    "ColourCategory": "RGB",
+    "Id": 26,
+    "Name": "Kingston FURY Beast 16GB",
+    "Price": 262.88
+  }
+]
