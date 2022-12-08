@@ -28,15 +28,15 @@ namespace SharkGaming.Pages.TestSite
         //    return Page();
         //}
 
-        public IActionResult OnPost()
-        {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-            _productService.UpdateProduct(products);
-            return RedirectToPage("Index");
-        }
+        //public IActionResult OnPost()
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return Page();
+        //    }
+        //    _productService.UpdateProduct(products);
+        //    return RedirectToPage("Index");
+        //}
 
 
 
