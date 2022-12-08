@@ -21,22 +21,17 @@ namespace SharkGaming.Services.ProductServiceFile
 {
     public class ProductService : IProductService
     {
-        #region Lists
-        private List<ProductsClass> _products;
-        private List<ComponentsClass> _components;
+        #region Lists       
         private List<PreBuildsClass> _preBuilds;
         private List<CustomPcClass> _customPcs;
         private List<Cases> _cases;
-        private List<CoolingClass> _cooling;
         private List<CaseFan> _caseFans;
-        private List<CPUCooling> _cPUCooling;
         private List<CPUAirCooling> _cPUAirCooling;
         private List<CPUWaterCooling> _cPUWaterCooling;
         private List<CPU> _cPUs;
         private List<GPU> _gPUs;
         private List<Motherboard> _motherboards;
         private List<PowerSupply> _powerSupplies;
-        private List<StorageClass> _storage;
         private List<RAM> _rAMs;
         private List<Mdot2> _mdot2s;
         private List<SolidStateDrive> _solidStateDrives;
@@ -45,35 +40,24 @@ namespace SharkGaming.Services.ProductServiceFile
         #region initialise Lists
         public ProductService()
         {
-            //_products = MockProducts.GetMockProducts();
-            _components = MockComponents.GetMockComponentsClass();
+            
             //_preBuilds = MockPreBuilds.GetMockPreBuilds();
             //_customPcs = MockCustomPC.GetMockCustomPcs();
-            _cases = MockCaseS.GetMockCases();
-            _cooling = MockCooling.GetMockCooling();
+            _cases = MockCaseS.GetMockCases();            
             _caseFans = MockCaseFan.GetMockCaseFans();
             _cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCoolings();
             _cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling();
             _cPUs = MockCPU.GetMockCPUs();
             _gPUs = MockGPU.GetMockGPUs();
             _motherboards = MockMotherboard.GetMockMotherboards();
-            _powerSupplies = MockPowerSupply.GetMockPowerSupplies();
-            _storage = MockStorage.GetMockStorage();
+            _powerSupplies = MockPowerSupply.GetMockPowerSupplies();            
             _rAMs = MockRam.GetMockRam();
             _mdot2s = MockMdot.GetMockMdot2s();
             _solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives();
         }
         #endregion
 
-        #region Get methods
-        public List<ProductsClass> GetAllProducts()
-        {
-            return _products;
-        }
-        public List<ComponentsClass> GetAllComponents()
-        {
-            return _components;
-        }
+        #region Get methods       
         public List<PreBuildsClass> GetPreBuilds()
         {
             return _preBuilds;
@@ -85,19 +69,11 @@ namespace SharkGaming.Services.ProductServiceFile
         public List<Cases> GetCases()
         {
             return _cases;
-        }
-        public List<CoolingClass> GetAllCooling()
-        {
-            return _cooling;
-        }
+        }      
         public List<CaseFan> GetCaseFans()
         {
             return _caseFans;
-        }
-        public List<CPUCooling> GetCPUCooling()
-        {
-            return _cPUCooling;
-        }
+        }       
         public List<CPUAirCooling> GetCPUAirCooling()
         {
             return _cPUAirCooling;
@@ -126,10 +102,6 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             return _rAMs;
         }
-        public List<StorageClass> GetStorage()
-        {
-            return _storage;
-        }
         public List<Mdot2> GetMdot2()
         {
             return _mdot2s;
@@ -141,16 +113,6 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Add to list methods
-        public void AddProduct(ProductsClass product)
-        {
-            _products.Add(product);
-            JsonService.SaveJsonProducts(_products);
-        }
-        public void AddComponent(ComponentsClass comp)
-        {
-            _components.Add(comp);
-            JsonService.SaveJsonComponents(_components);
-        }
         public void AddPreBuild(PreBuildsClass preBuilds)
         {
             _preBuilds.Add(preBuilds);
@@ -165,21 +127,11 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             _cases.Add(cas);
             JsonService.SaveJsonCases(_cases);
-        }
-        public void AddCooling(CoolingClass cooling)
-        {
-            _cooling.Add(cooling);
-            JsonService.SaveJsonCooling(_cooling);
-        }
+        }       
         public void AddCaseFan(CaseFan caseFan)
         {
             _caseFans.Add(caseFan);
             JsonService.SaveJsonCaseFans(_caseFans);
-        }
-        public void AddCPUCooling(CPUCooling cpuCooling)
-        {
-            _cPUCooling.Add(cpuCooling);
-            JsonService.SaveJsonCPUCooling(_cPUCooling);
         }
         public void AddCPUAirCooling(CPUAirCooling air)
         {
@@ -216,11 +168,6 @@ namespace SharkGaming.Services.ProductServiceFile
             _rAMs.Add(ram);           
             JsonService.SaveJsonRAM(_rAMs);
         }
-        public void AddStorage(StorageClass storage)
-        {
-            _storage.Add(storage);
-            JsonService.SaveJsonStorage(_storage);
-        }
         public void AddMdot2(Mdot2 mdot2)
         {
             _mdot2s.Add(mdot2);
@@ -251,24 +198,84 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 if (!string.IsNullOrWhiteSpace(str))
                 {
-                    foreach (ProductsClass item in _products)
+                    foreach (ProductsClass item in _preBuilds)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
                             nameSearch.Add(item);
                         }
                     }
-                }
-                return nameSearch;
-            }
-        }
-        public IEnumerable<ComponentsClass> ComponentNameSearch(string str)
-        {
-            List<ComponentsClass> nameSearch = new List<ComponentsClass>();
-            {
-                if (!string.IsNullOrWhiteSpace(str))
-                {
-                    foreach (ComponentsClass item in _components)
+                    foreach (ProductsClass item in _cases)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _caseFans)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _cPUAirCooling)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _cPUWaterCooling)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _cPUs)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _gPUs)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _motherboards)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _powerSupplies)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _rAMs)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _mdot2s)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            nameSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _solidStateDrives)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
@@ -286,24 +293,213 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             if (item != null)
             {
-                foreach (ProductsClass i in _products)
+                foreach (ProductsClass i in _preBuilds)
                 {
                     if (i.Id == item.Id)
                     {
                         i.Price = item.Price;
                         i.Name = item.Name;
                     }
+                    JsonService.SaveJsonPreBuilds(_preBuilds);
+                }              
+                
+                foreach (ProductsClass i in _cases)
+                {
+                    if (i.Id == item.Id)
+                    {
+                        i.Price = item.Price;
+                        i.Name = item.Name;
+                    }
+                    JsonService.SaveJsonCases(_cases);
                 }
-                JsonService.SaveJsonProducts(_products);
+
+                foreach (ProductsClass i in _cPUAirCooling)
+                {
+                    if (i.Id == item.Id)
+                    {
+                        i.Price = item.Price;
+                        i.Name = item.Name;
+                    }
+                    JsonService.SaveJsonCPUAirCooling(_cPUAirCooling);
+                }
+
+                foreach (ProductsClass i in _cPUWaterCooling)
+                {
+                    if (i.Id == item.Id)
+                    {
+                        i.Price = item.Price;
+                        i.Name = item.Name;
+                    }
+                    JsonService.SaveJsonCPUWaterCooling(_cPUWaterCooling);
+                }
+                
+                foreach (ProductsClass i in _cPUs)
+                {
+                    if (i.Id == item.Id)
+                    {
+                        i.Price = item.Price;
+                        i.Name = item.Name;
+                    }
+                    JsonService.SaveJsonCPU(_cPUs);
+                }
+
+                foreach (ProductsClass i in _gPUs)
+                {
+                    if (i.Id == item.Id)
+                    {
+                        i.Price = item.Price;
+                        i.Name = item.Name;
+                    }
+                    JsonService.SaveJsonGPU(_gPUs);
+                }
+
+                foreach (ProductsClass i in _motherboards)
+                {
+                    if (i.Id == item.Id)
+                    {
+                        i.Price = item.Price;
+                        i.Name = item.Name;
+                    }
+                    JsonService.SaveJsonMotherboards(_motherboards);
+                }
+                
+                foreach (ProductsClass i in _powerSupplies)
+                {
+                    if (i.Id == item.Id)
+                    {
+                        i.Price = item.Price;
+                        i.Name = item.Name;
+                    }
+                    JsonService.SaveJsonPowerSupply(_powerSupplies);
+                }
+
+                foreach (ProductsClass i in _rAMs)
+                {
+                    if (i.Id == item.Id)
+                    {
+                        i.Price = item.Price;
+                        i.Name = item.Name;
+                    }
+                    JsonService.SaveJsonRAM(_rAMs);
+                }
+
+                foreach (ProductsClass i in _mdot2s)
+                {
+                    if (i.Id == item.Id)
+                    {
+                        i.Price = item.Price;
+                        i.Name = item.Name;
+                    }
+                    JsonService.SaveJsonMdot2(_mdot2s);
+                }
+
+                foreach (ProductsClass i in _solidStateDrives)
+                {
+                    if (i.Id == item.Id)
+                    {
+                        i.Price = item.Price;
+                        i.Name = item.Name;
+                    }
+                    JsonService.SaveJsonSSD(_solidStateDrives);
+                }
+
             }
         }
         #endregion
 
-        #region price filter
+        #region price filter 
         public IEnumerable<ProductsClass> PriceFilter(double maxPrice, double minPrice = 0)
         {
             List<ProductsClass> filterList = new List<ProductsClass>();
-            foreach (ProductsClass item in _products)
+            foreach (ProductsClass item in _preBuilds)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+            
+            foreach (ProductsClass item in _cases)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            foreach (ProductsClass item in _caseFans)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            foreach (ProductsClass item in _cPUAirCooling)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            foreach (ProductsClass item in _cPUWaterCooling)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            foreach (ProductsClass item in _cPUs)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            foreach (ProductsClass item in _gPUs)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            foreach (ProductsClass item in _motherboards)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            foreach (ProductsClass item in _powerSupplies)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            foreach (ProductsClass item in _rAMs)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            foreach (ProductsClass item in _mdot2s)
+            {
+                if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
+                {
+                    filterList.Add(item);
+                }
+            }
+
+            foreach (ProductsClass item in _solidStateDrives)
             {
                 if ((minPrice == 0 && item.Price <= maxPrice) || (maxPrice == 0 && item.Price >= minPrice) || (item.Price >= minPrice && item.Price <= maxPrice))
                 {
@@ -333,39 +529,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #region Delete Product
         public ProductsClass DeleteProduct(int? itemId)
         {
-            #region Delete Product
-            ProductsClass productToBeDeleted = null;
-            foreach (ProductsClass item in _products)
-            {
-                if (item.Id == itemId)
-                {
-                    productToBeDeleted = item;
-                    break;
-                }
-            }
-            if (productToBeDeleted != null)
-            {
-                _products.Remove(productToBeDeleted);
-                JsonService.SaveJsonProducts(_products);
-            }
-            #endregion
-
-            #region Delete Component
-            ComponentsClass componentToBeDeleted = null;
-            foreach (ComponentsClass item in _components)
-            {
-                if (item.Id == itemId)
-                {
-                    componentToBeDeleted = item;
-                    break;
-                }
-            }
-            if (componentToBeDeleted != null)
-            {
-                _components.Remove(componentToBeDeleted);
-                JsonService.SaveJsonComponents(_components);
-            }
-            #endregion
+            ProductsClass deletedProduct = null;
 
             #region Delete Pre Build
             PreBuildsClass preBuildToBeDeleted = null;
@@ -381,8 +545,11 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _preBuilds.Remove(preBuildToBeDeleted);
                 JsonService.SaveJsonPreBuilds(_preBuilds);
+                deletedProduct = preBuildToBeDeleted;
             }
             #endregion
+
+            // custom pc
 
             #region Delete Case
             Cases caseToBeDeleted = null;
@@ -398,23 +565,7 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _cases.Remove(caseToBeDeleted);
                 JsonService.SaveJsonCases(_cases);
-            }
-            #endregion
-
-            #region Delete Cooling
-            CoolingClass coolingToBeDeleted = null;
-            foreach (CoolingClass item in _cooling)
-            {
-                if (item.Id == itemId)
-                {
-                    coolingToBeDeleted = item;
-                    break;
-                }
-            }
-            if (coolingToBeDeleted != null)
-            {
-                _cooling.Remove(coolingToBeDeleted);
-                JsonService.SaveJsonCooling(_cooling);
+                deletedProduct = caseToBeDeleted;
             }
             #endregion
 
@@ -432,6 +583,7 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _caseFans.Remove(caseFanToBeDeleted);
                 JsonService.SaveJsonCaseFans(_caseFans);
+                deletedProduct = caseFanToBeDeleted;
             }
             #endregion
 
@@ -449,6 +601,7 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _cPUAirCooling.Remove(cPUAirToBeDeleted);
                 JsonService.SaveJsonCPUAirCooling(_cPUAirCooling);
+                deletedProduct = cPUAirToBeDeleted;
             }
             #endregion
 
@@ -466,6 +619,7 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _cPUWaterCooling.Remove(cPUWaterToBeDeleted);
                 JsonService.SaveJsonCPUWaterCooling(_cPUWaterCooling);
+                deletedProduct = cPUWaterToBeDeleted;
             }
             #endregion
 
@@ -483,6 +637,7 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _cPUs.Remove(cPUToBeDeleted);
                 JsonService.SaveJsonCPU(_cPUs);
+                deletedProduct = cPUToBeDeleted;
             }
             #endregion
 
@@ -500,6 +655,7 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _gPUs.Remove(gPUToBeDeleted);
                 JsonService.SaveJsonGPU(_gPUs);
+                deletedProduct = gPUToBeDeleted;
             }
             #endregion
 
@@ -517,6 +673,7 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _motherboards.Remove(motherboardToBeDeleted);
                 JsonService.SaveJsonMotherboards(_motherboards);
+                deletedProduct = motherboardToBeDeleted;
             }
             #endregion
 
@@ -534,26 +691,10 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _powerSupplies.Remove(powerSuppliesToBeDeleted);
                 JsonService.SaveJsonPowerSupply(_powerSupplies);
+                deletedProduct = powerSuppliesToBeDeleted;
             }
             #endregion
-
-            #region Delete storage 
-            StorageClass storageToBeDeleted = null;
-            foreach (StorageClass item in _storage)
-            {
-                if (item.Id == itemId)
-                {
-                    storageToBeDeleted = item;
-                    break;
-                }
-            }
-            if (storageToBeDeleted != null)
-            {
-                _storage.Remove(storageToBeDeleted);
-                JsonService.SaveJsonStorage(_storage);
-            }
-            #endregion
-
+          
             #region Delete RAM
             RAM ramToBeDeleted = null;
             foreach (RAM item in _rAMs)
@@ -568,6 +709,7 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _rAMs.Remove(ramToBeDeleted);
                 JsonService.SaveJsonRAM(_rAMs);
+                deletedProduct = ramToBeDeleted;
             }
             #endregion
 
@@ -581,10 +723,11 @@ namespace SharkGaming.Services.ProductServiceFile
                     break;
                 }
             }
-            if (ramToBeDeleted != null)
+            if (mdot2ToBeDeleted != null)
             {
                 _mdot2s.Remove(mdot2ToBeDeleted);
                 JsonService.SaveJsonMdot2(_mdot2s);
+                deletedProduct = mdot2ToBeDeleted;
             }
             #endregion
 
@@ -602,11 +745,11 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _solidStateDrives.Remove(SSDToBeDeleted);
                 JsonService.SaveJsonSSD(_solidStateDrives);
+                deletedProduct = SSDToBeDeleted;
             }
             #endregion
-
-
-            return productToBeDeleted;
+            
+            return deletedProduct;
         }
         #endregion
 
