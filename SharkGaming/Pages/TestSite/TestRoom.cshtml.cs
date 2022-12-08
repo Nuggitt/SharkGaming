@@ -29,7 +29,7 @@ namespace SharkGaming.Pages.TestSite
         public void OnGet()
         {
             //components = _productService.GetRAM();
-            Products = _productService.GetPreBuilds();
+            //Products = _productService.GetPreBuilds();
         }
 
 
