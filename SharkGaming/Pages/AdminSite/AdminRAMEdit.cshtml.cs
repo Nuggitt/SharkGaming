@@ -2,17 +2,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SharkGaming.Products.Components.ComponentTypes.RAM;
 using SharkGaming.Services.ProductServiceFile;
-using System.Reflection;
 
-namespace SharkGaming.Pages.TestSite
+namespace SharkGaming.Pages.AdminSite
 {
-    public class AdminModel : PageModel
+    public class AdminRAMEditModel : PageModel
     {
-
         private IProductService _productService;
         [BindProperty] public RAM ram { get; set; }
 
-        public AdminModel(IProductService productService)
+        public AdminRAMEditModel(IProductService productService)
         {
             _productService = productService;
         }
@@ -36,29 +34,7 @@ namespace SharkGaming.Pages.TestSite
             //    return Page();
             //}
             _productService.UpdateRAM(ram);
-            return RedirectToPage("AdminRAMPage");
+            return RedirectToPage("AdminRAMListPage");
         }
-
-
-
-
-
-
     }
-
-
-
-
 }
-
-
-        
-
-
-    
-
-
-    
-    
-
-

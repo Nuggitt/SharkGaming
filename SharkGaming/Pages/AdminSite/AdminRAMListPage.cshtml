@@ -1,5 +1,5 @@
 ﻿@page
-@model SharkGaming.Pages.TestSite.AdminRAMPageModel
+@model SharkGaming.Pages.AdminSite.AdminRAMListPageModel
 @{
 }
 
@@ -36,7 +36,7 @@
 						@item.Price
 					</td>
 					<td>
-						<a class="btn btn-primary btn-sm" type="button" title="Update" asp-page="Admin" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+						<a class="btn btn-primary btn-sm" type="button" title="Update" asp-page="AdminRAMEdit" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
 					</td>
 				</tr>
 			}
@@ -45,5 +45,5 @@
 </table>
 
 <div>
-    <a asp-page="/TestSite/AdminMainPage">Back to List</a>
+    <a asp-page="/AdminSite/AdminMainPage">Back to List</a>
 </div>

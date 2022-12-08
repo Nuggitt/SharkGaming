@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using SharkGaming.Products.Components.ComponentTypes.RAM;
 using SharkGaming.Services.ProductServiceFile;
 
-namespace SharkGaming.Pages.TestSite
+namespace SharkGaming.Pages.AdminSite
 {
-    public class AdminRAMPageModel : PageModel
+    public class AdminRAMListPageModel : PageModel
     {
         private IProductService _productService;
 
-        public AdminRAMPageModel(IProductService iproductervice)
+        public AdminRAMListPageModel(IProductService iproductervice)
         {
             _productService = iproductervice;
         }

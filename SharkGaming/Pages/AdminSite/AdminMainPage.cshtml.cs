@@ -1,16 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SharkGaming.Products.Components.ComponentTypes.RAM;
-using SharkGaming.Services.ProductServiceFile;
 
-namespace SharkGaming.Pages.TestSite
+namespace SharkGaming.Pages.AdminSite
 {
     public class AdminMainPageModel : PageModel
     {
-
-
         public void OnGet()
         {
-
         }
     }
 }
