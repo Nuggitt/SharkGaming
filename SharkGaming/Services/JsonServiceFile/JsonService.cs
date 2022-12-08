@@ -1,4 +1,5 @@
-﻿using SharkGaming.Products;
+﻿using SharkGaming.Order;
+using SharkGaming.Products;
 using SharkGaming.Products.Components;
 using SharkGaming.Products.Components.ComponentTypes.Cooling;
 using SharkGaming.Products.Components.ComponentTypes.CPU;
@@ -86,7 +87,7 @@ namespace SharkGaming.Services.JsonServiceFile
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "PreBuilds.json"); }
         }
 
-        public void SaveJsonPreBuilds(List<PreBuildsClass> preBuilds)
+        public void SaveJsonPreBuilds(List<ProductsClass> preBuilds)
         {
             using (FileStream jsonFileWriter = File.Create(JsonFileNamePreBuilds))
             {
@@ -95,15 +96,15 @@ namespace SharkGaming.Services.JsonServiceFile
                     SkipValidation = false,
                     Indented = true
                 });
-                JsonSerializer.Serialize<PreBuildsClass[]>(jsonWriter, preBuilds.ToArray());
+                JsonSerializer.Serialize<ProductsClass[]>(jsonWriter, preBuilds.ToArray());
             }
         }
 
-        public IEnumerable<PreBuildsClass> GetJsonPreBuilds()
+        public IEnumerable<ProductsClass> GetJsonPreBuilds()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileNamePreBuilds))
             {
-                return JsonSerializer.Deserialize<PreBuildsClass[]>(jsonFileReader.ReadToEnd());
+                return JsonSerializer.Deserialize<ProductsClass[]>(jsonFileReader.ReadToEnd());
             }
         }
         #endregion
@@ -527,5 +528,34 @@ namespace SharkGaming.Services.JsonServiceFile
             }
         }
         #endregion
+
+        #region Order Json
+        private string JsonFileNameOrder
+        {
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "Order.json"); }
+        }
+
+        public void SaveJsonOrder(List<OrderClass> Order)
+        {
+            using (FileStream jsonFileWriter = File.Create(JsonFileNameOrder))
+            {
+                Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
+                {
+                    SkipValidation = false,
+                    Indented = true
+                });
+                JsonSerializer.Serialize<OrderClass[]>(jsonWriter, Order.ToArray());
+            }
+        }
+
+        public IEnumerable<OrderClass> GetJsonOrder()
+        {
+            using (StreamReader jsonFileReader = File.OpenText(JsonFileNameOrder))
+            {
+                return JsonSerializer.Deserialize<OrderClass[]>(jsonFileReader.ReadToEnd());
+            }
+        }
+        #endregion
+
     }
 }

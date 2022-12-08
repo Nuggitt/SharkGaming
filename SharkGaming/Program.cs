@@ -1,4 +1,5 @@
 using SharkGaming.Services.JsonServiceFile;
+using SharkGaming.Services.OrderRepositoryServiceFile;
 using SharkGaming.Services.ProductServiceFile;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IProductService, ProductService>();
 builder.Services.AddTransient<JsonService>();
+builder.Services.AddSingleton<IOrderRepositoryService, OrderRepositoryService>();
 
 var app = builder.Build();
 

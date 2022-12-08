@@ -1,5 +1,4 @@
-﻿
-using SharkGaming.Products.Components.ComponentTypes.Cooling;
+﻿using SharkGaming.Products.Components.ComponentTypes.Cooling;
 using SharkGaming.Products.Components.ComponentTypes.CPU;
 using SharkGaming.Products.Components.ComponentTypes.GPU;
 using SharkGaming.Products.Components.ComponentTypes.Motherboard;
@@ -22,7 +21,7 @@ namespace SharkGaming.Services.ProductServiceFile
     public class ProductService : IProductService
     {
         #region Lists       
-        private List<PreBuildsClass> _preBuilds;
+        private List<ProductsClass> _preBuilds;
         private List<CustomPcClass> _customPcs;
         private List<Cases> _cases;
         private List<CaseFan> _caseFans;
@@ -58,7 +57,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Get methods       
-        public List<PreBuildsClass> GetPreBuilds()
+        public List<ProductsClass> GetPreBuilds()
         {
             return _preBuilds;
         }
@@ -70,7 +69,7 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             return _cases;
         }      
-        public List<CaseFan> GetCaseFans()
+        public List<CaseFan> GetCaseFan()
         {
             return _caseFans;
         }       
@@ -115,7 +114,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Add to list methods
-        public void AddPreBuild(PreBuildsClass preBuilds)
+        public void AddPreBuild(ProductsClass preBuilds)
         {
             _preBuilds.Add(preBuilds);
             JsonService.SaveJsonPreBuilds(_preBuilds);  
@@ -189,7 +188,32 @@ namespace SharkGaming.Services.ProductServiceFile
         public ProductService(JsonService jsonService)
         {
             JsonService = jsonService;
-            _rAMs = MockRam.GetMockRam().ToList();
+            //_preBuilds = MockPreBuilds.GetMockPreBuilds().ToList();
+            //_customPcs = MockCustomPC.GetMockCustomPcs().ToList();
+            //_cases = MockCaseS.GetMockCases().ToList();
+            //_caseFans = MockCaseFan.GetMockCaseFans().ToList();
+            //_cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCoolings().ToList();
+            //_cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling().ToList();
+            //_cPUs = MockCPU.GetMockCPUs().ToList();
+            //_gPUs = MockGPU.GetMockGPUs().ToList();
+            //_motherboards = MockMotherboard.GetMockMotherboards().ToList();
+            //_powerSupplies = MockPowerSupply.GetMockPowerSupplies().ToList();
+            //_rAMs = MockRam.GetMockRam().ToList();
+            //_mdot2s = MockMdot.GetMockMdot2s().ToList();
+            //_solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives().ToList();
+
+
+            _cases = JsonService.GetJsonCases().ToList();
+            _caseFans = JsonService.GetJsonCaseFans().ToList();
+            _cPUAirCooling = JsonService.GetJsonCPUAirCooling().ToList();
+            _cPUWaterCooling = JsonService.GetJsonCPUWaterrCooling().ToList();
+            _cPUs = JsonService.GetJsonCPU().ToList();
+            _gPUs = JsonService.GetJsonGPU().ToList();
+            _motherboards = JsonService.GetJsonMotherboards().ToList();
+            _powerSupplies = JsonService.GetJsonPowerSupply().ToList();
+            _rAMs = JsonService.GetJsonRAM().ToList();
+            _mdot2s = JsonService.GetJsonMdot2().ToList();
+            _solidStateDrives = JsonService.GetJsonSSD().ToList();
         }
         #endregion
 
@@ -291,120 +315,195 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region update methods
-        public void UpdateProduct(ProductsClass item)
+        public void UpdatePreBuilds(ProductsClass productsClass)
         {
-            if (item != null)
+            if (productsClass != null)
             {
                 foreach (ProductsClass i in _preBuilds)
                 {
-                    if (i.Id == item.Id)
+                    if (i.Id == productsClass.Id)
                     {
-                        i.Price = item.Price;
-                        i.Name = item.Name;
+                        i.Name = productsClass.Name;
+                        i.Price = productsClass.Price;
                     }
-                    JsonService.SaveJsonPreBuilds(_preBuilds);
-                }              
-                
-                foreach (ProductsClass i in _cases)
-                {
-                    if (i.Id == item.Id)
-                    {
-                        i.Price = item.Price;
-                        i.Name = item.Name;
-                    }
-                    JsonService.SaveJsonCases(_cases);
                 }
+                JsonService.SaveJsonPreBuilds(_preBuilds);
+            }
+        }
 
-                foreach (ProductsClass i in _cPUAirCooling)
+        public void UpdateCase(Cases cases)
+        {
+            if (cases != null)
+            {
+                foreach (Cases i in _cases)
                 {
-                    if (i.Id == item.Id)
+                    if (i.Id == cases.Id)
                     {
-                        i.Price = item.Price;
-                        i.Name = item.Name;
+                        i.Name = cases.Name;
+                        i.Price = cases.Price;
                     }
-                    JsonService.SaveJsonCPUAirCooling(_cPUAirCooling);
                 }
+                JsonService.SaveJsonCases(_cases);
+            }
+        }
 
-                foreach (ProductsClass i in _cPUWaterCooling)
+        public void UpdateCaseFan(CaseFan caseFan)
+        {
+            if (caseFan != null)
+            {
+                foreach (CaseFan i in _caseFans)
                 {
-                    if (i.Id == item.Id)
+                    if (i.Id == caseFan.Id)
                     {
-                        i.Price = item.Price;
-                        i.Name = item.Name;
+                        i.Name = caseFan.Name;
+                        i.Price = caseFan.Price;
                     }
-                    JsonService.SaveJsonCPUWaterCooling(_cPUWaterCooling);
                 }
-                
-                foreach (ProductsClass i in _cPUs)
-                {
-                    if (i.Id == item.Id)
-                    {
-                        i.Price = item.Price;
-                        i.Name = item.Name;
-                    }
-                    JsonService.SaveJsonCPU(_cPUs);
-                }
+                JsonService.SaveJsonCaseFans(_caseFans);
+            }
+        }
 
-                foreach (ProductsClass i in _gPUs)
+        public void UpdateCPUAirCooling(CPUAirCooling cpuAirCooling)
+        {
+            if (cpuAirCooling != null)
+            {
+                foreach (CPUAirCooling i in _cPUAirCooling)
                 {
-                    if (i.Id == item.Id)
+                    if (i.Id == cpuAirCooling.Id)
                     {
-                        i.Price = item.Price;
-                        i.Name = item.Name;
+                        i.Name = cpuAirCooling.Name;
+                        i.Price = cpuAirCooling.Price;
                     }
-                    JsonService.SaveJsonGPU(_gPUs);
                 }
+                JsonService.SaveJsonCPUAirCooling(_cPUAirCooling);
+            }
+        }
 
-                foreach (ProductsClass i in _motherboards)
+        public void UpdateCPUWaterCooling(CPUWaterCooling cpuWaterCooling)
+        {
+            if (cpuWaterCooling != null)
+            {
+                foreach (CPUWaterCooling i in _cPUWaterCooling)
                 {
-                    if (i.Id == item.Id)
+                    if (i.Id == cpuWaterCooling.Id)
                     {
-                        i.Price = item.Price;
-                        i.Name = item.Name;
+                        i.Name = cpuWaterCooling.Name;
+                        i.Price = cpuWaterCooling.Price;
                     }
-                    JsonService.SaveJsonMotherboards(_motherboards);
                 }
-                
-                foreach (ProductsClass i in _powerSupplies)
-                {
-                    if (i.Id == item.Id)
-                    {
-                        i.Price = item.Price;
-                        i.Name = item.Name;
-                    }
-                    JsonService.SaveJsonPowerSupply(_powerSupplies);
-                }
+                JsonService.SaveJsonCPUWaterCooling(_cPUWaterCooling);
+            }
+        }
 
-                foreach (ProductsClass i in _rAMs)
+        public void UpdateCPU(CPU cpu)
+        {
+            if (cpu != null)
+            {
+                foreach (CPU i in _cPUs)
                 {
-                    if (i.Id == item.Id)
+                    if (i.Id == cpu.Id)
                     {
-                        i.Price = item.Price;
-                        i.Name = item.Name;
+                        i.Name = cpu.Name;
+                        i.Price = cpu.Price;
                     }
-                    JsonService.SaveJsonRAM(_rAMs);
                 }
+                JsonService.SaveJsonCPU(_cPUs);
+            }
+        }
 
-                foreach (ProductsClass i in _mdot2s)
+        public void UpdateGPU(GPU gpu)
+        {
+            if (gpu != null)
+            {
+                foreach (GPU i in _gPUs)
                 {
-                    if (i.Id == item.Id)
+                    if (i.Id == gpu.Id)
                     {
-                        i.Price = item.Price;
-                        i.Name = item.Name;
+                        i.Name = gpu.Name;
+                        i.Price = gpu.Price;
                     }
-                    JsonService.SaveJsonMdot2(_mdot2s);
                 }
+                JsonService.SaveJsonGPU(_gPUs);
+            }
+        }
 
-                foreach (ProductsClass i in _solidStateDrives)
+        public void UpdateMotherboards(Motherboard motherboard)
+        {
+            if (motherboard != null)
+            {
+                foreach (Motherboard i in _motherboards)
                 {
-                    if (i.Id == item.Id)
+                    if (i.Id == motherboard.Id)
                     {
-                        i.Price = item.Price;
-                        i.Name = item.Name;
+                        i.Name = motherboard.Name;
+                        i.Price = motherboard.Price;
                     }
-                    JsonService.SaveJsonSSD(_solidStateDrives);
                 }
+                JsonService.SaveJsonMotherboards(_motherboards);
+            }
+        }
 
+        public void UpdatePowerSupply(PowerSupply powerSupply)
+        {
+            if (powerSupply != null)
+            {
+                foreach (PowerSupply i in _powerSupplies)
+                {
+                    if (i.Id == powerSupply.Id)
+                    {
+                        i.Name = powerSupply.Name;
+                        i.Price = powerSupply.Price;
+                    }
+                }
+                JsonService.SaveJsonPowerSupply(_powerSupplies);
+            }
+        }
+
+        public void UpdateMdot2(Mdot2 mdot2)
+        {
+            if (mdot2 != null)
+            {
+                foreach (Mdot2 i in _mdot2s)
+                {
+                    if (i.Id == mdot2.Id)
+                    {
+                        i.Name = mdot2.Name;
+                        i.Price = mdot2.Price;
+                    }
+                }
+                JsonService.SaveJsonMdot2(_mdot2s);
+            }
+        }
+
+        public void UpdateRAM(RAM ram)
+        {
+            if (ram != null)
+            {
+                foreach (RAM i in _rAMs)
+                {
+                    if (i.Id == ram.Id)
+                    {
+                        i.Name = ram.Name;
+                        i.Price = ram.Price;
+                    }
+                }
+                JsonService.SaveJsonRAM(_rAMs);
+            }
+        }
+
+        public void UpdateSSD(SolidStateDrive solidStateDrive)
+        {
+            if (solidStateDrive != null)
+            {
+                foreach (SolidStateDrive i in _solidStateDrives)
+                {
+                    if (i.Id == solidStateDrive.Id)
+                    {
+                        i.Name = solidStateDrive.Name;
+                        i.Price = solidStateDrive.Price;
+                    }
+                }
+                JsonService.SaveJsonSSD(_solidStateDrives);
             }
         }
         #endregion
@@ -523,65 +622,176 @@ namespace SharkGaming.Services.ProductServiceFile
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _cases)
+            }
+            return null;
+        }
+
+        public Cases GetCases(int id)
+        {
+            if (id != null)
+            {
+                foreach (Cases i in _cases)
+                {
                     if (i.Id == id)
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _caseFans)
+                }
+            }
+            return null;
+        }
+
+        public CaseFan GetCaseFans(int id)
+        {
+            if (id != null)
+            {
+                foreach (CaseFan i in _caseFans)
+                {
                     if (i.Id == id)
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _cPUAirCooling)
+                }
+            }
+            return null;
+        }
+
+        public CPUAirCooling GetCPUAirCoolings(int id)
+        {
+            if (id != null)
+            {
+                foreach (CPUAirCooling i in _cPUAirCooling)
+                {
                     if (i.Id == id)
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _cPUWaterCooling)
+                }
+            }
+            return null;
+        }
+
+        public CPUWaterCooling GetCPUWaterCoolings(int id)
+        {
+            if (id != null)
+            {
+                foreach (CPUWaterCooling i in _cPUWaterCooling)
+                {
                     if (i.Id == id)
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _cPUs)
+                }
+            }
+            return null;
+        }
+
+        public CPU GetCPUs(int id)
+        {
+            if (id != null)
+            {
+                foreach (CPU i in _cPUs)
+                {
                     if (i.Id == id)
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _gPUs)
+                }
+            }
+            return null;
+        }
+
+        public GPU GetGPUs(int id)
+        {
+            if (id != null)
+            {
+                foreach (GPU i in _gPUs)
+                {
                     if (i.Id == id)
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _motherboards)
+                }
+            }
+            return null;
+        }
+
+        public Motherboard GetMotherboards(int id)
+        {
+            if (id != null)
+            {
+                foreach (Motherboard i in _motherboards)
+                {
                     if (i.Id == id)
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _powerSupplies)
+                }
+            }
+            return null;
+        }
+
+        public PowerSupply GetPowerSupplys(int id)
+        {
+            if (id != null)
+            {
+                foreach (PowerSupply i in _powerSupplies)
+                {
                     if (i.Id == id)
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _rAMs)
+                }
+            }
+            return null;
+        }
+
+        public Mdot2 GetMdot2s(int id)
+        {
+            if (id != null)
+            {
+                foreach (Mdot2 i in _mdot2s)
+                {
                     if (i.Id == id)
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _mdot2s)
+                }
+            }
+            return null;
+        }
+
+        public SolidStateDrive GetSolidStateDrives(int id)
+        {
+            if (id != null)
+            {
+                foreach (SolidStateDrive i in _solidStateDrives)
+                {
                     if (i.Id == id)
                     {
                         return i;
                     }
-                foreach (ProductsClass i in _solidStateDrives)
+                }
+            }
+            return null;
+        }
+
+        public RAM GetRAMs(int id)
+        {
+            if (id != null)
+            {
+                foreach (RAM i in _rAMs)
+                {
                     if (i.Id == id)
                     {
                         return i;
                     }
+                }
             }
             return null;
         }
         #endregion
+
 
         #region Delete Product
         public ProductsClass DeleteProduct(int? itemId)
@@ -589,8 +799,8 @@ namespace SharkGaming.Services.ProductServiceFile
             ProductsClass deletedProduct = null;
 
             #region Delete Pre Build
-            PreBuildsClass preBuildToBeDeleted = null;
-            foreach (PreBuildsClass item in _preBuilds)
+            ProductsClass preBuildToBeDeleted = null;
+            foreach (ProductsClass item in _preBuilds)
             {
                 if (item.Id == itemId)
                 {

@@ -1,4 +1,7 @@
-﻿namespace SharkGaming.Products.Components.ComponentTypes.RAM
+﻿using System.ComponentModel.DataAnnotations;
+using System.Xml.Linq;
+
+namespace SharkGaming.Products.Components.ComponentTypes.RAM
 {
     public class RAM : ComponentsClass
     {
@@ -27,5 +30,7 @@
         {
 
         }
+
+        
     }
 }

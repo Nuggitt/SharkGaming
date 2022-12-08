@@ -1,0 +1,35 @@
+[
+  {
+    "PSUFormFactor": "ATX",
+    "ColourCategory": "Black",
+    "ClassType": "Titanium",
+    "PowerCapacity": 1600,
+    "Molex": true,
+    "CoolingSystem": "Passiv",
+    "Id": 21,
+    "Name": "Corsair AX1600I Modular Titanium",
+    "Price": 4139.77
+  },
+  {
+    "PSUFormFactor": "ATX",
+    "ColourCategory": "Black",
+    "ClassType": "Bronze",
+    "PowerCapacity": 550,
+    "Molex": false,
+    "CoolingSystem": "Aktive",
+    "Id": 22,
+    "Name": "NZXT C550",
+    "Price": 784.76
+  },
+  {
+    "PSUFormFactor": "ATX",
+    "ColourCategory": "Black",
+    "ClassType": "Gold",
+    "PowerCapacity": 750,
+    "Molex": true,
+    "CoolingSystem": "Aktive",
+    "Id": 23,
+    "Name": "Asus ROG Strix 750 Modular",
+    "Price": 1130.61
+  }
+]

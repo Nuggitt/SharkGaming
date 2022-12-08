@@ -17,7 +17,7 @@
             Type = type;
             Socket = socket;
             FanAmount = fanAmount;
-            Id = nextId++;
+            
         }
     }
 }

@@ -1,0 +1,41 @@
+[
+  {
+    "ClockSpeed": 3.4,
+    "BoostClock": 4.9,
+    "Core": 16,
+    "Threads": 32,
+    "Socket": "AM4",
+    "UnlockForOC": true,
+    "PCIExpress": 4,
+    "ThermalDesignPower": 105,
+    "Id": 12,
+    "Name": "Ryzen 9 5950X",
+    "Price": 4657.26
+  },
+  {
+    "ClockSpeed": 3.8,
+    "BoostClock": 4.7,
+    "Core": 8,
+    "Threads": 16,
+    "Socket": "AM4",
+    "UnlockForOC": true,
+    "PCIExpress": 4,
+    "ThermalDesignPower": 105,
+    "Id": 13,
+    "Name": "Ryzen 7 5800X",
+    "Price": 1858.6
+  },
+  {
+    "ClockSpeed": 2.6,
+    "BoostClock": 4.4,
+    "Core": 6,
+    "Threads": 12,
+    "Socket": "Socket 1200",
+    "UnlockForOC": false,
+    "PCIExpress": 4,
+    "ThermalDesignPower": 65,
+    "Id": 14,
+    "Name": "Intel i5 11400 11th",
+    "Price": 1164.71
+  }
+]

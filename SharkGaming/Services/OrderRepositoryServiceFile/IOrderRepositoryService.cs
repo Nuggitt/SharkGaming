@@ -1,21 +1,22 @@
-﻿namespace SharkGaming.Services.OrderRepositoryServiceFile
+﻿using SharkGaming.Order;
+using SharkGaming.Products;
+using SharkGaming.Users.Customer;
+
+namespace SharkGaming.Services.OrderRepositoryServiceFile
 {
     public interface IOrderRepositoryService
     {
-        public void CreateOrder();
 
-        public void ReadOrder();
+        List<OrderClass> GetOrders();
+        
+        void AddOrder(OrderClass order);
+        
+        void UpdateOrder(OrderClass order);
+        
+        OrderClass GetOrderById(int id);
 
-        public void UpdateOrder();
+        IEnumerable<OrderClass> CustomerEmailSearch(OrderClass order);
 
-        public void DeleteOrder();
-
-        public void AddOrderItemToOrderList();
-
-        public double CalculateTotalPrice();
-
-
-
-
+        OrderClass DeleteOrder(int? orderId);
     }
 }

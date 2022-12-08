@@ -105,3 +105,11 @@ footer{
     color: white;
     text-align: center;
 }
+
+.columnCustom {
+    column-count: 2;
+}
+
+table.border-black {
+    border-color: black;
+}
