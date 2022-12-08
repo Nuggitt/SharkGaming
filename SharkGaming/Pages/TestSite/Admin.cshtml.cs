@@ -8,13 +8,13 @@ namespace SharkGaming.Pages.TestSite
     public class AdminModel : PageModel
     {
 
-        private ProductService _productService;
+        private IProductService _productService;
         [BindProperty] public Products.ProductsClass products { get; set; }
 
-        //public AdminModel(ProductService productService)
-        //{
-        //    _productService = productService;
-        //}
+        public AdminModel(IProductService productService)
+        {
+            _productService = productService;
+        }
 
         //public IActionResult OnGet(int id)
 
