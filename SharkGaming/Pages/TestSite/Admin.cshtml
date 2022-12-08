@@ -4,18 +4,14 @@
 }
 <form method="post">
     <div class="form-group">
-        <label asp-for="products.Id" class="control-lable"></label>
-        <input asp-for="products.Id" class="form-control" readonly="@(true)" />
+        <label asp-for="ram.Name" class="control-lable"></label>
+        <input asp-for="ram.Name" class="form-control" />
+        <span asp-validation-for="ram.Name" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="products.Name" class="control-lable"></label>
-        <input asp-for="products.Name" class="form-control" />
-        <span asp-validation-for="products.Name" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="products.Price" class="control-lable"></label>
-        <input asp-for="products.Price" class="form-control" />
-        <span asp-validation-for="products.Price" class="text-danger"></span>
+        <label asp-for="ram.Price" class="control-lable"></label>
+        <input asp-for="ram.Price" class="form-control" />
+        <span asp-validation-for="ram.Price" class="text-danger"></span>
     </div>
 
     <div class="form-group">

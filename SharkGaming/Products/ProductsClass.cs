@@ -19,10 +19,9 @@ namespace SharkGaming.Products
 
         }
 
-        [Display(Name = "Item ID")]
-        [Required(ErrorMessage = "Der skal angives et ID til item")]
-        [Range(typeof(int), "0", "10000", ErrorMessage = "ID skal være mellem {1} og {2}")]
-        public int? Id { get; set; }
+
+        
+        public int Id { get; set; }
 
         [Display(Name = "Item Navn")]
         [Required(ErrorMessage = "Item skal have et navn"), MaxLength(20)]

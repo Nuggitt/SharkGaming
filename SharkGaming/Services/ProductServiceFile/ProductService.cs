@@ -595,6 +595,21 @@ namespace SharkGaming.Services.ProductServiceFile
         }
         #endregion
 
+        public RAM GetRAMs(int id)
+        {
+            if (id != null)
+            {
+                foreach (RAM i in _rAMs)
+                {
+                    if (i.Id == id)
+                    {
+                        return i;
+                    }
+                }
+            }
+            return null;
+        }
+
         #region Delete Product
         public ProductsClass DeleteProduct(int? itemId)
         {
