@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SharkGaming.Products.Components.ComponentTypes.RAM;
 using SharkGaming.Services.ProductServiceFile;
 using System.Reflection;
 
@@ -9,34 +10,34 @@ namespace SharkGaming.Pages.TestSite
     {
 
         private IProductService _productService;
-        [BindProperty] public Products.ProductsClass products { get; set; }
+        [BindProperty] public RAM ram { get; set; }
 
         public AdminModel(IProductService productService)
         {
             _productService = productService;
         }
 
-        //public IActionResult OnGet(int id)
+        public IActionResult OnGet(int id)
 
-        //{
-        //    products = _productService.GetProduct(id);
-        //    if (products == null)
-        //    {
-        //        return RedirectToPage("/NotFound"); //Not found ikke defineret endnu
+        {
+            ram = _productService.GetRAMs(id);
+            if (ram == null)
+            {
+                /*return RedirectToPage("TestRoom")*/; //Not found ikke defineret endnu
 
-        //    }
-        //    return Page();
-        //}
+            }
+            return Page();
+        }
 
-        //public IActionResult OnPost()
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return Page();
-        //    }
-        //    _productService.UpdateProduct(products);
-        //    return RedirectToPage("Index");
-        //}
+        public IActionResult OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            _productService.UpdateProduct(ram);
+            return RedirectToPage("Index");
+        }
 
 
 

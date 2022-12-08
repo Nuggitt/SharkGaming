@@ -66,5 +66,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #region Delete Product
         ProductsClass DeleteProduct(int? productId);
         #endregion
+
+        RAM GetRAMs(int id);
     }
 }
