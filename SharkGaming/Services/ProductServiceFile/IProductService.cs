@@ -16,7 +16,7 @@ namespace SharkGaming.Services.ProductServiceFile
     public interface IProductService
     {
         #region Get list methods    
-        List<PreBuildsClass> GetPreBuilds();
+        List<ProductsClass> GetPreBuilds();
         List<CustomPcClass> GetCustomPc();
         List<Cases> GetCases();
         List<CaseFan> GetCaseFans();
@@ -32,7 +32,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Add Item methods
-        void AddPreBuild(PreBuildsClass preBuilds);
+        void AddPreBuild(ProductsClass preBuilds);
         void AddCustomPc(CustomPcClass customPc);
         void AddCase(Cases cas);
         void AddCaseFan(CaseFan caseFan);

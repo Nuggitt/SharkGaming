@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SharkGaming.MockData.Products.PreBuilds;
 using SharkGaming.Products;
 using SharkGaming.Products.Components;
 using SharkGaming.Products.Components.ComponentTypes.Cooling;
@@ -28,8 +29,8 @@ namespace SharkGaming.Pages.TestSite
 
         public void OnGet()
         {
-            components = _productService.GetRAM();
-            //Products = _productService.GetPreBuilds();
+            //components = _productService.GetRAM();
+            Products = MockPreBuilds.GetMockPreBuilds();
         }
 
 
