@@ -1,13 +1,18 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SharkGaming.MockData.MProducts.MComponents.MComponentTypes;
 using SharkGaming.MockData.Products.PreBuilds;
 using SharkGaming.Products;
 using SharkGaming.Products.Components;
 using SharkGaming.Products.Components.ComponentTypes.Cooling;
 using SharkGaming.Products.Components.ComponentTypes.CPU;
+using SharkGaming.Products.Components.ComponentTypes.GPU;
 using SharkGaming.Products.Components.ComponentTypes.Motherboard;
+using SharkGaming.Products.Components.ComponentTypes.PowerSupply;
 using SharkGaming.Products.Components.ComponentTypes.RAM;
+using SharkGaming.Products.Components.ComponentTypes.Storage;
+using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
 using SharkGaming.Services.ProductServiceFile;
 using System.Runtime.CompilerServices;
 
@@ -22,15 +27,37 @@ namespace SharkGaming.Pages.TestSite
             _productService = iproductervice;
         }
 
-        public List<RAM>? components { get; set; }
+
 
         public List<ProductsClass> Products { get; set; }
+        public List<Cases> cases { get; set; }
+        public List<CaseFan> caseFan { get; set; }
+        public List<CPUAirCooling> cPUAirCoolings { get; set; }
+        public List<CPUWaterCooling> cPUWaterCoolings { get; set; }
+        public List<CPU> cPU { get; set; }
+        public List<GPU> gPU { get; set; }
+        public List<Motherboard> motherboards { get; set; }
+        public List<PowerSupply> powerSupplies { get; set; }
+        public List<RAM>? ram { get; set; }
+        public List<Mdot2> mdot2s { get; set; }
+        public List<SolidStateDrive> solidStateDrives { get; set; }
 
 
         public void OnGet()
         {
-            //components = _productService.GetRAM();
-            Products = MockPreBuilds.GetMockPreBuilds();
+            //Products = MockPreBuilds.GetMockPreBuilds();
+            cases = MockCaseS.GetMockCases();
+            caseFan = MockCaseFan.GetMockCaseFans();
+            cPUAirCoolings = MockCPUAirCooling.GetMockCPUAirCoolings();
+            cPUWaterCoolings = MockCPUWaterCooling.GetMockCPUWaterCooling();
+            cPU = MockCPU.GetMockCPUs();
+            gPU = MockGPU.GetMockGPUs();
+            motherboards = MockMotherboard.GetMockMotherboards();
+            powerSupplies = MockPowerSupply.GetMockPowerSupplies();
+            ram = MockRam.GetMockRam();
+            mdot2s = MockMdot.GetMockMdot2s();
+            solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives();
+
         }
 
 
