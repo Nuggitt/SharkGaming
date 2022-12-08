@@ -22,7 +22,7 @@ namespace SharkGaming.Services.ProductServiceFile
     public class ProductService : IProductService
     {
         #region Lists       
-        private List<PreBuildsClass> _preBuilds;
+        private List<ProductsClass> _preBuilds;
         private List<CustomPcClass> _customPcs;
         private List<Cases> _cases;
         private List<CaseFan> _caseFans;
@@ -58,7 +58,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Get methods       
-        public List<PreBuildsClass> GetPreBuilds()
+        public List<ProductsClass> GetPreBuilds()
         {
             return _preBuilds;
         }
@@ -115,7 +115,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Add to list methods
-        public void AddPreBuild(PreBuildsClass preBuilds)
+        public void AddPreBuild(ProductsClass preBuilds)
         {
             _preBuilds.Add(preBuilds);
             JsonService.SaveJsonPreBuilds(_preBuilds);  
@@ -189,7 +189,19 @@ namespace SharkGaming.Services.ProductServiceFile
         public ProductService(JsonService jsonService)
         {
             JsonService = jsonService;
+            //_preBuilds = MockPreBuilds.GetMockPreBuilds().ToList();
+            //_customPcs = MockCustomPC.GetMockCustomPcs().ToList();
+            _cases = MockCaseS.GetMockCases().ToList();
+            _caseFans = MockCaseFan.GetMockCaseFans().ToList();
+            _cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCoolings().ToList();
+            _cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling().ToList();
+            _cPUs = MockCPU.GetMockCPUs().ToList();
+            _gPUs = MockGPU.GetMockGPUs().ToList();
+            _motherboards = MockMotherboard.GetMockMotherboards().ToList();
+            _powerSupplies = MockPowerSupply.GetMockPowerSupplies().ToList();
             _rAMs = MockRam.GetMockRam().ToList();
+            _mdot2s = MockMdot.GetMockMdot2s().ToList();
+            _solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives().ToList();
         }
         #endregion
 
@@ -589,8 +601,8 @@ namespace SharkGaming.Services.ProductServiceFile
             ProductsClass deletedProduct = null;
 
             #region Delete Pre Build
-            PreBuildsClass preBuildToBeDeleted = null;
-            foreach (PreBuildsClass item in _preBuilds)
+            ProductsClass preBuildToBeDeleted = null;
+            foreach (ProductsClass item in _preBuilds)
             {
                 if (item.Id == itemId)
                 {

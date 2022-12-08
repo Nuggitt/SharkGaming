@@ -86,7 +86,7 @@ namespace SharkGaming.Services.JsonServiceFile
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "PreBuilds.json"); }
         }
 
-        public void SaveJsonPreBuilds(List<PreBuildsClass> preBuilds)
+        public void SaveJsonPreBuilds(List<ProductsClass> preBuilds)
         {
             using (FileStream jsonFileWriter = File.Create(JsonFileNamePreBuilds))
             {
@@ -95,15 +95,15 @@ namespace SharkGaming.Services.JsonServiceFile
                     SkipValidation = false,
                     Indented = true
                 });
-                JsonSerializer.Serialize<PreBuildsClass[]>(jsonWriter, preBuilds.ToArray());
+                JsonSerializer.Serialize<ProductsClass[]>(jsonWriter, preBuilds.ToArray());
             }
         }
 
-        public IEnumerable<PreBuildsClass> GetJsonPreBuilds()
+        public IEnumerable<ProductsClass> GetJsonPreBuilds()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileNamePreBuilds))
             {
-                return JsonSerializer.Deserialize<PreBuildsClass[]>(jsonFileReader.ReadToEnd());
+                return JsonSerializer.Deserialize<ProductsClass[]>(jsonFileReader.ReadToEnd());
             }
         }
         #endregion
