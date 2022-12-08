@@ -56,8 +56,19 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Update Product
-        //void UpdateProduct(ProductsClass item);
+        void UpdatePreBuilds(ProductsClass productsClass);
+        void UpdateCase(Cases cases);
+        void UpdateCaseFan(CaseFan caseFan);
+        void UpdateCPUAirCooling(CPUAirCooling airCooling);
+        void UpdateCPUWaterCooling(CPUWaterCooling waterCooling);
+        void UpdateCPU(CPU cpu);
+        void UpdateGPU(GPU gpu);
+        void UpdateMotherboards(Motherboard motherboard);
+        void UpdatePowerSupply(PowerSupply powerSupply);
+        void UpdateMdot2(Mdot2 mdot2);
         void UpdateRAM(RAM ram);
+        void UpdateSSD(SolidStateDrive solidStateDrive);
+
         #endregion
 
         #region Get Product via ID
