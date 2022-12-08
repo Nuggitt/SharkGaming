@@ -8,6 +8,7 @@
         : base(type, socket, fanAmount, thermalDesignPower, size, powerConnector, airFlow, rpm, squareMetersPerHour, mmH20, colourCatagory, name, price, amdCompatible, intelCompatible, specInfo)
         {
             RadiatorMaterial = radiatorMaterial;
+            Id = nextId++;
         }
 
         public CPUWaterCooling()

@@ -10,6 +10,7 @@
         {
 
             BearingType = bearingType;
+            Id = nextId++;
         }
 
         public CaseFan()

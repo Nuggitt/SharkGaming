@@ -19,6 +19,7 @@
             FourKBRandomRead = fourKBRandomRead;
             FourKBRandomWrite = fourKBRandomWrite;
             NANDFlashMemoryType = nandFlashMemoryType;
+            Id = nextId++;
         }
     }
 }

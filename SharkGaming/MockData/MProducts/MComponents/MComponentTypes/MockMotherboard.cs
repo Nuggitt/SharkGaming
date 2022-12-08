@@ -1,6 +1,4 @@
-﻿using SharkGaming.Products.Components.ComponentTypes.Motherboard;
-
-namespace SharkGaming.MockData.Products.Components.ComponentTypes.Motherboard
+﻿namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes
 {
     public class MockMotherboard
     {

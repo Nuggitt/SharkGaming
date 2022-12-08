@@ -1,6 +1,6 @@
 ﻿using SharkGaming.Products.Components.ComponentTypes.Storage;
 
-namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MStorage
+namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes
 {
     public class MockMdot
     {

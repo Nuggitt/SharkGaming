@@ -23,6 +23,7 @@
             UnlockForOC = unlockForOC;
             PCIExpress = pCIExpress;
             ThermalDesignPower = thermalDesignPower;
+            Id = nextId++;
         }
         
         public CPU()

@@ -20,6 +20,7 @@
             LatencyTimings = latencyTimings;
             Voltage = voltage;
             ColourCategory = colourCategory;
+            Id = nextId++;
         }
 
         public RAM()

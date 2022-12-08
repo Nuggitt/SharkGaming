@@ -1,6 +1,6 @@
 ﻿using SharkGaming.Products.Components.ComponentTypes.Cooling;
 
-namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MCooling
+namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes
 {
     public class MockCPUAirCooling
     {
@@ -16,5 +16,4 @@ namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MCooling
             return _cPUAirCoolers;
         }
     }
-    
 }

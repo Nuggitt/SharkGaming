@@ -1,6 +1,6 @@
 ﻿using SharkGaming.Products.Components.ComponentTypes.RAM;
 
-namespace SharkGaming.MockData.Products.Components.ComponentTypes.Ram
+namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes
 {
     public class MockRam
     {

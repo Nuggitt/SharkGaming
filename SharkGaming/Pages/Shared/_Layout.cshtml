@@ -13,10 +13,10 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-black border-bottom border-dark box-shadow mb-3">
-            <div class="container">
+       @*     <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
                     <div class="logo-image">
-                        <img src="~/images/logo images/sharkgamingfulllogo.png" class="img-fluid" />
+                        <img src="~/images/logo images/sharkgamingfulllogo.png" class="img-fluid"/>
                     </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -29,6 +29,9 @@
                             <a class="nav-link text-white" asp-area="" asp-page="/ProductInfoPages/ComponentInfoPages/Test">TestProductInfoPage</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-page="/ProductInfoPages/ComponentInfoPages/CasePage1"> CAAASE1</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-page="/TestSite/TestRoom">TestMe</a>
                         </li>
                     </ul>
@@ -39,6 +42,50 @@
                     <a href="#"><i class="fa fa-fw fa-user"></i></a>
                     <a href="#"><i class="fa fa-fw fa-envelope"></i></a>
                 </div>
+            </div>*@
+@*        </nav>*@
+
+
+
+@*    Nav-bar 1*@
+            <div class="collapse navbar-collapse flex-column " id="navbar">
+
+                <ul class="navbar-nav w-100 px-3">
+
+                    <a class="navbar-brand" asp-area="" asp-page="/Index">
+                        <div class="logo-image">
+                            <img src="~/images/logo images/sharkgamingfulllogo.png" class="img-fluid" />
+                        </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                        <form action="/action_page.php">
+                            <input type="text" placeholder="Search.." name="search">
+                        </form>
+                        <a href="#"><i class="fa fa-fw fa-search"></i></a>
+                        <a href="#"><i class="fa fa-fw fa-user"></i></a>
+                        <a href="#"><i class="fa fa-fw fa-envelope"></i></a>
+                    </div>
+                </ul>
+
+
+@*        Nav-bar 2*@
+                <ul class="navbar-nav justify-content-center w-100 bgGrey px-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-page="/ProductInfoPages/ProductListPage">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-page="/ProductInfoPages/ComponentInfoPages/Test">TestProductInfoPage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-page="/ProductInfoPages/ComponentInfoPages/CasePage1"> CAAASE1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-page="/TestSite/TestRoom">TestMe</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>

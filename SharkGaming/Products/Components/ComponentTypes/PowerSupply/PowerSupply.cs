@@ -20,6 +20,7 @@
             PowerCapacity = powerCapacity;
             Molex = molex;
             CoolingSystem = coolingSystem;
+            Id = nextId++;
         }
 
         public PowerSupply()

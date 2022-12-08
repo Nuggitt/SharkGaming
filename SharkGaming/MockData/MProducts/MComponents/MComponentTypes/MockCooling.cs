@@ -1,7 +1,6 @@
 ﻿using SharkGaming.Products.Components.ComponentTypes.Cooling;
-using SharkGaming.Products.Components.ComponentTypes.Storage;
 
-namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes.MCooling
+namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes
 {
     public class MockCooling
     {

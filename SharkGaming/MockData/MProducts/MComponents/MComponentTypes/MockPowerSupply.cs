@@ -1,6 +1,4 @@
-﻿using SharkGaming.Products.Components.ComponentTypes.PowerSupply;
-
-namespace SharkGaming.MockData.Products.Components.ComponentTypes.PowerSupply
+﻿namespace SharkGaming.MockData.MProducts.MComponents.MComponentTypes
 {
     public class MockPowerSupply
     {
