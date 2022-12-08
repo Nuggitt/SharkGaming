@@ -15,7 +15,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         
         OrderClass GetOrderById(int id);
 
-        IEnumerable<CustomerClass> CustomerEmailSearch(CustomerClass name);
+        IEnumerable<OrderClass> CustomerEmailSearch(OrderClass order);
 
         OrderClass DeleteOrder(int? orderId);
 
