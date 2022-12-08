@@ -9,24 +9,24 @@ namespace SharkGaming.Pages.TestSite
     {
 
         private ProductService _productService;
-        [BindProperty] public Products.Components.ComponentTypes.GPU.GPU GPU { get; set; }
+        [BindProperty] public Products.ProductsClass products { get; set; }
 
-        public AdminModel(ProductService productService)
-        {
-            _productService = productService;
-        }
+        //public AdminModel(ProductService productService)
+        //{
+        //    _productService = productService;
+        //}
 
-        public IActionResult OnGet(int id)
-        
-        {
-            //GPU = _productService.GetProduct(id);
-            if (GPU == null)
-            {
-                return RedirectToPage("/NotFound"); //Not found ikke defineret endnu
+        //public IActionResult OnGet(int id)
 
-            }
-            return Page();
-        }
+        //{
+        //    products = _productService.GetProduct(id);
+        //    if (products == null)
+        //    {
+        //        return RedirectToPage("/NotFound"); //Not found ikke defineret endnu
+
+        //    }
+        //    return Page();
+        //}
 
         public IActionResult OnPost()
         {
@@ -34,8 +34,8 @@ namespace SharkGaming.Pages.TestSite
             {
                 return Page();
             }
-            _productService.UpdateProduct(GPU);
-            return RedirectToPage("GetAllItems");
+            _productService.UpdateProduct(products);
+            return RedirectToPage("Index");
         }
 
 
