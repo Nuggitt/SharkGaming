@@ -511,20 +511,20 @@ namespace SharkGaming.Services.ProductServiceFile
         }
         #endregion
 
-        #region Get Product via ID
-        public ProductsClass GetProduct(int id)
-        {
-            if (id != null)
-            {
-                foreach (ProductsClass i in _products)
-                    if (i.Id == id)
-                    {
-                        return i;
-                    }
-            }
-            return null;
-        }
-        #endregion
+        //#region Get Product via ID
+        //public ProductsClass GetProduct(int id)
+        //{
+        //    if (id != null)
+        //    {
+        //        foreach (ProductsClass i in _products)
+        //            if (i.Id == id)
+        //            {
+        //                return i;
+        //            }
+        //    }
+        //    return null;
+        //}
+        //#endregion
        
         #region Delete Product
         public ProductsClass DeleteProduct(int? itemId)

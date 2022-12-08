@@ -59,9 +59,9 @@ namespace SharkGaming.Services.ProductServiceFile
         void UpdateProduct(ProductsClass item);
         #endregion
 
-        #region Get Product via ID
-        ProductsClass GetProduct(int id);
-        #endregion
+        //#region Get Product via ID
+        //ProductsClass GetProduct(int id);
+        //#endregion
 
         #region Delete Product
         ProductsClass DeleteProduct(int? productId);
