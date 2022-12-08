@@ -12,7 +12,7 @@ namespace SharkGaming.Order
         public DateTime Time { get; set; }
         public CustomerClass Customer { get; set; }
 
-        private List<OrderItemsClass> OrderItems = new List<OrderItemsClass>();
+        private List<OrderItemsClass> _orderItems = new List<OrderItemsClass>();
 
         public OrderClass(CustomerClass customer, string deliveryAdress, DateOnly date, DateTime time, List<OrderItemsClass> orderitems)
         {
@@ -21,7 +21,7 @@ namespace SharkGaming.Order
             DeliveryAddress = deliveryAdress;
             Date = date;
             Time = time;
-            OrderItems = orderitems;
+            _orderItems = orderitems;
 
         }
 
@@ -30,5 +30,9 @@ namespace SharkGaming.Order
 
         }
 
+        public static List<OrderItemsClass> GetOrders()
+        {
+            return OrderItems;
+        }
     }
 }

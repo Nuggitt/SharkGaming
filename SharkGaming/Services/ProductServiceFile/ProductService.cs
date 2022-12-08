@@ -189,7 +189,19 @@ namespace SharkGaming.Services.ProductServiceFile
         public ProductService(JsonService jsonService)
         {
             JsonService = jsonService;
+            //_preBuilds = MockPreBuilds.GetMockPreBuilds().ToList();
+            //_customPcs = MockCustomPC.GetMockCustomPcs().ToList();
+            _cases = MockCaseS.GetMockCases().ToList();
+            _caseFans = MockCaseFan.GetMockCaseFans().ToList();
+            _cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCoolings().ToList();
+            _cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling().ToList();
+            _cPUs = MockCPU.GetMockCPUs().ToList();
+            _gPUs = MockGPU.GetMockGPUs().ToList();
+            _motherboards = MockMotherboard.GetMockMotherboards().ToList();
+            _powerSupplies = MockPowerSupply.GetMockPowerSupplies().ToList();
             _rAMs = MockRam.GetMockRam().ToList();
+            _mdot2s = MockMdot.GetMockMdot2s().ToList();
+            _solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives().ToList();
         }
         #endregion
 

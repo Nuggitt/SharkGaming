@@ -15,7 +15,6 @@ namespace SharkGaming.OrderFile
             Product = product;
             Amount = amount;
             Price = price;
-
         }
 
         
