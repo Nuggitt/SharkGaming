@@ -19,7 +19,7 @@ namespace SharkGaming.Pages.TestSite
         public IActionResult OnGet(int id)
         
         {
-            GPU = _productService.GetGPUs(id);
+            //GPU = _productService.GetProduct(id);
             if (GPU == null)
             {
                 return RedirectToPage("/NotFound"); //Not found ikke defineret endnu
