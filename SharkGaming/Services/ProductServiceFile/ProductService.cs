@@ -190,30 +190,30 @@ namespace SharkGaming.Services.ProductServiceFile
             JsonService = jsonService;
             //_preBuilds = MockPreBuilds.GetMockPreBuilds().ToList();
             //_customPcs = MockCustomPC.GetMockCustomPcs().ToList();
-            _cases = MockCaseS.GetMockCases().ToList();
-            _caseFans = MockCaseFan.GetMockCaseFans().ToList();
-            _cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCoolings().ToList();
-            _cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling().ToList();
-            _cPUs = MockCPU.GetMockCPUs().ToList();
-            _gPUs = MockGPU.GetMockGPUs().ToList();
-            _motherboards = MockMotherboard.GetMockMotherboards().ToList();
-            _powerSupplies = MockPowerSupply.GetMockPowerSupplies().ToList();
-            _rAMs = MockRam.GetMockRam().ToList();
-            _mdot2s = MockMdot.GetMockMdot2s().ToList();
-            _solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives().ToList();
+            //_cases = MockCaseS.GetMockCases().ToList();
+            //_caseFans = MockCaseFan.GetMockCaseFans().ToList();
+            //_cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCoolings().ToList();
+            //_cPUWaterCooling = MockCPUWaterCooling.GetMockCPUWaterCooling().ToList();
+            //_cPUs = MockCPU.GetMockCPUs().ToList();
+            //_gPUs = MockGPU.GetMockGPUs().ToList();
+            //_motherboards = MockMotherboard.GetMockMotherboards().ToList();
+            //_powerSupplies = MockPowerSupply.GetMockPowerSupplies().ToList();
+            //_rAMs = MockRam.GetMockRam().ToList();
+            //_mdot2s = MockMdot.GetMockMdot2s().ToList();
+            //_solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives().ToList();
 
 
-            //_cases = JsonService.GetJsonCases().ToList();
-            //_caseFans = JsonService.GetJsonCaseFans().ToList();
-            //_cPUAirCooling = JsonService.GetJsonCPUAirCooling().ToList();
-            //_cPUWaterCooling = JsonService.GetJsonCPUWaterrCooling().ToList();
-            //_cPUs = JsonService.GetJsonCPU().ToList();
-            //_gPUs = JsonService.GetJsonGPU().ToList();
-            //_motherboards = JsonService.GetJsonMotherboards().ToList();
-            //_powerSupplies = JsonService.GetJsonPowerSupply().ToList();
-            //_rAMs = JsonService.GetJsonRAM().ToList();
-            //_mdot2s = JsonService.GetJsonMdot2().ToList();
-            //_solidStateDrives = JsonService.GetJsonSSD().ToList();
+            _cases = JsonService.GetJsonCases().ToList();
+            _caseFans = JsonService.GetJsonCaseFans().ToList();
+            _cPUAirCooling = JsonService.GetJsonCPUAirCooling().ToList();
+            _cPUWaterCooling = JsonService.GetJsonCPUWaterrCooling().ToList();
+            _cPUs = JsonService.GetJsonCPU().ToList();
+            _gPUs = JsonService.GetJsonGPU().ToList();
+            _motherboards = JsonService.GetJsonMotherboards().ToList();
+            _powerSupplies = JsonService.GetJsonPowerSupply().ToList();
+            _rAMs = JsonService.GetJsonRAM().ToList();
+            _mdot2s = JsonService.GetJsonMdot2().ToList();
+            _solidStateDrives = JsonService.GetJsonSSD().ToList();
         }
         #endregion
 

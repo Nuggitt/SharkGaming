@@ -20,7 +20,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
 
         public void OnGet()
         {
-            components = MockCaseS.GetMockCases();
+            components = _productService.GetCases();
         }
     }
 }
