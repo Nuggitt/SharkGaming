@@ -15,15 +15,11 @@ namespace SharkGaming.Services.ProductServiceFile
 {
     public interface IProductService
     {
-        #region Get list methods
-        List<ProductsClass> GetAllProducts();
-        List<ComponentsClass> GetAllComponents();
+        #region Get list methods    
         List<PreBuildsClass> GetPreBuilds();
         List<CustomPcClass> GetCustomPc();
         List<Cases> GetCases();
-        List<CoolingClass> GetAllCooling();
         List<CaseFan> GetCaseFans();
-        List<CPUCooling> GetCPUCooling();
         List<CPUAirCooling> GetCPUAirCooling();
         List<CPUWaterCooling> GetCPUWaterCooling();
         List<CPU> GetCPUs();
@@ -31,20 +27,15 @@ namespace SharkGaming.Services.ProductServiceFile
         List<Motherboard> GetMotherboards();
         List<PowerSupply> GetPowerSupply();
         List<RAM> GetRAM();
-        List<StorageClass> GetStorage();
         List<Mdot2> GetMdot2();
         List<SolidStateDrive> GetSolidStateDrives();
         #endregion
 
         #region Add Item methods
-        void AddProduct(ProductsClass product);
-        void AddComponent(ComponentsClass comp);
         void AddPreBuild(PreBuildsClass preBuilds);
         void AddCustomPc(CustomPcClass customPc);
         void AddCase(Cases cas);
-        void AddCooling(CoolingClass cooling);
         void AddCaseFan(CaseFan caseFan);
-        void AddCPUCooling(CPUCooling cpuCooling);
         void AddCPUAirCooling(CPUAirCooling air);
         void AddCPUWaterCooling(CPUWaterCooling water);
         void AddCPU(CPU cpu);
@@ -52,14 +43,12 @@ namespace SharkGaming.Services.ProductServiceFile
         void AddMotherboard(Motherboard motherboard);
         void AddPowerSupply(PowerSupply psu);
         void AddRAM(RAM ram);
-        void AddStorage(StorageClass storage);
         void AddMdot2(Mdot2 mdot2);
         void AddSolidStateDrive(SolidStateDrive ssd);
         #endregion
 
         #region Name Search Methods
         IEnumerable<ProductsClass> ProductNameSearch(string str);
-        IEnumerable<ComponentsClass> ComponentNameSearch(string str);
         #endregion
 
         #region Price Filter 

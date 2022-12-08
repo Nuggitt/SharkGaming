@@ -26,22 +26,23 @@ namespace SharkGaming.Products.PreBuilds
 
 
 
-        public PreBuildsClass(string name, double price, string specs, bool discount,Cases cases, Motherboard motherboard, CPU cPU, CPUCooling cPUCooling, RAM raM, GPU gpU, StorageClass storageclass, PowerSupply powersupply, CaseFan casefan)
-            : base(name, price)
-        {
-            Specs = specs;
-            Discount = discount;
-            Cases = cases;
-            Motherboard = motherboard;
-            CPU = cPU;
-            CPUCooling = cPUCooling;
-            rAM = raM;
-            gPU = gpU;
-            storageClass = storageclass;
-            powerSupply = powersupply;
-            caseFan = casefan;
+        //public PreBuildsClass(string name, double price, string specs, bool discount,Cases cases, Motherboard motherboard, CPU cPU, CPUCooling cPUCooling, RAM raM, GPU gpU, StorageClass storageclass, PowerSupply powersupply, CaseFan casefan)
+        //    : base(name, price)
+        //{
+        //    Specs = specs;
+        //    Discount = discount;
+        //    Cases = cases;
+        //    Motherboard = motherboard;
+        //    CPU = cPU;
+        //    CPUCooling = cPUCooling;
+        //    rAM = raM;
+        //    gPU = gpU;
+        //    storageClass = storageclass;
+        //    powerSupply = powersupply;
+        //    caseFan = casefan;
 
-        }
+        //}
+
 
         public PreBuildsClass()
         {
