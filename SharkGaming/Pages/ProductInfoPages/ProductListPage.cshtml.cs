@@ -38,7 +38,17 @@ namespace SharkGaming.Pages.ProductInfoPages
         }
         public void OnGet()
         {
-            cases= _productService.GetCases();
+            cases = _productService.GetCases();
+            caseFan = _productService.GetCaseFan();
+            cPUAirCoolings = _productService.GetCPUAirCooling();
+            cPUWaterCoolings = _productService.GetCPUWaterCooling();
+            cPU = _productService.GetCPUs();
+            gPU = _productService.GetGPUs();
+            motherboards = _productService.GetMotherboards();
+            powerSupplies = _productService.GetPowerSupply();
+            ram = _productService.GetRAM();
+            mdot2s = _productService.GetMdot2();
+            solidStateDrives = _productService.GetSolidStateDrives();
         }
     }
 }
