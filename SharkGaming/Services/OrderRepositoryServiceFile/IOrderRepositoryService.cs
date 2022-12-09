@@ -25,7 +25,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         void AddOrderItems(ProductsClass orderItems);
         List<ProductsClass> GetOrderItems();
 
-        ProductsClass DeleteOrderItem(int? itemId)
+        ProductsClass DeleteOrderItem(int? itemId);
 
 
 
