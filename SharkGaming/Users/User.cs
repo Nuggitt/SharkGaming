@@ -1,22 +1,24 @@
 ﻿namespace SharkGaming.Users
 {
-    public class UserClass
+    public class User
     {
         private int nextId = 0;
         protected int Id { get; set; }
-        protected string Username { get; set; }
-        protected string Password { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
-        public UserClass()
-        {
-
-        }
-
-        public UserClass(string username, string password)
+        public User(string username, string password)
         {
             Id = nextId++;
             Username = username;
             Password = password;
         }
+
+        public User()
+        {
+
+        }
+
+
     }
 }

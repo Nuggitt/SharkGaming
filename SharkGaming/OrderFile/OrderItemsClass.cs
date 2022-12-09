@@ -1,5 +1,6 @@
 ﻿using SharkGaming.Order;
 using SharkGaming.Products;
+using SharkGaming.Products.Components;
 using SharkGaming.Users.Customer;
 
 namespace SharkGaming.OrderFile
@@ -17,9 +18,16 @@ namespace SharkGaming.OrderFile
             Price = price;
         }
 
-        
+        public static List<ProductsClass> orderItemList = new List<ProductsClass>()
+        {
 
-      
+        };
+
+        public static List<ProductsClass> GetOrderList()
+        {
+            return orderItemList;
+        }
+
 
     }
 }
