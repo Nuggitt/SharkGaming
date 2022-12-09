@@ -1,6 +1,11 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using SharkGaming.Services.JsonServiceFile;
 using SharkGaming.Services.OrderRepositoryServiceFile;
 using SharkGaming.Services.ProductServiceFile;
+using SharkGaming.Services.UserServiceFile;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +14,24 @@ builder.Services.AddRazorPages();
 builder.Services.AddSingleton<IProductService, ProductService>();
 builder.Services.AddTransient<JsonService>();
 builder.Services.AddSingleton<IOrderRepositoryService, OrderRepositoryService>();
+builder.Services.AddSingleton<UserService>();
+
+builder.Services.Configure<CookiePolicyOptions>(options => 
+{
+    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+    options.CheckConsentNeeded = context => true;
+    options.MinimumSameSitePolicy = SameSiteMode.None;
+}); 
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(cookieOptions => 
+{
+    cookieOptions.LoginPath = "/Login/LoginPage";
+}); 
+
+builder.Services.AddMvc().AddRazorPagesOptions(options => 
+{
+    options.Conventions.AuthorizeFolder("/AdminSite");
+}).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 var app = builder.Build();
 
