@@ -12,6 +12,6 @@ namespace SharkGaming.MockData.MProducts.MOrders
             new OrderItemsClass(new Cases("Shark Gaming Aquarium", 999, true, true, "A case with tempered glass", "MidTower (ATX)", "Black", 10, true, 280, 415, 427, "ATX", "2xUSB 3.0 & 1x USB 2.0 & HD Audio" ),1,999)
         };
 
-        public static List<OrderItemsClass> GetMockRam() { return _mockOrderItems; }
+        public static List<OrderItemsClass> GetMockOrderItems() { return _mockOrderItems; }
     }
 }
