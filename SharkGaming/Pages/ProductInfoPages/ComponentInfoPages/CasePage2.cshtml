@@ -2,3 +2,209 @@
 @model SharkGaming.Pages.ProductInfoPages.ComponentInfoPages.CasePage2Model
 @{
 }
+
+<div class="text-center">
+    <h1 style="color:white">
+        @if (Model.components != null)
+        {
+            foreach (var item in Model.components)
+            {
+                @if (item.Id == 1)
+                {
+                        @item.Name
+                }
+            }
+        }
+    </h1>
+</div>
+
+<br />
+
+<div class="row text-center">
+    <div class="column col-6">
+        <img src="~/images/components/ram2.png" style=" width: 70%" />
+    </div>
+    <div class="column col-6">
+        <h3 style="color:white">Description</h3>
+        <p style="color:white">SharkGaming aquarium is a case that allows you to connect to the motherboard and control RGB through the software</p>
+        <h1 style="color:white">
+            Price:
+            @if (Model.components != null)
+            {
+                foreach (var item in Model.components)
+                {
+                    @if (item.Id == 1)
+                    {
+                            @item.Price
+                    }
+                }
+            }
+             kr
+        </h1>
+        <a class="btn btnGreen">Add to cart</a>
+    </div>
+</div>
+
+<br />
+
+<table class="table table-bordered center bg-dark text-white" style="width:85%">
+    <thead>
+        <tr>
+            <th style="width:50%">Specification</th>
+            <th style="width:50%">Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Specifications</td>
+            <td>Info</td>
+        </tr>
+        <tr>
+            <td>Compatibility</td>
+            <td>AMD and Intel</td>
+        </tr>
+        <tr>
+            <td>Size type</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 1)
+                        {
+                            @item.SizeType
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Colour</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 1)
+                        {
+                            @item.Colour
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Amount of Fans</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 1)
+                        {
+                            @item.AmountOfFans
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>RGB</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 25)
+                        {
+                            @item.RGB
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Width</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 1)
+                        {
+                            @item.Width
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Depth</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 1)
+                        {
+                            @item.Depth
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Height</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 1)
+                        {
+                            @item.Height
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td> Support Motherboard</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach(var item in Model.components)
+                    {
+                        @if (item.Id==1)
+                        {
+                            @item.SupportMotherboard;
+                        }
+
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Build-in interface</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach(var item in Model.components)
+                    {
+                        @if (item.Id==1)
+                        {
+                            @item.BuildInInterface;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>
