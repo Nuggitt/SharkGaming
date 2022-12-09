@@ -18,12 +18,12 @@ namespace SharkGaming.OrderFile
             Price = price;
         }
 
-        public static List<ProductsClass> orderItemList = new List<ProductsClass>()
+        public static List<OrderItemsClass> orderItemList = new List<OrderItemsClass>()
         {
 
         };
 
-        public static List<ProductsClass> GetOrderList()
+        public static List<OrderItemsClass> GetOrderList()
         {
             return orderItemList;
         }
