@@ -110,6 +110,13 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             return orderToBeDeleted;
         }
 
+        //OrderItemsMethods:
+
+        public void AddToOrderItems(List<ProductsClass> products)
+        {
+            //OrderItemsClass.orderItemList.Add(products);
+        }
+
         
     }
 }
