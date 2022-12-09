@@ -16,12 +16,15 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         private IProductService _productService;
         private IOrderRepositoryService _orderService;
 
-        public CasePage1Model(IProductService iproductervice)
+        public CasePage1Model(IProductService iproductervice, IOrderRepositoryService iorderRepositoryService)
         {
             _productService = iproductervice;
+            _orderService = iorderRepositoryService;
         }
+        
         public List<Cases> components { get; set; }
         public List<ProductsClass> orderItemList { get; set; }
+        public ProductsClass Item { get; set; }
 
         public void OnGet()
         {
@@ -30,7 +33,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
 
         public void OnPost()
         {
-            _orderService.AddToOrderItems(orderItemList);
+            _orderService.AddOrderItems(Item);
 
         }
     }

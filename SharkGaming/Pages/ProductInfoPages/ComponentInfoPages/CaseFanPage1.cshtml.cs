@@ -28,7 +28,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
 
         public void OnPost()
         {
-            _orderService.AddToOrderItems(orderItemList);
+            //_orderService.AddToOrderItems(orderItemList);
 
         }
     }
