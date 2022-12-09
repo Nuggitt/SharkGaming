@@ -1,4 +1,5 @@
 ﻿using SharkGaming.Order;
+using SharkGaming.OrderFile;
 using SharkGaming.Products;
 using SharkGaming.Users.Customer;
 
@@ -18,5 +19,13 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         IEnumerable<OrderClass> CustomerEmailSearch(OrderClass order);
 
         OrderClass DeleteOrder(int? orderId);
+
+        //OrderItemsMethods:
+
+        void AddToOrderItems(List<ProductsClass> product);
+
+        
+
+
     }
 }

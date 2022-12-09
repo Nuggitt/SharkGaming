@@ -18,7 +18,7 @@ using System.Text.Json.Nodes;
 
 namespace SharkGaming.Services.ProductServiceFile
 {
-    public class ProductService : IProductService
+    public class ProductService : IProductService // All customPc commented out
     {
         #region Lists       
         private List<ProductsClass> _preBuilds;

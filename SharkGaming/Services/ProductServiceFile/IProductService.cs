@@ -14,7 +14,7 @@ using SharkGaming.Services.JsonServiceFile;
 
 namespace SharkGaming.Services.ProductServiceFile
 {
-    public interface IProductService
+    public interface IProductService // All customPc commented out
     {
         #region Get list methods    
         List<ProductsClass> GetPreBuilds();
