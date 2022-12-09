@@ -18,11 +18,11 @@ using System.Text.Json.Nodes;
 
 namespace SharkGaming.Services.ProductServiceFile
 {
-    public class ProductService : IProductService
+    public class ProductService : IProductService // All customPc commented out
     {
         #region Lists       
         private List<ProductsClass> _preBuilds;
-        private List<CustomPcClass> _customPcs;
+        //private List<CustomPcClass> _customPcs;
         private List<Cases> _cases;
         private List<CaseFan> _caseFans;
         private List<CPUAirCooling> _cPUAirCooling;
@@ -39,8 +39,8 @@ namespace SharkGaming.Services.ProductServiceFile
         #region initialise Lists
         public ProductService()
         {
-            
-            //_preBuilds = MockPreBuilds.GetMockPreBuilds();
+
+            _preBuilds = MockPreBuilds.GetMockPreBuilds();
             //_customPcs = MockCustomPC.GetMockCustomPcs();
             _cases = MockCaseS.GetMockCases();            
             _caseFans = MockCaseFan.GetMockCaseFans();
@@ -61,10 +61,10 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             return _preBuilds;
         }
-        public List<CustomPcClass> GetCustomPc()
-        {
-            return _customPcs;
-        }
+        //public List<CustomPcClass> GetCustomPc()
+        //{
+        //    return _customPcs;
+        //}
         public List<Cases> GetCases()
         {
             return _cases;
@@ -119,11 +119,11 @@ namespace SharkGaming.Services.ProductServiceFile
             _preBuilds.Add(preBuilds);
             JsonService.SaveJsonPreBuilds(_preBuilds);  
         }
-        public void AddCustomPc(CustomPcClass customPc)
-        {
-            _customPcs.Add(customPc);
-            JsonService.SaveJsonCustomPcs(_customPcs);   
-        }
+        //public void AddCustomPc(CustomPcClass customPc)
+        //{
+        //    _customPcs.Add(customPc);
+        //    JsonService.SaveJsonCustomPcs(_customPcs);   
+        //}
         public void AddCase(Cases cas)
         {
             _cases.Add(cas);
@@ -231,6 +231,13 @@ namespace SharkGaming.Services.ProductServiceFile
                             nameSearch.Add(item);
                         }
                     }
+                    //foreach (CustomPcClass item in _customPcs)
+                    //{
+                    //    if (item.Name.ToLower().Contains(str.ToLower()))
+                    //    {
+                    //        nameSearch.Add(item);
+                    //    }
+                    //}
                     foreach (ProductsClass item in _cases)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
@@ -315,21 +322,37 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region update methods
-        public void UpdatePreBuilds(ProductsClass productsClass)
+        public void UpdatePreBuilds(PreBuildsClass preBuildsClass)
         {
-            if (productsClass != null)
+            if (preBuildsClass != null)
             {
-                foreach (ProductsClass i in _preBuilds)
+                foreach (PreBuildsClass i in _preBuilds)
                 {
-                    if (i.Id == productsClass.Id)
+                    if (i.Id == preBuildsClass.Id)
                     {
-                        i.Name = productsClass.Name;
-                        i.Price = productsClass.Price;
+                        i.Name = preBuildsClass.Name;
+                        i.Price = preBuildsClass.Price;
                     }
                 }
                 JsonService.SaveJsonPreBuilds(_preBuilds);
             }
         }
+
+        //public void UpdateCustomPc(CustomPcClass customPcClass)
+        //{
+        //    if (CustomPcClass != null)
+        //    {
+        //        foreach (CustomPcClass i in _customPcs)
+        //        {
+        //            if (i.Id == customPcClass.Id)
+        //            {
+        //                i.Name = customPcClass.Name;
+        //                i.Price = customPcClass.Price;
+        //            }
+        //        }
+        //        JsonService.SaveJsonCustomPcs(_customPcs);
+        //    }
+        //}
 
         public void UpdateCase(Cases cases)
         {
@@ -626,6 +649,21 @@ namespace SharkGaming.Services.ProductServiceFile
             return null;
         }
 
+//        public CustomPcClass GetCustomPcs(int id)
+//        {
+//            if (id != null)
+//            {
+//                foreach (CustomPcClass i in _customPcs)
+//                {
+//                    if (i.Id == id)
+//                    {
+//                        return i;
+//                    }
+//}
+//            }
+//            return null;
+//        }
+
         public Cases GetCases(int id)
         {
             if (id != null)
@@ -792,15 +830,14 @@ namespace SharkGaming.Services.ProductServiceFile
         }
         #endregion
 
-
-        #region Delete Product
-        public ProductsClass DeleteProduct(int? itemId)
+        #region delete methods
+        public PreBuildsClass DeletePreBuilds(int? itemId)
         {
-            ProductsClass deletedProduct = null;
+            PreBuildsClass deletedPreBuilds = null;
 
             #region Delete Pre Build
-            ProductsClass preBuildToBeDeleted = null;
-            foreach (ProductsClass item in _preBuilds)
+            PreBuildsClass preBuildToBeDeleted = null;
+            foreach (PreBuildsClass item in _preBuilds)
             {
                 if (item.Id == itemId)
                 {
@@ -812,11 +849,41 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _preBuilds.Remove(preBuildToBeDeleted);
                 JsonService.SaveJsonPreBuilds(_preBuilds);
-                deletedProduct = preBuildToBeDeleted;
+                deletedPreBuilds = preBuildToBeDeleted;
             }
             #endregion
+  
+            return deletedPreBuilds;
+        }
 
-            // custom pc
+        //public CustomPcClass DeleteCustomPc(int? itemId)
+        //{
+        //    CustomPcClass deletedCustomPcClass = null;
+
+        //    #region Delete Pre Build
+        //    CustomPcClass customPcToBeDeleted = null;
+        //    foreach (CustomPcClass item in _customPcs)
+        //    {
+        //        if (item.Id == itemId)
+        //        {
+        //            customPcToBeDeleted = item;
+        //            break;
+        //        }
+        //    }
+        //    if (customPcToBeDeleted != null)
+        //    {
+        //        _preBuilds.Remove(customPcToBeDeleted);
+        //        JsonService.SaveJsonPreBuilds(_preBuilds);
+        //        deletedCustomPcClass = customPcToBeDeleted;
+        //    }
+        //    #endregion
+
+        //    return deletedCustomPcClass;
+        //}
+
+        public Cases DeleteCase(int? itemId)
+        {
+            Cases deletedCase = null;
 
             #region Delete Case
             Cases caseToBeDeleted = null;
@@ -832,9 +899,16 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _cases.Remove(caseToBeDeleted);
                 JsonService.SaveJsonCases(_cases);
-                deletedProduct = caseToBeDeleted;
+                deletedCase = caseToBeDeleted;
             }
             #endregion
+
+            return deletedCase;
+        }
+
+        public CaseFan DeleteCaseFan(int? itemId)
+        {
+            CaseFan deletedCaseFan = null;
 
             #region Delete CaseFan
             CaseFan caseFanToBeDeleted = null;
@@ -850,9 +924,16 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _caseFans.Remove(caseFanToBeDeleted);
                 JsonService.SaveJsonCaseFans(_caseFans);
-                deletedProduct = caseFanToBeDeleted;
+                deletedCaseFan = caseFanToBeDeleted;
             }
             #endregion
+
+            return deletedCaseFan;
+        }
+
+        public CPUAirCooling DeleteCPUAirCooling(int? itemId)
+        {
+            CPUAirCooling deletedAirCooling = null;       
 
             #region Delete CPU Air Cooling
             CPUAirCooling cPUAirToBeDeleted = null;
@@ -868,10 +949,17 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _cPUAirCooling.Remove(cPUAirToBeDeleted);
                 JsonService.SaveJsonCPUAirCooling(_cPUAirCooling);
-                deletedProduct = cPUAirToBeDeleted;
+                deletedAirCooling = cPUAirToBeDeleted;
             }
-            #endregion
+            #endregion 
 
+            return deletedAirCooling;
+        }
+
+        public CPUWaterCooling DeleteCPUWaterCooling(int? itemId)
+        {
+            CPUWaterCooling deletedWaterCooling = null;
+        
             #region Delete CPU Water Cooling
             CPUWaterCooling cPUWaterToBeDeleted = null;
             foreach (CPUWaterCooling item in _cPUWaterCooling)
@@ -886,10 +974,17 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _cPUWaterCooling.Remove(cPUWaterToBeDeleted);
                 JsonService.SaveJsonCPUWaterCooling(_cPUWaterCooling);
-                deletedProduct = cPUWaterToBeDeleted;
+                deletedWaterCooling = cPUWaterToBeDeleted;
             }
             #endregion
 
+            return deletedWaterCooling;
+        }
+
+        public CPU DeleteCPU(int? itemId)
+        {
+            CPU deletedCPU = null;
+           
             #region Delete CPU 
             CPU cPUToBeDeleted = null;
             foreach (CPU item in _cPUs)
@@ -904,10 +999,17 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _cPUs.Remove(cPUToBeDeleted);
                 JsonService.SaveJsonCPU(_cPUs);
-                deletedProduct = cPUToBeDeleted;
+                deletedCPU = cPUToBeDeleted;
             }
             #endregion
+        
+            return deletedCPU;
+        }
 
+        public GPU DeleteGPU(int? itemId)
+        {
+            GPU deletedGPU = null;
+        
             #region Delete GPU 
             GPU gPUToBeDeleted = null;
             foreach (GPU item in _gPUs)
@@ -922,10 +1024,17 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _gPUs.Remove(gPUToBeDeleted);
                 JsonService.SaveJsonGPU(_gPUs);
-                deletedProduct = gPUToBeDeleted;
+                deletedGPU = gPUToBeDeleted;
             }
             #endregion
 
+            return deletedGPU;
+        }
+
+        public Motherboard DeleteMotherboard(int? itemId)
+        {
+            Motherboard deletedMotherboard = null;
+         
             #region Delete Motherboard 
             Motherboard motherboardToBeDeleted = null;
             foreach (Motherboard item in _motherboards)
@@ -940,10 +1049,17 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _motherboards.Remove(motherboardToBeDeleted);
                 JsonService.SaveJsonMotherboards(_motherboards);
-                deletedProduct = motherboardToBeDeleted;
+                deletedMotherboard = motherboardToBeDeleted;
             }
-            #endregion
+            #endregion       
 
+            return deletedMotherboard;
+        }
+
+        public PowerSupply DeletePowerSupply(int? itemId)
+        {
+            PowerSupply deletedPowerSupply = null;
+         
             #region Delete PSU 
             PowerSupply powerSuppliesToBeDeleted = null;
             foreach (PowerSupply item in _powerSupplies)
@@ -958,10 +1074,18 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _powerSupplies.Remove(powerSuppliesToBeDeleted);
                 JsonService.SaveJsonPowerSupply(_powerSupplies);
-                deletedProduct = powerSuppliesToBeDeleted;
+                deletedPowerSupply = powerSuppliesToBeDeleted;
             }
             #endregion
-          
+        
+            return deletedPowerSupply;
+        }
+
+        public RAM DeleteRAM(int? itemId)
+        {
+            RAM deletedRAM = null;
+
+           
             #region Delete RAM
             RAM ramToBeDeleted = null;
             foreach (RAM item in _rAMs)
@@ -976,10 +1100,17 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _rAMs.Remove(ramToBeDeleted);
                 JsonService.SaveJsonRAM(_rAMs);
-                deletedProduct = ramToBeDeleted;
+                deletedRAM = ramToBeDeleted;
             }
             #endregion
 
+            return deletedRAM;
+        }
+
+        public Mdot2 DeleteMdot2(int? itemId)
+        {
+            Mdot2 deletedMdot2 = null;
+           
             #region Delete M.2
             Mdot2 mdot2ToBeDeleted = null;
             foreach (Mdot2 item in _mdot2s)
@@ -994,9 +1125,16 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _mdot2s.Remove(mdot2ToBeDeleted);
                 JsonService.SaveJsonMdot2(_mdot2s);
-                deletedProduct = mdot2ToBeDeleted;
+                deletedMdot2 = mdot2ToBeDeleted;
             }
             #endregion
+
+            return deletedMdot2;
+        }
+
+        public SolidStateDrive DeleteSSD(int? itemId)
+        {
+            SolidStateDrive deletedSolidStateDrive = null;
 
             #region Delete SSD
             SolidStateDrive SSDToBeDeleted = null;
@@ -1012,11 +1150,11 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 _solidStateDrives.Remove(SSDToBeDeleted);
                 JsonService.SaveJsonSSD(_solidStateDrives);
-                deletedProduct = SSDToBeDeleted;
+                deletedSolidStateDrive = SSDToBeDeleted;
             }
             #endregion
-            
-            return deletedProduct;
+
+            return deletedSolidStateDrive;
         }
         #endregion
 
