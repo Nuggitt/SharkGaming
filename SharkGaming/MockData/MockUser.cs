@@ -11,7 +11,8 @@ namespace SharkGaming.MockData
         private static List<User> users = new List<User>() {
             new User("phillip", "123"),
             new User("admin", "123"),
-            new User("mads","123")
+            new User("mads","123"),
+            new User("loverboy", "123")
         };
 
         public static List<User> GetMockUser() { return users; }
