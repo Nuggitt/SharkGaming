@@ -1,7 +1,8 @@
 ﻿@page
-@model SharkGaming.Pages.ProductInfoPages.ComponentInfoPages.CasePage3Model
+@model SharkGaming.Pages.ProductInfoPages.ComponentInfoPages.CaseFanPage3Model
 @{
 }
+
 
 <div class="text-center">
     <h1 style="color:white">
@@ -9,9 +10,11 @@
         {
             foreach (var item in Model.components)
             {
-                @if (item.Id == 2)
+                @if (item.Id == 5)
                 {
+
                     @item.Name
+
                 }
             }
         }
@@ -22,7 +25,7 @@
 
 <div class="row text-center">
     <div class="column col-6">
-        <img src="~/images/components/Case2.png" style=" width: 70%" />
+        <img src="~/Images/Components/RAM1.png" style="width:65%" />
     </div>
     <div class="column col-6">
         <h3 style="color:white">Description</h3>
@@ -33,9 +36,11 @@
             {
                 foreach (var item in Model.components)
                 {
-                    @if (item.Id == 2)
+                    @if (item.Id == 5)
                     {
+
                         @item.Price
+
                     }
                 }
             }
@@ -47,11 +52,11 @@
 
 <br />
 
-<table class="table table-bordered center bg-dark text-white" style="width:85%">
+<table class="table table-bordered border-black center bg-dark text-white" style="width:85%">
     <thead>
         <tr>
             <th style="width:50%">Specification</th>
-            <th style="width:50%">Info</th>
+            <th style="widht: 50%">Info</th>
         </tr>
     </thead>
     <tbody>
@@ -60,15 +65,15 @@
             <td>AMD and Intel</td>
         </tr>
         <tr>
-            <td>Size type</td>
+            <td>Bearing type</td>
             <td>
                 @if (Model.components != null)
                 {
                     foreach (var item in Model.components)
                     {
-                        @if (item.Id == 2)
+                        @if (item.Id == 5)
                         {
-                            @item.SizeType
+                            @item.BearingType
                             ;
                         }
                     }
@@ -76,15 +81,15 @@
             </td>
         </tr>
         <tr>
-            <td>Colour</td>
+            <td>Thermal design power</td>
             <td>
                 @if (Model.components != null)
                 {
                     foreach (var item in Model.components)
                     {
-                        @if (item.Id == 2)
+                        @if (item.Id == 5)
                         {
-                            @item.Colour
+                            @item.ThermalDesignPower
                             ;
                         }
                     }
@@ -92,15 +97,15 @@
             </td>
         </tr>
         <tr>
-            <td>Amount of Fans</td>
+            <td>Size</td>
             <td>
                 @if (Model.components != null)
                 {
                     foreach (var item in Model.components)
                     {
-                        if (item.Id == 2)
+                        if (item.Id == 5)
                         {
-                            @item.AmountOfFans
+                            @item.Size
                             ;
                         }
                     }
@@ -108,21 +113,15 @@
             </td>
         </tr>
         <tr>
-            <td>RGB</td>
-            <td>
-                True
-            </td>
-        </tr>
-        <tr>
-            <td>Width</td>
+            <td>Power connector</td>
             <td>
                 @if (Model.components != null)
                 {
                     foreach (var item in Model.components)
                     {
-                        @if (item.Id == 2)
+                        @if (item.Id == 5)
                         {
-                            @item.Width
+                            @item.PowerConnector
                             ;
                         }
                     }
@@ -130,15 +129,15 @@
             </td>
         </tr>
         <tr>
-            <td>Depth</td>
+            <td>Air flow</td>
             <td>
                 @if (Model.components != null)
                 {
                     foreach (var item in Model.components)
                     {
-                        @if (item.Id == 2)
+                        @if (item.Id == 5)
                         {
-                            @item.Depth
+                            @item.AirFlow
                             ;
                         }
                     }
@@ -146,15 +145,15 @@
             </td>
         </tr>
         <tr>
-            <td>Height</td>
+            <td>RPM</td>
             <td>
                 @if (Model.components != null)
                 {
                     foreach (var item in Model.components)
                     {
-                        @if (item.Id == 2)
+                        @if (item.Id == 5)
                         {
-                            @item.Height
+                            @item.Rpm
                             ;
                         }
                     }
@@ -162,32 +161,47 @@
             </td>
         </tr>
         <tr>
-            <td> Support Motherboard</td>
+            <td>Square meters pr hour</td>
             <td>
                 @if (Model.components != null)
                 {
                     foreach (var item in Model.components)
                     {
-                        @if (item.Id == 2)
+                        @if (item.Id == 5)
                         {
-                            @item.SupportMotherboard
+                            @item.SquareMetersPerHour
                             ;
                         }
-
                     }
                 }
             </td>
         </tr>
         <tr>
-            <td>Build-in interface</td>
+            <td>MMH20</td>
             <td>
                 @if (Model.components != null)
                 {
                     foreach (var item in Model.components)
                     {
-                        @if (item.Id == 2)
+                        @if (item.Id == 5)
                         {
-                            @item.BuildInInterface
+                            @item.MmH20
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Colour category</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 5)
+                        {
+                            @item.ColourCatagory
                             ;
                         }
                     }
