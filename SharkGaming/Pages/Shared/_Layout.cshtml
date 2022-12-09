@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using SharkGaming.Pages.Login
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -83,10 +84,26 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" asp-area="" asp-page="/AdminSite/AdminMainPage">AdminMainPage</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" asp-area="" asp-page="/Login/LoginPage">LoginPage</a>
-                    </li>
-                </ul>
+                    <ul class="navbar-nav">
+                        @{
+                            if (LogInPageModel.LoggedInUser == null)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-page="/LogIn/LoginPage">Login</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item nav-link text-white">
+                                    User: @LogInPageModel.LoggedInUser.Username
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-page="/LogIn/LogoutPage">Logout</a>
+                                </li>
+                            }
+                        }
+                    </ul>
             </div>
         </nav>
     </header>

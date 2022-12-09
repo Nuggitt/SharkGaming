@@ -9,17 +9,17 @@ namespace SharkGaming.Services.UserServiceFile
 
         public List<User> _users { get; set; }
 
-        private JsonService JsonService { get; set; }
+        //private JsonService JsonService { get; set; }
 
         public UserService()
         {
-            _users = MockData.MockUser.GetMockUser();
+            _users = MockUser.GetMockUser();
         }
 
-        public UserService(JsonService jsonService)
-        {
-            //_users = Json
-        }
+        //public UserService(JsonService jsonService)
+        //{
+        //    //_users = Json
+        //}
 
     }
 }
