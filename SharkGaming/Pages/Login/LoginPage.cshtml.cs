@@ -29,7 +29,7 @@ namespace SharkGaming.Pages.Login
 
         public async Task<IActionResult> OnPost()
         {
-            List<User> users = _userService.Users;
+            List<User> users = _userService._users;
             foreach (User user in users)
             {
                 if (UserName == user.Username)
