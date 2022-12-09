@@ -18,12 +18,27 @@
                     <th>Filters</th>
                 </tr>
             </thead>
-            <tbody class="hoverTable">
+            <tbody>
                 <tr>
                     <td>Price filter</td>
                 </tr>
                 <tr>
-                    <td>RGB</td>
+                    <td>
+                        <form action="/action_page.php">
+                            <input type="checkbox" id="rgbFilter" name="RGB" value="RGB">
+                            <label for="RGB"> RGB</label><br>
+                            <input type="checkbox" id="intelCompFilter" name="Intel Compatible" value="AMD">
+                            <label for="intelCompFilter"> Intel Compatible</label><br>
+                            <input type="checkbox" id="amdCompFilter" name="AMD Compatible" value="Intel">
+                            <label for="amdCompFilter"> AMD Compatible</label><br>
+
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Filter">
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -36,7 +51,7 @@
             <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/CasePage1" class="btn btn-dark">
                     <h1 class="text-center">Shark Gaming Aquarium</h1>
-                    <img src="~/images/Case1.jpg" class="img-fluid" />
+                    <img src="~/images/Components/Case1.png" class="img-fluid" />
                     <br />
                     Very super cool RGB dickladon gaming case.
                 </a>
