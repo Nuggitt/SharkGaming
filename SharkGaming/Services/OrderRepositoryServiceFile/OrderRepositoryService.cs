@@ -22,8 +22,8 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
         public OrderRepositoryService()
         {
-            _orders = OrderClass.GetOrders();
-            _orderItems = OrderItemsClass.GetOrderList();   
+            //_orders = OrderClass.GetOrders();
+            //_orderItems = OrderItemsClass.GetOrderList();   
         }
 
         #region json
