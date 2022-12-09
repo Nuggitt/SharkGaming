@@ -111,7 +111,8 @@ footer{
 }
 
 .columnCustom {
-    column-count: 2;
+    column-count: 3;
+    column-fill: auto;
 }
 
 table.border-black {
