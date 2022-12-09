@@ -1,4 +1,5 @@
 ﻿using SharkGaming.Order;
+using SharkGaming.OrderFile;
 using SharkGaming.Products;
 using SharkGaming.Products.Components;
 using SharkGaming.Products.Components.ComponentTypes.Cooling;
@@ -553,6 +554,34 @@ namespace SharkGaming.Services.JsonServiceFile
             using (StreamReader jsonFileReader = File.OpenText(JsonFileNameOrder))
             {
                 return JsonSerializer.Deserialize<OrderClass[]>(jsonFileReader.ReadToEnd());
+            }
+        }
+        #endregion
+
+        #region Order Items Json
+        private string JsonFileNameOrderItems
+        {
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "OrderItems.json"); }
+        }
+
+        public void SaveJsonOrderItems(List<ProductsClass> OrderItems)
+        {
+            using (FileStream jsonFileWriter = File.Create(JsonFileNameOrderItems))
+            {
+                Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
+                {
+                    SkipValidation = false,
+                    Indented = true
+                });
+                JsonSerializer.Serialize<ProductsClass[]>(jsonWriter, OrderItems.ToArray());
+            }
+        }
+
+        public IEnumerable<ProductsClass> GetJsonOrderItems()
+        {
+            using (StreamReader jsonFileReader = File.OpenText(JsonFileNameOrder))
+            {
+                return JsonSerializer.Deserialize<ProductsClass[]>(jsonFileReader.ReadToEnd());
             }
         }
         #endregion

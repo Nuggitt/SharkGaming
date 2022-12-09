@@ -2,6 +2,6 @@
 {
     public class UserRepository
     {
-        public static List<UserClass> _userList;
+        public static List<User> _userList;
     }
 }

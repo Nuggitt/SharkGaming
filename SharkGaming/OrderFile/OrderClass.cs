@@ -13,7 +13,8 @@ namespace SharkGaming.Order
         public CustomerClass Customer { get; set; }
         public double TotalPrice { get; set; }
 
-        private static List<OrderItemsClass> _orderItems = new List<OrderItemsClass>();
+        private List<OrderItemsClass> _orderItems = new List<OrderItemsClass>();
+        private static List<OrderClass> _orders = new List<OrderClass>();
 
         public OrderClass(CustomerClass customer, string deliveryAdress, DateOnly date, DateTime time, List<OrderItemsClass> orderitems)
         {
@@ -24,6 +25,7 @@ namespace SharkGaming.Order
             Time = time;
             _orderItems = orderitems;
             TotalPrice = CalculateTotalPrice();
+            _orders.Add(this);
         }
 
         public OrderClass()
@@ -31,11 +33,15 @@ namespace SharkGaming.Order
 
         }
 
-        public static List<OrderItemsClass> GetOrders()
+        public List<OrderItemsClass> GetOrderItems()
         {
             return _orderItems;
         }
 
+        public static List<OrderClass> GetOrders()
+        {
+            return _orders;
+        }
         public double CalculateTotalPrice()
         {
             double totalPrice = 0;
