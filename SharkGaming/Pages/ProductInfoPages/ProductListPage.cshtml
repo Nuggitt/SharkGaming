@@ -18,12 +18,27 @@
                     <th>Filters</th>
                 </tr>
             </thead>
-            <tbody class="hoverTable">
+            <tbody>
                 <tr>
                     <td>Price filter</td>
                 </tr>
                 <tr>
-                    <td>RGB</td>
+                    <td>
+                        <form action="/action_page.php">
+                            <input type="checkbox" id="rgbFilter" name="RGB" value="RGB">
+                            <label for="RGB"> RGB</label><br>
+                            <input type="checkbox" id="intelCompFilter" name="Intel Compatible" value="AMD">
+                            <label for="intelCompFilter"> Intel Compatible</label><br>
+                            <input type="checkbox" id="amdCompFilter" name="AMD Compatible" value="Intel">
+                            <label for="amdCompFilter"> AMD Compatible</label><br>
+
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Filter">
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -36,7 +51,7 @@
             <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/CasePage1" class="btn btn-dark">
                     <h1 class="text-center">Shark Gaming Aquarium</h1>
-                    <img src="~/images/Case1.jpg" class="img-fluid" />
+                    <img src="~/images/Components/Case1.png" class="img-fluid" />
                     <br />
                     Very super cool RGB dickladon gaming case.
                 </a>
@@ -45,9 +60,9 @@
             <br />
 
             <div>
-                <a href="/ProductInfoPages/ComponentInfoPages/Test" class="btn btn-dark">
+                <a href="/ProductInfoPages/ComponentInfoPages/CasePage2" class="btn btn-dark">
                     <h1 class="text-center">Product Name</h1>
-                    <img src="~/images/testimage.jpg" class="img-fluid" />
+                    <img src="~/images/components/Case2.png" class="img-fluid" />
                     <br />
                     jhfdknlsm v jnsdlksfv  enfljv dknakhbskd,m dnfioenfnflkmlks vkns amsjd vk.
                 </a>
@@ -56,9 +71,9 @@
             <br />
 
             <div>
-                <a href="/ProductInfoPages/ComponentInfoPages/Test" class="btn btn-dark">
+                <a href="/ProductInfoPages/ComponentInfoPages/CasePage3" class="btn btn-dark">
                     <h1 class="text-center">Product Name</h1>
-                    <img src="~/images/testimage.jpg" class="img-fluid" />
+                    <img src="~/images/components/Case3.png" class="img-fluid" />
                     <br />
                     jhfdknlsm v jnsdlksfv  enfljv dknakhbskd,m dnfioenfnflkmlks vkns amsjd vk.
                 </a>
@@ -67,9 +82,9 @@
             <br />
 
             <div>
-                <a href="/ProductInfoPages/ComponentInfoPages/Test" class="btn btn-dark">
+                <a href="/ProductInfoPages/ComponentInfoPages/RamPage1" class="btn btn-dark">
                     <h1 class="text-center">Product Name</h1>
-                    <img src="~/images/testimage.jpg" class="img-fluid" />
+                    <img src="~/images/components/RAM1.png" class="img-fluid" />
                     <br />
                     jhfdknlsm v jnsdlksfv  enfljv dknakhbskd,m dnfioenfnflkmlks vkns amsjd vk.
                 </a>
@@ -78,9 +93,20 @@
             <br />
 
             <div>
-                <a href="/ProductInfoPages/ComponentInfoPages/Test" class="btn btn-dark">
+                <a href="/ProductInfoPages/ComponentInfoPages/RamPage2" class="btn btn-dark">
                     <h1 class="text-center">Product Name</h1>
-                    <img src="~/images/testimage.jpg" class="img-fluid" />
+                    <img src="~/images/components/RAM2.png" class="img-fluid" />
+                    <br />
+                    jhfdknlsm v jnsdlksfv  enfljv dknakhbskd,m dnfioenfnflkmlks vkns amsjd vk.
+                </a>
+                <a class="btn btnGreen" style="width:100%">Add to cart</a>
+            </div>
+            <br />
+
+            <div>
+                <a href="/ProductInfoPages/ComponentInfoPages/RamPage3" class="btn btn-dark">
+                    <h1 class="text-center">Product Name</h1>
+                    <img src="~/images/components/RAM3.png" class="img-fluid" />
                     <br />
                     jhfdknlsm v jnsdlksfv  enfljv dknakhbskd,m dnfioenfnflkmlks vkns amsjd vk.
                 </a>
