@@ -10,6 +10,7 @@ using SharkGaming.Products.Components.ComponentTypes.Storage;
 using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
 using SharkGaming.Products.CustomPc;
 using SharkGaming.Products.PreBuilds;
+using SharkGaming.Services.JsonServiceFile;
 
 namespace SharkGaming.Services.ProductServiceFile
 {
@@ -17,7 +18,7 @@ namespace SharkGaming.Services.ProductServiceFile
     {
         #region Get list methods    
         List<ProductsClass> GetPreBuilds();
-        List<CustomPcClass> GetCustomPc();
+        //List<CustomPcClass> GetCustomPc();
         List<Cases> GetCases();
         List<CaseFan> GetCaseFan();
         List<CPUAirCooling> GetCPUAirCooling();
@@ -33,7 +34,7 @@ namespace SharkGaming.Services.ProductServiceFile
 
         #region Add Item methods
         void AddPreBuild(ProductsClass preBuilds);
-        void AddCustomPc(CustomPcClass customPc);
+        //void AddCustomPc(CustomPcClass customPc);
         void AddCase(Cases cas);
         void AddCaseFan(CaseFan caseFan);
         void AddCPUAirCooling(CPUAirCooling air);
@@ -56,7 +57,8 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Update Product
-        void UpdatePreBuilds(ProductsClass productsClass);
+        void UpdatePreBuilds(PreBuildsClass preBuildsClass);
+        //void UpdateCustomPc(CustomPcClass customPcClass);
         void UpdateCase(Cases cases);
         void UpdateCaseFan(CaseFan caseFan);
         void UpdateCPUAirCooling(CPUAirCooling airCooling);
@@ -72,15 +74,8 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Get Product via ID
-        ProductsClass GetProduct(int id);
-        #endregion
-
-        #region Delete Product
-        ProductsClass DeleteProduct(int? productId);
-        #endregion
-
-
         Cases GetCases(int id);
+        //CustomPcClass GetCustomPcs(int id);
         CaseFan GetCaseFans(int id);
         CPUAirCooling GetCPUAirCoolings(int id);
         CPUWaterCooling GetCPUWaterCoolings(int id);
@@ -91,6 +86,40 @@ namespace SharkGaming.Services.ProductServiceFile
         Mdot2 GetMdot2s(int id);
         SolidStateDrive GetSolidStateDrives(int id);
         RAM GetRAMs(int id);
+        #endregion
+
+
+        #region delete methods
+        PreBuildsClass DeletePreBuilds(int? itemId);
+
+        //CustomPcClass DeleteCustomPC(int? itemId);
+
+        Cases DeleteCase(int? itemId);
+
+        CaseFan DeleteCaseFan(int? itemId);
+
+        CPUAirCooling DeleteCPUAirCooling(int? itemId);
+
+        CPUWaterCooling DeleteCPUWaterCooling(int? itemId);
+
+        CPU DeleteCPU(int? itemId);
+
+        GPU DeleteGPU(int? itemId);
+
+        Motherboard DeleteMotherboard(int? itemId);
+
+        PowerSupply DeletePowerSupply(int? itemId);
+
+        RAM DeleteRAM(int? itemId);
+
+        Mdot2 DeleteMdot2(int? itemId);    
+
+        SolidStateDrive DeleteSSD(int? itemId);
+        
+        #endregion
+
+
+       
 
     }
 }
