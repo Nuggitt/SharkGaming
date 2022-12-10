@@ -7,6 +7,8 @@ namespace SharkGaming.OrderFile
 {
     public class OrderItemsClass
     {
+        public static int nextId = 0;
+        public int OrderItemId { get; set; }
         public int Amount { get; set; }
         public double Price { get; set; }
         public ProductsClass Product { get; set; }
@@ -16,6 +18,7 @@ namespace SharkGaming.OrderFile
             Product = product;
             Amount = amount;
             Price = price;
+            OrderItemId = nextId++;
         }
 
         public static List<OrderItemsClass> orderItemList = new List<OrderItemsClass>()
