@@ -9,7 +9,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
     {
         private IProductService _productService;
 
-        public PowerSupplyPage1Model(IProductService iproductervice)
+        public PowerSupplyPage2Model(IProductService iproductervice)
         {
             _productService = iproductervice;
         }
