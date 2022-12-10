@@ -5,17 +5,22 @@
     "Password": "123"
   },
   {
-    "Id": 0,
-    "Username": "phillip",
-    "Password": "123"
-  },
-  {
-    "Id": 0,
+    "Id": 1,
     "Username": "loverboy",
     "Password": "123"
   },
   {
-    "Id": 0,
+    "Id": 2,
+    "Username": "lovergirl",
+    "Password": "\u003C3"
+  },
+  {
+    "Id": 3,
+    "Username": "philip",
+    "Password": "123"
+  },
+  {
+    "Id": 4,
     "Username": "mikkel",
     "Password": "123"
   }

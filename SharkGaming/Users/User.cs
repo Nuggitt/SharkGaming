@@ -2,7 +2,7 @@
 {
     public class User
     {
-        private int nextId = 0;
+        private static int nextId = 0;
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
