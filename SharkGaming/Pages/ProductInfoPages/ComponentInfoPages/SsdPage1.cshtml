@@ -2,3 +2,172 @@
 @model SharkGaming.Pages.ProductInfoPages.ComponentInfoPages.SsdPage1Model
 @{
 }
+
+<div class="text-center">
+    <h1 style="color:white">
+        @if (Model.components != null)
+        {
+            foreach (var item in Model.components)
+            {
+                @if (item.Id == 30)
+                {
+                    @item.Name
+                }
+            }
+        }
+    </h1>
+</div>
+
+<br />
+
+<div class="row text-center">
+    <div class="column col-6">
+        <img src="~/images/components/SSD1.png" style=" width: 70%" />
+    </div>
+    <div class="column col-6">
+        <h3 style="color:white">Description</h3>
+        <p style="color:white">SharkGaming aquarium is a case that allows you to connect to the motherboard and control RGB through the software</p>
+        <h1 style="color:white">
+            Price:
+            @if (Model.components != null)
+            {
+                foreach (var item in Model.components)
+                {
+                    @if (item.Id == 30)
+                    {
+                        @item.Price
+                    }
+                }
+            }
+            kr
+        </h1>
+        <a class="btn btnGreen">Add to cart</a>
+    </div>
+</div>
+
+<br />
+
+<table class="table table-bordered center bg-dark text-white" style="width:85%">
+    <thead>
+        <tr>
+            <th style="width:50%">Specification</th>
+            <th style="width:50%">Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Compatibility</td>
+            <td>AMD and Intel</td>
+        </tr>
+        <tr>
+            <td>Capacity</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 30)
+                        {
+                            @item.Capacity
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Compatible Bay</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 30)
+                        {
+                            @item.CompatibleBay
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Internal date rate</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 30)
+                        {
+                            @item.InternalDateRate
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Drive transer rate</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 30)
+                        {
+                            @item.DriveTransferRate
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Four KB random read</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach(var item in Model.components)
+                    {
+                        if(item.Id==30)
+                        {
+                            @item.FourKBRandomRead
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Four KB random write</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach(var item in Model.components)
+                    {
+                        if(item.Id==30)
+                        {
+                            @item.FourKBRandomWrite;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>NAND flash memory</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 30)
+                        {
+                            @item.NANDFlashMemoryType
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -2,3 +2,148 @@
 @model SharkGaming.Pages.ProductInfoPages.ComponentInfoPages.PowerSupplyPage3Model
 @{
 }
+
+
+<div class="text-center">
+    <h1 style="color:white">
+        @if (Model.components != null)
+        {
+            foreach (var item in Model.components)
+            {
+                @if (item.Id == 23)
+                {
+                    @item.Name
+                }
+            }
+        }
+    </h1>
+</div>
+
+<br />
+
+<div class="row text-center">
+    <div class="column col-6">
+        <img src="~/images/components/PSU3.png" style=" width: 70%" />
+    </div>
+    <div class="column col-6">
+        <h3 style="color:white">Description</h3>
+        <p style="color:white">SharkGaming aquarium is a case that allows you to connect to the motherboard and control RGB through the software</p>
+        <h1 style="color:white">
+            Price:
+            @if (Model.components != null)
+            {
+                foreach (var item in Model.components)
+                {
+                    @if (item.Id == 23)
+                    {
+                        @item.Price
+                    }
+                }
+            }
+            kr
+        </h1>
+        <a class="btn btnGreen">Add to cart</a>
+    </div>
+</div>
+
+<br />
+
+<table class="table table-bordered center bg-dark text-white" style="width:85%">
+    <thead>
+        <tr>
+            <th style="width:50%">Specification</th>
+            <th style="width:50%">Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Compatibility</td>
+            <td>AMD and Intel</td>
+        </tr>
+        <tr>
+            <td>PSU form factor</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 23)
+                        {
+                            @item.PSUFormFactor
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Colour category</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 23)
+                        {
+                            @item.ColourCategory
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Class type</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 23)
+                        {
+                            @item.ClassType;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Power capacity</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 23)
+                        {
+                            @item.PowerCapacity
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Molex</td>
+            <td>
+                True
+            </td>
+        </tr>
+        <tr>
+            <td>Cooling system</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 23)
+                        {
+                            @item.CoolingSystem
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>
