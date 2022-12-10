@@ -42,7 +42,7 @@ namespace SharkGaming.Order
         }
         public double CalculateTotalPrice()
         {
-            double totalPrice = 0;
+            double? totalPrice = 0;
 
             if (_orderItems != null)
             {

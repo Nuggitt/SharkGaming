@@ -13,7 +13,7 @@ namespace SharkGaming.OrderFile
         public double? Price { get; set; }
         public ProductsClass Product { get; set; }
 
-        public OrderItemsClass(ProductsClass product, int amount )
+        public OrderItemsClass(ProductsClass product, int amount)
         {
             Product = product;
             Amount = amount;
