@@ -10,14 +10,14 @@ namespace SharkGaming.OrderFile
         public static int nextId = 0;
         public int OrderItemId { get; set; }
         public int Amount { get; set; }
-        public double Price { get; set; }
+        public double? Price { get; set; }
         public ProductsClass Product { get; set; }
 
-        public OrderItemsClass(ProductsClass product, int amount, double price )
+        public OrderItemsClass(ProductsClass product, int amount )
         {
             Product = product;
             Amount = amount;
-            Price = price;
+            Price = product.Price;
             OrderItemId = nextId++;
         }
 
