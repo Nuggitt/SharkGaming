@@ -1,6 +1,6 @@
 ﻿namespace SharkGaming.Users.Customer
 {
-    public class CustomerClass : User
+    public class CustomerClass
     {
         public string Phone { get; set; }
         public string Email { get; set; }
@@ -13,8 +13,7 @@
 
         }
 
-        public CustomerClass(string phone, string email, string address, int postcode, string country, string username, string password) 
-            : base(username, password)
+        public CustomerClass(string phone, string email, string address, int postcode, string country)
         {
             Email = email;
             Address = address;
