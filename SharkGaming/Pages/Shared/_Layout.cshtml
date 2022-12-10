@@ -82,25 +82,33 @@
                         <a class="nav-link text-white" asp-area="" asp-page="/TestSite/TestRoom">TestMe</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" asp-area="" asp-page="/AdminSite/AdminMainPage">AdminMainPage</a>
+                        <a class="nav-link text-white" asp-area="" asp-page="/login/CreateUserPage">CreateNewUser</a>
                     </li>
+                    @{
+                        if (LogInPageModel.LoggedInUser != null && LogInPageModel.LoggedInUser.Username == "admin")
+                        {
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-page="/AdminSite/AdminMainPage">AdminMainPage</a>
+                        </li>
+                    }
+}
                     <ul class="navbar-nav">
                         @{
                             if (LogInPageModel.LoggedInUser == null)
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-page="/LogIn/LoginPage">Login</a>
-                                </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-page="/LogIn/LoginPage">Login</a>
+                                    </li>
                             }
                             else
                             {
-                                <li class="nav-item nav-link text-white">
-                                    User: @LogInPageModel.LoggedInUser.Username
-                                </li>
+                                    <li class="nav-item nav-link text-white">
+                                        User: @LogInPageModel.LoggedInUser.Username
+                                    </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" asp-area="" asp-page="/LogIn/LogoutPage">Logout</a>
-                                </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-white" asp-area="" asp-page="/LogIn/LogoutPage">Logout</a>
+                                    </li>
                             }
                         }
                     </ul>

@@ -39,6 +39,9 @@ namespace SharkGaming.Pages.Login
                             {
                                 new Claim(ClaimTypes.Name, UserName)
                             };
+
+                    if (UserName == "admin") claims.Add(new Claim(ClaimTypes.Role, "admin"));
+
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
                     return RedirectToPage("/index");
