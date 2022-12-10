@@ -20,8 +20,8 @@ namespace SharkGaming.Services.UserServiceFile
         {
             JsonService = jsonService;
 
-            _users = MockUser.GetMockUser();
-            //_users = jsonService.GetJsonUser().ToList();
+            //_users = MockUser.GetMockUser();
+            _users = jsonService.GetJsonUser().ToList();
             JsonService.SaveJsonUser(_users);
         }
 
