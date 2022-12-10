@@ -30,7 +30,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 
 builder.Services.AddMvc().AddRazorPagesOptions(options => 
 {
-    options.Conventions.AuthorizeFolder("/Fuckmig");
+    options.Conventions.AuthorizeFolder("/index");
 }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 var app = builder.Build();
