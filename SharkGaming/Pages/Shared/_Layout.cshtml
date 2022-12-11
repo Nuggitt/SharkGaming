@@ -48,13 +48,13 @@
                 <ul class="navbar-nav justify-content-center w-100 bgGrey px-3">
                     
                     <li class="nav-item">
-                        <a class="nav-link text-white" asp-area="" asp-page="/ProductInfoPages/ProductListPage">Products</a>
+                        <a class="nav-link text-white" asp-area="" asp-page="/ProductInfoPages/ProductListPage">Components</a>
                     </li>
 
                     @{if (LogInPageModel.LoggedInUser != null && LogInPageModel.LoggedInUser.Username == "admin")
                     {
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-page="/AdminSite/AdminMainPage">AdminMainPage</a>
+                                <a class="nav-link text-white" asp-area="" asp-page="/AdminSite/AdminMainPage">Admin Main Page</a>
                             </li>
                     }}
             </div>
