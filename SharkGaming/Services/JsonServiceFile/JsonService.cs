@@ -13,6 +13,7 @@ using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
 using SharkGaming.Products.CustomPc;
 using SharkGaming.Products.PreBuilds;
 using SharkGaming.Users;
+using SharkGaming.Users.Customer;
 using System.Text.Json;
 
 namespace SharkGaming.Services.JsonServiceFile
@@ -615,5 +616,33 @@ namespace SharkGaming.Services.JsonServiceFile
         }
         #endregion
 
+
+        #region Customer Json
+        private string JsonFileCustomer
+        {
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "Customers.json"); }
+        }
+
+        public void SaveJsonCustomer(List<CustomerClass> customerClasses)
+        {
+            using (FileStream jsonFileWriter = File.Create(JsonFileCustomer))
+            {
+                Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
+                {
+                    SkipValidation = false,
+                    Indented = true
+                });
+                JsonSerializer.Serialize<CustomerClass[]>(jsonWriter, customerClasses.ToArray());
+            }
+        }
+
+        public IEnumerable<CustomerClass> GetJsonCustomer()
+        {
+            using (StreamReader jsonFileReader = File.OpenText(JsonFileUsers))
+            {
+                return JsonSerializer.Deserialize<CustomerClass[]>(jsonFileReader.ReadToEnd());
+            }
+        }
+        #endregion
     }
 }

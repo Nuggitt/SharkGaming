@@ -32,7 +32,7 @@ namespace SharkGaming.Pages.Login
                 return Page();
             }
             _userService.AddUser(new User(UserName, Password));
-            return RedirectToPage("/index");
+            return RedirectToPage("/login/logInPage");
         }
     }
 }

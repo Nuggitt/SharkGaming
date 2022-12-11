@@ -6,6 +6,7 @@ using SharkGaming.Services.ProductServiceFile;
 using SharkGaming.Services.UserServiceFile;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using SharkGaming.Services.CustomerServiceFile;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ builder.Services.AddSingleton<IProductService, ProductService>();
 builder.Services.AddTransient<JsonService>();
 builder.Services.AddSingleton<IOrderRepositoryService, OrderRepositoryService>();
 builder.Services.AddSingleton<UserService>();
+builder.Services.AddSingleton<CustomerService>();
 
 builder.Services.Configure<CookiePolicyOptions>(options => 
 {

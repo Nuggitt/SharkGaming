@@ -6,22 +6,17 @@
   },
   {
     "Id": 1,
-    "Username": "loverboy",
+    "Username": "phillip",
     "Password": "123"
   },
   {
     "Id": 2,
-    "Username": "lovergirl",
-    "Password": "\u003C3"
-  },
-  {
-    "Id": 3,
-    "Username": "philip",
+    "Username": "loverboy",
     "Password": "123"
   },
   {
-    "Id": 4,
-    "Username": "mikkel",
+    "Id": 3,
+    "Username": "mads",
     "Password": "123"
   }
 ]
