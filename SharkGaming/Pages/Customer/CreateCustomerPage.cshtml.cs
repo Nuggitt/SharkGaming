@@ -13,7 +13,7 @@ namespace SharkGaming.Pages.Customer
         private CustomerService _customerService;
 
         [BindProperty]
-        public string Phone { get; set; }
+        public int Phone { get; set; }
 
         [BindProperty]
         public string Email { get; set; }

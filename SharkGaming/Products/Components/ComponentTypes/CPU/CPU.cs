@@ -10,6 +10,8 @@
         public bool UnlockForOC { get; set; }
         public double PCIExpress { get; set; }
         public int ThermalDesignPower { get; set; }
+        public bool AmdCompatible { get; set; }
+        public bool IntelCompatible { get; set; }
 
 
         public CPU(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, double clockSpeed, double boostClock, int core, int threads, string socket, bool unlockForOC, double pCIExpress, int thermalDesignPower)
@@ -23,6 +25,8 @@
             UnlockForOC = unlockForOC;
             PCIExpress = pCIExpress;
             ThermalDesignPower = thermalDesignPower;
+            AmdCompatible = amdCompatible;
+            IntelCompatible = intelCompatible;
             Id = nextId++;
         }
         
