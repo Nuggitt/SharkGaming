@@ -16,15 +16,14 @@
             <div class="form-group">
                 <label asp-for="@Model.Password" class="control-lable text-white"></label>
                 <input asp-for="@Model.Password" class="form-control" />
-
             </div>
-
+            <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-dark" />
             </div>
         </form>
+        <a asp-page="/Customer/loginpage" class="text-white">Back to login</a>
     </div>
 </div>
-<div>
-    <a asp-page="/Customer/CreateCustomerPage">Back to Customer Creation</a>
-</div>
+
+
