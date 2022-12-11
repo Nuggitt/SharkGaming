@@ -12,6 +12,8 @@ namespace SharkGaming.Products.Components.ComponentTypes.RAM
         public string LatencyTimings { get; set; }
         public double Voltage { get; set; }
         public string ColourCategory { get; set; }
+        public bool AMDCompatible { get; set; }
+        public bool IntelCompatible { get; set; }
 
         public RAM(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, int capacity, string technology, string formFactor, double speed, string latencyTimings, double voltage, string colourCategory)
             : base(name, price, amdCompatible, intelCompatible, specInfo)
@@ -24,6 +26,8 @@ namespace SharkGaming.Products.Components.ComponentTypes.RAM
             Voltage = voltage;
             ColourCategory = colourCategory;
             Id = nextId++;
+            AMDCompatible = amdCompatible;
+            IntelCompatible = intelCompatible;
         }
 
         public RAM()

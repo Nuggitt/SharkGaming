@@ -10,12 +10,10 @@ using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
 using SharkGaming.Products.Components.ComponentTypes.Storage;
 using SharkGaming.Products;
 using SharkGaming.Services.ProductServiceFile;
-using System.Reflection;
-
 
 namespace SharkGaming.Pages.ProductInfoPages
 {
-    public class ProductListPageModel : PageModel
+    public class AmdCompatiblePageModel : PageModel
     {
         public bool Bool = false;
         public List<ProductsClass> Products { get; private set; }
@@ -35,9 +33,9 @@ namespace SharkGaming.Pages.ProductInfoPages
 
         public List<ProductsClass> Items { get; private set; } = new List<ProductsClass>();
 
-        public ProductListPageModel(IProductService iproductService)
+        public AmdCompatiblePageModel(IProductService iproductService)
         {
-            _productService= iproductService;
+            _productService = iproductService;
         }
         public void OnGet()
         {
@@ -63,6 +61,5 @@ namespace SharkGaming.Pages.ProductInfoPages
             }
             return Page();
         }
-
     }
 }

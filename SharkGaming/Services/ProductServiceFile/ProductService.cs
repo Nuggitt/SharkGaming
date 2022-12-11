@@ -353,7 +353,7 @@ namespace SharkGaming.Services.ProductServiceFile
                     }
                     foreach (CPU item in _cPUs)
                     {
-                    if (item.)
+                    if (item.IntelCompatible)
                     {
                         intelSearch.Add(item);
                     }
@@ -362,33 +362,27 @@ namespace SharkGaming.Services.ProductServiceFile
                     {
                         intelSearch.Add(item); 
                     }
-                    //foreach (ProductsClass item in _motherboards)
-                    //{
-                    //    if (item.Name.ToLower().Contains(str.ToLower()))
-                    //    {
-                    //    intelSearch.Add(item);
-                    //    }
-                    //}
-                    foreach (ProductsClass item in _powerSupplies)
+                    foreach (Motherboard item in _motherboards)
                     {
-                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        if (item.IntelCompatible)
                         {
                         intelSearch.Add(item);
                         }
                     }
-                    foreach (ProductsClass item in _rAMs)
+                    foreach (ProductsClass item in _powerSupplies)
+                    { 
+                        intelSearch.Add(item);  
+                    }
+                    foreach (RAM item in _rAMs)
                     {
-                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        if (item.IntelCompatible)
                         {
                         intelSearch.Add(item);
                         }
                     }
                     foreach (ProductsClass item in _mdot2s)
                     {
-                        if (item.Name.ToLower().Contains(str.ToLower()))
-                        {
-                        intelSearch.Add(item);
-                        }
+                        intelSearch.Add(item); 
                     }
                     foreach (ProductsClass item in _solidStateDrives)
                     {
@@ -398,7 +392,82 @@ namespace SharkGaming.Services.ProductServiceFile
                         }
                     }
                 
-                return nameSearch;
+                return intelSearch;
+            }
+        }
+        #endregion
+
+        #region intel check
+        public IEnumerable<ProductsClass> AMDCompatability()
+        {
+            List<ProductsClass> AMDSearch = new List<ProductsClass>();
+            {
+
+
+                foreach (ProductsClass item in _cases)
+                {
+                    AMDSearch.Add(item);
+                }
+                foreach (ProductsClass item in _caseFans)
+                {
+                    AMDSearch.Add(item);
+                }
+
+                foreach (CPUAirCooling item in _cPUAirCooling)
+                {
+                    if (item.AMDCompatible)
+                    {
+                        AMDSearch.Add(item);
+                    }
+                }
+                foreach (CPUWaterCooling item in _cPUWaterCooling)
+                {
+                    if (item.AMDCompatible)
+                    {
+                        AMDSearch.Add(item);
+                    }
+                }
+                foreach (CPU item in _cPUs)
+                {
+                    if (item.AmdCompatible)
+                    {
+                        AMDSearch.Add(item);
+                    }
+                }
+                foreach (ProductsClass item in _gPUs)
+                {
+                    AMDSearch.Add(item);
+                }
+                foreach (Motherboard item in _motherboards)
+                {
+                    if (item.AMDCompatible)
+                    {
+                        AMDSearch.Add(item);
+                    }
+                }
+                foreach (ProductsClass item in _powerSupplies)
+                {
+                    AMDSearch.Add(item);
+                }
+                foreach (RAM item in _rAMs)
+                {
+                    if (item.AMDCompatible)
+                    {
+                        AMDSearch.Add(item);
+                    }
+                }
+                foreach (ProductsClass item in _mdot2s)
+                {
+                    AMDSearch.Add(item);
+                }
+                foreach (ProductsClass item in _solidStateDrives)
+                {
+                    {
+                        AMDSearch.Add(item);
+                    }
+                }
+
+                return AMDSearch;
             }
         }
         #endregion

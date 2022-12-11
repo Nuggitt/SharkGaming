@@ -1,8 +1,7 @@
 ﻿@page
-@model SharkGaming.Pages.ProductInfoPages.ProductListPageModel
+@model SharkGaming.Pages.ProductInfoPages.AmdCompatiblePageModel
 @{
 }
-
 <div class="text-center">
     <h1 style="color:white">Products</h1>
 </div>
@@ -52,23 +51,23 @@
 <div class="row center">
     <div class="column col-12 center columnCustom">
 
-@*Case 1*@
+        @*Case 1*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/CasePage1" class="btn btn-dark">
                     <h1 class="text-center">
-                        @foreach(var x in Model.cases)
+                    @foreach (var x in Model.cases)
+                    {
+                        @if (x.Id == 0)
                         {
-                            @if (x.Id == 0)
-                            {
-                                @x.Name
-                                Model.Bool = true;
-                            }
+                            @x.Name
+                            Model.Bool = true;
                         }
-                        @if(Model.Bool == false)
-                        {
-                            <text>NAME NOT FOUND</text> 
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>NAME NOT FOUND</text> 
+                    }
+                    else Model.Bool = false;
                      </h1>
 
                     <img src="~/images/Components/Case1.png" class="img-fluid" />
@@ -77,42 +76,42 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @foreach (var x in Model.cases)
+                    @foreach (var x in Model.cases)
+                    {
+                        @if (x.Id == 0)
                         {
-                            @if (x.Id == 0)
-                            {
-                                @x.Price <text> Kr</text>
-                                Model.Bool = true;
-                            }
+                            @x.Price <text> Kr</text>
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>PRICE NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*Case 2*@
+        @*Case 2*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/CasePage2" class="btn btn-dark">
                     <h1 class="text-center">
-                        @foreach (var x in Model.cases)
+                    @foreach (var x in Model.cases)
+                    {
+                        @if (x.Id == 1)
                         {
-                            @if (x.Id == 1)
-                            {
-                                @x.Name
-                                Model.Bool = true;
-                            }
+                            @x.Name
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>NAME NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>NAME NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
 
                     <img src="~/images/components/Case2.png" class="img-fluid" />
@@ -121,42 +120,42 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @foreach (var x in Model.cases)
+                    @foreach (var x in Model.cases)
+                    {
+                        @if (x.Id == 1)
                         {
-                            @if (x.Id == 1)
-                            {
-                                @x.Price <text> Kr</text>
-                                Model.Bool = true;
-                            }
+                            @x.Price <text> Kr</text>
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>PRICE NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*Case 3*@
+        @*Case 3*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/CasePage3" class="btn btn-dark">
                     <h1 class="text-center">
-                        @foreach (var x in Model.cases)
+                    @foreach (var x in Model.cases)
+                    {
+                        @if (x.Id == 2)
                         {
-                            @if (x.Id == 2)
-                            {
-                                @x.Name
-                                Model.Bool = true;
-                            }
+                            @x.Name
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>NAME NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>NAME NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
 
                     <img src="~/images/components/Case3.png" class="img-fluid" />
@@ -165,42 +164,42 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @foreach (var x in Model.cases)
+                    @foreach (var x in Model.cases)
+                    {
+                        @if (x.Id == 2)
                         {
-                            @if (x.Id == 2)
-                            {
-                                @x.Price <text> Kr</text>
-                                Model.Bool = true;
-                            }
+                            @x.Price <text> Kr</text>
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>PRICE NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*CaseFan 1*@
+        @*CaseFan 1*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/CaseFanPage1" class="btn btn-dark">
                     <h1 class="text-center">
-                        @foreach (var x in Model.caseFan)
+                    @foreach (var x in Model.caseFan)
+                    {
+                        @if (x.Id == 3)
                         {
-                            @if (x.Id == 3)
-                            {
-                                @x.Name
-                                Model.Bool = true;
-                            }
+                            @x.Name
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>NAME NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>NAME NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
 
                     <img src="~/images/components/CaseFan1.png" class="img-fluid" />
@@ -209,42 +208,42 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @foreach (var x in Model.caseFan)
+                    @foreach (var x in Model.caseFan)
+                    {
+                        @if (x.Id == 3)
                         {
-                            @if (x.Id == 3)
-                            {
-                                @x.Price <text> Kr</text>
-                                Model.Bool = true;
-                            }
+                            @x.Price <text> Kr</text>
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>PRICE NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*CaseFan 2*@
+        @*CaseFan 2*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/CaseFanPage2" class="btn btn-dark">
                     <h1 class="text-center">
-                        @foreach (var x in Model.caseFan)
+                    @foreach (var x in Model.caseFan)
+                    {
+                        @if (x.Id == 4)
                         {
-                            @if (x.Id == 4)
-                            {
-                                @x.Name
-                                Model.Bool = true;
-                            }
+                            @x.Name
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>NAME NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>NAME NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
 
                     <img src="~/images/components/CaseFan2.png" class="img-fluid" />
@@ -253,42 +252,42 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @foreach (var x in Model.caseFan)
+                    @foreach (var x in Model.caseFan)
+                    {
+                        @if (x.Id == 4)
                         {
-                            @if (x.Id == 4)
-                            {
-                                @x.Price <text> Kr</text>
-                                Model.Bool = true;
-                            }
+                            @x.Price <text> Kr</text>
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>PRICE NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*CaseFan 3*@
+        @*CaseFan 3*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/CaseFanPage3" class="btn btn-dark">
                     <h1 class="text-center">
-                        @foreach (var x in Model.caseFan)
+                    @foreach (var x in Model.caseFan)
+                    {
+                        @if (x.Id == 5)
                         {
-                            @if (x.Id == 5)
-                            {
-                                @x.Name
-                                Model.Bool = true;
-                            }
+                            @x.Name
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>NAME NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>NAME NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
 
                     <img src="~/images/components/CaseFan3.png" class="img-fluid" />
@@ -297,42 +296,42 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @foreach (var x in Model.caseFan)
+                    @foreach (var x in Model.caseFan)
+                    {
+                        @if (x.Id == 5)
                         {
-                            @if (x.Id == 5)
-                            {
-                                @x.Price <text> Kr</text>
-                                Model.Bool = true;
-                            }
+                            @x.Price <text> Kr</text>
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>PRICE NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*CPUAirCooling 1*@
+        @*CPUAirCooling 1*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/CpuAirCoolingPage1" class="btn btn-dark">
                     <h1 class="text-center">
-                        @foreach (var x in Model.cPUAirCoolings)
+                    @foreach (var x in Model.cPUAirCoolings)
+                    {
+                        @if (x.Id == 6)
                         {
-                            @if (x.Id == 6)
-                            {
-                                @x.Name
-                                Model.Bool = true;
-                            }
+                            @x.Name
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>NAME NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>NAME NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
 
                     <img src="~/images/components/CPUair1.png" class="img-fluid" />
@@ -341,42 +340,42 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @foreach (var x in Model.cPUAirCoolings)
+                    @foreach (var x in Model.cPUAirCoolings)
+                    {
+                        @if (x.Id == 6)
                         {
-                            @if (x.Id == 6)
-                            {
-                                @x.Price <text> Kr</text>
-                                Model.Bool = true;
-                            }
+                            @x.Price <text> Kr</text>
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>PRICE NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*CPUAirCooling 2*@
+        @*CPUAirCooling 2*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/CpuAirCoolingPage2" class="btn btn-dark">
                     <h1 class="text-center">
-                        @foreach (var x in Model.cPUAirCoolings)
+                    @foreach (var x in Model.cPUAirCoolings)
+                    {
+                        @if (x.Id == 7)
                         {
-                            @if (x.Id == 7)
-                            {
-                                @x.Name
-                                Model.Bool = true;
-                            }
+                            @x.Name
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>NAME NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>NAME NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
 
                     <img src="~/images/components/CPUair2.png" class="img-fluid" />
@@ -385,42 +384,42 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @foreach (var x in Model.cPUAirCoolings)
+                    @foreach (var x in Model.cPUAirCoolings)
+                    {
+                        @if (x.Id == 7)
                         {
-                            @if (x.Id == 7)
-                            {
-                                @x.Price <text> Kr</text>
-                                Model.Bool = true;
-                            }
+                            @x.Price <text> Kr</text>
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>PRICE NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*CPUAirCooling 3*@
+        @*CPUAirCooling 3*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/CpuAirCoolingPage3" class="btn btn-dark">
                     <h1 class="text-center">
-                        @foreach (var x in Model.cPUAirCoolings)
+                    @foreach (var x in Model.cPUAirCoolings)
+                    {
+                        @if (x.Id == 8)
                         {
-                            @if (x.Id == 8)
-                            {
-                                @x.Name
-                                Model.Bool = true;
-                            }
+                            @x.Name
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>NAME NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>NAME NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
 
                     <img src="~/images/components/CPUair3.png" class="img-fluid" />
@@ -429,26 +428,26 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @foreach (var x in Model.cPUAirCoolings)
+                    @foreach (var x in Model.cPUAirCoolings)
+                    {
+                        @if (x.Id == 8)
                         {
-                            @if (x.Id == 8)
-                            {
-                                @x.Price <text> Kr</text>
-                                Model.Bool = true;
-                            }
+                            @x.Price <text> Kr</text>
+                            Model.Bool = true;
                         }
-                        @if (Model.Bool == false)
-                        {
-                            <text>PRICE NOT FOUND</text>
-                        }
-                        else Model.Bool = false;
+                    }
+                    @if (Model.Bool == false)
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
+                    else Model.Bool = false;
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*CPUWaterCooling 1*@
+        @*CPUWaterCooling 1*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/CpuWaterCoolingPage1" class="btn btn-dark">
                 <h1 class="text-center">
@@ -492,7 +491,7 @@
         </div>
         <br />
 
-@*CPUWaterCooling 2*@
+        @*CPUWaterCooling 2*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/CpuWaterCoolingPage2" class="btn btn-dark">
                 <h1 class="text-center">
@@ -534,9 +533,9 @@
             </a>
             <a class="btn btnGreen" style="width:100%">Add to cart</a>
         </div>
-        
 
-@*CPUWaterCooling 3*@
+
+        @*CPUWaterCooling 3*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/CpuWaterCoolingPage3" class="btn btn-dark">
                 <h1 class="text-center">
@@ -580,7 +579,7 @@
         </div>
         <br />
 
-@*CPU 1*@
+        @*CPU 1*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/CpuPage1" class="btn btn-dark">
                 <h1 class="text-center">
@@ -624,7 +623,7 @@
         </div>
         <br />
 
-@*CPU 2*@
+        @*CPU 2*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/CpuPage2" class="btn btn-dark">
                 <h1 class="text-center">
@@ -668,7 +667,7 @@
         </div>
         <br />
 
-@*CPU 3*@
+        @*CPU 3*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/CpuPage3" class="btn btn-dark">
                 <h1 class="text-center">
@@ -712,7 +711,7 @@
         </div>
         <br />
 
-@*GPU 1*@
+        @*GPU 1*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/GpuPage1" class="btn btn-dark">
                 <h1 class="text-center">
@@ -756,7 +755,7 @@
         </div>
         <br />
 
-@*GPU 2*@
+        @*GPU 2*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/GpuPage2" class="btn btn-dark">
                 <h1 class="text-center">
@@ -800,7 +799,7 @@
         </div>
         <br />
 
-@*GPU 3*@
+        @*GPU 3*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/GpuPage3" class="btn btn-dark">
                 <h1 class="text-center">
@@ -844,7 +843,7 @@
         </div>
         <br />
 
-@*Motherboard 1*@
+        @*Motherboard 1*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/MotherBoardPage1" class="btn btn-dark">
                 <h1 class="text-center">
@@ -888,7 +887,7 @@
         </div>
         <br />
 
-@*Motherboard 2*@
+        @*Motherboard 2*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/MotherBoardPage2" class="btn btn-dark">
                 <h1 class="text-center">
@@ -932,7 +931,7 @@
         </div>
         <br />
 
-@*Motherboard 3*@
+        @*Motherboard 3*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/MotherBoardPage3" class="btn btn-dark">
                 <h1 class="text-center">
@@ -976,7 +975,7 @@
         </div>
         <br />
 
-@*PowerSupply 1*@
+        @*PowerSupply 1*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/PowerSupplyPage1" class="btn btn-dark">
                 <h1 class="text-center">
@@ -1020,7 +1019,7 @@
         </div>
         <br />
 
-@*PowerSupply 2*@
+        @*PowerSupply 2*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/PowerSupplyPage2" class="btn btn-dark">
                 <h1 class="text-center">
@@ -1064,7 +1063,7 @@
         </div>
         <br />
 
-@*PowerSupply 3*@
+        @*PowerSupply 3*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/PowerSupplyPage3" class="btn btn-dark">
                 <h1 class="text-center">
@@ -1108,27 +1107,30 @@
         </div>
         <br />
 
-@*RAM 1*@
+        @*RAM 1*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/RamPage1" class="btn btn-dark">
                     <h1 class="text-center">
-                        @if (Model.ram != null)
+                    @if (Model.ram != null)
+                    {
+                        @foreach (var x in Model.ram)
                         {
-                            @foreach (var x in Model.ram)
+                            @if (x.Id == 24)
                             {
-                                @if (x.Id == 24)
-                                {
-                                    @x.Name
-                                    Model.Bool = true;
-                                }
+                                @x.Name
+                                Model.Bool = true;
                             }
-                            @if (Model.Bool == false)
-                            {
-                                <text>NAME NOT FOUND</text>
-                            }
-                            else Model.Bool = false;
                         }
-                        else {<text>NAME NOT FOUND</text>}
+                        @if (Model.Bool == false)
+                        {
+                            <text>NAME NOT FOUND</text>
+                        }
+                        else Model.Bool = false;
+                    }
+                    else
+                    {
+                        <text>NAME NOT FOUND</text>
+                    }
                     </h1>
 
                     <img src="~/images/components/RAM1.png" class="img-fluid" />
@@ -1137,53 +1139,56 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @if (Model.ram != null)
+                    @if (Model.ram != null)
+                    {
+                        @foreach (var x in Model.ram)
                         {
-                            @foreach (var x in Model.ram)
+                            @if (x.Id == 24)
                             {
-                                @if (x.Id == 24)
-                                {
-                                    @x.Price <text> Kr</text>
-                                    Model.Bool = true;
-                                }
+                                @x.Price <text> Kr</text>
+                                Model.Bool = true;
                             }
-                            @if (Model.Bool == false)
-                            {
-                                <text>PRICE NOT FOUND</text>
-                            }
-                            else Model.Bool = false;
                         }
-                        else {<text>PRICE NOT FOUND</text>}
+                        @if (Model.Bool == false)
+                        {
+                            <text>PRICE NOT FOUND</text>
+                        }
+                        else Model.Bool = false;
+                    }
+                    else
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*RAM 2*@
+        @*RAM 2*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/RamPage2" class="btn btn-dark">
                     <h1 class="text-center">
-                        @if (Model.ram != null)
+                    @if (Model.ram != null)
+                    {
+                        @foreach (var x in Model.ram)
                         {
-                            @foreach (var x in Model.ram)
+                            @if (x.Id == 25)
                             {
-                                @if (x.Id == 25)
-                                {
-                                    @x.Name
-                                    Model.Bool = true;
-                                }
+                                @x.Name
+                                Model.Bool = true;
                             }
-                            @if (Model.Bool == false)
-                            {
-                                <text>NAME NOT FOUND</text>
-                            }
-                            else Model.Bool = false;
                         }
-                        else
+                        @if (Model.Bool == false)
                         {
                             <text>NAME NOT FOUND</text>
                         }
+                        else Model.Bool = false;
+                    }
+                    else
+                    {
+                        <text>NAME NOT FOUND</text>
+                    }
                     </h1>
 
                     <img src="~/images/components/RAM2.png" class="img-fluid" />
@@ -1192,56 +1197,56 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @if (Model.ram != null)
+                    @if (Model.ram != null)
+                    {
+                        @foreach (var x in Model.ram)
                         {
-                            @foreach (var x in Model.ram)
+                            @if (x.Id == 25)
                             {
-                                @if (x.Id == 25)
-                                {
-                                    @x.Price <text> Kr</text>
-                                    Model.Bool = true;
-                                }
+                                @x.Price <text> Kr</text>
+                                Model.Bool = true;
                             }
-                            @if (Model.Bool == false)
-                            {
-                                <text>PRICE NOT FOUND</text>
-                            }
-                            else Model.Bool = false;
                         }
-                        else
+                        @if (Model.Bool == false)
                         {
                             <text>PRICE NOT FOUND</text>
                         }
+                        else Model.Bool = false;
+                    }
+                    else
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*RAM 3*@
+        @*RAM 3*@
         <div>
                 <a href="/ProductInfoPages/ComponentInfoPages/RamPage3" class="btn btn-dark">
                     <h1 class="text-center">
-                        @if (Model.ram != null)
+                    @if (Model.ram != null)
+                    {
+                        @foreach (var x in Model.ram)
                         {
-                            @foreach (var x in Model.ram)
+                            @if (x.Id == 26)
                             {
-                                @if (x.Id == 26)
-                                {
-                                    @x.Name
-                                    Model.Bool = true;
-                                }
+                                @x.Name
+                                Model.Bool = true;
                             }
-                            @if (Model.Bool == false)
-                            {
-                                <text>NAME NOT FOUND</text>
-                            }
-                            else Model.Bool = false;
                         }
-                        else
+                        @if (Model.Bool == false)
                         {
                             <text>NAME NOT FOUND</text>
                         }
+                        else Model.Bool = false;
+                    }
+                    else
+                    {
+                        <text>NAME NOT FOUND</text>
+                    }
                     </h1>
 
                     <img src="~/images/components/RAM3.png" class="img-fluid" />
@@ -1250,33 +1255,33 @@
                     <br />
 
                     <h1 class="text-orange">
-                        @if (Model.ram != null)
+                    @if (Model.ram != null)
+                    {
+                        @foreach (var x in Model.ram)
                         {
-                            @foreach (var x in Model.ram)
+                            @if (x.Id == 26)
                             {
-                                @if (x.Id == 26)
-                                {
-                                    @x.Price <text> Kr</text>
-                                    Model.Bool = true;
-                                }
+                                @x.Price <text> Kr</text>
+                                Model.Bool = true;
                             }
-                            @if (Model.Bool == false)
-                            {
-                                <text>PRICE NOT FOUND</text>
-                            }
-                            else Model.Bool = false;
                         }
-                        else
+                        @if (Model.Bool == false)
                         {
                             <text>PRICE NOT FOUND</text>
                         }
+                        else Model.Bool = false;
+                    }
+                    else
+                    {
+                        <text>PRICE NOT FOUND</text>
+                    }
                     </h1>
                 </a>
                 <a class="btn btnGreen" style="width:100%">Add to cart</a>
             </div>
         <br />
 
-@*Mdot2 1*@
+        @*Mdot2 1*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/Mdot2Page1" class="btn btn-dark">
                 <h1 class="text-center">
@@ -1320,7 +1325,7 @@
         </div>
         <br />
 
-@*Mdot2 2*@
+        @*Mdot2 2*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/Mdot2Page2" class="btn btn-dark">
                 <h1 class="text-center">
@@ -1364,7 +1369,7 @@
         </div>
         <br />
 
-@*Mdot2 3*@
+        @*Mdot2 3*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/Mdot2Page3" class="btn btn-dark">
                 <h1 class="text-center">
@@ -1408,7 +1413,7 @@
         </div>
         <br />
 
-@*SSD 1*@
+        @*SSD 1*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/SsdPage1" class="btn btn-dark">
                         <h1 class="text-center">
@@ -1452,7 +1457,7 @@
         </div>
         <br />
 
-@*SSD 2*@
+        @*SSD 2*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/SsdPage2" class="btn btn-dark">
                         <h1 class="text-center">
@@ -1496,7 +1501,7 @@
         </div>
         <br />
 
-@*SSD 3*@
+        @*SSD 3*@
         <div>
             <a href="/ProductInfoPages/ComponentInfoPages/SsdPage3" class="btn btn-dark">
                         <h1 class="text-center">

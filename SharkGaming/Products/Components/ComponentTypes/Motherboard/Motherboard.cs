@@ -13,8 +13,10 @@
         public string PowerConnectors { get; set; }
         public string BIOSType { get; set; }
         public double PCIExpress { get; set; }
-        
-        
+        public bool AMDCompatible { get; set; }
+        public bool IntelCompatible { get; set; }
+
+
         public Motherboard(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, bool supportedRamIntergrityCheck, int maxRamSize, string technology, double buSClock, string productType, string chipsetType, string processorSocket, string powerConnectors, string bIOSType, double pciExpress)
             : base(name, price, amdCompatible, intelCompatible, specInfo)
         {
@@ -29,6 +31,8 @@
             BIOSType = bIOSType;
             PCIExpress = pciExpress;
             Id = nextId++;
+            AMDCompatible = amdCompatible;
+            IntelCompatible = intelCompatible;
         }
 
         public Motherboard()
