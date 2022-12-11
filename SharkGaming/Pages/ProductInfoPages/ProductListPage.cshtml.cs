@@ -50,5 +50,6 @@ namespace SharkGaming.Pages.ProductInfoPages
             mdot2s = _productService.GetMdot2();
             solidStateDrives = _productService.GetSolidStateDrives();
         }
+
     }
 }

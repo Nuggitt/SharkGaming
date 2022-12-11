@@ -321,6 +321,88 @@ namespace SharkGaming.Services.ProductServiceFile
         }
         #endregion
 
+        #region intel check
+        public IEnumerable<ProductsClass> IntelCompatability()
+        {
+            List<ProductsClass> intelSearch = new List<ProductsClass>();
+            {
+                
+                    
+                    foreach (ProductsClass item in _cases)
+                    {
+                         intelSearch.Add(item);  
+                    }
+                    foreach (ProductsClass item in _caseFans)
+                    {                     
+                            intelSearch.Add(item);
+                    }
+                    
+                    foreach (CPUAirCooling item in _cPUAirCooling)
+                    {
+                        if (item.IntelCompatible)
+                        {
+                        intelSearch.Add(item);
+                        }
+                    }
+                    foreach (CPUWaterCooling item in _cPUWaterCooling)
+                    {
+                        if (item.IntelCompatible)
+                        {
+                        intelSearch.Add(item);
+                        }
+                    }
+                    //foreach (ProductsClass item in _cPUs)
+                    //{
+                    //    if (item.Name.ToLower().Contains(str.ToLower()))
+                    //    {
+                    //    intelSearch.Add(item);
+                    //    }
+                    //}
+                    foreach (ProductsClass item in _gPUs)
+                    {
+                        intelSearch.Add(item); 
+                    }
+                    //foreach (ProductsClass item in _motherboards)
+                    //{
+                    //    if (item.Name.ToLower().Contains(str.ToLower()))
+                    //    {
+                    //    intelSearch.Add(item);
+                    //    }
+                    //}
+                    foreach (ProductsClass item in _powerSupplies)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                        intelSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _rAMs)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                        intelSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _mdot2s)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                        intelSearch.Add(item);
+                        }
+                    }
+                    foreach (ProductsClass item in _solidStateDrives)
+                    {
+                        
+                        {
+                            intelSearch.Add(item);
+                        }
+                    }
+                
+                return nameSearch;
+            }
+        }
+        #endregion
+
         #region update methods
         public void UpdatePreBuilds(PreBuildsClass preBuildsClass)
         {

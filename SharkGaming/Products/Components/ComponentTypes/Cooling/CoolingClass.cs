@@ -10,6 +10,8 @@
         public string SquareMetersPerHour { get; set; }
         public string MmH20 { get; set; }
         public string ColourCatagory { get; set; }
+        public bool AMDCompatible { get; set; }
+        public bool IntelCompatible { get; set; }
 
         public CoolingClass()
         {
@@ -27,6 +29,8 @@
             SquareMetersPerHour = squareMetersPerHour;
             MmH20 = mmH20;
             ColourCatagory = colourCatagory;
+            AMDCompatible = amdCompatible;
+            IntelCompatible = intelCompatible;
         }
     }
 }
