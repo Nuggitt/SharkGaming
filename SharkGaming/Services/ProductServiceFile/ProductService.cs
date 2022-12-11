@@ -351,13 +351,13 @@ namespace SharkGaming.Services.ProductServiceFile
                         intelSearch.Add(item);
                         }
                     }
-                    //foreach (ProductsClass item in _cPUs)
-                    //{
-                    //    if (item.Name.ToLower().Contains(str.ToLower()))
-                    //    {
-                    //    intelSearch.Add(item);
-                    //    }
-                    //}
+                    foreach (CPU item in _cPUs)
+                    {
+                    if (item.)
+                    {
+                        intelSearch.Add(item);
+                    }
+                    }
                     foreach (ProductsClass item in _gPUs)
                     {
                         intelSearch.Add(item); 
