@@ -54,15 +54,7 @@ namespace SharkGaming.Pages.ProductInfoPages
             solidStateDrives = _productService.GetSolidStateDrives();
         }
 
-        public IActionResult OnPostIntelCompatible(bool check)
-        {
-            if (check)
-            {
-                Items = _productService.IntelCompatability().ToList();
-                return Page();
-            }
-            return Page();
-        }
+        
 
     }
 }

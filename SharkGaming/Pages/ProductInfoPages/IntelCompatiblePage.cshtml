@@ -3,7 +3,7 @@
 @{
 }
 <div class="text-center">
-    <h1 style="color:white">Products</h1>
+    <h1 style="color:white">Intel Compatible Products</h1>
 </div>
 
 <br />
@@ -20,7 +20,7 @@
                 <tr>
                     <td>Price filter</td>
                 </tr>
-                <tr>
+@*<tr>
                     <td>
                         <form action="Post">
                             <input type="checkbox" id="rgbFilter" name="RGB" value="RGB">
@@ -32,11 +32,16 @@
                             <input type="submit" value="Filter">
                         </form>
                     </td>
-                </tr>
-                <tr>
+                </tr>*@
+                <tr>                   
                     <td>
-                        <input type="submit" value="Filter">
-                    </td>
+                         <a href="/ProductInfoPages/ProductListPage"> <input class="btn btn-dark" type="submit" value="All Products"</a>     
+                    </td>  
+                </tr>
+                <tr>                   
+                    <td>
+                         <a href="/ProductInfoPages/AmdCompatiblePage"> <input class="btn btn-dark" type="submit" value="AMD Compatible"</a>
+                    </td>  
                 </tr>
             </tbody>
         </table>
@@ -579,49 +584,7 @@
         </div>
         <br />
 
-        @*CPU 1*@
-        <div>
-            <a href="/ProductInfoPages/ComponentInfoPages/CpuPage1" class="btn btn-dark">
-                <h1 class="text-center">
-                    @foreach (var x in Model.cPU)
-                    {
-                        @if (x.Id == 12)
-                        {
-                            @x.Name
-                            Model.Bool = true;
-                        }
-                    }
-                    @if (Model.Bool == false)
-                    {
-                        <text>NAME NOT FOUND</text>
-                    }
-                    else Model.Bool = false;
-                </h1>
-
-                <img src="~/images/components/CPU1.png" class="img-fluid" />
-                <br />
-                jhfdknlsm v jnsdlksfv  enfljv dknakhbskd,m dnfioenfnflkmlks vkns amsjd vk.
-                <br />
-
-                <h1 class="text-orange">
-                    @foreach (var x in Model.cPU)
-                    {
-                        @if (x.Id == 12)
-                        {
-                            @x.Price <text> Kr</text>
-                            Model.Bool = true;
-                        }
-                    }
-                    @if (Model.Bool == false)
-                    {
-                        <text>PRICE NOT FOUND</text>
-                    }
-                    else Model.Bool = false;
-                </h1>
-            </a>
-            <a class="btn btnGreen" style="width:100%">Add to cart</a>
-        </div>
-        <br />
+       
 
         @*CPU 2*@
         <div>
@@ -667,49 +630,7 @@
         </div>
         <br />
 
-        @*CPU 3*@
-        <div>
-            <a href="/ProductInfoPages/ComponentInfoPages/CpuPage3" class="btn btn-dark">
-                <h1 class="text-center">
-                    @foreach (var x in Model.cPU)
-                    {
-                        @if (x.Id == 14)
-                        {
-                            @x.Name
-                            Model.Bool = true;
-                        }
-                    }
-                    @if (Model.Bool == false)
-                    {
-                        <text>NAME NOT FOUND</text>
-                    }
-                    else Model.Bool = false;
-                </h1>
-
-                <img src="~/images/components/CPU3.png" class="img-fluid" />
-                <br />
-                jhfdknlsm v jnsdlksfv  enfljv dknakhbskd,m dnfioenfnflkmlks vkns amsjd vk.
-                <br />
-
-                <h1 class="text-orange">
-                    @foreach (var x in Model.cPU)
-                    {
-                        @if (x.Id == 14)
-                        {
-                            @x.Price <text> Kr</text>
-                            Model.Bool = true;
-                        }
-                    }
-                    @if (Model.Bool == false)
-                    {
-                        <text>PRICE NOT FOUND</text>
-                    }
-                    else Model.Bool = false;
-                </h1>
-            </a>
-            <a class="btn btnGreen" style="width:100%">Add to cart</a>
-        </div>
-        <br />
+        
 
         @*GPU 1*@
         <div>
@@ -843,93 +764,7 @@
         </div>
         <br />
 
-        @*Motherboard 1*@
-        <div>
-            <a href="/ProductInfoPages/ComponentInfoPages/MotherBoardPage1" class="btn btn-dark">
-                <h1 class="text-center">
-                    @foreach (var x in Model.motherboards)
-                    {
-                        @if (x.Id == 18)
-                        {
-                            @x.Name
-                            Model.Bool = true;
-                        }
-                    }
-                    @if (Model.Bool == false)
-                    {
-                        <text>NAME NOT FOUND</text>
-                    }
-                    else Model.Bool = false;
-                </h1>
-
-                <img src="~/images/components/Motherboard1.png" class="img-fluid" />
-                <br />
-                jhfdknlsm v jnsdlksfv  enfljv dknakhbskd,m dnfioenfnflkmlks vkns amsjd vk.
-                <br />
-
-                <h1 class="text-orange">
-                    @foreach (var x in Model.motherboards)
-                    {
-                        @if (x.Id == 18)
-                        {
-                            @x.Price <text> Kr</text>
-                            Model.Bool = true;
-                        }
-                    }
-                    @if (Model.Bool == false)
-                    {
-                        <text>PRICE NOT FOUND</text>
-                    }
-                    else Model.Bool = false;
-                </h1>
-            </a>
-            <a class="btn btnGreen" style="width:100%">Add to cart</a>
-        </div>
-        <br />
-
-        @*Motherboard 2*@
-        <div>
-            <a href="/ProductInfoPages/ComponentInfoPages/MotherBoardPage2" class="btn btn-dark">
-                <h1 class="text-center">
-                    @foreach (var x in Model.motherboards)
-                    {
-                        @if (x.Id == 19)
-                        {
-                            @x.Name
-                            Model.Bool = true;
-                        }
-                    }
-                    @if (Model.Bool == false)
-                    {
-                        <text>NAME NOT FOUND</text>
-                    }
-                    else Model.Bool = false;
-                </h1>
-
-                <img src="~/images/components/Motherboard2.png" class="img-fluid" />
-                <br />
-                jhfdknlsm v jnsdlksfv  enfljv dknakhbskd,m dnfioenfnflkmlks vkns amsjd vk.
-                <br />
-
-                <h1 class="text-orange">
-                    @foreach (var x in Model.motherboards)
-                    {
-                        @if (x.Id == 19)
-                        {
-                            @x.Price <text> Kr</text>
-                            Model.Bool = true;
-                        }
-                    }
-                    @if (Model.Bool == false)
-                    {
-                        <text>PRICE NOT FOUND</text>
-                    }
-                    else Model.Bool = false;
-                </h1>
-            </a>
-            <a class="btn btnGreen" style="width:100%">Add to cart</a>
-        </div>
-        <br />
+       
 
         @*Motherboard 3*@
         <div>
