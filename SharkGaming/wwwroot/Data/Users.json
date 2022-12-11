@@ -18,25 +18,5 @@
     "Id": 3,
     "Username": "mads",
     "Password": "123"
-  },
-  {
-    "Id": 0,
-    "Username": "mads",
-    "Password": "1234"
-  },
-  {
-    "Id": 0,
-    "Username": "mads",
-    "Password": "12345"
-  },
-  {
-    "Id": 0,
-    "Username": "mads",
-    "Password": "12345"
-  },
-  {
-    "Id": 0,
-    "Username": "mads",
-    "Password": "123456"
   }
 ]
