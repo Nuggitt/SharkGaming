@@ -2,7 +2,7 @@
 {
     public class CustomerClass
     {
-        public string Phone { get; set; }
+        public int Phone { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
         public int Postcode { get; set; }
@@ -13,12 +13,14 @@
 
         }
 
-        public CustomerClass(string phone, string email, string address, int postcode, string country)
+        public CustomerClass(int phone, string email, string address, int postcode, string country)
         {
+            Phone = phone;
             Email = email;
             Address = address;
             Postcode = postcode;
             Country = country;
+
         }
     }
 }
