@@ -1,0 +1,54 @@
+﻿@page
+@model SharkGaming.Pages.ProductInfoPages.PrebuildInfoPages.Prebuild1InfoPageModel
+@{
+}
+
+
+<div class="text-center">
+    <h1 style="color:white">
+        @if (Model.components != null)
+        {
+            foreach (var item in Model.components)
+            {
+                @if (item.Id == 3)
+                {
+
+                    @item.Name
+
+                }
+            }
+        }
+    </h1>
+</div>
+
+<br />
+
+<div class="row text-center">
+    <div class="column col-6">
+        <img src="~/Images/Components/CaseFan1.png" style="width:65%" />
+    </div>
+    <div class="column col-6">
+        <h3 style="color:white">Description</h3>
+        <p style="color:white">This casefan is the perfect option to keep your computer just as cool as yourself.</p>
+        <h1 style="color:white">
+            Price:
+            @if (Model.components != null)
+            {
+                foreach (var item in Model.components)
+                {
+                    @if (item.Id == 3)
+                    {
+
+                        @item.Price
+
+                    }
+                }
+            }
+            kr
+        </h1>
+        <a class="btn btnGreen">Add to cart </a>
+    </div>
+</div>
+
+<br />
+

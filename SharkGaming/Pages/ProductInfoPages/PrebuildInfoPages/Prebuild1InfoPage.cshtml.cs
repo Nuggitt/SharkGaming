@@ -1,17 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SharkGaming.Products;
-using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
 using SharkGaming.Products.PreBuilds;
 using SharkGaming.Services.ProductServiceFile;
 
 namespace SharkGaming.Pages.ProductInfoPages.PrebuildInfoPages
 {
-    public class PrebuildInfoSideModel : PageModel
+    public class Prebuild1InfoPageModel : PageModel
     {
         private IProductService _productService;
 
-        public PrebuildInfoSideModel(IProductService iproductervice)
+        public Prebuild1InfoPageModel(IProductService iproductervice)
         {
             _productService = iproductervice;
         }
