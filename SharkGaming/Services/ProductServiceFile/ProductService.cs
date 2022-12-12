@@ -343,7 +343,7 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if (str.ToLower() == "gpu" || str.ToLower() == "graphics processing unit" || str.ToLower() == "graphicsprocessingunit" || str.ToLower() == "graphics card" || str.ToLower() == "graphicscard")
+                    if (str.ToLower() == "gpu" || str.ToLower() == "graphics processing unit" || str.ToLower() == "graphicsprocessingunit" || str.ToLower() == "graphics card" || str.ToLower() == "graphicscard" || str.ToLower() == "graphics" || str.ToLower() == "graphic" || str.ToLower() == "card")
                     {
                         foreach (ProductsClass prod in _gPUs)
                         {
