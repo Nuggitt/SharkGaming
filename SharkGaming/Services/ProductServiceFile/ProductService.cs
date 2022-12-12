@@ -259,7 +259,7 @@ namespace SharkGaming.Services.ProductServiceFile
                     }
                     if(str.ToLower() == "case" || str.ToLower() == "cases")
                     {
-                        foreach (ProductsClass prod in _preBuilds)
+                        foreach (ProductsClass prod in _cases)
                         {
                             if (!nameSearch.Contains(prod))
                                 nameSearch.Add(prod);
