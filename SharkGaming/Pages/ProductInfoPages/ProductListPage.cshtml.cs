@@ -31,6 +31,8 @@ namespace SharkGaming.Pages.ProductInfoPages
         public List<Mdot2> mdot2s { get; private set; }
         public List<SolidStateDrive> solidStateDrives { get; private set; }
 
+        public List<ProductsClass> productsClasses { get; private set; }
+
         private IProductService _productService;
 
         public List<ProductsClass> Items { get; private set; } = new List<ProductsClass>();
@@ -41,6 +43,7 @@ namespace SharkGaming.Pages.ProductInfoPages
         }
         public void OnGet()
         {
+            productsClasses = _productService.GetPreBuilds();
             cases = _productService.GetCases();
             caseFan = _productService.GetCaseFan();
             cPUAirCoolings = _productService.GetCPUAirCooling();
