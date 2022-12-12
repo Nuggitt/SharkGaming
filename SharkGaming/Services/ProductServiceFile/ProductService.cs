@@ -229,6 +229,8 @@ namespace SharkGaming.Services.ProductServiceFile
                             nameSearch.Add(item);
                         }
                     }
+
+                    
                     //foreach (CustomPcClass item in _customPcs)
                     //{
                     //    if (item.Name.ToLower().Contains(str.ToLower()))

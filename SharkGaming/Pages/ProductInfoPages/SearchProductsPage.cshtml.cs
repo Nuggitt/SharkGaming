@@ -10,7 +10,7 @@ namespace SharkGaming.Pages.ProductInfoPages
     public class SearchProductsPageModel : PageModel
     {
        
-        public ProductService _productService;
+        public IProductService _productService;
 
 
         [BindProperty] public string SearchString { get; set; }
@@ -19,9 +19,9 @@ namespace SharkGaming.Pages.ProductInfoPages
         public List<Products.ProductsClass> Items { get; private set; } = new List<Products.ProductsClass>();
         
 
-        public SearchProductsPageModel( )
+        public SearchProductsPageModel(IProductService productService )
         {
-            
+            this._productService = productService;
 
         }
 
