@@ -59,7 +59,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Update Product
-        void UpdatePreBuilds(PreBuildsClass preBuildsClass);
+        void UpdatePreBuilds(ProductsClass preBuildsClass);
         //void UpdateCustomPc(CustomPcClass customPcClass);
         void UpdateCase(Cases cases);
         void UpdateCaseFan(CaseFan caseFan);
@@ -77,6 +77,7 @@ namespace SharkGaming.Services.ProductServiceFile
 
         #region Get Product via ID
         Cases GetCases(int id);
+        ProductsClass GetPreBuildss(int id);
         //CustomPcClass GetCustomPcs(int id);
         CaseFan GetCaseFans(int id);
         CPUAirCooling GetCPUAirCoolings(int id);

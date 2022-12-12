@@ -1,0 +1,67 @@
+[
+  {
+    "Id": 0,
+    "Name": "Phanteks Enthoo Evolv X Satin Black Kabinet",
+    "Price": 1748
+  },
+  {
+    "Id": 1,
+    "Name": "Gigabyte X570S AORUS Master",
+    "Price": 2932.32
+  },
+  {
+    "Id": 2,
+    "Name": "Ryzen 9 5950X",
+    "Price": 4657.26
+  },
+  {
+    "Id": 3,
+    "Name": "ARCTIC LIQUID FREEZER II 360 A-RGB COOLER",
+    "Price": 999
+  },
+  {
+    "Id": 4,
+    "Name": "G.SKILL TridentZ RGB Series 32GB",
+    "Price": 1177
+  },
+  {
+    "Id": 5,
+    "Name": "ASUS GeForce RTX 3090 TI",
+    "Price": 13799.45
+  },
+  {
+    "Id": 6,
+    "Name": "Samsung 980 PRO 2TB M.2-2280",
+    "Price": 2276.92
+  },
+  {
+    "Id": 7,
+    "Name": "Corsair AX1600I Modular Titanium",
+    "Price": 4139.77
+  },
+  {
+    "Id": 8,
+    "Name": "be quiet! 120mm Silent Wings 4 Quiet Fan",
+    "Price": 159
+  },
+  {
+    "Id": 9,
+    "Name": "be quiet! 120mm Silent Wings 4 Quiet Fan",
+    "Price": 159
+  },
+  {
+    "Id": 10,
+    "Name": "be quiet! 120mm Silent Wings 4 Quiet Fan",
+    "Price": 159
+  },
+  {
+    "Id": 11,
+    "Name": "be quiet! 120mm Silent Wings 4 Quiet Fan",
+    "Price": 159
+  },
+  {
+    "Id": 12,
+    "Name": "be quiet! 120mm Silent Wings 4 Quiet Fan",
+    "Price": 159
+  }
+]

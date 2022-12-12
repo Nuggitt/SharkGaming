@@ -202,7 +202,7 @@ namespace SharkGaming.Services.ProductServiceFile
             //_mdot2s = MockMdot.GetMockMdot2s().ToList();
             //_solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives().ToList();
 
-
+            _preBuilds = JsonService.GetJsonPreBuilds().ToList();
             _cases = JsonService.GetJsonCases().ToList();
             _caseFans = JsonService.GetJsonCaseFans().ToList();
             _cPUAirCooling = JsonService.GetJsonCPUAirCooling().ToList();
@@ -322,11 +322,11 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region update methods
-        public void UpdatePreBuilds(PreBuildsClass preBuildsClass)
+        public void UpdatePreBuilds(ProductsClass preBuildsClass)
         {
             if (preBuildsClass != null)
             {
-                foreach (PreBuildsClass i in _preBuilds)
+                foreach (ProductsClass i in _preBuilds)
                 {
                     if (i.Id == preBuildsClass.Id)
                     {
@@ -636,7 +636,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Get Product via ID
-        public ProductsClass GetProduct(int id)
+        public ProductsClass GetPreBuildss(int id)
         {
             if (id != null)
             {
@@ -649,20 +649,20 @@ namespace SharkGaming.Services.ProductServiceFile
             return null;
         }
 
-//        public CustomPcClass GetCustomPcs(int id)
-//        {
-//            if (id != null)
-//            {
-//                foreach (CustomPcClass i in _customPcs)
-//                {
-//                    if (i.Id == id)
-//                    {
-//                        return i;
-//                    }
-//}
-//            }
-//            return null;
-//        }
+        //        public CustomPcClass GetCustomPcs(int id)
+        //        {
+        //            if (id != null)
+        //            {
+        //                foreach (CustomPcClass i in _customPcs)
+        //                {
+        //                    if (i.Id == id)
+        //                    {
+        //                        return i;
+        //                    }
+        //}
+        //            }
+        //            return null;
+        //        }
 
         public Cases GetCases(int id)
         {
@@ -1173,6 +1173,8 @@ namespace SharkGaming.Services.ProductServiceFile
             //}
             return price;
         }
+
+        
 
         #endregion
     }
