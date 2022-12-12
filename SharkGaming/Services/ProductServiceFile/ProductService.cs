@@ -21,7 +21,7 @@ namespace SharkGaming.Services.ProductServiceFile
     public class ProductService : IProductService // All customPc commented out
     {
         #region Lists       
-        private List<ProductsClass> _preBuilds;
+        private List<PreBuildsClass> _preBuilds;
         //private List<CustomPcClass> _customPcs;
         private List<Cases> _cases;
         private List<CaseFan> _caseFans;
@@ -57,7 +57,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Get methods       
-        public List<ProductsClass> GetPreBuilds()
+        public List<PreBuildsClass> GetPreBuilds()
         {
             return _preBuilds;
         }
@@ -114,7 +114,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Add to list methods
-        public void AddPreBuild(ProductsClass preBuilds)
+        public void AddPreBuild(PreBuildsClass preBuilds)
         {
             _preBuilds.Add(preBuilds);
             JsonService.SaveJsonPreBuilds(_preBuilds);  
@@ -322,11 +322,11 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region update methods
-        public void UpdatePreBuilds(ProductsClass preBuildsClass)
+        public void UpdatePreBuilds(PreBuildsClass preBuildsClass)
         {
             if (preBuildsClass != null)
             {
-                foreach (ProductsClass i in _preBuilds)
+                foreach (PreBuildsClass i in _preBuilds)
                 {
                     if (i.Id == preBuildsClass.Id)
                     {
@@ -636,11 +636,11 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Get Product via ID
-        public ProductsClass GetPreBuildss(int id)
+        public PreBuildsClass GetPreBuildss(int id)
         {
             if (id != null)
             {
-                foreach (ProductsClass i in _preBuilds)
+                foreach (PreBuildsClass i in _preBuilds)
                     if (i.Id == id)
                     {
                         return i;
@@ -1173,8 +1173,6 @@ namespace SharkGaming.Services.ProductServiceFile
             //}
             return price;
         }
-
-        
 
         #endregion
     }

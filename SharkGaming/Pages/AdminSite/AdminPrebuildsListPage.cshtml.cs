@@ -16,7 +16,7 @@ namespace SharkGaming.Pages.AdminSite
             _productService = iproductervice;
         }
 
-        public List<ProductsClass> preBuildsClasses { get; private set; }
+        public List<PreBuildsClass> preBuildsClasses { get; private set; }
 
 
         public void OnGet()

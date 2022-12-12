@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SharkGaming.Products;
+using SharkGaming.Products.PreBuilds;
 using SharkGaming.Services.ProductServiceFile;
 
 namespace SharkGaming.Pages.ProductInfoPages
@@ -13,7 +13,7 @@ namespace SharkGaming.Pages.ProductInfoPages
         {
             _productService = iproductervice;
         }
-        public List<ProductsClass>? preBuilds { get; private set; }
+        public List<PreBuildsClass>? preBuilds { get; private set; }
 
 
         public void OnGet()

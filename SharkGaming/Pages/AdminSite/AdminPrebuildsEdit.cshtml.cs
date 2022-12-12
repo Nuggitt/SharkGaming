@@ -10,7 +10,7 @@ namespace SharkGaming.Pages.AdminSite
     public class AdminPrebuildsEditModel : PageModel
     {
         private IProductService _productService;
-        [BindProperty] public ProductsClass preBuilds { get; set; }
+        [BindProperty] public PreBuildsClass preBuilds { get; set; }
 
         public AdminPrebuildsEditModel(IProductService productService)
         {
