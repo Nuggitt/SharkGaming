@@ -13,12 +13,12 @@ namespace SharkGaming.Pages.ProductInfoPages
         {
             _productService = iproductervice;
         }
-        public List<ProductsClass>? components { get; private set; }
+        public List<ProductsClass>? preBuilds { get; private set; }
 
 
         public void OnGet()
         {
-            components = _productService.GetPreBuilds();
+            preBuilds = _productService.GetPreBuilds();
         }
     }
 }
