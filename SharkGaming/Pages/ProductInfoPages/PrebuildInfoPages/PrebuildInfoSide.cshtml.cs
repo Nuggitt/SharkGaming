@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SharkGaming.Products;
 using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
+using SharkGaming.Products.PreBuilds;
 using SharkGaming.Services.ProductServiceFile;
 
 namespace SharkGaming.Pages.ProductInfoPages.PrebuildInfoPages
@@ -14,7 +15,7 @@ namespace SharkGaming.Pages.ProductInfoPages.PrebuildInfoPages
         {
             _productService = iproductervice;
         }
-        public List<ProductsClass>? components { get; private set; }
+        public List<PreBuildsClass>? components { get; private set; }
 
 
         public void OnGet()

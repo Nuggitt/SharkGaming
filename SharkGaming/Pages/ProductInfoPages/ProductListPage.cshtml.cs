@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SharkGaming.Products.Components.ComponentTypes.Cooling;
 using SharkGaming.Products.Components.ComponentTypes.CPU;
@@ -11,14 +10,14 @@ using SharkGaming.Products.Components.ComponentTypes.Storage;
 using SharkGaming.Products;
 using SharkGaming.Services.ProductServiceFile;
 using System.Reflection;
-
+using SharkGaming.Products.PreBuilds;
 
 namespace SharkGaming.Pages.ProductInfoPages
 {
     public class ProductListPageModel : PageModel
     {
         public bool Bool = false;
-        public List<ProductsClass> Products { get; private set; }
+        public List<PreBuildsClass> Products { get; private set; }
         public List<Cases> cases { get; private set; }
         public List<CaseFan> caseFan { get; private set; }
         public List<CPUAirCooling> cPUAirCoolings { get; private set; }
