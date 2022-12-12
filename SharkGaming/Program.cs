@@ -28,9 +28,9 @@ builder.Services.Configure<CookiePolicyOptions>(options =>
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(cookieOptions => 
 {
     cookieOptions.LoginPath = "/Login/LoginPage";
-}); 
+});
 
-builder.Services.AddMvc().AddRazorPagesOptions(options => 
+builder.Services.AddMvc().AddRazorPagesOptions(options =>
 {
     options.Conventions.AuthorizeFolder("/index");
 }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
