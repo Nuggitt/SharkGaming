@@ -222,25 +222,7 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 if (!string.IsNullOrWhiteSpace(str))
                 {
-                    foreach (ProductsClass item in _preBuilds)
-                    {
-                        if (item.Name.ToLower().Contains(str.ToLower()))
-                        {
-                            if (!nameSearch.Contains(item))
-                            nameSearch.Add(item);
-                        }
-
-                    }
-                    if (str.ToLower() == "prebuild" || str.ToLower() == "pre build" || str.ToLower() == "prebuilds" || str.ToLower() == "pre builds")
-                    {
-                        foreach (ProductsClass prod in _preBuilds)
-                        {
-                            if (!nameSearch.Contains(prod))
-                                nameSearch.Add(prod);
-                        }
-                    }
-
-
+                    
                     //foreach (CustomPcClass item in _customPcs)
                     //{
                     //    if (item.Name.ToLower().Contains(str.ToLower()))
@@ -257,7 +239,7 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if(str.ToLower() == "case" || str.ToLower() == "cases")
+                    if(str.ToLower() == "case" || str.ToLower() == "cases" || str.ToLower() == "all")
                     {
                         foreach (ProductsClass prod in _cases)
                         {
@@ -274,7 +256,7 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if (str.ToLower() == "casefan" || str.ToLower() == "case fan" || str.ToLower() == "case fans" || str.ToLower() == "fan" || str.ToLower() == "fans" || str.ToLower() == "case cooling" || str.ToLower() == "cooling") 
+                    if (str.ToLower() == "casefan" || str.ToLower() == "case fan" || str.ToLower() == "case fans" || str.ToLower() == "all" || str.ToLower() == "fan" || str.ToLower() == "fans" || str.ToLower() == "case cooling" || str.ToLower() == "cooling") 
                     {
                         foreach (ProductsClass prod in _caseFans)
                         {
@@ -291,7 +273,7 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if (str.ToLower() == "cpucooling" || str.ToLower() == "cpufan" || str.ToLower() == "cpufans" || str.ToLower() == "fan" || str.ToLower() == "fans" || str.ToLower() == "cpu cooling" || str.ToLower() == "cooling" || str.ToLower() == "cpu fan" || str.ToLower() == "cpu fans")
+                    if (str.ToLower() == "cpucooling" || str.ToLower() == "cpufan" || str.ToLower() == "all" || str.ToLower() == "cpufans" || str.ToLower() == "fan" || str.ToLower() == "fans" || str.ToLower() == "cpu cooling" || str.ToLower() == "cooling" || str.ToLower() == "cpu fan" || str.ToLower() == "cpu fans")
                     {
                         foreach (ProductsClass prod in _cPUAirCooling)
                         {
@@ -308,7 +290,7 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if (str.ToLower() == "cpucooling" || str.ToLower() == "cpufan" || str.ToLower() == "cpufans" || str.ToLower() == "fan" || str.ToLower() == "fans" || str.ToLower() == "cpu cooling" || str.ToLower() == "cooling" || str.ToLower() == "cpu fan" || str.ToLower() == "cpu fans" || str.ToLower() == "watercooling" || str.ToLower() == "watercooled" || str.ToLower() == "water cooling" || str.ToLower() == "water cooled" || str.ToLower() == "liquidcooling" || str.ToLower() == "liquidcooled" || str.ToLower() == "liquid cooling" || str.ToLower() == "liquid cooled" || str.ToLower() == "liquid")
+                    if (str.ToLower() == "cpucooling" || str.ToLower() == "cpufan" || str.ToLower() == "all" || str.ToLower() == "cpufans" || str.ToLower() == "fan" || str.ToLower() == "fans" || str.ToLower() == "cpu cooling" || str.ToLower() == "cooling" || str.ToLower() == "cpu fan" || str.ToLower() == "cpu fans" || str.ToLower() == "watercooling" || str.ToLower() == "watercooled" || str.ToLower() == "water cooling" || str.ToLower() == "water cooled" || str.ToLower() == "liquidcooling" || str.ToLower() == "liquidcooled" || str.ToLower() == "liquid cooling" || str.ToLower() == "liquid cooled" || str.ToLower() == "liquid")
                     {
                         foreach (ProductsClass prod in _cPUWaterCooling)
                         {
@@ -325,7 +307,7 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if (str.ToLower() == "cpu" || str.ToLower() == "central processing unit" || str.ToLower() == "centralprocessingunit")
+                    if (str.ToLower() == "cpu" || str.ToLower() == "central processing unit" || str.ToLower() == "centralprocessingunit" || str.ToLower() == "all")
                     {
                         foreach (ProductsClass prod in _cPUs)
                         {
@@ -343,7 +325,7 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if (str.ToLower() == "gpu" || str.ToLower() == "graphics processing unit" || str.ToLower() == "graphicsprocessingunit" || str.ToLower() == "graphics card" || str.ToLower() == "graphicscard" || str.ToLower() == "graphics" || str.ToLower() == "graphic" || str.ToLower() == "card")
+                    if (str.ToLower() == "gpu" || str.ToLower() == "graphics processing unit" || str.ToLower() == "all" || str.ToLower() == "graphicsprocessingunit" || str.ToLower() == "graphics card" || str.ToLower() == "graphicscard" || str.ToLower() == "graphics" || str.ToLower() == "graphic" || str.ToLower() == "card")
                     {
                         foreach (ProductsClass prod in _gPUs)
                         {
@@ -360,7 +342,7 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if (str.ToLower() == "motherboard" || str.ToLower() == "mother board")
+                    if (str.ToLower() == "motherboard" || str.ToLower() == "mother board" || str.ToLower() == "all")
                     {
                         foreach (ProductsClass prod in _motherboards)
                         {
@@ -377,7 +359,7 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if (str.ToLower() == "psu" || str.ToLower() == "powersupply" || str.ToLower() == "power supply" || str.ToLower() == "powersupplies" || str.ToLower() == "power supplies" || str.ToLower() == "power" || str.ToLower() == "supply" || str.ToLower() == "supplies")
+                    if (str.ToLower() == "psu" || str.ToLower() == "powersupply" || str.ToLower() == "all" || str.ToLower() == "power supply" || str.ToLower() == "powersupplies" || str.ToLower() == "power supplies" || str.ToLower() == "power" || str.ToLower() == "supply" || str.ToLower() == "supplies")
                     {
                         foreach (ProductsClass prod in _powerSupplies)
                         {
@@ -394,7 +376,7 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if (str.ToLower() == "ram" || str.ToLower() == "randomaccessmemory" || str.ToLower() == "random access memory" || str.ToLower() == "memory")
+                    if (str.ToLower() == "ram" || str.ToLower() == "randomaccessmemory" || str.ToLower() == "all" || str.ToLower() == "random access memory" || str.ToLower() == "memory")
                     {
                         foreach (ProductsClass prod in _rAMs)
                         {
@@ -411,7 +393,7 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if (str.ToLower() == "storage" || str.ToLower() == "m.2" || str.ToLower() == "mdot2")
+                    if (str.ToLower() == "storage" || str.ToLower() == "m.2" || str.ToLower() == "mdot2" || str.ToLower() == "all")
                     {
                         foreach (ProductsClass prod in _mdot2s)
                         {
@@ -428,9 +410,26 @@ namespace SharkGaming.Services.ProductServiceFile
                                 nameSearch.Add(item);
                         }
                     }
-                    if (str.ToLower() == "storage" || str.ToLower() == "ssd" || str.ToLower() == "solidstatedrive" || str.ToLower() == "solid state drive" || str.ToLower() == "solid state" || str.ToLower() == "solid")
+                    if (str.ToLower() == "storage" || str.ToLower() == "ssd" || str.ToLower() == "all" || str.ToLower() == "solidstatedrive" || str.ToLower() == "solid state drive" || str.ToLower() == "solid state" || str.ToLower() == "solid")
                     {
                         foreach (ProductsClass prod in _solidStateDrives)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
+                        }
+                    }
+                    foreach (ProductsClass item in _preBuilds)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
+                        }
+
+                    }
+                    if (str.ToLower() == "prebuild" || str.ToLower() == "pre build" || str.ToLower() == "prebuilds" || str.ToLower() == "pre builds" || str.ToLower() == "all")
+                    {
+                        foreach (ProductsClass prod in _preBuilds)
                         {
                             if (!nameSearch.Contains(prod))
                                 nameSearch.Add(prod);
