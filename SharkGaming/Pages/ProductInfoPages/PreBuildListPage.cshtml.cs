@@ -7,6 +7,7 @@ namespace SharkGaming.Pages.ProductInfoPages
 {
     public class PreBuildListPageModel : PageModel
     {
+        public string img = "/Images/Components/Case1.png";
         private IProductService _productService;
 
         public PreBuildListPageModel(IProductService iproductervice)
