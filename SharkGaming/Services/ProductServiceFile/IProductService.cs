@@ -52,6 +52,8 @@ namespace SharkGaming.Services.ProductServiceFile
         IEnumerable<ProductsClass> ProductNameSearch(string str);
         #endregion
 
+      
+
         #region Price Filter 
         IEnumerable<ProductsClass> PriceFilter(double maxPrice, double minPrice = 0);
         #endregion

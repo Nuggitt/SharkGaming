@@ -4,30 +4,50 @@
 }
 
 <div class="text-center">
-    <h1 style="color:white">Shark Gaming Aquarium</h1>
+    <h1 style="color:white">
+        @if (Model.components != null)
+        {
+            foreach (var item in Model.components)
+            {
+                @if (item.Id == 0)
+                {
+                    @item.Name
+                }
+            }
+        }
+    </h1>
 </div>
 
 <br />
-<form method="post">
-    <div class="row text-center">
-        <div class="column col-6">
-            <img src="~/Images/Components/Case1.png" style="width:65%" />
-        </div>
-        <div class="column col-6">
-            <h3 style="color:white">Description</h3>
-            <p style="color:white">SharkGaming aquarium is a case that allows you to connect to the motherboard and control RGB through the software</p>
-            <h1 style="color:white">Price: 999</h1>
-            <div class="form-group">
-                <input type="submit" value="Add To Cart" class="btn btnGreen">
-            </div>
-        </div>
-    </div>
-</form>
 
+<div class="row text-center">
+    <div class="column col-6">
+        <img src="~/images/components/Case1.png" style=" width: 70%" />
+    </div>
+    <div class="column col-6">
+        <h3 style="color:white">Description</h3>
+        <p style="color:white">SharkGaming aquarium is a case that allows you to connect to the motherboard and control RGB through the software</p>
+        <h1 style="color:white">
+            Price:
+            @if (Model.components != null)
+            {
+                foreach (var item in Model.components)
+                {
+                    @if (item.Id == 0)
+                    {
+                        @item.Price
+                    }
+                }
+            }
+            kr
+        </h1>
+        <a class="btn btnGreen">Add to cart</a>
+    </div>
+</div>
 
 <br />
 
-<table class="table table-bordered border-black center bg-dark text-white" style="width:85%">
+<table class="table table-bordered center bg-dark text-white" style="width:85%">
     <thead>
         <tr>
             <th style="width:50%">Specification</th>
@@ -36,8 +56,143 @@
     </thead>
     <tbody>
         <tr>
-            <td>navn</td>
-            <td>info</td>
+            <td>Compatibility</td>
+            <td>AMD and Intel</td>
+        </tr>
+        <tr>
+            <td>Size type</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 0)
+                        {
+                            @item.SizeType
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Colour</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 0)
+                        {
+                            @item.Colour
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Amount of Fans</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 0)
+                        {
+                            @item.AmountOfFans
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>RGB</td>
+            <td>
+                True
+            </td>
+        </tr>
+        <tr>
+            <td>Width</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 0)
+                        {
+                            @item.Width
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Depth</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 0)
+                        {
+                            @item.Depth
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Height</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 0)
+                        {
+                            @item.Height
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td> Support Motherboard</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 0)
+                        {
+                            @item.SupportMotherboard
+                            ;
+                        }
+
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Build-in interface</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 0)
+                        {
+                            @item.BuildInInterface
+                            ;
+                        }
+                    }
+                }
+            </td>
         </tr>
     </tbody>
 </table>

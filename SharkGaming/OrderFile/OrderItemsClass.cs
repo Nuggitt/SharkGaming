@@ -7,23 +7,30 @@ namespace SharkGaming.OrderFile
 {
     public class OrderItemsClass
     {
+        public static int nextId = 0;
+        public int OrderItemId { get; set; }
         public int Amount { get; set; }
-        public double Price { get; set; }
+        public double? Price { get; set; }
         public ProductsClass Product { get; set; }
 
-        public OrderItemsClass(ProductsClass product, int amount, double price )
+        public OrderItemsClass(ProductsClass product, int amount)
         {
             Product = product;
             Amount = amount;
-            Price = price;
+            Price = product.Price;
+            OrderItemId = nextId++;
+        }
+        public OrderItemsClass()
+        {
+            
         }
 
-        public static List<ProductsClass> orderItemList = new List<ProductsClass>()
+        public static List<OrderItemsClass> orderItemList = new List<OrderItemsClass>()
         {
 
         };
 
-        public static List<ProductsClass> GetOrderList()
+        public static List<OrderItemsClass> GetOrderList()
         {
             return orderItemList;
         }

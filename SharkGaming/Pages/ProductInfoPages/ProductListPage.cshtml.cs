@@ -10,6 +10,7 @@ using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
 using SharkGaming.Products.Components.ComponentTypes.Storage;
 using SharkGaming.Products;
 using SharkGaming.Services.ProductServiceFile;
+using System.Reflection;
 
 
 namespace SharkGaming.Pages.ProductInfoPages
@@ -32,13 +33,28 @@ namespace SharkGaming.Pages.ProductInfoPages
 
         private IProductService _productService;
 
+        public List<ProductsClass> Items { get; private set; } = new List<ProductsClass>();
+
         public ProductListPageModel(IProductService iproductService)
         {
             _productService= iproductService;
         }
         public void OnGet()
         {
-            cases= _productService.GetCases();
+            cases = _productService.GetCases();
+            caseFan = _productService.GetCaseFan();
+            cPUAirCoolings = _productService.GetCPUAirCooling();
+            cPUWaterCoolings = _productService.GetCPUWaterCooling();
+            cPU = _productService.GetCPUs();
+            gPU = _productService.GetGPUs();
+            motherboards = _productService.GetMotherboards();
+            powerSupplies = _productService.GetPowerSupply();
+            ram = _productService.GetRAM();
+            mdot2s = _productService.GetMdot2();
+            solidStateDrives = _productService.GetSolidStateDrives();
         }
+
+        
+
     }
 }

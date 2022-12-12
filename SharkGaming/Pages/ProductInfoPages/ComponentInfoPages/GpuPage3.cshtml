@@ -1,4 +1,212 @@
 ﻿@page
-@model SharkGaming.Pages.ProductInfoPages.ComponentInfoPages.GpuPage3Model
+@model SharkGaming.Pages.ProductInfoPages.ComponentInfoPages.GpuPage1Model
 @{
 }
+
+<div class="text-center">
+    <h1 style="color:white">
+        @if (Model.components != null)
+        {
+            foreach (var item in Model.components)
+            {
+                @if (item.Id == 17)
+                {
+                    @item.Name
+                }
+            }
+        }
+    </h1>
+</div>
+
+<br />
+
+<div class="row text-center">
+    <div class="column col-6">
+        <img src="~/images/components/GPU3.png" style=" width: 70%" />
+    </div>
+    <div class="column col-6">
+        <h3 style="color:white">Description</h3>
+        <p style="color:white">SharkGaming aquarium is a case that allows you to connect to the motherboard and control RGB through the software</p>
+        <h1 style="color:white">
+            Price:
+            @if (Model.components != null)
+            {
+                foreach (var item in Model.components)
+                {
+                    @if (item.Id == 17)
+                    {
+                        @item.Price
+                    }
+                }
+            }
+            kr
+        </h1>
+        <a class="btn btnGreen">Add to cart</a>
+    </div>
+</div>
+
+<br />
+
+<table class="table table-bordered center bg-dark text-white" style="width:85%">
+    <thead>
+        <tr>
+            <th style="width:50%">Specification</th>
+            <th style="width:50%">Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Compatibility</td>
+            <td>AMD and Intel</td>
+        </tr>
+        <tr>
+            <td>Graphics engine</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 17)
+                        {
+                            @item.GraphicsEngine
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>cUDA core</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 17)
+                        {
+                            @item.CUDACore
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>VR-compatible</td>
+            <td>
+                True
+            </td>
+        </tr>
+        <tr>
+            <td>Max resolution</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 17)
+                        {
+                            @item.MaxResolution
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Memory size</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 17)
+                        {
+                            @item.MemorySize
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Memory technology</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 17)
+                        {
+                            @item.MemoryTechnology
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Memory bus width</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        @if (item.Id == 17)
+                        {
+                            @item.MemoryBusWidth
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Required power supply</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 17)
+                        {
+                            @item.RequriedPowerSupply
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Width</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 17)
+                        {
+                            @item.Width
+                        }
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>PCI express</td>
+            <td>
+                @if (Model.components != null)
+                {
+                    foreach (var item in Model.components)
+                    {
+                        if (item.Id == 17)
+                        {
+                            @item.PCIExpress
+                            ;
+                        }
+                    }
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>

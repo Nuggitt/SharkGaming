@@ -40,6 +40,7 @@ namespace SharkGaming.Products.PreBuilds
         //    storageClass = storageclass;
         //    powerSupply = powersupply;
         //    caseFan = casefan;
+        //    Id = nextId++;
 
         //}
 

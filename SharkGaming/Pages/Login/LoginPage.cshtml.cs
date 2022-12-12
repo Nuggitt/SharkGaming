@@ -10,13 +10,13 @@ using System.Security.Claims;
 
 namespace SharkGaming.Pages.Login
 {
-    public class LoginPageModel : PageModel
+    public class LogInPageModel : PageModel
     {
         private UserService _userService;
 
         public static User LoggedInUser { get; set; } = null;
 
-        public LoginPageModel(UserService userService)
+        public LogInPageModel(UserService userService)
         {
             _userService = userService;
         }
@@ -29,28 +29,22 @@ namespace SharkGaming.Pages.Login
 
         public async Task<IActionResult> OnPost()
         {
-            List<User> users = _userService.Users;
+            List<User> users = _userService._users;
             foreach (User user in users)
             {
-                if (UserName == user.Username)
+                if (UserName == user.Username && Password == user.Password)
                 {
-                    var passwordHasher = new PasswordHasher<string>();
-                    if (passwordHasher.VerifyHashedPassword(null, user.Password, Password) == PasswordVerificationResult.Success)
-                    {
-                        LoggedInUser = user;
-                        var claims = new List<Claim>
-                        {
-                            new Claim(ClaimTypes.Name, UserName)
-                        };
+                    LoggedInUser = user;
+                    var claims = new List<Claim>
+                            {
+                                new Claim(ClaimTypes.Name, UserName)
+                            };
 
-                        if (UserName == "admin") claims.Add(new Claim(ClaimTypes.Role, "admin"));
+                    if (UserName == "admin") claims.Add(new Claim(ClaimTypes.Role, "admin"));
 
-                        var claimsIdentity =
-                            new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                            new ClaimsPrincipal(claimsIdentity));
-                        return RedirectToPage("/Index");
-                    }
+                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+                    return RedirectToPage("/index");
                 }
             }
 

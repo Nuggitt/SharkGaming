@@ -18,12 +18,12 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
     public class OrderRepositoryService : IOrderRepositoryService
     {
         private List<OrderClass> _orders;
-        private List<ProductsClass> _orderItems;
+        private List<OrderItemsClass> _orderItems;
 
         public OrderRepositoryService()
         {
-            _orders = OrderClass.GetOrders();
-            _orderItems = OrderItemsClass.GetOrderList();   
+            //_orders = OrderClass.GetOrders();
+            //_orderItems = OrderItemsClass.GetOrderList();   
         }
 
         #region json
@@ -32,8 +32,8 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         public OrderRepositoryService(JsonService jsonService)
         {
             JsonService = jsonService;
-            _orders = JsonService.GetJsonOrder().ToList();
-            _orderItems = JsonService.GetJsonOrderItems().ToList();
+            //_orders = JsonService.GetJsonOrder().ToList();
+            //_orderItems = JsonService.GetJsonOrderItems().ToList();
         }
         #endregion
 
@@ -123,26 +123,26 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
         //OrderItemsMethods:
 
-        public List<ProductsClass> GetOrderItems()
+        public List<OrderItemsClass> GetOrderItems()
         {
             return _orderItems;
         }
 
-        public void AddOrderItems(ProductsClass orderItem)
+        public void AddOrderItems(OrderItemsClass orderItem)
         {
             _orderItems.Add(orderItem);
             JsonService.SaveJsonOrderItems(_orderItems);
         }
 
-        public ProductsClass DeleteOrderItem(int? itemId)
+        public OrderItemsClass DeleteOrderItem(int? itemId)
         {
-            ProductsClass deletedOrderItem = null;
+            OrderItemsClass deletedOrderItem = null;
 
             #region Delete OrderItem
-            ProductsClass orderItemsToBeDeleted = null;
-            foreach (ProductsClass item in _orderItems)
+            OrderItemsClass orderItemsToBeDeleted = null;
+            foreach (OrderItemsClass item in _orderItems)
             {
-                if (item.Id == itemId)
+                if (item.OrderItemId == itemId)
                 {
                     orderItemsToBeDeleted = item;
                     break;
@@ -151,7 +151,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             if (orderItemsToBeDeleted != null)
             {
                 _orderItems.Remove(orderItemsToBeDeleted);
-                JsonService.SaveJsonPreBuilds(_orderItems);
+                JsonService.SaveJsonOrderItems(_orderItems);
                 deletedOrderItem = orderItemsToBeDeleted;
             }
             #endregion

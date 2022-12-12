@@ -12,6 +12,8 @@ using SharkGaming.Products.Components.ComponentTypes.Storage;
 using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
 using SharkGaming.Products.CustomPc;
 using SharkGaming.Products.PreBuilds;
+using SharkGaming.Users;
+using SharkGaming.Users.Customer;
 using System.Text.Json;
 
 namespace SharkGaming.Services.JsonServiceFile
@@ -564,7 +566,7 @@ namespace SharkGaming.Services.JsonServiceFile
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "OrderItems.json"); }
         }
 
-        public void SaveJsonOrderItems(List<ProductsClass> OrderItems)
+        public void SaveJsonOrderItems(List<OrderItemsClass> OrderItems)
         {
             using (FileStream jsonFileWriter = File.Create(JsonFileNameOrderItems))
             {
@@ -573,18 +575,74 @@ namespace SharkGaming.Services.JsonServiceFile
                     SkipValidation = false,
                     Indented = true
                 });
-                JsonSerializer.Serialize<ProductsClass[]>(jsonWriter, OrderItems.ToArray());
+                JsonSerializer.Serialize<OrderItemsClass[]>(jsonWriter, OrderItems.ToArray());
             }
         }
 
-        public IEnumerable<ProductsClass> GetJsonOrderItems()
+        public IEnumerable<OrderItemsClass> GetJsonOrderItems()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileNameOrder))
             {
-                return JsonSerializer.Deserialize<ProductsClass[]>(jsonFileReader.ReadToEnd());
+                return JsonSerializer.Deserialize<OrderItemsClass[]>(jsonFileReader.ReadToEnd());
             }
         }
         #endregion
 
+        #region User Json
+        private string JsonFileUsers
+        {
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "Users.json"); }
+        }
+
+        public void SaveJsonUser(List<User> OrderItems)
+        {
+            using (FileStream jsonFileWriter = File.Create(JsonFileUsers))
+            {
+                Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
+                {
+                    SkipValidation = false,
+                    Indented = true
+                });
+                JsonSerializer.Serialize<User[]>(jsonWriter, OrderItems.ToArray());
+            }
+        }
+
+        public IEnumerable<User> GetJsonUser()
+        {
+            using (StreamReader jsonFileReader = File.OpenText(JsonFileUsers))
+            {
+                return JsonSerializer.Deserialize<User[]>(jsonFileReader.ReadToEnd());
+            }
+        }
+        #endregion
+
+
+        #region Customer Json
+        private string JsonFileCustomer
+        {
+            get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "Customers.json"); }
+        }
+
+        public void SaveJsonCustomer(List<CustomerClass> customerClasses)
+        {
+            using (FileStream jsonFileWriter = File.Create(JsonFileCustomer))
+            {
+                Utf8JsonWriter jsonWriter = new Utf8JsonWriter(jsonFileWriter, new JsonWriterOptions()
+                {
+                    SkipValidation = false,
+                    Indented = true
+                });
+                JsonSerializer.Serialize<CustomerClass[]>(jsonWriter, customerClasses.ToArray());
+            }
+        }
+
+        public IEnumerable<CustomerClass> GetJsonCustomer()
+        {
+            using (StreamReader jsonFileReader = File.OpenText(JsonFileUsers))
+            {
+                return JsonSerializer.Deserialize<CustomerClass[]>(jsonFileReader.ReadToEnd());
+            }
+        }
+        #endregion
     }
 }
