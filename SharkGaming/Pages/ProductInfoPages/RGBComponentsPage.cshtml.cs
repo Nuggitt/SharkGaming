@@ -10,13 +10,13 @@ using SharkGaming.Products.Components.ComponentTypes.Storage.Case;
 using SharkGaming.Products.Components.ComponentTypes.Storage;
 using SharkGaming.Products;
 using SharkGaming.Services.ProductServiceFile;
-using System.Reflection;
-
 
 namespace SharkGaming.Pages.ProductInfoPages
 {
-    public class ProductListPageModel : PageModel
+    public class RGBComponentsPageModel : PageModel
     {
+
+
         public bool Bool = false;
         public List<ProductsClass> Products { get; private set; }
         public List<Cases> cases { get; private set; }
@@ -31,19 +31,16 @@ namespace SharkGaming.Pages.ProductInfoPages
         public List<Mdot2> mdot2s { get; private set; }
         public List<SolidStateDrive> solidStateDrives { get; private set; }
 
-        //public List<ProductsClass> prebuilds { get; private set; }
-
         private IProductService _productService;
 
         public List<ProductsClass> Items { get; private set; } = new List<ProductsClass>();
 
-        public ProductListPageModel(IProductService iproductService)
+        public RGBComponentsPageModel(IProductService iproductService)
         {
-            _productService= iproductService;
+            _productService = iproductService;
         }
         public void OnGet()
         {
-            //prebuilds = _productService.GetPreBuilds();
             cases = _productService.GetCases();
             caseFan = _productService.GetCaseFan();
             cPUAirCoolings = _productService.GetCPUAirCooling();
@@ -57,7 +54,9 @@ namespace SharkGaming.Pages.ProductInfoPages
             solidStateDrives = _productService.GetSolidStateDrives();
         }
 
-        
+
+
 
     }
 }
+
