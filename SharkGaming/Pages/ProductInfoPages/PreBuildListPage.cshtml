@@ -12,10 +12,15 @@
 <div class="row center">
     <div class="column col-12 center columnCustom">
 
+
+@*  Doesn't work atm
+    
+    @foreach(var x in Model.preBuilds)
+        {
         <div>
             <a href="#" class="btn btn-dark">
                 <h1 class="text-center">
-                    Name
+                    @x.Name
                 </h1>
 
                 <img src="~/Images/Components/Case1.png" class="img-fluid" />
@@ -24,14 +29,17 @@
                 <br />
 
                 <h1 class="text-orange">
-                    Price
+                    @x.Price
                 </h1>
             </a>
             <a class="btn btnGreen" style="width:100%">Add to cart</a>
         </div>
         <br />
+        }*@
 
-        <div>
+
+
+@*        <div>
             <a href="#" class="btn btn-dark">
                 <h1 class="text-center">
                     Name
@@ -67,7 +75,7 @@
             </a>
             <a class="btn btnGreen" style="width:100%">Add to cart</a>
         </div>
-        <br />
+        <br />*@
 
     </div>
 </div>
