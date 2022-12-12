@@ -186,9 +186,24 @@
                         {
                             <a href="/ProductInfoPages/PrebuildInfoPages/Prebuild3InfoPage"> <input class="btn btn-dark" type="submit" value="More info"> </a>
                         }
-
-                        
+  
                     </td>
+                    <td>
+                        <form method="post" class="form-inline">
+                            <div class="input-group mb-3">
+                                
+                                <input asp-for="product" class="form-control mr-1" />
+
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Qty</span>
+                                </div>
+                                <input asp-for="amount" class="form-control mr-1" />
+                                <input type="submit" asp-page-handler="AddToCart" value="Add To Cart" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </td>
+                    
+
                 </tr>
             }
         }

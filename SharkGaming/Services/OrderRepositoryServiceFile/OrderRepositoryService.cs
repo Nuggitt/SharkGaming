@@ -128,11 +128,6 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             return _orderItems;
         }
 
-        public void AddOrderItems(OrderItemsClass orderItem)
-        {
-            _orderItems.Add(orderItem);
-            JsonService.SaveJsonOrderItems(_orderItems);
-        }
 
         public OrderItemsClass DeleteOrderItem(int? itemId)
         {
@@ -158,7 +153,11 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
             return deletedOrderItem;
         }
-
+        public void AddToCart(ProductsClass products, int amount)
+        {
+            _orderItems.Add(new OrderItemsClass(products, amount));
+            JsonService.SaveJsonOrderItems(_orderItems);
+        }
 
 
     }
