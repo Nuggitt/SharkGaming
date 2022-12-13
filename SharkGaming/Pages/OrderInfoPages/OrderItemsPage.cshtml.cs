@@ -29,6 +29,11 @@ namespace SharkGaming.Pages.OrderInfoPages
             return Page();
         }
 
+        //public IActionResult OnPost()
+        //{
+        //    orderItemList = _orderService.DeleteOrderItem();
+        //}
+
 
 
     }
