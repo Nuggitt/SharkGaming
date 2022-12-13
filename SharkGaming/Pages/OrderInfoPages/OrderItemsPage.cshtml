@@ -41,7 +41,7 @@
                             @item.Price
                         </td>
                         <td>
-                            <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteItem" asp-route-id="@item.ProductId"><i class="fa fa-trash"></i></a>
+                            <input type="submit" asp-page-handler="DeleteFromCart" value="Delete" class="btn btn-danger" />
                         </td>
                         <td>
                             @*<a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditItem" asp-route-id="@item.Id">Edit</a>

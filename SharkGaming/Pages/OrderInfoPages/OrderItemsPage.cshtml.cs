@@ -29,10 +29,16 @@ namespace SharkGaming.Pages.OrderInfoPages
             return Page();
         }
 
-        //public IActionResult OnPost()
-        //{
-        //    orderItemList = _orderService.DeleteOrderItem();
-        //}
+        public IActionResult OnPostDeleteFromCart(int? itemId)
+        {
+            if (itemId != null)
+            {
+                _orderService.DeleteFromCart(itemId);
+                return Page();
+            }
+            return Page();
+            
+        }
 
 
 

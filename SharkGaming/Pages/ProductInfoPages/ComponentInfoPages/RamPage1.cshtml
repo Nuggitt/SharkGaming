@@ -43,9 +43,8 @@
 
                         }
 
-                        <div class="form-group">
-                            <input type="submit" value="Add To Card" class="btn btnGreen" asp-page="/OrderInfoPages/OrderItemsPage" asp-route-id="@item.Id" />
-                        </div>
+                        
+                        <input type="submit" asp-page-handler="AddToCart" value="Add To Cart" class="btn btn-dark" />
                     }
                 }
                 kr
