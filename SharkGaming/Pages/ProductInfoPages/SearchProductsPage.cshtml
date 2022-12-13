@@ -5,12 +5,31 @@
 
 <h1 class=" text-white">Search All Products</h1>
 <br />
+
+<h3 class=" text-white">Search</h3>
 <form method="post" class="form-inline">
-    <input asp-for="SearchString" class="form-control mr-1" placeholder="Enter search term" />
-    <br />
-    <input type="submit" asp-page-handler="NameSearch" value="Search" class="btn btn-dark" />
+<div class="input-group mb-3">
+
+    <div class="input-group-prepend">
+
+</div>
+<input asp-for="SearchString" class="form-control mr-1" placeholder="Enter search term" />
+<input type="submit" asp-page-handler="NameSearch" value="Search" class="btn btn-dark" />
+        <span class="input-group"> </span>
+        <h3 class=" text-white">Price Filter</h3>
+        <span class="input-group"> </span>
+<div class="input-group-prepend">
+<span class="input-group-text">Min</span>
+</div>
+<input asp-for="minPrice" class="form-control mr-1"/>
+        
+<div class="input-group-prepend">
+<span class="input-group-text">Max</span>
+</div>
+<input asp-for="maxPrice" class="form-control mr-1"/>
+<input type="submit" asp-page-handler="PriceFilter" value="Filter" class="btn btn-dark" />
+</div>
 </form>
-<br />
 
 <table class="table table-hover table-striped">
     <thead>

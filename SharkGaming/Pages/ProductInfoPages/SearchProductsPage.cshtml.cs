@@ -19,8 +19,10 @@ namespace SharkGaming.Pages.ProductInfoPages
         [BindProperty] public string SearchString { get; set; }
         [BindProperty] public int productId { get; set; }
         [BindProperty] public int amount { get; set; }
+        [BindProperty] public int maxPrice { get; set; }
+        [BindProperty] public int minPrice { get; set; }
 
-        
+
         public List<Products.ProductsClass> Items { get; private set; } = new List<Products.ProductsClass>();
         
 
@@ -46,6 +48,11 @@ namespace SharkGaming.Pages.ProductInfoPages
         {
             
             _orderService.AddToCart(productId, amount);
+            return Page();
+        }
+        public IActionResult OnPostPriceFilter()
+        {
+            Items = _productService.PriceFilter(maxPrice, minPrice).ToList();
             return Page();
         }
     }
