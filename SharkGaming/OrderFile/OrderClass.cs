@@ -12,7 +12,7 @@ namespace SharkGaming.Order
         public CustomerClass Customer { get; set; }
         //public double? TotalPrice { get; set; }
 
-        private List<OrderItemsClass> _orderItems = new List<OrderItemsClass>();
+        public List<OrderItemsClass> _orderItems = new List<OrderItemsClass>();
         private static List<OrderClass> _orders = new List<OrderClass>();
 
         public OrderClass(CustomerClass customer, string deliveryAdress, List<OrderItemsClass> orderitems)

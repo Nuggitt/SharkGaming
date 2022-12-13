@@ -22,12 +22,12 @@ namespace SharkGaming.Pages.OrderInfoPages
             _productService = productService;
         }
 
-        public List<OrderItemsClass> orderItemList { get; set; }
-        public List<ProductsClass> products { get; set; }
+        public List<OrderItemsClass> _orderItems { get; set; }
+        
 
         public IActionResult OnGet()
         {
-            orderItemList = _orderService.GetFromCart();
+            _orderItems = _orderService.GetFromCart();
             return Page();
         }
 

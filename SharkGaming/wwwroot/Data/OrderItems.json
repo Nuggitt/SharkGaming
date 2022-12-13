@@ -3,12 +3,6 @@
     "OrderItemId": 0,
     "Amount": 0,
     "Price": null,
-    "ProductId": 0
-  },
-  {
-    "OrderItemId": 0,
-    "Amount": 1,
-    "Price": null,
     "ProductId": 1
   }
 ]

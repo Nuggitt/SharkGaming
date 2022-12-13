@@ -26,13 +26,13 @@
             </tr>
         </thead>
         <tbody>
-            @if (Model.orderItemList != null)
+            @if (Model._orderItems != null)
             {
-                foreach (var item in Model.orderItemList)
+                foreach (var item in Model._orderItems)
                 {
                     <tr class="btn-secondary">
                         <td>
-                            @item.
+                            @item.ProductId
                         </td>
                         <td>
                             @item.Amount
