@@ -129,16 +129,13 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             return _orderItems;
         }
 
-
-        public OrderItemsClass DeleteOrderItem(int? itemId)
+        #region Delete OrderItem
+        public OrderItemsClass DeleteFromCart(int? itemId)
         {
-            OrderItemsClass deletedOrderItem = null;
-
-            #region Delete OrderItem
             OrderItemsClass orderItemsToBeDeleted = null;
-            foreach (OrderItemsClass item in _orderItems)
+            foreach (var item in _orderItems)
             {
-                if (item.OrderItemId == itemId)
+                if (item.ProductId == itemId)
                 {
                     orderItemsToBeDeleted = item;
                     break;
@@ -148,13 +145,14 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             {
                 _orderItems.Remove(orderItemsToBeDeleted);
                 JsonService.SaveJsonOrderItems(_orderItems);
-                deletedOrderItem = orderItemsToBeDeleted;
+                
             }
-            #endregion
 
-
-            return deletedOrderItem;
+            return orderItemsToBeDeleted;
         }
+        #endregion
+
+
         public void AddToCart(int productId, int amount)
         {
             _orderItems = OrderItemsClass.GetOrderList();
@@ -169,7 +167,8 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
                 
         }
 
+        
+
 
     }
 }
-
