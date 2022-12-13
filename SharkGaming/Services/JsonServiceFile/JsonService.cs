@@ -581,7 +581,7 @@ namespace SharkGaming.Services.JsonServiceFile
 
         public IEnumerable<OrderItemsClass> GetJsonOrderItems()
         {
-            using (StreamReader jsonFileReader = File.OpenText(JsonFileNameOrder))
+            using (StreamReader jsonFileReader = File.OpenText(JsonFileNameOrderItems))
             {
                 return JsonSerializer.Deserialize<OrderItemsClass[]>(jsonFileReader.ReadToEnd());
             }
