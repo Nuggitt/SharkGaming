@@ -2,7 +2,11 @@
   {
     "OrderItemId": 0,
     "Amount": 1,
-    "Price": null,
-    "ProductId": 0
+    "ProductId": 11
+  },
+  {
+    "OrderItemId": 0,
+    "Amount": 1,
+    "ProductId": 4
   }
 ]
