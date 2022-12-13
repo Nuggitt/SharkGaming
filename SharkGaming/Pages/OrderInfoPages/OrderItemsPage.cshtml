@@ -2,52 +2,55 @@
 @model SharkGaming.Pages.OrderInfoPages.OrderItemsPageModel
 @{
 }
-<table class="table table-bordered table-hover table-striped table-opacity" width="60%">
-    <col style="width: 5%" />
-    <col style="width: 77%" />
-    <col style="width: 9%" />
-    <col style="width: 9%" />
-    <thead>
-        <tr class="btn-secondary active">
-            <th>
-                Id
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Price
-            </th>
-            <th>
-                Actions
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @if ( Model.orderItemList != null)
-        {
-            foreach (var item in Model.orderItemList)
+
+<form method="post">
+    <table class="table table-bordered table-hover table-striped table-opacity" width="60%">
+        <col style="width: 5%" />
+        <col style="width: 77%" />
+        <col style="width: 9%" />
+        <col style="width: 9%" />
+        <thead>
+            <tr class="btn-secondary active">
+                <th>
+                    Id
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.orderItemList != null)
             {
-                <tr class="btn-secondary">
-                    <td>
-                        @item.ProductId
-                    </td>
-                    <td>
-                        @item.Amount
-                    </td>
-                    <td>
-                        @item.Price
-                    </td>
-                    <td>
-                        @*<a class="btn btn-primary btn-sm" type="button" data-toggle="tooltip" title="Edit" asp-page="EditItem" asp-route-id="@item.ProductId"><i class="fa fa-edit"></i></a>
-                        <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteItem" asp-route-id="@item.ProductId"><i class="fa fa-trash"></i></a>*@
-                    </td>
-                    <td>
-                        @*<a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditItem" asp-route-id="@item.Id">Edit</a>
-                        <a class="btn btn-danger btn-sm " type="button" title="Delete" asp-page="DeleteItem" asp-route-id="@item.Id">Delete</a>*@
-                    </td>
-                </tr>
+                foreach (var item in Model.orderItemList)
+                {
+                    <tr class="btn-secondary">
+                        <td>
+                            @item.ProductId
+                        </td>
+                        <td>
+                            @item.Amount
+                        </td>
+                        <td>
+                            @item.Price
+                        </td>
+                        <td>
+                            <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteItem" asp-route-id="@item.ProductId"><i class="fa fa-trash"></i></a>
+                        </td>
+                        <td>
+                            @*<a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditItem" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-danger btn-sm " type="button" title="Delete" asp-page="DeleteItem" asp-route-id="@item.Id">Delete</a>*@
+                        </td>
+                    </tr>
+                }
             }
-        }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</form>
+
