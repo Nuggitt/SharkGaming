@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SharkGaming.OrderFile;
 using SharkGaming.Products;
 using SharkGaming.Services.OrderRepositoryServiceFile;
 using SharkGaming.Services.ProductServiceFile;
@@ -13,17 +14,17 @@ namespace SharkGaming.Pages.OrderInfoPages
         private IProductService _productService;
 
 
-        public OrderItemsPageModel(OrderRepositoryService orderService, IProductService productService)
+        public OrderItemsPageModel(IOrderRepositoryService orderService, IProductService productService)
         {
             _orderService = orderService;
             _productService = productService;
         }
 
-        //public List<> _productsadded { get; private set; }
+        public List<ProductsClass> idSearch { get;  set; }
 
-        //public void OnGet()
+        //public IEnumerable<ProductsClass> GetProductIdSearch(int id)
         //{
-        //    _productsadded = _productService.GetOrderItems();
+        //    _productService.
         //}
 
 

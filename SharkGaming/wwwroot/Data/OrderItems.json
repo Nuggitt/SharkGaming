@@ -1,8 +1,8 @@
 [
   {
     "OrderItemId": 0,
-    "Amount": 1,
+    "Amount": 3,
     "Price": null,
-    "ProductId": 1
+    "ProductId": 0
   }
 ]

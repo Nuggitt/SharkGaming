@@ -24,9 +24,9 @@
         </tr>
     </thead>
     <tbody>
-        @if ( != null)
+        @if ( Model.idSearch != null)
         {
-            foreach (var item in Model.Items)
+            foreach (var item in Model.idSearch)
             {
                 <tr class="btn-secondary">
                     <td>
@@ -39,12 +39,12 @@
                         @item.Price
                     </td>
                     <td>
-                        <a class="btn btn-primary btn-sm" type="button" data-toggle="tooltip" title="Edit" asp-page="EditItem" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
-                        <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteItem" asp-route-id="@item.Id"><i class="fa fa-trash"></i></a>
+                        @*<a class="btn btn-primary btn-sm" type="button" data-toggle="tooltip" title="Edit" asp-page="EditItem" asp-route-id="@item.ProductId"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-danger btn-sm " type="button" data-toggle="tooltip" data-placement="top" title="Delete" asp-page="DeleteItem" asp-route-id="@item.ProductId"><i class="fa fa-trash"></i></a>*@
                     </td>
                     <td>
-                        <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditItem" asp-route-id="@item.Id">Edit</a>
-                        <a class="btn btn-danger btn-sm " type="button" title="Delete" asp-page="DeleteItem" asp-route-id="@item.Id">Delete</a>
+                        @*<a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditItem" asp-route-id="@item.Id">Edit</a>
+                        <a class="btn btn-danger btn-sm " type="button" title="Delete" asp-page="DeleteItem" asp-route-id="@item.Id">Delete</a>*@
                     </td>
                 </tr>
             }
