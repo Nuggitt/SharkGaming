@@ -33,8 +33,8 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
 
         public IActionResult OnPostAddToCart()
         {
-            price = 524;
-            _orderService.AddToCart(24, 1, 524);
+            
+            _orderService.AddToCart(24, 1, 543);
             return RedirectToPage("RamPage1");
         }
     }
