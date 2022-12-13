@@ -22,8 +22,8 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
         public OrderRepositoryService()
         {
-            //_orders = OrderClass.GetOrders();
-            //_orderItems = OrderItemsClass.GetOrderList();   
+            _orders = OrderClass.GetOrders();
+            _orderItems = OrderItemsClass.GetOrderList();
         }
 
         #region json
@@ -153,9 +153,10 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
             return deletedOrderItem;
         }
-        public void AddToCart(ProductsClass products, int amount)
+        public void AddToCart(int productId, int amount)
         {
-            _orderItems.Add(new OrderItemsClass(products, amount));
+            _orderItems = OrderItemsClass.GetOrderList();
+            _orderItems.Add(new OrderItemsClass(productId, amount));
             JsonService.SaveJsonOrderItems(_orderItems);
         }
 

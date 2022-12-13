@@ -17,7 +17,7 @@ namespace SharkGaming.Pages.ProductInfoPages
 
 
         [BindProperty] public string SearchString { get; set; }
-        [BindProperty] public ProductsClass product { get; set; }
+        [BindProperty] public int productId { get; set; }
         [BindProperty] public int amount { get; set; }
 
 
@@ -42,7 +42,7 @@ namespace SharkGaming.Pages.ProductInfoPages
         }
         public IActionResult OnPostAddToCart()
         {
-            _orderService.AddToCart(product, amount);
+            _orderService.AddToCart(productId, amount);
             return Page();
         }
     }

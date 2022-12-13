@@ -121,7 +121,7 @@ namespace SharkGaming.Services.ProductServiceFile
 
         #endregion
 
-       
+        IEnumerable<ProductsClass> ProductIdSearch(int id);
 
 
 
