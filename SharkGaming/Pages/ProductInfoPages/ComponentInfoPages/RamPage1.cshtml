@@ -42,14 +42,14 @@
                             @item.Price
 
                         }
+
+                        <div class="form-group">
+                            <input type="submit" value="Add To Card" class="btn btnGreen" asp-page="/OrderInfoPages/OrderItemsPage" asp-route-id="@item.Id" />
+                        </div>
                     }
                 }
                 kr
             </h1>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btnGreen" asp-page="/OrderInfoPages/OrderItemsPage" />
-            </div>
-            <a class="btn btnGreen">Add to cart</a>
         </div>
     </div>
 
@@ -59,7 +59,7 @@
         <thead>
             <tr>
                 <th style="width:50%">Specification</th>
-                <th style="widht: 50%">Info</th>
+                <th style="width: 50%">Info</th>
             </tr>
         </thead>
         <tbody>
