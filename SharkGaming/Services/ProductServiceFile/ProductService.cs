@@ -1297,6 +1297,145 @@ namespace SharkGaming.Services.ProductServiceFile
 
         #endregion
 
-        
+        public IEnumerable<ProductsClass> ProductIdSearch(int id)
+        {
+            List<ProductsClass> idSearch = new List<ProductsClass>();
+            {
+                if (id != null)
+                {
+
+                    //foreach (CustomPcClass item in _customPcs)
+                    //{
+                    //    if (item.Name.ToLower().Contains(str.ToLower()))
+                    //    {
+                    //        nameSearch.Add(item);
+                    //    }
+                    //}
+
+                    foreach (ProductsClass item in _cases)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+                    }
+            
+
+                    foreach (ProductsClass item in _caseFans)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+                    }
+                    
+
+                    foreach (ProductsClass item in _cPUAirCooling)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+                    }
+                   
+
+                    foreach (ProductsClass item in _cPUWaterCooling)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+                    }
+                  
+
+                    foreach (ProductsClass item in _cPUs)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+                    }
+                   
+
+                    foreach (ProductsClass item in _gPUs)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+                    }
+                   
+
+                    foreach (ProductsClass item in _motherboards)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+                    }
+                   
+
+                    foreach (ProductsClass item in _powerSupplies)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+                    }
+                   
+
+                    foreach (ProductsClass item in _rAMs)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+                    }
+                   
+
+                    foreach (ProductsClass item in _mdot2s)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+                    }
+                   
+
+                    foreach (ProductsClass item in _solidStateDrives)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+                    }
+                   
+
+                    foreach (ProductsClass item in _preBuilds)
+                    {
+                        if (id == item.Id)
+                        {
+                            if (!idSearch.Contains(item))
+                                idSearch.Add(item);
+                        }
+
+                    }
+                   
+                }
+                return idSearch;
+            }
+        }
+
     }
 }

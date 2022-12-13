@@ -10,7 +10,7 @@ namespace SharkGaming.Order
         public string DeliveryAddress { get; set; }
         public DateTime Dt { get; set; }
         public CustomerClass Customer { get; set; }
-        public double? TotalPrice { get; set; }
+        //public double? TotalPrice { get; set; }
 
         private List<OrderItemsClass> _orderItems = new List<OrderItemsClass>();
         private static List<OrderClass> _orders = new List<OrderClass>();
@@ -22,7 +22,7 @@ namespace SharkGaming.Order
             DeliveryAddress = deliveryAdress;
             Dt = DateTime.Now;
             _orderItems = orderitems;
-            TotalPrice = CalculateTotalPrice();
+            //TotalPrice = CalculateTotalPrice();
             _orders.Add(this);
         }
 
@@ -40,20 +40,20 @@ namespace SharkGaming.Order
         {
             return _orders;
         }
-        public double? CalculateTotalPrice()
-        {
-            double? totalPrice = 0;
+        //public double? CalculateTotalPrice()
+        //{
+        //    double? totalPrice = 0;
 
-            if (_orderItems != null)
-            {
-                foreach (OrderItemsClass item in _orderItems)
-                {
-                    totalPrice = totalPrice + item.Price + 1000;
-                }
-                return totalPrice;
-            }
-            return 0;
-        }
+        //    if (_orderItems != null)
+        //    {
+        //        foreach (OrderItemsClass item in _orderItems)
+        //        {
+        //            totalPrice = totalPrice + item.Price + 1000;
+        //        }
+        //        return totalPrice;
+        //    }
+        //    return 0;
+        //}
 
     }
 }

@@ -23,7 +23,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         public OrderRepositoryService()
         {
             //_orders = OrderClass.GetOrders();
-            //_orderItems = OrderItemsClass.GetOrderList();   
+            //_orderItems = OrderItemsClass.GetOrderList();
         }
 
         #region json
@@ -33,7 +33,8 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         {
             JsonService = jsonService;
             //_orders = JsonService.GetJsonOrder().ToList();
-            //_orderItems = JsonService.GetJsonOrderItems().ToList();
+            _orderItems = JsonService.GetJsonOrderItems().ToList();
+            JsonService.SaveJsonOrderItems(_orderItems);
         }
         #endregion
 
@@ -59,7 +60,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
                     if (i.Id == order.Id)
                     {
                         i.Customer.Email = order.Customer.Email;
-                        i.TotalPrice = order.TotalPrice;
+                        //i.TotalPrice = order.TotalPrice;
                     }
                     JsonService.SaveJsonOrder(_orders);
                 }
@@ -128,16 +129,13 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             return _orderItems;
         }
 
-
-        public OrderItemsClass DeleteOrderItem(int? itemId)
+        #region Delete OrderItem
+        public OrderItemsClass DeleteFromCart(int? itemId)
         {
-            OrderItemsClass deletedOrderItem = null;
-
-            #region Delete OrderItem
             OrderItemsClass orderItemsToBeDeleted = null;
-            foreach (OrderItemsClass item in _orderItems)
+            foreach (var item in _orderItems)
             {
-                if (item.OrderItemId == itemId)
+                if (item.ProductId == itemId)
                 {
                     orderItemsToBeDeleted = item;
                     break;
@@ -147,19 +145,30 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             {
                 _orderItems.Remove(orderItemsToBeDeleted);
                 JsonService.SaveJsonOrderItems(_orderItems);
-                deletedOrderItem = orderItemsToBeDeleted;
+                
             }
-            #endregion
 
-            return deletedOrderItem;
+            return orderItemsToBeDeleted;
         }
-        public void AddToCart(ProductsClass products, int amount)
+        #endregion
+
+
+        public void AddToCart(int productId, int amount)
         {
-            _orderItems.Add(new OrderItemsClass(products, amount));
+            _orderItems = OrderItemsClass.GetOrderList();
+            _orderItems.Add(new OrderItemsClass(productId, amount));
             JsonService.SaveJsonOrderItems(_orderItems);
         }
+
+        public List<OrderItemsClass> GetFromCart()
+        {
+            return _orderItems;
+
+                
+        }
+
+        
 
 
     }
 }
-

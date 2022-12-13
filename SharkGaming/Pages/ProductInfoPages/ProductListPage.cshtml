@@ -9,9 +9,55 @@
 
 <br />
 
-<div class="row text-center">
-    @foreach (var x in Model.caseFan)
-    {
+<div class="row center">
+    <div class="column col-4 center">
+        <table class="table table-bordered border-black align-content-start bg-dark text-white">
+            <thead>
+                <tr>
+                    <th>Filters</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>
+                        <a href="/ProductInfoPages/ProductListPage"> <input class="btn btn-dark" type="submit" value="All Components"</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/ProductInfoPages/AmdCompatiblePage"> <input class="btn btn-dark" type="submit" value="AMD Compatible"</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/ProductInfoPages/IntelCompatiblePage"> <input class="btn btn-dark" type="submit" value="Intel Compatible"</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/ProductInfoPages/RGBComponentsPage"> <input class="btn btn-dark" type="submit" value="RGB Components"</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="column col-8 center">
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/ProductInfoPages/IntelCompatiblePage"> <input class="btn btn-dark" type="submit" value="Intel Compatible"</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/ProductInfoPages/RGBComponentsPage"> <input class="btn btn-dark" type="submit" value="RBG Components"</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="column col-8 center">
 
         <div style="width:33%" class="mb-4">
             <a href="@x.Link" class="text-white text-decoration-none">
