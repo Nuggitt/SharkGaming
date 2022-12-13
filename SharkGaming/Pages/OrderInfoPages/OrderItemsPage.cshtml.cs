@@ -17,11 +17,13 @@ namespace SharkGaming.Pages.OrderInfoPages
 
         public OrderItemsPageModel(IOrderRepositoryService orderService, IProductService productService)
         {
+            
             _orderService = orderService;
             _productService = productService;
         }
 
         public List<OrderItemsClass> orderItemList { get; set; }
+        public List<ProductsClass> products { get; set; }
 
         public IActionResult OnGet()
         {

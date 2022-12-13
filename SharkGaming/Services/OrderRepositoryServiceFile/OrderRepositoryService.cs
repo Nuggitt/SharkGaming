@@ -155,7 +155,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
         public void AddToCart(int productId, int amount)
         {
-            _orderItems = OrderItemsClass.GetOrderList();
+            //_orderItems = OrderItemsClass.GetOrderList();
             _orderItems.Add(new OrderItemsClass(productId, amount));
             JsonService.SaveJsonOrderItems(_orderItems);
         }
