@@ -29,7 +29,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         void AddToCart(int products, int amount);
 
 
-
+        public List<OrderItemsClass> GetFromCart();
 
     }
 }

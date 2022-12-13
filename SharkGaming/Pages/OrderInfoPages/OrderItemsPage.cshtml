@@ -24,16 +24,16 @@
         </tr>
     </thead>
     <tbody>
-        @if ( Model.idSearch != null)
+        @if ( Model.orderItemList != null)
         {
-            foreach (var item in Model.idSearch)
+            foreach (var item in Model.orderItemList)
             {
                 <tr class="btn-secondary">
                     <td>
-                        @item.Id
+                        @item.ProductId
                     </td>
                     <td>
-                        @item.Name
+                        @item.Amount
                     </td>
                     <td>
                         @item.Price

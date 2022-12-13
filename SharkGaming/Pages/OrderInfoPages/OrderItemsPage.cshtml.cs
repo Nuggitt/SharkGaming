@@ -12,6 +12,7 @@ namespace SharkGaming.Pages.OrderInfoPages
     {
         private IOrderRepositoryService _orderService;
         private IProductService _productService;
+        
 
 
         public OrderItemsPageModel(IOrderRepositoryService orderService, IProductService productService)
@@ -20,12 +21,13 @@ namespace SharkGaming.Pages.OrderInfoPages
             _productService = productService;
         }
 
-        public List<ProductsClass> idSearch { get;  set; }
+        public List<OrderItemsClass> orderItemList { get; set; }
 
-        //public IEnumerable<ProductsClass> GetProductIdSearch(int id)
-        //{
-        //    _productService.
-        //}
+        public IActionResult OnGet()
+        {
+            orderItemList = _orderService.GetFromCart();
+            return Page();
+        }
 
 
 
