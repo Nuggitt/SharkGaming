@@ -33,7 +33,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         {
             JsonService = jsonService;
             //_orders = JsonService.GetJsonOrder().ToList();
-            //_orderItems = JsonService.GetJsonOrderItems().ToList();
+            _orderItems = JsonService.GetJsonOrderItems().ToList();
         }
         #endregion
 
@@ -59,7 +59,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
                     if (i.Id == order.Id)
                     {
                         i.Customer.Email = order.Customer.Email;
-                        i.TotalPrice = order.TotalPrice;
+                        //i.TotalPrice = order.TotalPrice;
                     }
                     JsonService.SaveJsonOrder(_orders);
                 }

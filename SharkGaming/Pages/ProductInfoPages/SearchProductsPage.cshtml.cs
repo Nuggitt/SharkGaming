@@ -17,7 +17,7 @@ namespace SharkGaming.Pages.ProductInfoPages
 
 
         [BindProperty] public string SearchString { get; set; }
-        [BindProperty] public int productId { get; set; }
+        public int productId { get; set; }
         [BindProperty] public int amount { get; set; }
 
 
