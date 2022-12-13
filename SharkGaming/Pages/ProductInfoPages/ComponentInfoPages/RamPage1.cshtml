@@ -38,16 +38,16 @@
                     {
                         @if (item.Id == 24)
                         {
-
                             @item.Price
 
                         }
 
-                        
-                        <input type="submit" asp-page-handler="AddToCart" value="Add To Cart" class="btn btn-dark" />
+
                     }
                 }
+                
                 kr
+                <input type="submit" asp-page-handler="AddToCart" asp-for="productId" value="Add To Cart" class="btn btn-green" />
             </h1>
         </div>
     </div>

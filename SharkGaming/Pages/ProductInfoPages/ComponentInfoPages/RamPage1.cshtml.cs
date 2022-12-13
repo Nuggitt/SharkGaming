@@ -14,9 +14,10 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         [BindProperty] public int productId { get; set; }
         [BindProperty] public int amount { get; set; }
 
-        public RamPage1Model(IProductService iproductervice)
+        public RamPage1Model(IProductService iproductervice, IOrderRepositoryService orderRepositoryService)
         {
             _productService = iproductervice;
+            _orderService = orderRepositoryService;
         }
         public List<RAM>? components { get; private set; }
 
