@@ -22,8 +22,8 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
         public OrderRepositoryService()
         {
-            _orders = OrderClass.GetOrders();
-            _orderItems = OrderItemsClass.GetOrderList();
+            //_orders = OrderClass.GetOrders();
+            //_orderItems = OrderItemsClass.GetOrderList();
         }
 
         #region json
@@ -34,6 +34,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             JsonService = jsonService;
             //_orders = JsonService.GetJsonOrder().ToList();
             _orderItems = JsonService.GetJsonOrderItems().ToList();
+            JsonService.SaveJsonOrderItems(_orderItems);
         }
         #endregion
 

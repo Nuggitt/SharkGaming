@@ -26,7 +26,6 @@ namespace SharkGaming.OrderFile
 
         public static List<OrderItemsClass> orderItemList = new List<OrderItemsClass>()
         {
-
         };
 
         public static List<OrderItemsClass> GetOrderList()
