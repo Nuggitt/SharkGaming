@@ -187,11 +187,11 @@ namespace SharkGaming.Services.JsonServiceFile
             }
         }
 
-        public IEnumerable<Cases> GetJsonCooling()
+        public IEnumerable<CoolingClass> GetJsonCooling()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileNameCooling))
             {
-                return JsonSerializer.Deserialize<Cases[]>(jsonFileReader.ReadToEnd());
+                return JsonSerializer.Deserialize<CoolingClass[]>(jsonFileReader.ReadToEnd());
             }
         }
         #endregion
@@ -594,7 +594,7 @@ namespace SharkGaming.Services.JsonServiceFile
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "Users.json"); }
         }
 
-        public void SaveJsonUser(List<User> OrderItems)
+        public void SaveJsonUser(List<User> user)
         {
             using (FileStream jsonFileWriter = File.Create(JsonFileUsers))
             {
@@ -603,7 +603,7 @@ namespace SharkGaming.Services.JsonServiceFile
                     SkipValidation = false,
                     Indented = true
                 });
-                JsonSerializer.Serialize<User[]>(jsonWriter, OrderItems.ToArray());
+                JsonSerializer.Serialize<User[]>(jsonWriter, user.ToArray());
             }
         }
 
