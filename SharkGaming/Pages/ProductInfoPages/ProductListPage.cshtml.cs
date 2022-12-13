@@ -11,6 +11,8 @@ using SharkGaming.Products;
 using SharkGaming.Services.ProductServiceFile;
 using System.Reflection;
 using SharkGaming.Products.PreBuilds;
+using SharkGaming.Services.OrderRepositoryServiceFile;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SharkGaming.Pages.ProductInfoPages
 {
@@ -29,16 +31,22 @@ namespace SharkGaming.Pages.ProductInfoPages
         public List<RAM>? ram { get; private set; }
         public List<Mdot2> mdot2s { get; private set; }
         public List<SolidStateDrive> solidStateDrives { get; private set; }
+        [BindProperty] public int productId { get; set; }
+        [BindProperty] public int amount { get; set; }
 
         //public List<ProductsClass> prebuilds { get; private set; }
 
-        private IProductService _productService;
+        public IProductService _productService;
+        public IOrderRepositoryService _orderService;
 
-        public List<ProductsClass> Items { get; private set; } = new List<ProductsClass>();
+        public List<Products.ProductsClass> Items { get; private set; } = new List<Products.ProductsClass>();
 
-        public ProductListPageModel(IProductService iproductService)
+
+        public ProductListPageModel(IProductService productService, IOrderRepositoryService orderService)
         {
-            _productService= iproductService;
+            this._productService = productService;
+            this._orderService = orderService;
+
         }
         public void OnGet()
         {
@@ -54,9 +62,15 @@ namespace SharkGaming.Pages.ProductInfoPages
             ram = _productService.GetRAM();
             mdot2s = _productService.GetMdot2();
             solidStateDrives = _productService.GetSolidStateDrives();
+
+
         }
 
-        
+        public IActionResult OnPostAddToCart()
+        {
+            _orderService.AddToCart(productId, 1);
+            return Page();
+        }
 
     }
 }

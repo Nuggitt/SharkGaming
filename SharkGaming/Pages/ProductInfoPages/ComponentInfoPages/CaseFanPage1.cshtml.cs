@@ -13,13 +13,18 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
 
         private IProductService _productService;
         private IOrderRepositoryService _orderService;
+        [BindProperty] public int productId { get; set; }
+        [BindProperty] public int amount { get; set; }
 
-        public CaseFanPage1Model(IProductService iproductervice)
+        public CaseFanPage1Model(IProductService productService, IOrderRepositoryService orderService)
         {
-            _productService = iproductervice;
+            this._productService = productService;
+            this._orderService = orderService;
+
         }
         public List<CaseFan> components { get; set; }
         public List<ProductsClass> orderItemList { get; set; }
+        public List<Products.ProductsClass> Items { get; private set; } = new List<Products.ProductsClass>();
 
         public void OnGet()
         {
@@ -30,6 +35,12 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         {
             //_orderService.AddToOrderItems(orderItemList);
 
+        }
+        public IActionResult OnPostAddToCart()
+        {
+            components = _productService.GetCaseFan();
+            _orderService.AddToCart(productId, 1);
+            return Page();
         }
     }
 }

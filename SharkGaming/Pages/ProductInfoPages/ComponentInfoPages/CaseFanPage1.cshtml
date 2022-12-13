@@ -45,7 +45,26 @@
             }
             kr
         </h1>
-        <a class="btn btnGreen">Add to cart </a>
+        <form method="post" class="form-inline">
+            <div class="input-group mb-3">
+
+                @foreach (var x in Model.components)
+                {
+                    @if (x.Id == 3)
+                    {
+                        <input type="hidden" asp-for="productId">
+                        Model.productId = 4;
+                    }
+
+                }
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Qty</span>
+                </div>
+
+                <input type="submit" asp-page-handler="AddToCart" value="Add To Cart" class="btn btn-dark" />
+
+            </div>
+        </form>
     </div>
 </div>
 
