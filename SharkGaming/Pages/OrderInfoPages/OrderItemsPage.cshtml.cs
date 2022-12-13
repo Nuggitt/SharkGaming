@@ -12,6 +12,8 @@ namespace SharkGaming.Pages.OrderInfoPages
     {
         private IOrderRepositoryService _orderService;
         private IProductService _productService;
+        [BindProperty] public int productId { get; set; }
+        
         
 
 
@@ -31,12 +33,12 @@ namespace SharkGaming.Pages.OrderInfoPages
             return Page();
         }
 
-        public IActionResult OnPostDeleteFromCart(int? itemId)
+        public IActionResult OnPostDeleteFromCart(int productId)
         {
-            if (itemId != null)
+            if (productId != null)
             {
-                _orderService.DeleteFromCart(itemId);
-                return Page();
+                _orderService.DeleteFromCart(productId);
+                return RedirectToPage("OrderItemsPage");
             }
             return Page();
             

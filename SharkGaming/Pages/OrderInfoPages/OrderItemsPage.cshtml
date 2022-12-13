@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @model SharkGaming.Pages.OrderInfoPages.OrderItemsPageModel
 @{
 }
@@ -41,11 +41,10 @@
                             @item.Price
                         </td>
                         <td>
-                            <input type="submit" asp-page-handler="DeleteFromCart" value="Delete" class="btn btn-danger" />
+                            <input type="submit" asp-page-handler="DeleteFromCart" asp-route-id="@item.ProductId" value="Delete" class="btn btn-danger" />
                         </td>
                         <td>
-                            @*<a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditItem" asp-route-id="@item.Id">Edit</a>
-                    <a class="btn btn-danger btn-sm " type="button" title="Delete" asp-page="DeleteItem" asp-route-id="@item.Id">Delete</a>*@
+                            <input type="hidden" asp-for="productId"/>
                         </td>
                     </tr>
                 }

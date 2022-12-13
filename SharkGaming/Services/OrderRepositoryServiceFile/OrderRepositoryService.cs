@@ -24,7 +24,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         public OrderRepositoryService()
         {
             //_orders = OrderClass.GetOrders();
-            //_orderItems = OrderItemsClass.GetOrderList();
+            _orderItems = OrderItemsClass.GetOrderList();
         }
 
         #region json
@@ -131,16 +131,19 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         }
 
         #region Delete OrderItem
-        public OrderItemsClass DeleteFromCart(int? itemId)
+        public OrderItemsClass DeleteFromCart(int? productId)
         {
             OrderItemsClass orderItemsToBeDeleted = null;
             foreach (var item in _orderItems)
             {
-                if (item.ProductId == itemId)
+                if (item.ProductId != productId)
                 {
                     orderItemsToBeDeleted = item;
                     break;
                 }
+                orderItemsToBeDeleted = item;
+                break;
+
             }
             if (orderItemsToBeDeleted != null)
             {

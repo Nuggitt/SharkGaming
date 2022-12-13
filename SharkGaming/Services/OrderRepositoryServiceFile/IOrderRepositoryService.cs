@@ -25,9 +25,9 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
        
         List<OrderItemsClass> GetOrderItems();
 
-        OrderItemsClass DeleteFromCart(int? itemId);
+        OrderItemsClass DeleteFromCart(int? productId);
 
-        void AddToCart(int products, int amount);
+        void AddToCart(int productId, int amount);
         
 
 
