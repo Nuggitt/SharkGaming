@@ -9,8 +9,8 @@
 
         }
 
-        public Mdot2(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, int capacity, string compatibleBay, double internalDateRate, double pciExpress)
-            : base(name, price, amdCompatible, intelCompatible, specInfo, capacity, compatibleBay, internalDateRate)
+        public Mdot2(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, int capacity, string compatibleBay, double internalDateRate, double pciExpress, string img, string description, string link)
+            : base(name, price, amdCompatible, intelCompatible, specInfo, capacity, compatibleBay, internalDateRate, img, description, link)
         {
             PCIExpress = pciExpress;
             Id = nextId++;

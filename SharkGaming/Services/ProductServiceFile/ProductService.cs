@@ -188,7 +188,7 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             JsonService = jsonService;
             //_preBuilds = MockPreBuilds.GetMockPreBuilds().ToList();
-            //_customPcs = MockCustomPC.GetMockCustomPcs().ToList();
+            ////_customPcs = MockCustomPC.GetMockCustomPcs().ToList();
             //_cases = MockCaseS.GetMockCases().ToList();
             //_caseFans = MockCaseFan.GetMockCaseFans().ToList();
             //_cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCoolings().ToList();

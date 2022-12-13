@@ -12,7 +12,10 @@
     "IntelCompatible": false,
     "Id": 12,
     "Name": "Ryzen 9 5950X",
-    "Price": 4657.26
+    "Price": 4657.26,
+    "Img": "/Images/Components/CPU1.png",
+    "Description": "Ryzen 9 5950x is a winner and a solid choice for the gamer who wants to build a good and strong computer.",
+    "Link": "/ProductInfoPages/ComponentInfoPages/CpuPage1"
   },
   {
     "ClockSpeed": 3.8,
@@ -27,7 +30,10 @@
     "IntelCompatible": false,
     "Id": 13,
     "Name": "Ryzen 7 5800X",
-    "Price": 1858.6
+    "Price": 1858.6,
+    "Img": "/Images/Components/CPU2.png",
+    "Description": "This CPU will definitely take your computer to the next level.",
+    "Link": "/ProductInfoPages/ComponentInfoPages/CpuPage2"
   },
   {
     "ClockSpeed": 2.6,
@@ -42,6 +48,9 @@
     "IntelCompatible": true,
     "Id": 14,
     "Name": "Intel i5 11400 11th",
-    "Price": 1164.71
+    "Price": 1164.72,
+    "Img": "/Images/Components/CPU3.png",
+    "Description": "The CPU of your dreams. With this you will be the new celebrity on your Discord server.",
+    "Link": "/ProductInfoPages/ComponentInfoPages/CpuPage3"
   }
 ]

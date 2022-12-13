@@ -48,7 +48,7 @@ namespace SharkGaming.Pages.ProductInfoPages
         {
             
             _orderService.AddToCart(productId, amount);
-            return Page();
+            return RedirectToPage("SearchProductsPage");
         }
         public IActionResult OnPostPriceFilter()
         {
