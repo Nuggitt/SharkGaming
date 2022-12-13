@@ -161,6 +161,13 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             JsonService.SaveJsonOrderItems(_orderItems);
         }
 
+        public List<OrderItemsClass> GetFromCart()
+        {
+            return _orderItems;
+
+                
+        }
+
 
     }
 }
