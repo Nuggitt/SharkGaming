@@ -15,6 +15,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         private IOrderRepositoryService _orderService;
         [BindProperty] public int productId { get; set; }
         [BindProperty] public int amount { get; set; }
+        [BindProperty] public double price { get; set; }
 
         public CaseFanPage1Model(IProductService productService, IOrderRepositoryService orderService)
         {
@@ -39,7 +40,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         public IActionResult OnPostAddToCart()
         {
             components = _productService.GetCaseFan();
-            _orderService.AddToCart(productId, 1);
+            _orderService.AddToCart(productId, 1,price);
             return Page();
         }
     }

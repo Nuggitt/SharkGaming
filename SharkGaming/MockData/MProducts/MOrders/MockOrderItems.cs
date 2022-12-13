@@ -8,8 +8,8 @@ namespace SharkGaming.MockData.MProducts.MOrders
     {
         public static List<OrderItemsClass> _mockOrderItems = new List<OrderItemsClass>()
         {
-            new OrderItemsClass(10,1),
-            new OrderItemsClass(3,1)
+            new OrderItemsClass(10,1,3),
+            new OrderItemsClass(3,1,3)
         };
 
         public static List<OrderItemsClass> GetMockOrderItems() { return _mockOrderItems; }

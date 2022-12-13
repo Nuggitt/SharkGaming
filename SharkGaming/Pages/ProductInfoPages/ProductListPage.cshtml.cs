@@ -33,6 +33,7 @@ namespace SharkGaming.Pages.ProductInfoPages
         public List<SolidStateDrive> solidStateDrives { get; private set; }
         [BindProperty] public int productId { get; set; }
         [BindProperty] public int amount { get; set; }
+        [BindProperty] public double price { get; set; }
 
         //public List<ProductsClass> prebuilds { get; private set; }
 
@@ -68,7 +69,7 @@ namespace SharkGaming.Pages.ProductInfoPages
 
         public IActionResult OnPostAddToCart()
         {
-            _orderService.AddToCart(productId, 1);
+            _orderService.AddToCart(productId, 1,price);
             return Page();
         }
 
