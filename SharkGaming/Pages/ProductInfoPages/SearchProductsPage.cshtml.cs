@@ -42,6 +42,7 @@ namespace SharkGaming.Pages.ProductInfoPages
         }
         public IActionResult OnPostAddToCart()
         {
+            
             _orderService.AddToCart(productId, amount);
             return Page();
         }
