@@ -20,7 +20,7 @@ namespace SharkGaming.Pages.ProductInfoPages
         [BindProperty] public int productId { get; set; }
         [BindProperty] public int amount { get; set; }
 
-
+        
         public List<Products.ProductsClass> Items { get; private set; } = new List<Products.ProductsClass>();
         
 
@@ -33,10 +33,12 @@ namespace SharkGaming.Pages.ProductInfoPages
 
         public void OnGet()
         {
+            Items = _productService.ProductNameSearch("all").ToList();
             
         }
         public IActionResult OnPostNameSearch()
         {
+            
             Items = _productService.ProductNameSearch(SearchString).ToList();
             return Page();
         }
