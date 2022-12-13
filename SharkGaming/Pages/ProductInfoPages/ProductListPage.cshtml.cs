@@ -11,6 +11,7 @@ using SharkGaming.Products;
 using SharkGaming.Services.ProductServiceFile;
 using System.Reflection;
 using SharkGaming.Products.PreBuilds;
+using System.Reflection.Metadata;
 
 namespace SharkGaming.Pages.ProductInfoPages
 {
@@ -33,8 +34,6 @@ namespace SharkGaming.Pages.ProductInfoPages
         //public List<ProductsClass> prebuilds { get; private set; }
 
         private IProductService _productService;
-
-        public List<ProductsClass> Items { get; private set; } = new List<ProductsClass>();
 
         public ProductListPageModel(IProductService iproductService)
         {

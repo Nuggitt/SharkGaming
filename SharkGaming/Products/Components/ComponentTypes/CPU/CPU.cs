@@ -14,8 +14,8 @@
         public bool IntelCompatible { get; set; }
 
 
-        public CPU(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, double clockSpeed, double boostClock, int core, int threads, string socket, bool unlockForOC, double pCIExpress, int thermalDesignPower)
-            : base(name, price, amdCompatible, intelCompatible, specInfo)
+        public CPU(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, double clockSpeed, double boostClock, int core, int threads, string socket, bool unlockForOC, double pCIExpress, int thermalDesignPower, string img, string description, string link)
+            : base(name, price, amdCompatible, intelCompatible, specInfo, img, description, link)
         {
             ClockSpeed = clockSpeed;
             BoostClock = boostClock;

@@ -9,108 +9,23 @@
 
 <br />
 
-<div class="row center">
-    <div class="column col-12 center columnCustom">
+<div class="row text-center">
+    @foreach (var x in Model.preBuilds)
+    {
 
-@*  Smart way to do it, but we don't know how to make an image an object property. 
-    (and we forgot to make description a property as well)
-    
-    @foreach(var x in Model.preBuilds)
-        {
-        <div>
-            <a href="#" class="btn btn-dark">
-                <h1 class="text-center">
-                    @x.Name
-                </h1>
-
-                <img src="~/Images/Components/Case1.png" class="img-fluid" />
-                <br />
-                Desciption
-                <br />
-
-                <h1 class="text-orange">
-                    @x.Price
-                </h1>
+        <div style="width:33%" class="mb-4">
+            <a href="@x.Link" class="text-white text-decoration-none">
+                <div class="card bg-dark">
+                    <img src="@x.Img" alt="Image" class="img-fluid">
+                    <div class="container">
+                        <h4><b>@x.Name</b></h4>
+                        <p>@x.Description</p>
+                        <h4 class="text-orange"><b>@x.Price KR.</b></h4>
+                        <a href="/error" class="btn btn-green" style="width:100%">Add to cart</a>
+                    </div>
+                </div>
             </a>
-            <a class="btn btnGreen" style="width:100%">Add to cart</a>
         </div>
-        <br />
-        }*@
-
-        @foreach (var x in Model.preBuilds)
-        {
-            if (x.Id == 33)
-            {
-                <div>
-                    <a href="/ProductInfoPages/PrebuildInfoPages/Prebuild1InfoPage" class="btn btn-dark">
-                        <h1 class="text-center">
-                            @x.Name
-                        </h1>
-
-                        <img src="~/Images/PreBuilds/PreBuild1.png" class="img-fluid" />
-                        <br />
-                        Desciption
-                        <br />
-
-                        <h1 class="text-orange">
-                            @x.Price kr
-                        </h1>
-                    </a>
-                    <a class="btn btnGreen" style="width:100%">Add to cart</a>
-                </div>
-                <br />
-            }
-        }
-
-        @foreach (var x in Model.preBuilds)
-        {
-            if (x.Id == 34)
-            {
-                <div>
-                    <a href="/ProductInfoPages/PrebuildInfoPages/Prebuild2InfoPage" class="btn btn-dark">
-                        <h1 class="text-center">
-                            @x.Name
-                        </h1>
-
-                        <img src="~/images/PreBuilds/PreBuild2.png" class="img-fluid" />
-                        <br />
-                        Desciption
-                        <br />
-
-                        <h1 class="text-orange">
-                            @x.Price kr
-                        </h1>
-                    </a>
-                    <a class="btn btnGreen" style="width:100%">Add to cart</a>
-                </div>
-                <br />
-            }
-        }
-
-        @foreach (var x in Model.preBuilds)
-        {
-            if (x.Id == 35)
-            {
-                <div>
-                    <a href="/ProductInfoPages/PrebuildInfoPages/Prebuild3InfoPage" class="btn btn-dark">
-                        <h1 class="text-center">
-                            @x.Name
-                        </h1>
-
-                        <img src="~/images/PreBuilds/PreBuild3.png" class="img-fluid" />
-                        <br />
-                        Desciption
-                        <br />
-
-                        <h1 class="text-orange">
-                            @x.Price kr
-                        </h1>
-                    </a>
-                    <a class="btn btnGreen" style="width:100%">Add to cart</a>
-                </div>
-                <br />
-            }
-        }
-
-    </div>
+    }
 </div>
+

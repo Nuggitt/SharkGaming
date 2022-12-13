@@ -11,8 +11,8 @@
 
         }
 
-        public StorageClass(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, int capacity, string compatibleBay, double internalDateRate)
-            : base(name, price, amdCompatible, intelCompatible, specInfo)
+        public StorageClass(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, int capacity, string compatibleBay, double internalDateRate, string img, string description, string link)
+            : base(name, price, amdCompatible, intelCompatible, specInfo, img, description, link)
         {
             Capacity = capacity;
             CompatibleBay = compatibleBay;
