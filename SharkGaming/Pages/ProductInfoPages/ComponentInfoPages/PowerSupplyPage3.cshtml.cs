@@ -30,7 +30,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         public IActionResult OnPostAddToCart()
         {
             _orderService.AddToCart(23, 1, 1130.61);
-            return RedirectToPage("PowerSupplyPage2");
+            return RedirectToPage("PowerSupplyPage3");
         }
     }
 }
