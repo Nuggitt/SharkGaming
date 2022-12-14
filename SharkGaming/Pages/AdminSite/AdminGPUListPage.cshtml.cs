@@ -22,5 +22,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             gPUs = _productService.GetGPUs();
         }
+
+        public IActionResult OnPostDeleteGPUFormJson(int gpuID)
+        {
+            if (gpuID != null)
+            {
+                _productService.DeleteGPU(gpuID);
+                return RedirectToPage("AdminGPUListPage");
+            }
+            return Page();
+
+        }
     }
 }

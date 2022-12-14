@@ -22,5 +22,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             caseFans = _productService.GetCaseFan();
         }
+
+        public IActionResult OnPostDeleteCaseFanFormJson(int caseFanID)
+        {
+            if (caseFanID != null)
+            {
+                _productService.DeleteCaseFan(caseFanID);
+                return RedirectToPage("AdminCaseFanListPage");
+            }
+            return Page();
+
+        }
     }
 }

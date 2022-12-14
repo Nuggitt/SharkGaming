@@ -22,5 +22,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             cPUAirCoolings = _productService.GetCPUAirCooling();
         }
+
+        public IActionResult OnPostDeleteCPUAirCoolingFormJson(int cpuAirID)
+        {
+            if (cpuAirID != null)
+            {
+                _productService.DeleteCPUAirCooling(cpuAirID);
+                return RedirectToPage("AdminCPUAirCoolingListPage");
+            }
+            return Page();
+
+        }
     }
 }

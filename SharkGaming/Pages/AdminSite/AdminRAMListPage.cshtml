@@ -36,7 +36,16 @@
 						@item.Price
 					</td>
 					<td>
-						<a class="btn btn-primary btn-sm" type="button" title="Update" asp-page="AdminRAMEdit" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+						<form method="post" class="form-inline">
+							<ul class="list-inline m-0">
+								<li class="list-inline-item">
+									<a class="btn btn-primary btn-sm" type="button" title="Update" asp-page="AdminRAMEdit" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
+								</li>
+								<li class="list-inline-item">
+									<input type="submit" asp-page-handler="DeleteRAMFormJson" asp-route-id="@item.Id" value="Delete" class="btn btn-danger" />									
+								</li>
+							</ul>
+						</form>
 					</td>
 				</tr>
 			}
