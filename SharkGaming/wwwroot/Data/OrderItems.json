@@ -1,11 +1,5 @@
 [
   {
-    "OrderItemId": 0,
-    "Amount": 1,
-    "Price": 0,
-    "ProductId": 0
-  },
-  {
     "OrderItemId": 1,
     "Amount": 1,
     "Price": 999,
