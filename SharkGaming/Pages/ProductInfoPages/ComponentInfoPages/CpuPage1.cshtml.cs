@@ -14,11 +14,11 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         {
             _productService = iproductervice;
         }
-        public List<CPU>? components { get; private set; }
+        public List<CPU>? cpus { get; private set; }
 
         public void OnGet()
         {
-            components = _productService.GetCPUs();
+            cpus = _productService.GetCPUs();
         }
     }
 }
