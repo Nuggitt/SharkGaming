@@ -28,6 +28,8 @@ namespace SharkGaming.Pages.OrderInfoPages
         public List<OrderItemsClass> _orderItems { get; set; }
         public List<ProductsClass> _allProducts { get; set; }
         public List<ProductsClass> _cartProducts { get; set; }
+        public double? TotalPrice { get; set; }
+        public int shipping { get; set; }
 
 
         //public IActionResult OnGet()
@@ -53,6 +55,7 @@ namespace SharkGaming.Pages.OrderInfoPages
                 }
             }
             _cartProducts = _cart;
+            CalculateTotalPrice();
             return Page();
         }
 
@@ -62,11 +65,31 @@ namespace SharkGaming.Pages.OrderInfoPages
             {
                 _orderService.DeleteFromCart(productId);
                 return RedirectToPage("OrderItemsPage");
+                
             }
             return Page();
             
         }
 
+        public double? CalculateTotalPrice()
+        {
+            double? totalPrice = 0;
+
+            if(_cartProducts != null)
+            {
+                foreach(var orderItem in _orderItems)
+                {
+                    foreach (var product in _cartProducts)
+                    {
+                        if(orderItem.ProductId == product.Id)
+                        totalPrice = totalPrice + product.Price * orderItem.Amount;
+                    }
+                }
+                
+                
+            }
+            return TotalPrice = totalPrice;
+        }
 
 
     }

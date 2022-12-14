@@ -21,5 +21,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             ram = _productService.GetRAM();
         }
+
+        public IActionResult OnPostDeleteRAMFormJson(int ramID)
+        {
+            if (ramID != null)
+            {
+                _productService.DeleteRAM(ramID);
+                return RedirectToPage("AdminRAMListPage");
+            }
+            return Page();
+
+        }
     }
 }

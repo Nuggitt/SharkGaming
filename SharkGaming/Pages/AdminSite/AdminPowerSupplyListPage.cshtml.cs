@@ -22,5 +22,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             powerSupplies = _productService.GetPowerSupply();
         }
+
+        public IActionResult OnPostDeletePowersupplyFormJson(int psuID)
+        {
+            if (psuID != null)
+            {
+                _productService.DeletePowerSupply(psuID);
+                return RedirectToPage("AdminPowerSupplyListPage");
+            }
+            return Page();
+
+        }
     }
 }

@@ -1010,11 +1010,13 @@ namespace SharkGaming.Services.ProductServiceFile
             Cases caseToBeDeleted = null;
             foreach (Cases item in _cases)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     caseToBeDeleted = item;
                     break;
                 }
+                caseToBeDeleted = item;
+                break;
             }
             if (caseToBeDeleted != null)
             {
@@ -1035,11 +1037,13 @@ namespace SharkGaming.Services.ProductServiceFile
             CaseFan caseFanToBeDeleted = null;
             foreach (CaseFan item in _caseFans)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     caseFanToBeDeleted = item;
                     break;
                 }
+                caseFanToBeDeleted = item;
+                break;
             }
             if (caseFanToBeDeleted != null)
             {
@@ -1060,11 +1064,13 @@ namespace SharkGaming.Services.ProductServiceFile
             CPUAirCooling cPUAirToBeDeleted = null;
             foreach (CPUAirCooling item in _cPUAirCooling)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     cPUAirToBeDeleted = item;
                     break;
                 }
+                cPUAirToBeDeleted = item;
+                break;
             }
             if (cPUAirToBeDeleted != null)
             {
@@ -1085,11 +1091,13 @@ namespace SharkGaming.Services.ProductServiceFile
             CPUWaterCooling cPUWaterToBeDeleted = null;
             foreach (CPUWaterCooling item in _cPUWaterCooling)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     cPUWaterToBeDeleted = item;
                     break;
                 }
+                cPUWaterToBeDeleted = item;
+                break;
             }
             if (cPUWaterToBeDeleted != null)
             {
@@ -1110,11 +1118,13 @@ namespace SharkGaming.Services.ProductServiceFile
             CPU cPUToBeDeleted = null;
             foreach (CPU item in _cPUs)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     cPUToBeDeleted = item;
                     break;
                 }
+                cPUToBeDeleted = item;
+                break;
             }
             if (cPUToBeDeleted != null)
             {
@@ -1135,11 +1145,13 @@ namespace SharkGaming.Services.ProductServiceFile
             GPU gPUToBeDeleted = null;
             foreach (GPU item in _gPUs)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     gPUToBeDeleted = item;
                     break;
                 }
+                gPUToBeDeleted = item;
+                break;
             }
             if (gPUToBeDeleted != null)
             {
@@ -1160,11 +1172,13 @@ namespace SharkGaming.Services.ProductServiceFile
             Motherboard motherboardToBeDeleted = null;
             foreach (Motherboard item in _motherboards)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     motherboardToBeDeleted = item;
                     break;
                 }
+                motherboardToBeDeleted = item;
+                break;
             }
             if (motherboardToBeDeleted != null)
             {
@@ -1185,11 +1199,13 @@ namespace SharkGaming.Services.ProductServiceFile
             PowerSupply powerSuppliesToBeDeleted = null;
             foreach (PowerSupply item in _powerSupplies)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     powerSuppliesToBeDeleted = item;
                     break;
                 }
+                powerSuppliesToBeDeleted = item;
+                break;
             }
             if (powerSuppliesToBeDeleted != null)
             {
@@ -1207,15 +1223,17 @@ namespace SharkGaming.Services.ProductServiceFile
             RAM deletedRAM = null;
 
            
-            #region Delete RAM
+            
             RAM ramToBeDeleted = null;
             foreach (RAM item in _rAMs)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     ramToBeDeleted = item;
                     break;
                 }
+                ramToBeDeleted = item;
+                break;
             }
             if (ramToBeDeleted != null)
             {
@@ -1223,7 +1241,7 @@ namespace SharkGaming.Services.ProductServiceFile
                 JsonService.SaveJsonRAM(_rAMs);
                 deletedRAM = ramToBeDeleted;
             }
-            #endregion
+            
 
             return deletedRAM;
         }
@@ -1261,11 +1279,13 @@ namespace SharkGaming.Services.ProductServiceFile
             SolidStateDrive SSDToBeDeleted = null;
             foreach (SolidStateDrive item in _solidStateDrives)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     SSDToBeDeleted = item;
                     break;
                 }
+                SSDToBeDeleted = item;
+                break;
             }
             if (SSDToBeDeleted != null)
             {

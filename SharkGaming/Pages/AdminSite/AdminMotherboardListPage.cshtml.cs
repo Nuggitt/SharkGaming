@@ -22,5 +22,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             motherboards = _productService.GetMotherboards();
         }
+
+        public IActionResult OnPostDeleteMotherboardFormJson(int motherboardID)
+        {
+            if (motherboardID != null)
+            {
+                _productService.DeleteMotherboard(motherboardID);
+                return RedirectToPage("AdminMotherboardListPage");
+            }
+            return Page();
+
+        }
     }
 }

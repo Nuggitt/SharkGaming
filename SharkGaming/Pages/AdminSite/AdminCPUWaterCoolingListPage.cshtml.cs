@@ -22,5 +22,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             cPUWaterCoolings = _productService.GetCPUWaterCooling();
         }
+
+        public IActionResult OnPostDeleteCPUWaterCoolingFormJson(int cpuWater)
+        {
+            if (cpuWater != null)
+            {
+                _productService.DeleteCPUWaterCooling(cpuWater);
+                return RedirectToPage("AdminCPUWaterCoolingListPage");
+            }
+            return Page();
+
+        }
     }
 }

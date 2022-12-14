@@ -22,5 +22,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             solidStateDrives = _productService.GetSolidStateDrives();
         }
+
+        public IActionResult OnPostDeleteSSDFormJson(int ssdID)
+        {
+            if (ssdID != null)
+            {
+                _productService.DeleteSSD(ssdID);
+                return RedirectToPage("AdminSolidStateDriveListPage");
+            }
+            return Page();
+
+        }
     }
 }

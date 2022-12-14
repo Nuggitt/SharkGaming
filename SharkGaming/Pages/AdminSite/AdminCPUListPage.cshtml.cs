@@ -22,5 +22,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             cPUs = _productService.GetCPUs();
         }
+
+        public IActionResult OnPostDeleteCPUFormJson(int cpuID)
+        {
+            if (cpuID != null)
+            {
+                _productService.DeleteCPU(cpuID);
+                return RedirectToPage("AdminCPUListPage");
+            }
+            return Page();
+
+        }
     }
 }

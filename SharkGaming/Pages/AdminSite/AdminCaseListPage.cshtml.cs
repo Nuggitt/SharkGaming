@@ -22,5 +22,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             cases = _productService.GetCases();
         }
+
+        public IActionResult OnPostDeleteCaseFormJson(int caseID)
+        {
+            if (caseID != null)
+            {
+                _productService.DeleteCase(caseID);
+                return RedirectToPage("AdminCaseListPage");
+            }
+            return Page();
+
+        }
     }
 }

@@ -39,9 +39,8 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         }
         public IActionResult OnPostAddToCart()
         {
-            caseFans = _productService.GetCaseFan();
-            _orderService.AddToCart(productId, 1,price);
-            return Page();
+            _orderService.AddToCart(24, 1, 543);
+            return RedirectToPage("RamPage1");
         }
     }
 }
