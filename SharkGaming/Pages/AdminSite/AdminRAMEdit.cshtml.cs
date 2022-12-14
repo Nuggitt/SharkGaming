@@ -36,12 +36,5 @@ namespace SharkGaming.Pages.AdminSite
             _productService.UpdateRAM(ram);
             return RedirectToPage("AdminRAMListPage");
         }
-
-        public IActionResult OnPostDeleteRAM()
-        {
-            _productService.DeleteRAM(ram.Id);
-            return RedirectToPage("AdminRAMListPage");
-
-        }
     }
 }
