@@ -23,13 +23,13 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
             this._orderService = orderService;
 
         }
-        public List<CaseFan> components { get; set; }
+        public List<CaseFan> caseFans { get; set; }
         public List<ProductsClass> orderItemList { get; set; }
         public List<Products.ProductsClass> Items { get; private set; } = new List<Products.ProductsClass>();
 
         public void OnGet()
         {
-            components = _productService.GetCaseFan();
+            caseFans = _productService.GetCaseFan();
         }
 
         public void OnPost()
