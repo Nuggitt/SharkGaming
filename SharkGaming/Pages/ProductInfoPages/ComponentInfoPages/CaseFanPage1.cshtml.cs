@@ -23,13 +23,13 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
             this._orderService = orderService;
 
         }
-        public List<CaseFan> components { get; set; }
+        public List<CaseFan> caseFans { get; set; }
         public List<ProductsClass> orderItemList { get; set; }
         public List<Products.ProductsClass> Items { get; private set; } = new List<Products.ProductsClass>();
 
         public void OnGet()
         {
-            components = _productService.GetCaseFan();
+            caseFans = _productService.GetCaseFan();
         }
 
         public void OnPost()
@@ -39,7 +39,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         }
         public IActionResult OnPostAddToCart()
         {
-            components = _productService.GetCaseFan();
+            caseFans = _productService.GetCaseFan();
             _orderService.AddToCart(productId, 1,price);
             return Page();
         }
