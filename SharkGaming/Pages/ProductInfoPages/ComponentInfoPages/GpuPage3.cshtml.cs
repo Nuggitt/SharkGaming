@@ -13,11 +13,11 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         {
             _productService = iproductervice;
         }
-        public List<GPU>? components { get; private set; }
+        public List<GPU>? gpus { get; private set; }
 
         public void OnGet()
         {
-            components = _productService.GetGPUs();
+            gpus = _productService.GetGPUs();
         }
     }
 }
