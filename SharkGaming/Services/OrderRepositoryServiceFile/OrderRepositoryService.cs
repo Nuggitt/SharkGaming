@@ -49,6 +49,12 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             _orders.Add(order);
             JsonService.SaveJsonOrder(_orders);
         }
+        public OrderClass CreateOrder(CustomerClass customer)
+        {
+            new OrderClass(customer, customer.Address, _orderItems);
+            JsonService.SaveJsonOrder(_orders);
+            return new OrderClass(customer, customer.Address, _orderItems);
+        }
         
 
         public void UpdateOrder(OrderClass order)
