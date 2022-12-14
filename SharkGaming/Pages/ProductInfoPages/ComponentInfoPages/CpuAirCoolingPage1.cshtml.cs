@@ -16,12 +16,12 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         {
             _productService = iproductervice;
         }
-        public List<CPUAirCooling> components { get; set; }
+        public List<CPUAirCooling> cpuAirCoolings { get; set; }
         public List<ProductsClass> orderItemList { get; set; }
 
         public void OnGet()
         {
-            components = _productService.GetCPUAirCooling();
+            cpuAirCoolings = _productService.GetCPUAirCooling();
         }
 
         public void OnPost()
