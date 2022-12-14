@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "OrderItemId": 0,
+    "Amount": 1,
+    "Price": 0,
+    "ProductId": 1
+  }
+]

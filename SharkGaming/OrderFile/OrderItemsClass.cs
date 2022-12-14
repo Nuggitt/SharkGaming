@@ -20,6 +20,7 @@ namespace SharkGaming.OrderFile
             Amount = amount;
             Price = price;
             OrderItemId = nextId++;
+
         }
         public OrderItemsClass()
         {
