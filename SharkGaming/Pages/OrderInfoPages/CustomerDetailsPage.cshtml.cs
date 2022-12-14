@@ -33,8 +33,13 @@ namespace SharkGaming.Pages.OrderInfoPages
         [BindProperty]
         public string Country { get; set; }
 
-        public List<OrderItemsClass> _orderItems { get; set; }
-        public List<ProductsClass> _allProducts { get; set; }
+        public double? TotalPrice { get; set; }
+        public int Shipping { get; set; }
+        
+
+
+
+       
 
 
         public CustomerDetailsPageModel(CustomerService customerService, IOrderRepositoryService orderService, IProductService productService)
@@ -42,7 +47,7 @@ namespace SharkGaming.Pages.OrderInfoPages
             _customerService = customerService;
             _orderService = orderService;
             _productService = productService;
-
+            
         }
         
         public IActionResult OnPost()
@@ -51,10 +56,13 @@ namespace SharkGaming.Pages.OrderInfoPages
             {
                 return Page();
             }
-            _orderService.CreateOrder(new CustomerClass(Phone, Email, Address, Postcode, Country));
+            _orderService.CreateOrder(new CustomerClass(Phone, Email, Address, Postcode, Country), TotalPrice);
             
-            return RedirectToPage("");
+            
+            return RedirectToPage("OrderConfirmationPage");
         }
+        
+        
     }
 }
 

@@ -10,12 +10,12 @@ namespace SharkGaming.Order
         public string DeliveryAddress { get; set; }
         public DateTime Dt { get; set; }
         public CustomerClass Customer { get; set; }
-        //public double? TotalPrice { get; set; }
+        public double? TotalPrice { get; set; }
 
         public List<OrderItemsClass> _orderItems = new List<OrderItemsClass>();
         private static List<OrderClass> _orders = new List<OrderClass>();
 
-        public OrderClass(CustomerClass customer, string deliveryAdress, List<OrderItemsClass> orderitems)
+        public OrderClass(CustomerClass customer, string deliveryAdress, List<OrderItemsClass> orderitems, double? totalPrice)
         {
             Id = nextId++;
             Customer = customer;
@@ -24,6 +24,7 @@ namespace SharkGaming.Order
             _orderItems = orderitems;
             //TotalPrice = CalculateTotalPrice();
             _orders.Add(this);
+            TotalPrice = totalPrice;
         }
 
         public OrderClass()

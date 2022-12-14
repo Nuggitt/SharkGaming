@@ -23,7 +23,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
         public OrderRepositoryService()
         {
-            //_orders = OrderClass.GetOrders();
+            _orders = OrderClass.GetOrders();
             _orderItems = OrderItemsClass.GetOrderList();
         }
 
@@ -50,9 +50,10 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             JsonService.SaveJsonOrder(_orders);
         }
         
-        public void CreateOrder(CustomerClass customer)
+        public void CreateOrder(CustomerClass customer, double? totalPrice)
         {
-            _orders.Add(new OrderClass(customer, customer.Address, _orderItems));
+            _orders = OrderClass.GetOrders();
+            _orders.Add(new OrderClass(customer, customer.Address, _orderItems, totalPrice));
             JsonService.SaveJsonOrder(_orders);          
         }
         
@@ -81,6 +82,20 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
                 foreach (OrderClass i in _orders)
 
                     if (i.Id == id)
+                    {
+                        return i;
+                    }
+
+            }
+            return null;
+        }
+        public OrderClass GetOrderByEmail(string email)
+        {
+            if (email != null)
+            {
+                foreach (OrderClass i in _orders)
+
+                    if (i.Customer.Email == email)
                     {
                         return i;
                     }
