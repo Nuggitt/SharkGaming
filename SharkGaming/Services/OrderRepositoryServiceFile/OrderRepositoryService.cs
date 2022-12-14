@@ -176,8 +176,9 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
       
         }
 
-        
-
-
+        public OrderClass CreateOrder(CustomerClass customer, List<OrderItemsClass> orderItems)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
