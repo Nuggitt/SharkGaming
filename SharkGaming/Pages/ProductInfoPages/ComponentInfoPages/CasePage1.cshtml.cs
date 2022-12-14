@@ -22,13 +22,13 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
             _orderService = iorderRepositoryService;
         }
         
-        public List<Cases> components { get; set; }
+        public List<Cases> cases { get; set; }
         public List<OrderItemsClass> orderItemList { get; set; }
         public OrderItemsClass Item { get; set; }
 
         public void OnGet()
         {
-            components = _productService.GetCases();
+            cases = _productService.GetCases();
         }
 
         public void OnPost()

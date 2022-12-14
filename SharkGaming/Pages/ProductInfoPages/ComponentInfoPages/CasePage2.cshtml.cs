@@ -15,12 +15,12 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
             {
                 _productService = iproductervice;
             }
-            public List<Cases>? components { get; private set; }
+            public List<Cases>? cases { get; private set; }
 
 
             public void OnGet()
             {
-                components = _productService.GetCases();
+                cases = _productService.GetCases();
             }
         }
 }
