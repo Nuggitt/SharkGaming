@@ -3,6 +3,8 @@
 @{
 }
 
+<h1 class="text-white">Shopping Cart</h1>
+<br />
 <form method="post">
     <table class="table table-bordered table-hover table-striped table-opacity" width="60%">
         <col style="width: 5%" />
@@ -72,8 +74,9 @@
             }   
         </tbody>
     </table>
-    <h3 class="text-white">Sub-Total: @Model.TotalPrice kr</h3>
     <h4 class="text-white">Shipping fee: @Model.Shipping kr</h4>
+    <h2 class="text-white">Total: @Model.TotalPrice kr</h2>
+    
     <br /> 
     <a asp-page="/OrderInfoPages/CustomerDetailsPage" class="btn btn-dark">Order</a>
 
