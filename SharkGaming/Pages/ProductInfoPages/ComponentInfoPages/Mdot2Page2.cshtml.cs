@@ -13,11 +13,11 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         {
             _productService = iproductervice;
         }
-        public List<Mdot2>? components { get; private set; }
+        public List<Mdot2>? mdot2 { get; private set; }
 
         public void OnGet()
         {
-            components = _productService.GetMdot2();
+            mdot2 = _productService.GetMdot2();
         }
     }
 }
