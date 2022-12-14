@@ -15,10 +15,16 @@
                     Id
                 </th>
                 <th>
-                    Amount
+                    Name
                 </th>
                 <th>
                     Price
+                </th>
+                <th>
+                    Quantity 
+                </th>
+                <th>
+                    
                 </th>
                 <th>
                     Actions
@@ -26,26 +32,49 @@
             </tr>
         </thead>
         <tbody>
-            @if (Model._orderItems != null)
+            @if (Model._cartProducts != null)
             {
-                foreach (var item in Model._orderItems)
+                foreach (var item in Model._cartProducts)
                 {
                     <tr class="btn-secondary">
                         <td>
-                            @item.ProductId
+                            @item.Id
                         </td>
                         <td>
-                            @item.Amount
+                            @item.Name
                         </td>
                         <td>
                             @item.Price
                         </td>
+                        @*<td>
+                            @if(item.Id == 0)
+                            {
+                                           
+                            }
+                        </td>*@
                         <td>
-                            <input type="submit" asp-page-handler="DeleteFromCart" asp-route-id="@item.ProductId" value="Delete" class="btn btn-danger" />
-                        </td>
+                            @if (Model._orderItems != null)
+                            {
+                                
+                                foreach (var orderItem in Model._orderItems)
+                                {
+                                    if(orderItem.ProductId == item.Id)
+                                    {
+                                        @orderItem.Amount
+                                    }
+                                    
+                                }
+                            }
+
+                        </td>                     
+                        
+                        
                         <td>
-                            <input type="hidden" asp-for="productId"/>
+                            <input type="submit" asp-page-handler="DeleteFromCart" asp-route-id="@item.Id" value="Delete" class="btn btn-danger" />
+                            <input type="hidden" asp-for="productId" />
                         </td>
+                       
+                        
                     </tr>
                 }
             }

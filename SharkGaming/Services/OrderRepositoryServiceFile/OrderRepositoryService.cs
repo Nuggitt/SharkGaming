@@ -167,8 +167,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         public List<OrderItemsClass> GetFromCart()
         {
             return _orderItems;
-
-                
+      
         }
 
         
