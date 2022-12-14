@@ -23,5 +23,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             preBuildsClasses = _productService.GetPreBuilds();
         }
+
+        public IActionResult OnPostDeletePreBuildFormJson(int preBuildID)
+        {
+            if (preBuildID != null)
+            {
+                _productService.DeletePreBuilds(preBuildID);
+                return RedirectToPage("AdminPrebuildsListPage");
+            }
+            return Page();
+
+        }
     }
 }

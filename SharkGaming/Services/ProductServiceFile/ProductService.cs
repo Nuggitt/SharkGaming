@@ -960,11 +960,13 @@ namespace SharkGaming.Services.ProductServiceFile
             PreBuildsClass preBuildToBeDeleted = null;
             foreach (PreBuildsClass item in _preBuilds)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     preBuildToBeDeleted = item;
                     break;
                 }
+                preBuildToBeDeleted = item;
+                break;
             }
             if (preBuildToBeDeleted != null)
             {
@@ -1254,11 +1256,13 @@ namespace SharkGaming.Services.ProductServiceFile
             Mdot2 mdot2ToBeDeleted = null;
             foreach (Mdot2 item in _mdot2s)
             {
-                if (item.Id == itemId)
+                if (item.Id != itemId)
                 {
                     mdot2ToBeDeleted = item;
                     break;
                 }
+                mdot2ToBeDeleted = item;
+                break;
             }
             if (mdot2ToBeDeleted != null)
             {
