@@ -22,5 +22,16 @@ namespace SharkGaming.Pages.AdminSite
         {
             mdot2s = _productService.GetMdot2();
         }
+
+        public IActionResult OnPostDeleteMdot2FormJson(int mdot2ID)
+        {
+            if (mdot2ID != null)
+            {
+                _productService.DeleteMdot2 (mdot2ID);
+                return RedirectToPage("AdminMdot2ListPage");
+            }
+            return Page();
+
+        }
     }
 }
