@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.VisualBasic;
+using SharkGaming.OrderFile;
 using SharkGaming.Products;
 using SharkGaming.Products.Components.ComponentTypes.RAM;
 using SharkGaming.Services.OrderRepositoryServiceFile;
@@ -19,6 +20,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         [BindProperty] public double price { get; set; }
         
 
+
         public RamPage1Model(IProductService iproductervice, IOrderRepositoryService orderRepositoryService)
         {
             _productService = iproductervice;
@@ -33,9 +35,10 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
 
         public IActionResult OnPostAddToCart()
         {
-            
+
             _orderService.AddToCart(24, 1, 543);
             return RedirectToPage("RamPage1");
+            
         }
     }
 }
