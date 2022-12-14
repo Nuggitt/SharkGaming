@@ -28,7 +28,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         }
         public IActionResult OnPostAddToCart()
         {
-            _orderService.AddToCart(9, 1, 999);
+            _orderService.AddToCart(10, 1, 999);
             return RedirectToPage("CpuWaterCoolingPage2");
         }
     }

@@ -2,31 +2,7 @@
   {
     "OrderItemId": 0,
     "Amount": 1,
-    "Price": 540,
-    "ProductId": 30
-  },
-  {
-    "OrderItemId": 1,
-    "Amount": 1,
-    "Price": 618,
-    "ProductId": 31
-  },
-  {
-    "OrderItemId": 2,
-    "Amount": 1,
-    "Price": 1249,
-    "ProductId": 30
-  },
-  {
-    "OrderItemId": 3,
-    "Amount": 1,
-    "Price": 262.88,
-    "ProductId": 26
-  },
-  {
-    "OrderItemId": 4,
-    "Amount": 1,
-    "Price": 1177,
-    "ProductId": 25
+    "Price": 319.03,
+    "ProductId": 29
   }
 ]
