@@ -1,8 +1,14 @@
 [
   {
-    "OrderItemId": 0,
+    "OrderItemId": 1,
     "Amount": 1,
-    "Price": 543,
-    "ProductId": 24
+    "Price": 399,
+    "ProductId": 7
+  },
+  {
+    "OrderItemId": 2,
+    "Amount": 3,
+    "Price": 599,
+    "ProductId": 2
   }
 ]
