@@ -74,11 +74,16 @@
             }   
         </tbody>
     </table>
-    <h4 class="text-white">Shipping fee: @Model.Shipping kr</h4>
-    <h2 class="text-white">Total: @Model.TotalPrice kr</h2>
+    @if (Model._cartProducts.Count > 0)
+    {
+        <h4 class="text-white">Shipping fee: @Model.Shipping kr</h4>
+        <h2 class="text-white">Total: @Model.TotalPrice kr</h2>
+
+        <br />
+
+        <a asp-page="/OrderInfoPages/CustomerDetailsPage" class="btn btn-dark">Order</a>
+    }
     
-    <br /> 
-    <a asp-page="/OrderInfoPages/CustomerDetailsPage" class="btn btn-dark">Order</a>
 
 
 </form>
