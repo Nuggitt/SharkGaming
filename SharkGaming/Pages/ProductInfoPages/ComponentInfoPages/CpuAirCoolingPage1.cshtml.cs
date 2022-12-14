@@ -11,11 +11,17 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
     {
         private IProductService _productService;
         private IOrderRepositoryService _orderService;
+        [BindProperty] public int productId { get; set; }
+        [BindProperty] public int amount { get; set; }
+        [BindProperty] public double price { get; set; }
 
-        public CpuAirCoolingPage1Model(IProductService iproductervice)
+        public CpuAirCoolingPage1Model(IProductService productService, IOrderRepositoryService orderService)
         {
-            _productService = iproductervice;
+            this._productService = productService;
+            this._orderService = orderService;
+
         }
+
         public List<CPUAirCooling> cpuAirCoolings { get; set; }
         public List<ProductsClass> orderItemList { get; set; }
 
@@ -24,10 +30,10 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
             cpuAirCoolings = _productService.GetCPUAirCooling();
         }
 
-        public void OnPost()
+        public IActionResult OnPostAddToCart()
         {
-            //_orderService.AddToOrderItems(orderItemList);
-
+            _orderService.AddToCart(6, 1, 399);
+            return RedirectToPage("CasePage3");
         }
     }
 }
