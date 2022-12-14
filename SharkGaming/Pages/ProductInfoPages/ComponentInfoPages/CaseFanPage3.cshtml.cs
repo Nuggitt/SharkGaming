@@ -16,12 +16,12 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         {
             _productService = iproductervice;
         }
-        public List<CaseFan> components { get; set; }
+        public List<CaseFan> caseFans { get; set; }
         public List<ProductsClass> orderItemList { get; set; }
 
         public void OnGet()
         {
-            components = _productService.GetCaseFan();
+            caseFans = _productService.GetCaseFan();
         }
 
         public void OnPost()
