@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SharkGaming.OrderFile;
 using SharkGaming.Products;
 using SharkGaming.Services.OrderRepositoryServiceFile;
 using SharkGaming.Services.ProductServiceFile;
@@ -9,19 +10,62 @@ namespace SharkGaming.Pages.OrderInfoPages
 {
     public class OrderItemsPageModel : PageModel
     {
-        //private IOrderRepositoryService _orderService;
-
-
-        //public OrderItemsPageModel(OrderRepositoryService orderService)
-        //{
-        //    _orderService = orderService;
-        //}
-        //public List<> _productsadded { get; private set; } 
+        private IOrderRepositoryService _orderService;
+        private IProductService _productService;
+        [BindProperty] public int productId { get; set; }
         
-        //public void OnGet()
+        
+        
+
+
+        public OrderItemsPageModel(IOrderRepositoryService orderService, IProductService productService)
+        {
+            
+            _orderService = orderService;
+            _productService = productService;
+        }
+
+        public List<OrderItemsClass> _orderItems { get; set; }
+        public List<ProductsClass> _allProducts { get; set; }
+        public List<ProductsClass> _cartProducts { get; set; }
+
+
+        //public IActionResult OnGet()
         //{
-        //    _productsadded = _productService.GetOrderItems();
+        //    _orderItems = _orderService.GetFromCart();
+        //    return Page();
         //}
+
+        public IActionResult OnGet()
+        {
+            List<ProductsClass> _cart = new List<ProductsClass>();
+
+            _orderItems = _orderService.GetFromCart();
+            _allProducts = _productService.ProductList();
+
+
+            foreach(var item in _orderItems)
+            {
+                foreach(var product in _allProducts)
+                {
+                    if(item.ProductId == product.Id)
+                        _cart.Add(product);
+                }
+            }
+            _cartProducts = _cart;
+            return Page();
+        }
+
+        public IActionResult OnPostDeleteFromCart(int productId)
+        {
+            if (productId != null)
+            {
+                _orderService.DeleteFromCart(productId);
+                return RedirectToPage("OrderItemsPage");
+            }
+            return Page();
+            
+        }
 
 
 

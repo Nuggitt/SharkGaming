@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SharkGaming.Products.Components.ComponentTypes.Cooling;
 using SharkGaming.Products.Components.ComponentTypes.CPU;
@@ -11,14 +10,16 @@ using SharkGaming.Products.Components.ComponentTypes.Storage;
 using SharkGaming.Products;
 using SharkGaming.Services.ProductServiceFile;
 using System.Reflection;
-
+using SharkGaming.Products.PreBuilds;
+using SharkGaming.Services.OrderRepositoryServiceFile;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SharkGaming.Pages.ProductInfoPages
 {
     public class ProductListPageModel : PageModel
     {
         public bool Bool = false;
-        public List<ProductsClass> Products { get; private set; }
+        public List<PreBuildsClass> Products { get; private set; }
         public List<Cases> cases { get; private set; }
         public List<CaseFan> caseFan { get; private set; }
         public List<CPUAirCooling> cPUAirCoolings { get; private set; }
@@ -30,17 +31,27 @@ namespace SharkGaming.Pages.ProductInfoPages
         public List<RAM>? ram { get; private set; }
         public List<Mdot2> mdot2s { get; private set; }
         public List<SolidStateDrive> solidStateDrives { get; private set; }
+        [BindProperty] public int productId { get; set; }
+        [BindProperty] public int amount { get; set; }
+        [BindProperty] public double price { get; set; }
 
-        private IProductService _productService;
+        //public List<ProductsClass> prebuilds { get; private set; }
 
-        public List<ProductsClass> Items { get; private set; } = new List<ProductsClass>();
+        public IProductService _productService;
+        public IOrderRepositoryService _orderService;
 
-        public ProductListPageModel(IProductService iproductService)
+        public List<Products.ProductsClass> Items { get; private set; } = new List<Products.ProductsClass>();
+
+
+        public ProductListPageModel(IProductService productService, IOrderRepositoryService orderService)
         {
-            _productService= iproductService;
+            this._productService = productService;
+            this._orderService = orderService;
+
         }
         public void OnGet()
         {
+            //prebuilds = _productService.GetPreBuilds();
             cases = _productService.GetCases();
             caseFan = _productService.GetCaseFan();
             cPUAirCoolings = _productService.GetCPUAirCooling();
@@ -52,9 +63,15 @@ namespace SharkGaming.Pages.ProductInfoPages
             ram = _productService.GetRAM();
             mdot2s = _productService.GetMdot2();
             solidStateDrives = _productService.GetSolidStateDrives();
+
+
         }
 
-        
+        public IActionResult OnPostAddToCart()
+        {
+            _orderService.AddToCart(productId, 1,price);
+            return Page();
+        }
 
     }
 }

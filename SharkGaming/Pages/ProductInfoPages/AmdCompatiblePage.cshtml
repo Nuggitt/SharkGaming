@@ -3,7 +3,7 @@
 @{
 }
 <div class="text-center">
-    <h1 style="color:white">AMD Compatible Products</h1>
+    <h1 style="color:white">AMD Compatible Components</h1>
 </div>
 
 <br />
@@ -18,30 +18,24 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Price filter</td>
-                </tr>
-                @*<tr>
                     <td>
-                        <form action="Post">
-                            <input type="checkbox" id="rgbFilter" name="RGB" value="RGB">
-                            <label for="RGB"> RGB</label><br>
-                            <input type="checkbox" asp-page-handler="IntelCompatible" id="intelCompFilter" name="Intel Compatible" value="AMD">
-                            <label for="intelCompFilter"> Intel Compatible</label><br>
-                            <input type="checkbox" id="amdCompFilter" name="AMD Compatible" value="Intel">
-                            <label for="amdCompFilter"> AMD Compatible</label><br>
-                            <input type="submit" value="Filter">
-                        </form>
+                        <a href="/ProductInfoPages/ProductListPage"> <input class="btn btn-dark" type="submit" value="All Components"</a>
                     </td>
-                </tr>*@
-                <tr>                   
-                    <td>
-                         <a href="/ProductInfoPages/ProductListPage"> <input class="btn btn-dark" type="submit" value="All Products"</a>     
-                    </td>  
                 </tr>
-                <tr>                   
+                <tr>
+                    <td>
+                        <a href="/ProductInfoPages/AmdCompatiblePage"> <input class="btn btn-dark" type="submit" value="AMD Compatible"</a>
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <a href="/ProductInfoPages/IntelCompatiblePage"> <input class="btn btn-dark" type="submit" value="Intel Compatible"</a>
-                    </td>  
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="/ProductInfoPages/RGBComponentsPage"> <input class="btn btn-dark" type="submit" value="RGB Components"</a>
+                    </td>
                 </tr>
             </tbody>
         </table>

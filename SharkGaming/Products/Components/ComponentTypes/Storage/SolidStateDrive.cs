@@ -12,8 +12,8 @@
 
         }
 
-        public SolidStateDrive(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, int capacity, string compatibleBay, double internalDateRate, double driveTransferRate, double fourKBRandomRead, double fourKBRandomWrite, string nandFlashMemoryType)
-            : base(name, price, amdCompatible, intelCompatible, specInfo, capacity, compatibleBay, internalDateRate)
+        public SolidStateDrive(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, int capacity, string compatibleBay, double internalDateRate, double driveTransferRate, double fourKBRandomRead, double fourKBRandomWrite, string nandFlashMemoryType, string img, string description, string link)
+            : base(name, price, amdCompatible, intelCompatible, specInfo, capacity, compatibleBay, internalDateRate, img, description, link)
         {
             DriveTransferRate = driveTransferRate;
             FourKBRandomRead = fourKBRandomRead;

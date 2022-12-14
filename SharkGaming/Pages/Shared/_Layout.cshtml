@@ -29,24 +29,26 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
-                        <form action="/action_page.php">
-                            <input type="text" placeholder="Search.." name="search">
-                        </form>
-                        <a href="#"><i class="fa fa-fw fa-search"></i></a>
+                        
+                        <a href="/ProductInfoPages/SearchProductsPage">Search All Products <i class="fa fa-fw fa-search"></i></a>
                         <a href="/OrderInfoPages/OrderItemsPage"><i class="fa fa-fw fa-shopping-cart"></i></a>
                         <a href="
                             @if(LogInPageModel.LoggedInUser == null)
                                 {<text>/LogIn/LoginPage</text>}
                             else{<text>/LogIn/UserAccountPage</text>} 
                         "><i class="fa fa-fw fa-user"></i></a>
-                        <a href="#"><i class="fa fa-fw fa-envelope"></i></a>
+                        <a href="/Fuckmig/EasterEgg"><i class="fa fa-fw fa-envelope"></i></a>
                     </div>
                 </ul>
 
 
 @*        Nav-bar 2*@
                 <ul class="navbar-nav justify-content-center w-100 bgGrey px-3">
-                    
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-page="/ProductInfoPages/PreBuildListPage">Pre-Builds</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link text-white" asp-area="" asp-page="/ProductInfoPages/ProductListPage">Components</a>
                     </li>

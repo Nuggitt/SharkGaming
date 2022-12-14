@@ -17,8 +17,8 @@
         public bool IntelCompatible { get; set; }
 
 
-        public Motherboard(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, bool supportedRamIntergrityCheck, int maxRamSize, string technology, double buSClock, string productType, string chipsetType, string processorSocket, string powerConnectors, string bIOSType, double pciExpress)
-            : base(name, price, amdCompatible, intelCompatible, specInfo)
+        public Motherboard(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, bool supportedRamIntergrityCheck, int maxRamSize, string technology, double buSClock, string productType, string chipsetType, string processorSocket, string powerConnectors, string bIOSType, double pciExpress, string img, string description, string link)
+            : base(name, price, amdCompatible, intelCompatible, specInfo, img, description, link)
         {
             SupportedRamIntergrityCheck = supportedRamIntergrityCheck;
             MaxRamSize = maxRamSize;

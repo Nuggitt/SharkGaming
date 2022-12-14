@@ -103,11 +103,11 @@ footer{
     background-color: #151515;
 }
 
-.btnGreen {
+.btn-green {
     background-color: #4B9A10;
-    border: none;
     color: white;
     text-align: center;
+    margin-bottom: 12px;
 }
 
 .columnCustom {

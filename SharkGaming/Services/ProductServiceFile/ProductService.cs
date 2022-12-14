@@ -15,13 +15,14 @@ using SharkGaming.MockData.Products.Components;
 using SharkGaming.Services.JsonServiceFile;
 using SharkGaming.MockData.Products.PreBuilds;
 using System.Text.Json.Nodes;
+using SharkGaming.OrderFile;
 
 namespace SharkGaming.Services.ProductServiceFile
 {
     public class ProductService : IProductService // All customPc commented out
     {
         #region Lists       
-        private List<ProductsClass> _preBuilds;
+        private List<PreBuildsClass> _preBuilds;
         //private List<CustomPcClass> _customPcs;
         private List<Cases> _cases;
         private List<CaseFan> _caseFans;
@@ -57,7 +58,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Get methods       
-        public List<ProductsClass> GetPreBuilds()
+        public List<PreBuildsClass> GetPreBuilds()
         {
             return _preBuilds;
         }
@@ -89,8 +90,6 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             return _gPUs;
         }
-
-
         public List<Motherboard> GetMotherboards()
         {
             return _motherboards;
@@ -114,7 +113,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Add to list methods
-        public void AddPreBuild(ProductsClass preBuilds)
+        public void AddPreBuild(PreBuildsClass preBuilds)
         {
             _preBuilds.Add(preBuilds);
             JsonService.SaveJsonPreBuilds(_preBuilds);  
@@ -189,7 +188,7 @@ namespace SharkGaming.Services.ProductServiceFile
         {
             JsonService = jsonService;
             //_preBuilds = MockPreBuilds.GetMockPreBuilds().ToList();
-            //_customPcs = MockCustomPC.GetMockCustomPcs().ToList();
+            ////_customPcs = MockCustomPC.GetMockCustomPcs().ToList();
             //_cases = MockCaseS.GetMockCases().ToList();
             //_caseFans = MockCaseFan.GetMockCaseFans().ToList();
             //_cPUAirCooling = MockCPUAirCooling.GetMockCPUAirCoolings().ToList();
@@ -202,7 +201,7 @@ namespace SharkGaming.Services.ProductServiceFile
             //_mdot2s = MockMdot.GetMockMdot2s().ToList();
             //_solidStateDrives = MockSolidStateDrive.GetMockSoildSateDrives().ToList();
 
-
+            _preBuilds = JsonService.GetJsonPreBuilds().ToList();
             _cases = JsonService.GetJsonCases().ToList();
             _caseFans = JsonService.GetJsonCaseFans().ToList();
             _cPUAirCooling = JsonService.GetJsonCPUAirCooling().ToList();
@@ -224,13 +223,7 @@ namespace SharkGaming.Services.ProductServiceFile
             {
                 if (!string.IsNullOrWhiteSpace(str))
                 {
-                    foreach (ProductsClass item in _preBuilds)
-                    {
-                        if (item.Name.ToLower().Contains(str.ToLower()))
-                        {
-                            nameSearch.Add(item);
-                        }
-                    }
+                    
                     //foreach (CustomPcClass item in _customPcs)
                     //{
                     //    if (item.Name.ToLower().Contains(str.ToLower()))
@@ -238,81 +231,209 @@ namespace SharkGaming.Services.ProductServiceFile
                     //        nameSearch.Add(item);
                     //    }
                     //}
+
                     foreach (ProductsClass item in _cases)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
-                            nameSearch.Add(item);
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
                         }
                     }
+                    if(str.ToLower() == "case" || str.ToLower() == "cases" || str.ToLower() == "all")
+                    {
+                        foreach (ProductsClass prod in _cases)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
+                        }
+                    }
+
                     foreach (ProductsClass item in _caseFans)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
-                            nameSearch.Add(item);
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
                         }
                     }
+                    if (str.ToLower() == "casefan" || str.ToLower() == "case fan" || str.ToLower() == "case fans" || str.ToLower() == "all" || str.ToLower() == "fan" || str.ToLower() == "fans" || str.ToLower() == "case cooling" || str.ToLower() == "cooling") 
+                    {
+                        foreach (ProductsClass prod in _caseFans)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
+                        }
+                    }
+
                     foreach (ProductsClass item in _cPUAirCooling)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
-                            nameSearch.Add(item);
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
                         }
                     }
+                    if (str.ToLower() == "cpucooling" || str.ToLower() == "cpufan" || str.ToLower() == "all" || str.ToLower() == "cpufans" || str.ToLower() == "fan" || str.ToLower() == "fans" || str.ToLower() == "cpu cooling" || str.ToLower() == "cooling" || str.ToLower() == "cpu fan" || str.ToLower() == "cpu fans")
+                    {
+                        foreach (ProductsClass prod in _cPUAirCooling)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
+                        }
+                    }
+
                     foreach (ProductsClass item in _cPUWaterCooling)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
-                            nameSearch.Add(item);
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
                         }
                     }
+                    if (str.ToLower() == "cpucooling" || str.ToLower() == "cpufan" || str.ToLower() == "all" || str.ToLower() == "cpufans" || str.ToLower() == "fan" || str.ToLower() == "fans" || str.ToLower() == "cpu cooling" || str.ToLower() == "cooling" || str.ToLower() == "cpu fan" || str.ToLower() == "cpu fans" || str.ToLower() == "watercooling" || str.ToLower() == "watercooled" || str.ToLower() == "water cooling" || str.ToLower() == "water cooled" || str.ToLower() == "liquidcooling" || str.ToLower() == "liquidcooled" || str.ToLower() == "liquid cooling" || str.ToLower() == "liquid cooled" || str.ToLower() == "liquid")
+                    {
+                        foreach (ProductsClass prod in _cPUWaterCooling)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
+                        }
+                    }
+
                     foreach (ProductsClass item in _cPUs)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
-                            nameSearch.Add(item);
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
                         }
                     }
+                    if (str.ToLower() == "cpu" || str.ToLower() == "central processing unit" || str.ToLower() == "centralprocessingunit" || str.ToLower() == "all")
+                    {
+                        foreach (ProductsClass prod in _cPUs)
+                        {
+                            if (!nameSearch.Contains(prod))
+
+                                nameSearch.Add(prod);
+                        }
+                    }
+
                     foreach (ProductsClass item in _gPUs)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
-                            nameSearch.Add(item);
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
                         }
                     }
+                    if (str.ToLower() == "gpu" || str.ToLower() == "graphics processing unit" || str.ToLower() == "all" || str.ToLower() == "graphicsprocessingunit" || str.ToLower() == "graphics card" || str.ToLower() == "graphicscard" || str.ToLower() == "graphics" || str.ToLower() == "graphic" || str.ToLower() == "card")
+                    {
+                        foreach (ProductsClass prod in _gPUs)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
+                        }
+                    }
+
                     foreach (ProductsClass item in _motherboards)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
-                            nameSearch.Add(item);
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
                         }
                     }
+                    if (str.ToLower() == "motherboard" || str.ToLower() == "mother board" || str.ToLower() == "all")
+                    {
+                        foreach (ProductsClass prod in _motherboards)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
+                        }
+                    }
+
                     foreach (ProductsClass item in _powerSupplies)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
-                            nameSearch.Add(item);
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
                         }
                     }
+                    if (str.ToLower() == "psu" || str.ToLower() == "powersupply" || str.ToLower() == "all" || str.ToLower() == "power supply" || str.ToLower() == "powersupplies" || str.ToLower() == "power supplies" || str.ToLower() == "power" || str.ToLower() == "supply" || str.ToLower() == "supplies")
+                    {
+                        foreach (ProductsClass prod in _powerSupplies)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
+                        }
+                    }
+
                     foreach (ProductsClass item in _rAMs)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
-                            nameSearch.Add(item);
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
                         }
                     }
+                    if (str.ToLower() == "ram" || str.ToLower() == "randomaccessmemory" || str.ToLower() == "all" || str.ToLower() == "random access memory" || str.ToLower() == "memory")
+                    {
+                        foreach (ProductsClass prod in _rAMs)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
+                        }
+                    }
+
                     foreach (ProductsClass item in _mdot2s)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
-                            nameSearch.Add(item);
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
                         }
                     }
+                    if (str.ToLower() == "storage" || str.ToLower() == "m.2" || str.ToLower() == "mdot2" || str.ToLower() == "all")
+                    {
+                        foreach (ProductsClass prod in _mdot2s)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
+                        }
+                    }
+
                     foreach (ProductsClass item in _solidStateDrives)
                     {
                         if (item.Name.ToLower().Contains(str.ToLower()))
                         {
-                            nameSearch.Add(item);
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
+                        }
+                    }
+                    if (str.ToLower() == "storage" || str.ToLower() == "ssd" || str.ToLower() == "all" || str.ToLower() == "solidstatedrive" || str.ToLower() == "solid state drive" || str.ToLower() == "solid state" || str.ToLower() == "solid")
+                    {
+                        foreach (ProductsClass prod in _solidStateDrives)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
+                        }
+                    }
+                    foreach (ProductsClass item in _preBuilds)
+                    {
+                        if (item.Name.ToLower().Contains(str.ToLower()))
+                        {
+                            if (!nameSearch.Contains(item))
+                                nameSearch.Add(item);
+                        }
+
+                    }
+                    if (str.ToLower() == "prebuild" || str.ToLower() == "pre build" || str.ToLower() == "prebuilds" || str.ToLower() == "pre builds" || str.ToLower() == "all")
+                    {
+                        foreach (ProductsClass prod in _preBuilds)
+                        {
+                            if (!nameSearch.Contains(prod))
+                                nameSearch.Add(prod);
                         }
                     }
                 }
@@ -636,11 +757,11 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Get Product via ID
-        public ProductsClass GetProduct(int id)
+        public PreBuildsClass GetPreBuildss(int id)
         {
             if (id != null)
             {
-                foreach (ProductsClass i in _preBuilds)
+                foreach (PreBuildsClass i in _preBuilds)
                     if (i.Id == id)
                     {
                         return i;
@@ -649,20 +770,20 @@ namespace SharkGaming.Services.ProductServiceFile
             return null;
         }
 
-//        public CustomPcClass GetCustomPcs(int id)
-//        {
-//            if (id != null)
-//            {
-//                foreach (CustomPcClass i in _customPcs)
-//                {
-//                    if (i.Id == id)
-//                    {
-//                        return i;
-//                    }
-//}
-//            }
-//            return null;
-//        }
+        //        public CustomPcClass GetCustomPcs(int id)
+        //        {
+        //            if (id != null)
+        //            {
+        //                foreach (CustomPcClass i in _customPcs)
+        //                {
+        //                    if (i.Id == id)
+        //                    {
+        //                        return i;
+        //                    }
+        //}
+        //            }
+        //            return null;
+        //        }
 
         public Cases GetCases(int id)
         {
@@ -1175,5 +1296,112 @@ namespace SharkGaming.Services.ProductServiceFile
         }
 
         #endregion
+
+        public List<ProductsClass> ProductList()
+        {
+            List<ProductsClass> idSearch = new List<ProductsClass>();
+            {
+                
+                {
+                    foreach (ProductsClass item in _cases)
+                    {
+                        
+                     idSearch.Add(item);
+                        
+                    }
+            
+
+                    foreach (ProductsClass item in _caseFans)
+                    {
+
+                        idSearch.Add(item);
+
+                    }
+
+
+                    foreach (ProductsClass item in _cPUAirCooling)
+                    {
+
+                        idSearch.Add(item);
+
+                    }
+
+
+                    foreach (ProductsClass item in _cPUWaterCooling)
+                    {
+
+                        idSearch.Add(item);
+
+                    }
+
+
+                    foreach (ProductsClass item in _cPUs)
+                    {
+
+                        idSearch.Add(item);
+
+                    }
+
+
+                    foreach (ProductsClass item in _gPUs)
+                    {
+
+                        idSearch.Add(item);
+
+                    }
+
+
+                    foreach (ProductsClass item in _motherboards)
+                    {
+
+                        idSearch.Add(item);
+
+                    }
+
+
+                    foreach (ProductsClass item in _powerSupplies)
+                    {
+
+                        idSearch.Add(item);
+
+                    }
+
+
+                    foreach (ProductsClass item in _rAMs)
+                    {
+
+                        idSearch.Add(item);
+
+                    }
+
+
+                    foreach (ProductsClass item in _mdot2s)
+                    {
+
+                        idSearch.Add(item);
+
+                    }
+
+
+                    foreach (ProductsClass item in _solidStateDrives)
+                    {
+
+                        idSearch.Add(item);
+
+                    }
+
+
+                    foreach (ProductsClass item in _preBuilds)
+                    {
+
+                        idSearch.Add(item);
+
+                    }
+
+                }
+                return idSearch;
+            }
+        }
+
     }
 }

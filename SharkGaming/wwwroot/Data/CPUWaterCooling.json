@@ -12,9 +12,14 @@
     "SquareMetersPerHour": "0",
     "MmH20": "1.85",
     "ColourCatagory": "NO RGP",
+    "AMDCompatible": true,
+    "IntelCompatible": true,
     "Id": 9,
     "Name": "ARCTIC LIQUID FREEZER II 240 CPU K\u00D8LER - VANDK\u00D8LER",
-    "Price": 649
+    "Price": 649,
+    "Img": "/Images/Components/CPUwater1.png",
+    "Description": "This cooler definitely help keep your CPU cold and chill.",
+    "Link": "/ProductInfoPages/ComponentInfoPages/CpuWaterCoolingPage1"
   },
   {
     "RadiatorMaterial": "Heatsink: Aluminum",
@@ -29,9 +34,14 @@
     "SquareMetersPerHour": "0",
     "MmH20": "1.85",
     "ColourCatagory": "ONLY PUMP SOCKET RGP",
+    "AMDCompatible": true,
+    "IntelCompatible": true,
     "Id": 10,
     "Name": "NZXT KRAKEN X53 CPU K\u00D8LER - VANDK\u00D8LER",
-    "Price": 999
+    "Price": 999,
+    "Img": "/Images/Components/CPUwater2.png",
+    "Description": "This is no ordinary water cooler. Oh well, it is but it\u0027s very cool.",
+    "Link": "/ProductInfoPages/ComponentInfoPages/CpuWaterCoolingPage2"
   },
   {
     "RadiatorMaterial": "Copper, Micro-Skived-Fins",
@@ -46,8 +56,13 @@
     "SquareMetersPerHour": "0",
     "MmH20": "1.85",
     "ColourCatagory": "NO RGP",
+    "AMDCompatible": true,
+    "IntelCompatible": true,
     "Id": 11,
     "Name": "ARCTIC LIQUID FREEZER II 360 A-RGB COOLER",
-    "Price": 998
+    "Price": 999,
+    "Img": "/Images/Components/CPUwater3.png",
+    "Description": "If you want your CPU to stay just as chill as yourself, then this is the CPU for you.",
+    "Link": "/ProductInfoPages/ComponentInfoPages/CpuWaterCoolingPage3"
   }
 ]

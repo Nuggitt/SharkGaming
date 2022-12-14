@@ -13,8 +13,8 @@
         public double Width { get; set; }
         public double PCIExpress { get; set; }
 
-        public GPU(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, string graphicsEngine, int cUDACore, bool vRReady, string maxResolution, int memorySize, string memoryTechnology, int memoryBusWidth, int requriedPowerSupply, double width, double pCIExpress)
-            : base(name, price, amdCompatible, intelCompatible, specInfo)
+        public GPU(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, string graphicsEngine, int cUDACore, bool vRReady, string maxResolution, int memorySize, string memoryTechnology, int memoryBusWidth, int requriedPowerSupply, double width, double pCIExpress, string img, string description, string link)
+            : base(name, price, amdCompatible, intelCompatible, specInfo, img, description, link)
         {
             GraphicsEngine = graphicsEngine;
             CUDACore = cUDACore;

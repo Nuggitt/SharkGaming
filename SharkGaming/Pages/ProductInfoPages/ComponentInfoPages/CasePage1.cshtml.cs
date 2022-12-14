@@ -33,7 +33,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
 
         public void OnPost()
         {
-            _orderService.AddOrderItems(Item);
+            
 
         }
     }

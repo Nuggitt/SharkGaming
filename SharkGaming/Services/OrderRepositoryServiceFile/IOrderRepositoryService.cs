@@ -22,13 +22,14 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
         //OrderItemsMethods:
 
-        void AddOrderItems(OrderItemsClass orderItems);
+       
         List<OrderItemsClass> GetOrderItems();
 
-        OrderItemsClass DeleteOrderItem(int? itemId);
+        OrderItemsClass DeleteFromCart(int? productId);
 
-
-
+        void AddToCart(int productId, int amount, double price);
+        
+        public List<OrderItemsClass> GetFromCart();
 
     }
 }

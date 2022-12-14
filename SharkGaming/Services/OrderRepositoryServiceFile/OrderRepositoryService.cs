@@ -12,6 +12,7 @@ using SharkGaming.Products.Components.ComponentTypes.Storage;
 using SharkGaming.Services.JsonServiceFile;
 using SharkGaming.Users.Customer;
 using SharkGaming.Products.PreBuilds;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace SharkGaming.Services.OrderRepositoryServiceFile
 {
@@ -23,7 +24,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         public OrderRepositoryService()
         {
             //_orders = OrderClass.GetOrders();
-            //_orderItems = OrderItemsClass.GetOrderList();   
+            _orderItems = OrderItemsClass.GetOrderList();
         }
 
         #region json
@@ -33,7 +34,8 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         {
             JsonService = jsonService;
             //_orders = JsonService.GetJsonOrder().ToList();
-            //_orderItems = JsonService.GetJsonOrderItems().ToList();
+            _orderItems = JsonService.GetJsonOrderItems().ToList();
+            JsonService.SaveJsonOrderItems(_orderItems);
         }
         #endregion
 
@@ -59,7 +61,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
                     if (i.Id == order.Id)
                     {
                         i.Customer.Email = order.Customer.Email;
-                        i.TotalPrice = order.TotalPrice;
+                        //i.TotalPrice = order.TotalPrice;
                     }
                     JsonService.SaveJsonOrder(_orders);
                 }
@@ -128,39 +130,48 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             return _orderItems;
         }
 
-        public void AddOrderItems(OrderItemsClass orderItem)
+        #region Delete OrderItem
+        public OrderItemsClass DeleteFromCart(int? productId)
         {
-            _orderItems.Add(orderItem);
-            JsonService.SaveJsonOrderItems(_orderItems);
-        }
-
-        public OrderItemsClass DeleteOrderItem(int? itemId)
-        {
-            OrderItemsClass deletedOrderItem = null;
-
-            #region Delete OrderItem
             OrderItemsClass orderItemsToBeDeleted = null;
-            foreach (OrderItemsClass item in _orderItems)
+            foreach (var item in _orderItems)
             {
-                if (item.OrderItemId == itemId)
+                if (item.ProductId != productId)
                 {
                     orderItemsToBeDeleted = item;
                     break;
                 }
+                orderItemsToBeDeleted = item;
+                break;
+
             }
             if (orderItemsToBeDeleted != null)
             {
                 _orderItems.Remove(orderItemsToBeDeleted);
                 JsonService.SaveJsonOrderItems(_orderItems);
-                deletedOrderItem = orderItemsToBeDeleted;
+                
             }
-            #endregion
 
-            return deletedOrderItem;
+            return orderItemsToBeDeleted;
+        }
+        #endregion
+
+
+        public void AddToCart(int productId, int amount, double price)
+        {
+            _orderItems = OrderItemsClass.GetOrderList();
+            _orderItems.Add(new OrderItemsClass(productId, amount, price));
+            JsonService.SaveJsonOrderItems(_orderItems);
         }
 
+        public List<OrderItemsClass> GetFromCart()
+        {
+            return _orderItems;
+      
+        }
+
+        
 
 
     }
 }
-

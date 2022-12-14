@@ -1,0 +1,200 @@
+﻿@page
+@model SharkGaming.Pages.ProductInfoPages.PrebuildInfoPages.Prebuild2InfoPageModel
+@{
+}
+
+
+
+<div class="text-center">
+    <h1 style="color:white">
+        @if (Model.components != null)
+        {
+            foreach (var item in Model.components)
+            {
+                @if (item.Id == 34)
+                {
+
+                    @item.Name
+
+                }
+            }
+        }
+    </h1>
+</div>
+
+<br />
+
+<div class="row text-center">
+    <div class="column col-6">
+        <img src="~/Images/PreBuilds/PreBuild2.png" style="width:65%" />
+    </div>
+    <div class="column col-6">
+        <h3 style="color:white">Description</h3>
+        <p style="color:white">Mid-end gaming pc to the gamer that wants the best parts for the budget</p>
+        <h1 style="color:white">
+            Price:
+            @if (Model.components != null)
+            {
+                foreach (var item in Model.components)
+                {
+                    @if (item.Id == 34)
+                    {
+
+                        @item.Price
+
+                    }
+                }
+            }
+            kr
+        </h1>
+        <a class="btn btnGreen">Add to cart </a>
+    </div>
+</div>
+
+<br />
+
+<table class="table table-bordered border-black center bg-dark text-white" style="width:85%">
+    <thead>
+        <tr>
+            <th style="width:50%">Specification</th>
+            <th style="width: 50%">Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Case
+            </td>
+            <td>
+                @foreach (var item in Model.components)
+                {
+                    @if (item.Id == 34)
+                    {
+                        @item.Cases.Name
+                        ;
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Mother board
+            </td>
+            <td>
+                @foreach (var item in Model.components)
+                {
+                    @if (item.Id == 34)
+                    {
+                        @item.Motherboard.Name
+                        ;
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                CPU
+            </td>
+            <td>
+                @foreach (var item in Model.components)
+                {
+                    @if (item.Id == 34)
+                    {
+                        @item.CPU.Name
+                        ;
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                CPU Cooling
+            </td>
+            <td>
+                @foreach (var item in Model.components)
+                {
+                    @if (item.Id == 34)
+                    {
+                        @item.CPUCooling.Name
+                        ;
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                GPU
+            </td>
+            <td>
+                @foreach (var item in Model.components)
+                {
+                    @if (item.Id == 34)
+                    {
+                        @item.gPU.Name
+                        ;
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                RAM
+            </td>
+            <td>
+                @foreach (var item in Model.components)
+                {
+                    @if (item.Id == 34)
+                    {
+                        @item.rAM.Name
+                        ;
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Power Supply
+            </td>
+            <td>
+                @foreach (var item in Model.components)
+                {
+                    @if (item.Id == 34)
+                    {
+                        @item.powerSupply.Name
+                        ;
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Storage
+            </td>
+            <td>
+                @foreach (var item in Model.components)
+                {
+                    @if (item.Id == 34)
+                    {
+                        @item.storageClass.Name
+                        ;
+                    }
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Case Fan
+            </td>
+            <td>
+                @foreach (var item in Model.components)
+                {
+                    @if (item.Id == 34)
+                    {
+                        @item.caseFan.Name
+                        ;
+                    }
+                }
+            </td>
+        </tr>
+    </tbody>
+</table>

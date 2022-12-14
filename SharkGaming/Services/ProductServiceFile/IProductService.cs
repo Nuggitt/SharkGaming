@@ -17,7 +17,7 @@ namespace SharkGaming.Services.ProductServiceFile
     public interface IProductService // All customPc commented out
     {
         #region Get list methods    
-        List<ProductsClass> GetPreBuilds();
+        List<PreBuildsClass> GetPreBuilds();
         //List<CustomPcClass> GetCustomPc();
         List<Cases> GetCases();
         List<CaseFan> GetCaseFan();
@@ -33,7 +33,7 @@ namespace SharkGaming.Services.ProductServiceFile
         #endregion
 
         #region Add Item methods
-        void AddPreBuild(ProductsClass preBuilds);
+        void AddPreBuild(PreBuildsClass preBuilds);
         //void AddCustomPc(CustomPcClass customPc);
         void AddCase(Cases cas);
         void AddCaseFan(CaseFan caseFan);
@@ -77,6 +77,7 @@ namespace SharkGaming.Services.ProductServiceFile
 
         #region Get Product via ID
         Cases GetCases(int id);
+        PreBuildsClass GetPreBuildss(int id);
         //CustomPcClass GetCustomPcs(int id);
         CaseFan GetCaseFans(int id);
         CPUAirCooling GetCPUAirCoolings(int id);
@@ -117,11 +118,13 @@ namespace SharkGaming.Services.ProductServiceFile
         Mdot2 DeleteMdot2(int? itemId);    
 
         SolidStateDrive DeleteSSD(int? itemId);
-        
+
         #endregion
 
+        public List<ProductsClass> ProductList();
 
-       
+
+
 
     }
 }

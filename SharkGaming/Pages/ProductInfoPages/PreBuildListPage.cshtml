@@ -1,0 +1,31 @@
+﻿@page
+@model SharkGaming.Pages.ProductInfoPages.PreBuildListPageModel
+@{
+}
+
+<div class="text-center">
+    <h1 style="color:white">Pre-Builds</h1>
+</div>
+
+<br />
+
+<div class="row text-center">
+    @foreach (var x in Model.preBuilds)
+    {
+
+        <div style="width:33%" class="mb-4">
+            <a href="@x.Link" class="text-white text-decoration-none">
+                <div class="card bg-dark">
+                    <img src="@x.Img" alt="Image" class="img-fluid">
+                    <div class="container">
+                        <h4><b>@x.Name</b></h4>
+                        <p>@x.Description</p>
+                        <h4 class="text-orange"><b>@x.Price KR.</b></h4>
+                        <a href="/error" class="btn btn-green" style="width:100%">Add to cart</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+</div>
+

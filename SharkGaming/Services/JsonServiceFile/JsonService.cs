@@ -90,7 +90,7 @@ namespace SharkGaming.Services.JsonServiceFile
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "PreBuilds.json"); }
         }
 
-        public void SaveJsonPreBuilds(List<ProductsClass> preBuilds)
+        public void SaveJsonPreBuilds(List<PreBuildsClass> preBuilds)
         {
             using (FileStream jsonFileWriter = File.Create(JsonFileNamePreBuilds))
             {
@@ -99,15 +99,15 @@ namespace SharkGaming.Services.JsonServiceFile
                     SkipValidation = false,
                     Indented = true
                 });
-                JsonSerializer.Serialize<ProductsClass[]>(jsonWriter, preBuilds.ToArray());
+                JsonSerializer.Serialize<PreBuildsClass[]>(jsonWriter, preBuilds.ToArray());
             }
         }
 
-        public IEnumerable<ProductsClass> GetJsonPreBuilds()
+        public IEnumerable<PreBuildsClass> GetJsonPreBuilds()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileNamePreBuilds))
             {
-                return JsonSerializer.Deserialize<ProductsClass[]>(jsonFileReader.ReadToEnd());
+                return JsonSerializer.Deserialize<PreBuildsClass[]>(jsonFileReader.ReadToEnd());
             }
         }
         #endregion
@@ -187,11 +187,11 @@ namespace SharkGaming.Services.JsonServiceFile
             }
         }
 
-        public IEnumerable<Cases> GetJsonCooling()
+        public IEnumerable<CoolingClass> GetJsonCooling()
         {
             using (StreamReader jsonFileReader = File.OpenText(JsonFileNameCooling))
             {
-                return JsonSerializer.Deserialize<Cases[]>(jsonFileReader.ReadToEnd());
+                return JsonSerializer.Deserialize<CoolingClass[]>(jsonFileReader.ReadToEnd());
             }
         }
         #endregion
@@ -581,7 +581,7 @@ namespace SharkGaming.Services.JsonServiceFile
 
         public IEnumerable<OrderItemsClass> GetJsonOrderItems()
         {
-            using (StreamReader jsonFileReader = File.OpenText(JsonFileNameOrder))
+            using (StreamReader jsonFileReader = File.OpenText(JsonFileNameOrderItems))
             {
                 return JsonSerializer.Deserialize<OrderItemsClass[]>(jsonFileReader.ReadToEnd());
             }
@@ -594,7 +594,7 @@ namespace SharkGaming.Services.JsonServiceFile
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "Users.json"); }
         }
 
-        public void SaveJsonUser(List<User> OrderItems)
+        public void SaveJsonUser(List<User> user)
         {
             using (FileStream jsonFileWriter = File.Create(JsonFileUsers))
             {
@@ -603,7 +603,7 @@ namespace SharkGaming.Services.JsonServiceFile
                     SkipValidation = false,
                     Indented = true
                 });
-                JsonSerializer.Serialize<User[]>(jsonWriter, OrderItems.ToArray());
+                JsonSerializer.Serialize<User[]>(jsonWriter, user.ToArray());
             }
         }
 

@@ -18,8 +18,8 @@
 
         }
 
-        public CoolingClass(double thermalDesignPower, double size, string powerConnector, string airFlow, double rpm, string squareMetersPerHour, string mmH20, string colourCatagory, string name, double price, bool amdCompatible, bool intelCompatible, string specInfo)
-        : base( name, price, amdCompatible, intelCompatible, specInfo)
+        public CoolingClass(double thermalDesignPower, double size, string powerConnector, string airFlow, double rpm, string squareMetersPerHour, string mmH20, string colourCatagory, string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, string img, string description, string link)
+        : base( name, price, amdCompatible, intelCompatible, specInfo, img, description, link)
         {
             ThermalDesignPower = thermalDesignPower;
             Size = size;

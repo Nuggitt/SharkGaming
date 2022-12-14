@@ -15,8 +15,8 @@ namespace SharkGaming.Products.Components.ComponentTypes.RAM
         public bool AMDCompatible { get; set; }
         public bool IntelCompatible { get; set; }
 
-        public RAM(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, int capacity, string technology, string formFactor, double speed, string latencyTimings, double voltage, string colourCategory)
-            : base(name, price, amdCompatible, intelCompatible, specInfo)
+        public RAM(string name, double price, bool amdCompatible, bool intelCompatible, string specInfo, int capacity, string technology, string formFactor, double speed, string latencyTimings, double voltage, string colourCategory, string img, string description, string link)
+            : base(name, price, amdCompatible, intelCompatible, specInfo, img, description, link)
         {
             Capacity = capacity;
             Technology = technology;
