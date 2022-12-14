@@ -13,11 +13,11 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         {
             _productService = iproductervice;
         }
-        public List<Motherboard>? components { get; private set; }
+        public List<Motherboard>? motherboards { get; private set; }
 
         public void OnGet()
         {
-            components = _productService.GetMotherboards();
+            motherboards = _productService.GetMotherboards();
         }
     }
 }
