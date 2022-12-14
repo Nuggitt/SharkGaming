@@ -49,11 +49,11 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             _orders.Add(order);
             JsonService.SaveJsonOrder(_orders);
         }
-        public OrderClass CreateOrder(CustomerClass customer)
+        
+        public void CreateOrder(CustomerClass customer)
         {
-            new OrderClass(customer, customer.Address, _orderItems);
-            JsonService.SaveJsonOrder(_orders);
-            return new OrderClass(customer, customer.Address, _orderItems);
+            _orders.Add(new OrderClass(customer, customer.Address, _orderItems));
+            JsonService.SaveJsonOrder(_orders);          
         }
         
 
@@ -176,9 +176,6 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
       
         }
 
-        public OrderClass CreateOrder(CustomerClass customer, List<OrderItemsClass> orderItems)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

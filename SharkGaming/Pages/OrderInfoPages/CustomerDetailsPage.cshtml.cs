@@ -15,8 +15,8 @@ namespace SharkGaming.Pages.OrderInfoPages
     {
 
         private CustomerService _customerService;
-        private OrderRepositoryService _orderRepositoryService;
-        private ProductService _productService;
+        private IOrderRepositoryService _orderService;
+        private IProductService _productService;
 
         [BindProperty]
         public int Phone { get; set; }
@@ -37,22 +37,21 @@ namespace SharkGaming.Pages.OrderInfoPages
         public List<ProductsClass> _allProducts { get; set; }
 
 
-        public CustomerDetailsPageModel(CustomerService customerService, OrderRepositoryService orderRepositoryService, ProductService productService)
+        public CustomerDetailsPageModel(CustomerService customerService, IOrderRepositoryService orderService, IProductService productService)
         {
             _customerService = customerService;
-            _orderRepositoryService = orderRepositoryService;
+            _orderService = orderService;
             _productService = productService;
 
         }
-
-
+        
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            _orderRepositoryService.CreateOrder(new CustomerClass(Phone, Email, Address, Postcode, Country));
+            _orderService.CreateOrder(new CustomerClass(Phone, Email, Address, Postcode, Country));
             
             return RedirectToPage("");
         }
