@@ -15,6 +15,8 @@ namespace SharkGaming.Pages.AdminSite
             _productService = iproductervice;
         }
 
+
+
         public List<CaseFan> caseFans { get; private set; }
 
 
