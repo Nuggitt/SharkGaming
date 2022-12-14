@@ -14,11 +14,11 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         {
             _productService = iproductervice;
         }
-        public List<SolidStateDrive>? components { get; private set; }
+        public List<SolidStateDrive>? ssds { get; private set; }
 
         public void OnGet()
         {
-            components = _productService.GetSolidStateDrives();
+            ssds = _productService.GetSolidStateDrives();
         }
     }
 }
