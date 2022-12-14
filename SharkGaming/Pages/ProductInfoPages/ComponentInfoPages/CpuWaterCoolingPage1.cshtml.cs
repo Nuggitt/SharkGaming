@@ -14,11 +14,11 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         {
             _productService = iproductervice;
         }
-        public List<Products.Components.ComponentTypes.Cooling.CPUWaterCooling>? components { get; private set; }
+        public List<Products.Components.ComponentTypes.Cooling.CPUWaterCooling>? cpuWaterCoolings { get; private set; }
 
         public void OnGet()
         {
-            components = _productService.GetCPUWaterCooling();
+            cpuWaterCoolings = _productService.GetCPUWaterCooling();
         }
     }
 }
