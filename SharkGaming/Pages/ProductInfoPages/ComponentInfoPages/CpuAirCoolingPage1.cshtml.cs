@@ -33,7 +33,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         public IActionResult OnPostAddToCart()
         {
             _orderService.AddToCart(6, 1, 399);
-            return RedirectToPage("CasePage3");
+            return RedirectToPage("CpuAirCoolingPage1");
         }
     }
 }
