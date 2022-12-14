@@ -31,7 +31,7 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
 
         public IActionResult OnPostAddToCart()
         {
-            _orderService.AddToCart(4, 1, 59);
+            _orderService.AddToCart(4, 1, 159);
             return RedirectToPage("CaseFanPage2");
         }
     }
