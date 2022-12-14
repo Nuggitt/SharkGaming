@@ -26,11 +26,11 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
             _productService = iproductervice;
             _orderService = orderRepositoryService;
         }
-        public List<RAM>? components { get; private set; }
+        public List<RAM>? rams { get; private set; }
 
         public void OnGet()
         {
-            components = _productService.GetRAM();
+            rams = _productService.GetRAM();
         }
 
         public IActionResult OnPostAddToCart()

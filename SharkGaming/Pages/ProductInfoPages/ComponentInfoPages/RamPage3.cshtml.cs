@@ -14,11 +14,11 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
         {
             _productService = iproductervice;
         }
-        public List<RAM>? components { get; set; }
+        public List<RAM>? rams { get; set; }
 
         public void OnGet()
         {
-            components = _productService.GetRAM();
+            rams = _productService.GetRAM();
         }
     }
 }
