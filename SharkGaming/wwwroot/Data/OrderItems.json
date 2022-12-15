@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "OrderItemId": 0,
+    "Amount": 1,
+    "Price": 17999,
+    "ProductId": 34
+  },
+  {
+    "OrderItemId": 1,
+    "Amount": 1,
+    "Price": 543,
+    "ProductId": 25
+  }
+]

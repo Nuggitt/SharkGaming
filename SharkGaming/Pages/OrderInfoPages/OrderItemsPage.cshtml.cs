@@ -90,7 +90,9 @@ namespace SharkGaming.Pages.OrderInfoPages
                 totalPrice = totalPrice + Shipping;
                 
             }
+            _orderService.SaveTotalPrice(totalPrice);
             return TotalPrice = totalPrice;
+            
         }
 
 

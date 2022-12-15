@@ -20,6 +20,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
     {
         private List<OrderClass> _orders;
         private List<OrderItemsClass> _orderItems;
+        public double? TotalPrice { get; set; }
 
         public OrderRepositoryService()
         {
@@ -191,6 +192,17 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
       
         }
 
-        
+        public void SaveTotalPrice(double? totalPrice)
+        {
+            TotalPrice = totalPrice;
+        }
+        public double? GetTotalPrice()
+        {
+            return TotalPrice;
+        }
+        public void RefreshCart()
+        {
+            _orderItems.Clear();
+        }
     }
 }
