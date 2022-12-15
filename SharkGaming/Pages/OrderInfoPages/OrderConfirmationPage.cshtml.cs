@@ -18,6 +18,7 @@ namespace SharkGaming.Pages.OrderInfoPages
         [BindProperty]
         public string Email { get; set; }
         public OrderClass order { get; set; }
+        public double? TotalPrice { get; set; }
         
 
         public OrderConfirmationPageModel(IOrderRepositoryService orderRepositoryService, IProductService productService)
@@ -30,12 +31,12 @@ namespace SharkGaming.Pages.OrderInfoPages
 
         public void OnGet()
         {
-           
+           TotalPrice = _orderService.GetTotalPrice();
         }
         public IActionResult OnPostEmailConfirmation()
         {
             order = _orderService.GetOrderByEmail(Email);
-
+            TotalPrice = _orderService.GetTotalPrice();
             return Page();
 
         }
