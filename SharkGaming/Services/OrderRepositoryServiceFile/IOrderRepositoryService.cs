@@ -34,6 +34,7 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         OrderClass GetOrderByEmail(string email);
         void SaveTotalPrice(double? totalPrice);
         double? GetTotalPrice();
+        void RefreshCart();
 
     }
 }

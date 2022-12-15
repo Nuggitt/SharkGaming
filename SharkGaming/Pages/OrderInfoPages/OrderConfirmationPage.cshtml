@@ -56,7 +56,10 @@
         Details of your order have been sent to your email address at @Model.Email
     </h3>
 
-    <a asp-page="/Index" class="btn btn-dark">Back to main menu</a>
+    @*<a asp-page="/Index" class="btn btn-dark">Back to main menu</a>*@
+    <form method="post" class="form-inline">
+    <input type="submit" asp-page-handler="RefreshCart" value="Confirm Order and return to Home Page" class="btn btn-dark" />
+    </form>
 }
 
 

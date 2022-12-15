@@ -40,7 +40,11 @@ namespace SharkGaming.Pages.OrderInfoPages
             return Page();
 
         }
-        
+        public IActionResult OnPostRefreshCart()
+        {
+            _orderService.RefreshCart();
+            return RedirectToPage("/Index");
+        }
 
     }
 }

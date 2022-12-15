@@ -200,6 +200,9 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
         {
             return TotalPrice;
         }
-
+        public void RefreshCart()
+        {
+            _orderItems.Clear();
+        }
     }
 }
