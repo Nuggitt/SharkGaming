@@ -67,17 +67,13 @@ namespace SharkGaming.Pages.ProductInfoPages
 
         }
 
-        public IActionResult OnPostAddToCart()
+        public IActionResult OnPostAddToCart(int id)
         {
-            foreach (var item in Items)
-            {
-                if (productId != item.Id)
-                {
-                    _orderService.AddToCart(productId, 1, price);
-                    return RedirectToPage("ProductListPage");
-                }
-            }
+            productId = id;
+
+            _orderService.AddToCart(productId, 1, price);
             return RedirectToPage("ProductListPage");
+
 
         }
 
