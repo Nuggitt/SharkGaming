@@ -181,8 +181,20 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
         public void AddToCart(int productId, int amount, double price)
         {
-            _orderItems = OrderItemsClass.GetOrderList();
-            _orderItems.Add(new OrderItemsClass(productId, amount, price));
+            _orderItems = OrderItemsClass.GetOrderList();          
+            bool containsItem = _orderItems.Any(item => item.ProductId == productId);
+            foreach (var item in _orderItems)
+            {
+                if (item.ProductId == productId)
+                {
+                    item.Amount = item.Amount + amount;
+                }
+            }
+            if(!containsItem)
+            {
+                _orderItems.Add(new OrderItemsClass(productId, amount, price));
+            }
+
             JsonService.SaveJsonOrderItems(_orderItems);
         }
 
