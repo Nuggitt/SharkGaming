@@ -20,10 +20,11 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
     {
         private List<OrderClass> _orders;
         private List<OrderItemsClass> _orderItems;
+        public double? TotalPrice { get; set; }
 
         public OrderRepositoryService()
         {
-            //_orders = OrderClass.GetOrders();
+            _orders = OrderClass.GetOrders();
             _orderItems = OrderItemsClass.GetOrderList();
         }
 
@@ -49,11 +50,12 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
             _orders.Add(order);
             JsonService.SaveJsonOrder(_orders);
         }
-        public OrderClass CreateOrder(CustomerClass customer)
+        
+        public void CreateOrder(CustomerClass customer, double? totalPrice)
         {
-            new OrderClass(customer, customer.Address, _orderItems);
-            JsonService.SaveJsonOrder(_orders);
-            return new OrderClass(customer, customer.Address, _orderItems);
+            _orders = OrderClass.GetOrders();
+            _orders.Add(new OrderClass(customer, customer.Address, _orderItems, totalPrice));
+            JsonService.SaveJsonOrder(_orders);          
         }
         
 
@@ -81,6 +83,20 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
                 foreach (OrderClass i in _orders)
 
                     if (i.Id == id)
+                    {
+                        return i;
+                    }
+
+            }
+            return null;
+        }
+        public OrderClass GetOrderByEmail(string email)
+        {
+            if (email != null)
+            {
+                foreach (OrderClass i in _orders)
+
+                    if (i.Customer.Email == email)
                     {
                         return i;
                     }
@@ -165,8 +181,20 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
 
         public void AddToCart(int productId, int amount, double price)
         {
-            _orderItems = OrderItemsClass.GetOrderList();
-            _orderItems.Add(new OrderItemsClass(productId, amount, price));
+            _orderItems = OrderItemsClass.GetOrderList();          
+            bool containsItem = _orderItems.Any(item => item.ProductId == productId);
+            foreach (var item in _orderItems)
+            {
+                if (item.ProductId == productId)
+                {
+                    item.Amount = item.Amount + amount;
+                }
+            }
+            if(!containsItem)
+            {
+                _orderItems.Add(new OrderItemsClass(productId, amount, price));
+            }
+
             JsonService.SaveJsonOrderItems(_orderItems);
         }
 
@@ -176,9 +204,17 @@ namespace SharkGaming.Services.OrderRepositoryServiceFile
       
         }
 
-        public OrderClass CreateOrder(CustomerClass customer, List<OrderItemsClass> orderItems)
+        public void SaveTotalPrice(double? totalPrice)
         {
-            throw new NotImplementedException();
+            TotalPrice = totalPrice;
+        }
+        public double? GetTotalPrice()
+        {
+            return TotalPrice;
+        }
+        public void RefreshCart()
+        {
+            _orderItems.Clear();
         }
     }
 }

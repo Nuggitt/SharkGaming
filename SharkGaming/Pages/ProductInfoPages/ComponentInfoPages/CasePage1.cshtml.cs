@@ -15,26 +15,29 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
 
         private IProductService _productService;
         private IOrderRepositoryService _orderService;
+        [BindProperty] public int productId { get; set; }
+        [BindProperty] public int amount { get; set; }
+        [BindProperty] public double price { get; set; }
 
-        public CasePage1Model(IProductService iproductervice, IOrderRepositoryService iorderRepositoryService)
+        public CasePage1Model(IProductService productService, IOrderRepositoryService orderService)
         {
-            _productService = iproductervice;
-            _orderService = iorderRepositoryService;
+            this._productService = productService;
+            this._orderService = orderService;
+
         }
-        
-        public List<Cases> components { get; set; }
-        public List<OrderItemsClass> orderItemList { get; set; }
-        public OrderItemsClass Item { get; set; }
+
+        public List<Cases> cases { get; set; }
+        public List<ProductsClass> orderItemList { get; set; }
 
         public void OnGet()
         {
-            components = _productService.GetCases();
+            cases = _productService.GetCases();
         }
 
-        public void OnPost()
+        public IActionResult OnPostAddToCart()
         {
-            
-
+            _orderService.AddToCart(0, 1, 999);
+            return RedirectToPage("CasePage1");
         }
     }
 }

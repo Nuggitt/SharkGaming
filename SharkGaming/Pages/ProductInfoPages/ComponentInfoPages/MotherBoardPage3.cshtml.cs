@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SharkGaming.Products.Components.ComponentTypes.Motherboard;
+using SharkGaming.Services.OrderRepositoryServiceFile;
 using SharkGaming.Services.ProductServiceFile;
 
 namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
@@ -8,16 +9,28 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
     public class MotherBoardPage3Model : PageModel
     {
         private IProductService _productService;
+        private IOrderRepositoryService _orderService;
+        [BindProperty] public int productId { get; set; }
+        [BindProperty] public int amount { get; set; }
+        [BindProperty] public double price { get; set; }
 
-        public MotherBoardPage3Model(IProductService iproductervice)
+        public MotherBoardPage3Model(IProductService productService, IOrderRepositoryService orderService)
         {
-            _productService = iproductervice;
+            this._productService = productService;
+            this._orderService = orderService;
+
         }
-        public List<Motherboard>? components { get; private set; }
+        public List<Motherboard>? motherboards { get; private set; }
 
         public void OnGet()
         {
-            components = _productService.GetMotherboards();
+            motherboards = _productService.GetMotherboards();
+        }
+
+        public IActionResult OnPostAddToCart()
+        {
+            _orderService.AddToCart(20, 1, 1681.73);
+            return RedirectToPage("MotherBoardPage3");
         }
     }
 }

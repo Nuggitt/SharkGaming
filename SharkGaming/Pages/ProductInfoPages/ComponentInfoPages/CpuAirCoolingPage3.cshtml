@@ -3,244 +3,117 @@
 @{
 }
 
-<div class="text-center">
-    <h1 style="color:white">
-        @if (Model.components != null)
-        {
-            foreach (var item in Model.components)
-            {
-                @if (item.Id == 8)
-                {
-                    @item.Name
-                }
-            }
-        }
-    </h1>
-</div>
+@foreach (var x in Model.cpuAirCoolings)
+{
+    if (x.Id == 8)
+    {
+        <div class="text-center">
+            <h1 style="color:white">
+                @x.Name
+            </h1>
+        </div>
 
-<br />
+        <br />
 
-<div class="row text-center">
-    <div class="column col-6">
-        <img src="~/images/components/CPUair3.png" style=" width: 70%" />
-    </div>
-    <div class="column col-6">
-        <h3 style="color:white">Description</h3>
-        <p style="color:white">An air cooler made for the gamer who knows RBG is half of the effectiveness in computers.</p>
-        <h1 style="color:white">
-            Price:
-            @if (Model.components != null)
-            {
-                foreach (var item in Model.components)
-                {
-                    @if (item.Id == 8)
-                    {
-                        @item.Price
-                    }
-                }
-            }
-            kr
-        </h1>
-        <a class="btn btnGreen">Add to cart</a>
-    </div>
-</div>
+        <form method="post">
+            <div class="row text-center">
 
-<br />
+                <div class="column col-6">
+                    <img src="@x.Img" style="width:65%" />
+                </div>
 
-<table class="table table-bordered center bg-dark text-white" style="width:85%">
-    <thead>
-        <tr>
-            <th style="width:50%">Specification</th>
-            <th style="width:50%">Info</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Compatibility</td>
-            <td>AMD and Intel</td>
-        </tr>
-        <tr>
-            <td>Tower material</td>
-            <td>
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        @if (item.Id == 8)
-                        {
-                            @item.TowerMaterial
-                            ;
-                        }
-                    }
-                }
-            </td>
-        </tr>
-        <tr>
-            <td>Air cooling</td>
-            <td>
-                true
-            </td>
-        </tr>
-        <tr>
-            <td>Socket</td>
-            <td>
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        if (item.Id == 8)
-                        {
-                            @item.Socket
-                            ;
-                        }
-                    }
-                }
-            </td>
-        </tr>
-        <tr>
-            <td>Amount of fans</td>
-            <td>
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        @if (item.Id == 8)
-                        {
-                            @item.FanAmount
-                            ;
-                        }
-                    }
-                }
-            </td>
-        </tr>
-        <tr>
-            <td>Thermal design power</td>
-            <td>
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        @if (item.Id == 8)
-                        {
-                            @item.ThermalDesignPower
-                            ;
-                        }
-                    }
-                }
-            </td>
-        </tr>
-        <tr>
-            <td>Size</td>
-            <td>
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        @if (item.Id == 8)
-                        {
-                            @item.Size
-                            ;
-                        }
-                    }
-                }
-            </td>
-        </tr>
-        <tr>
-            <td>Power connector</td>
-            <td>
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        @if (item.Id == 8)
-                        {
-                            @item.PowerConnector
-                            ;
-                        }
-                    }
-                }
-            </td>
-        </tr>
-        <tr>
-            <td> Air flow</td>
-            <td>
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        @if (item.Id == 8)
-                        {
-                            @item.AirFlow
-                            ;
-                        }
+                <div class="column col-6">
+                    <h3 style="color:white">Description</h3>
+                    <p style="color:white">@x.Description</p>
+                    <h1 style="color:chocolate">Price: @x.Price KR.</h1>
+                    <input type="submit" asp-page-handler="AddToCart" asp-for="productId" value="Add To Cart" class="btn btn-green" />
+                    <input type="hidden" asp-for="productId">
+                    <br />
+                </div>
+            </div>
+        </form>
 
-                    }
-                }
-            </td>
-        </tr>
-        <tr>
-            <td>RPM</td>
-            <td>
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        @if (item.Id == 8)
+
+        <table class="table table-bordered center bg-dark text-white" style="width:85%">
+            <thead>
+                <tr>
+                    <th style="width:50%">Specification</th>
+                    <th style="width: 50%">Info</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>AMD compatible</td>
+                    <td>
+                        @if (x.AMDCompatible == true)
                         {
-                            @item.Rpm
-                            ;
+                            <text>True</text>
                         }
-                    }
-                }
-            </td>
-        </tr>
-        <tr>
-            <td>Square meters pr hour</td>
-            <td>
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        @if (item.Id == 8)
+                        else
                         {
-                            @item.SquareMetersPerHour
-                            ;
+                            <text>False</text>
                         }
-                    }
-                }
-            </td>
-        </tr>
-        <tr>
-            <td>MMH20</td>
-            <td>
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        @if (item.Id == 8)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Intel compatible</td>
+                    <td>
+                        @if (x.IntelCompatible == true)
                         {
-                            @item.MmH20
-                            ;
+                            <text>True</text>
                         }
-                    }
-                }
-            </td>
-        </tr>
-        <tr>
-            <td>Colour category</td>
-            <td>
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        @if (item.Id == 8)
+                        else
                         {
-                            @item.ColourCatagory
-                            ;
+                            <text>False</text>
                         }
-                    }
-                }
-            </td>
-        </tr>
-    </tbody>
-</table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tower material</td>
+                    <td>@x.TowerMaterial</td>
+                </tr>
+                <tr>
+                    <td>Socket</td>
+                    <td>@x.Socket</td>
+                </tr>
+                <tr>
+                    <td>Amount of fans</td>
+                    <td>@x.FanAmount</td>
+                </tr>
+                <tr>
+                    <td>Thermal design power</td>
+                    <td>@x.ThermalDesignPower</td>
+                </tr>
+                <tr>
+                    <td>Size</td>
+                    <td>@x.Size</td>
+                </tr>
+                <tr>
+                    <td>Power connector</td>
+                    <td>@x.PowerConnector</td>
+                </tr>
+                <tr>
+                    <td>Air flow</td>
+                    <td>@x.AirFlow</td>
+                </tr>
+                <tr>
+                    <td>RPM</td>
+                    <td>@x.Rpm</td>
+                </tr>
+                <tr>
+                    <td>Square meters pr hour</td>
+                    <td>@x.SquareMetersPerHour</td>
+                </tr>
+                <tr>
+                    <td>MMH20</td>
+                    <td>@x.MmH20</td>
+                </tr>
+                <tr>
+                    <td>Colour category</td>
+                    <td>@x.ColourCatagory</td>
+                </tr>
+            </tbody>
+        </table>
+    }
+}

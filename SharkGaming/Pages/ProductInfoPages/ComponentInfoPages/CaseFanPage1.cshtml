@@ -3,6 +3,7 @@
 @{
 }
 
+
 @foreach (var x in Model.caseFans)
 {
     if (x.Id == 3)
@@ -15,31 +16,24 @@
 
         <br />
 
-        <div class="row text-center">
+        <form method="post">
+            <div class="row text-center">
 
-            <div class="column col-6">
-                <img src="@x.Img" style="width:65%" />
+                <div class="column col-6">
+                    <img src="@x.Img" style="width:65%" />
+                </div>
+
+                <div class="column col-6">
+                    <h3 style="color:white">Description</h3>
+                    <p style="color:white">@x.Description</p>
+                    <h1 style="color:chocolate">Price: @x.Price KR.</h1>
+                    <input type="submit" asp-page-handler="AddToCart" asp-for="productId" value="Add To Cart" class="btn btn-green" />
+                    <input type="hidden" asp-for="productId">
+                    <br />
+                </div>
             </div>
+        </form>
 
-            <div class="column col-6">
-                <h3 style="color:white">Description</h3>
-                <p style="color:white">@x.Description</p>
-                <h1 style="color:chocolate">Price: @x.Price KR.</h1>
-                <br />
-
-                <form method="post" class="form-inline">
-                    <div class="input-group mb-3">
-                        <input type="hidden" asp-for="productId">
-                        Model.productId = 4;
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Qty</span>
-                        </div>
-                        <input type="submit" asp-page-handler="AddToCart" value="Add To Cart" class="btn btn-dark" />
-                    </div>
-                </form>
-            </div>
-
-        </div>
 
         <table class="table table-bordered center bg-dark text-white" style="width:85%">
             <thead>
@@ -116,3 +110,4 @@
         </table>
     }
 }
+

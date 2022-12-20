@@ -23,14 +23,16 @@ namespace SharkGaming.Pages.OrderInfoPages
             
             _orderService = orderService;
             _productService = productService;
+            Shipping = 89;
         }
 
         public List<OrderItemsClass> _orderItems { get; set; }
         public List<ProductsClass> _allProducts { get; set; }
         public List<ProductsClass> _cartProducts { get; set; }
         public double? TotalPrice { get; set; }
-        public int shipping { get; set; }
+        public int Shipping { get; set; }
 
+       
 
         //public IActionResult OnGet()
         //{
@@ -85,10 +87,12 @@ namespace SharkGaming.Pages.OrderInfoPages
                         totalPrice = totalPrice + product.Price * orderItem.Amount;
                     }
                 }
-                
+                totalPrice = totalPrice + Shipping;
                 
             }
+            _orderService.SaveTotalPrice(totalPrice);
             return TotalPrice = totalPrice;
+            
         }
 
 

@@ -3,181 +3,102 @@
 @{
 }
 
-<form method="post">
-    <div class="text-center">
-        <h1 style="color:white">
-            @if (Model.components != null)
-            {
-                foreach (var item in Model.components)
-                {
-                    @if (item.Id == 24)
-                    {
-
-                        @item.Name
-
-                    }
-                }
-            }
-        </h1>
-    </div>
-
-    <br />
-
-    <div class="row text-center">
-        <div class="column col-6">
-            <img src="~/Images/Components/RAM1.png" style="width:65%" />
-        </div>
-        <div class="column col-6">
-            <h3 style="color:white">Description</h3>
-            <p style="color:white">Corsair Vengeance RGB Pro 16GB will also light up your pc with the solid glow sticks on the top.  </p>
+@foreach (var x in Model.rams)
+{
+    if (x.Id == 24)
+    {
+        <div class="text-center">
             <h1 style="color:white">
-                Price:
-                @if (Model.components != null)
-                {
-                    foreach (var item in Model.components)
-                    {
-                        @if (item.Id == 24)
-                        {
-                            @item.Price
-
-                        }
-
-
-                    }
-                }
-                
-                kr
-                <input type="submit" asp-page-handler="AddToCart" asp-for="productId" value="Add To Cart" class="btn btn-green" />
+                @x.Name
             </h1>
         </div>
-    </div>
 
-    <br />
+        <br />
 
-    <table class="table table-bordered border-black center bg-dark text-white" style="width:85%">
-        <thead>
-            <tr>
-                <th style="width:50%">Specification</th>
-                <th style="width: 50%">Info</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Compatibility</td>
-                <td>AMD and Intel</td>
-            </tr>
-            <tr>
-                <td>Capacity</td>
-                <td>
-                    @if (Model.components != null)
-                    {
-                        foreach (var item in Model.components)
+        <form method="post">
+            <div class="row text-center">
+
+                <div class="column col-6">
+                    <img src="@x.Img" style="width:65%" />
+                </div>
+
+                <div class="column col-6">
+                    <h3 style="color:white">Description</h3>
+                    <p style="color:white">@x.Description</p>
+                    <h1 style="color:chocolate">Price: @x.Price KR.</h1>
+                    <input type="submit" asp-page-handler="AddToCart" asp-for="productId" value="Add To Cart" class="btn btn-green" />
+                    <input type="hidden" asp-for="productId">
+                    <br />
+                </div>
+            </div>
+        </form>
+
+
+        <table class="table table-bordered center bg-dark text-white" style="width:85%">
+            <thead>
+                <tr>
+                    <th style="width:50%">Specification</th>
+                    <th style="width: 50%">Info</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>AMD compatible</td>
+                    <td>
+                        @if(x.AMDCompatible == true)
                         {
-                            @if (item.Id == 24)
-                            {
-                                @item.Capacity
-                                ;
-                            }
+                            <text>True</text>
                         }
-                    }
-                </td>
-            </tr>
-            <tr>
-                <td>Technology</td>
-                <td>
-                    @if (Model.components != null)
-                    {
-                        foreach (var item in Model.components)
+                        else
                         {
-                            @if (item.Id == 24)
-                            {
-                                @item.Technology
-                                ;
-                            }
+                            <text>False</text>
                         }
-                    }
-                </td>
-            </tr>
-            <tr>
-                <td>Form factor</td>
-                <td>
-                    @if (Model.components != null)
-                    {
-                        foreach (var item in Model.components)
+                    </td>
+                </tr>
+                <tr>
+                    <td>Intel compatible</td>
+                    <td>
+                        @if(x.IntelCompatible == true)
                         {
-                            if (item.Id == 24)
-                            {
-                                @item.FormFactor
-                                ;
-                            }
+                            <text>True</text>
                         }
-                    }
-                </td>
-            </tr>
-            <tr>
-                <td>Speed</td>
-                <td>
-                    @if (Model.components != null)
-                    {
-                        foreach (var item in Model.components)
+                        else
                         {
-                            @if (item.Id == 24)
-                            {
-                                @item.Speed
-                                ;
-                            }
+                            <text>False</text>
                         }
-                    }
-                </td>
-            </tr>
-            <tr>
-                <td>Latency timings</td>
-                <td>
-                    @if (Model.components != null)
-                    {
-                        foreach (var item in Model.components)
-                        {
-                            @if (item.Id == 24)
-                            {
-                                @item.LatencyTimings
-                                ;
-                            }
-                        }
-                    }
-                </td>
-            </tr>
-            <tr>
-                <td>Voltage</td>
-                <td>
-                    @if (Model.components != null)
-                    {
-                        foreach (var item in Model.components)
-                        {
-                            @if (item.Id == 24)
-                            {
-                                @item.Voltage
-                                ;
-                            }
-                        }
-                    }
-                </td>
-            </tr>
-            <tr>
-                <td>Colour category</td>
-                <td>
-                    @if (Model.components != null)
-                    {
-                        foreach (var item in Model.components)
-                        {
-                            @if (item.Id == 24)
-                            {
-                                @item.ColourCategory
-                                ;
-                            }
-                        }
-                    }
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Capacity</td>
+                    <td>@x.Capacity</td>
+                </tr>
+                <tr>
+                    <td>Technology</td>
+                    <td>@x.Technology</td>
+                </tr>
+                <tr>
+                    <td>Form factor</td>
+                    <td>@x.FormFactor</td>
+                </tr>
+                <tr>
+                    <td>Speed</td>
+                    <td>@x.Speed</td>
+                </tr>
+                <tr>
+                    <td>Latency timings</td>
+                    <td>@x.LatencyTimings</td>
+                </tr>
+                <tr>
+                    <td>Voltage</td>
+                    <td>@x.Voltage</td>
+                </tr>
+                <tr>
+                    <td>Colour category</td>
+                    <td>@x.ColourCategory</td>
+                </tr>
+            </tbody>
+        </table>
+    }
+}
+

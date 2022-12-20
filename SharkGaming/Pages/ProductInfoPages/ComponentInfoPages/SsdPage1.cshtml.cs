@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SharkGaming.Products.Components.ComponentTypes.PowerSupply;
 using SharkGaming.Products.Components.ComponentTypes.Storage;
+using SharkGaming.Services.OrderRepositoryServiceFile;
 using SharkGaming.Services.ProductServiceFile;
 
 namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
@@ -9,16 +10,30 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
     public class SsdPage1Model : PageModel
     {
         private IProductService _productService;
+        private IOrderRepositoryService _orderService;
+        [BindProperty] public int productId { get; set; }
+        [BindProperty] public int amount { get; set; }
+        [BindProperty] public double price { get; set; }
 
-        public SsdPage1Model(IProductService iproductervice)
+        public SsdPage1Model(IProductService productService, IOrderRepositoryService orderService)
         {
-            _productService = iproductervice;
+            this._productService = productService;
+            this._orderService = orderService;
+
         }
-        public List<SolidStateDrive>? components { get; private set; }
+        public List<SolidStateDrive>? ssds { get; private set; }
 
         public void OnGet()
         {
-            components = _productService.GetSolidStateDrives();
+            ssds = _productService.GetSolidStateDrives();
+        }
+
+        public IActionResult OnPostAddToCart()
+        {
+
+            _orderService.AddToCart(30, 1, 1249);
+            return RedirectToPage("SsdPage1");
+
         }
     }
 }

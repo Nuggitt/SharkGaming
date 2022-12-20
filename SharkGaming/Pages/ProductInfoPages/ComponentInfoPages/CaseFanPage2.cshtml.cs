@@ -11,23 +11,28 @@ namespace SharkGaming.Pages.ProductInfoPages.ComponentInfoPages
     {
         private IProductService _productService;
         private IOrderRepositoryService _orderService;
+        [BindProperty] public int productId { get; set; }
+        [BindProperty] public int amount { get; set; }
+        [BindProperty] public double price { get; set; }
 
-        public CaseFanPage2Model(IProductService iproductervice)
+        public CaseFanPage2Model(IProductService productService, IOrderRepositoryService orderService)
         {
-            _productService = iproductervice;
+            this._productService = productService;
+            this._orderService = orderService;
+
         }
-        public List<CaseFan> components { get; set; }
+        public List<CaseFan> caseFans { get; set; }
         public List<ProductsClass> orderItemList { get; set; }
 
         public void OnGet()
         {
-            components = _productService.GetCaseFan();
+            caseFans = _productService.GetCaseFan();
         }
 
-        public void OnPost()
+        public IActionResult OnPostAddToCart()
         {
-            //_orderService.AddToOrderItems(orderItemList);
-
+            _orderService.AddToCart(4, 1, 159);
+            return RedirectToPage("CaseFanPage2");
         }
     }
 }
